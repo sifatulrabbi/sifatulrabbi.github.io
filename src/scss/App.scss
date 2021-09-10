@@ -23,4 +23,16 @@ body {
   }
 }
 
+li {
+  list-style-type: none;
+}
+
+button,
+input,
+textarea {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
 @import './navbar';

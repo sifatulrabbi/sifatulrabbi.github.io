@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import './scss/App.scss';
+
+const Navbar = lazy(() => import('./components/Navbar/Navbar'));
+const Hero = lazy(() => import('./components/Hero/Hero'));
 
 function App() {
   return (
     <div className="app">
-      <h1>hello world</h1>
+      <Suspense fallback={<div>loading...</div>}>
+        <Navbar />
+        <Hero />
+      </Suspense>
     </div>
   );
 }
