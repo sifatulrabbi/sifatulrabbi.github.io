@@ -1,0 +1,71 @@
+$primaryMain: #3a95e9;
+$primaryLight: #ddf2ff;
+$primaryDark: #003e86;
+$text: #5c5c5c;
+$borderRadius: 15px;
+$shadow: rgba(0, 0, 0, 0.1) 4px 6px 15px 0px;
+$breakPoint: 1000px;
+$fontHeading: 'Montserrat', sans-serif;
+$fontBody: 'Karla', sans-serif;
+
+@mixin fontSize($button: false) {
+  @if $button {
+    font-size: 16px;
+  } @else {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    @if $button {
+      font-size: 14px;
+    } @else {
+      font-size: 16px;
+    }
+  }
+}
+
+@mixin typography($name) {
+  @if $name == h1 {
+    font-size: 54px;
+    font-weight: 900;
+    color: $primaryDark;
+  } @else if $name == h2 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 35%;
+  } @else if $name == waterMark {
+    font-size: 96px;
+    font-weight: 900;
+    letter-spacing: 3%;
+  }
+
+  @media screen and (max-width: $breakPoint) {
+    @if $name == h1 {
+      font-size: 44px;
+    } @else if $name == h2 {
+      font-size: 22px;
+    } @else if $name == waterMark {
+      font-size: 58px;
+    }
+  }
+}
+
+@mixin paper {
+  padding: 1.5rem;
+  width: max-content;
+  height: max-content;
+  max-width: 100%;
+  text-align: left;
+  box-shadow: $shadow;
+}
+
+@mixin button($secondary: false, $big: false) {
+  @include fontSize(true);
+  @if $secondary {
+    background-color: hsl(0, 0%, 85%);
+  } @else {
+    background-color: hsl(0, 0%, 100%);
+  }
+  color: $primaryMain;
+  letter-spacing: 3%;
+}
