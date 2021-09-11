@@ -1,6 +1,108 @@
 @import './variables';
 
 .hero {
-  @include resPadding();
-  margin-top: 120px;
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $primaryMain;
+  }
+
+  &::after {
+    z-index: -2;
+    top: 50%;
+    left: 50%;
+    border: 2px solid $primaryMain;
+    transform: translate(-50%, -50%);
+    height: calc(100% + 4rem);
+    width: 80%;
+  }
+
+  &_content {
+    @include resPadding();
+  }
+
+  &_heading {
+    @include typography(h1);
+    margin-bottom: 1.5rem;
+  }
+
+  &_subHeading {
+    font-size: 0.9rem;
+    color: #f0f0f0;
+    font-weight: normal;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+
+  &_cta {
+    margin-top: 12vh;
+    display: flex;
+    justify-content: center;
+
+    &_email {
+      display: none;
+    }
+
+    &_button {
+      height: 100%;
+    }
+  }
+
+  &_bgArt {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .hero {
+    &_bgArt {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 40vw;
+      transform: translate(0, -10%);
+    }
+
+    &::before {
+      width: 50%;
+    }
+
+    &::after {
+      height: 60%;
+      width: 50%;
+    }
+
+    &_subHeading {
+      text-align: left;
+    }
+
+    &_cta {
+      justify-content: flex-start;
+
+      &_email {
+        display: block;
+        background-color: #fff;
+        box-shadow: $shadow;
+        padding: 1rem;
+        width: max-content;
+        font-size: 0.8rem;
+      }
+    }
+  }
 }

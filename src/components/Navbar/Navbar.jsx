@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { logo } from '../../images';
+import { logoWhite as logo } from '../../images';
 
 const Navbar = () => {
   const [shadow, setShadow] = useState(false);

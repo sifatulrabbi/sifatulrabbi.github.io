@@ -26,9 +26,11 @@ $fontBody: 'Karla', sans-serif;
 
 @mixin typography($name) {
   @if $name == h1 {
-    font-size: 54px;
+    font-size: clamp(2.4rem, 3vw, 4rem);
     font-weight: 900;
     color: $primaryDark;
+    line-height: 1;
+    text-align: left;
   } @else if $name == h2 {
     font-size: 26px;
     font-weight: 700;
@@ -41,7 +43,7 @@ $fontBody: 'Karla', sans-serif;
 
   @media screen and (max-width: $breakPoint) {
     @if $name == h1 {
-      font-size: 44px;
+      text-align: center;
     } @else if $name == h2 {
       font-size: 22px;
     } @else if $name == waterMark {
@@ -60,10 +62,12 @@ $fontBody: 'Karla', sans-serif;
 }
 
 @mixin resPadding {
-  padding: 0 1.5rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 
   @media screen and (min-width: 1000px) {
-    padding: 0 10vw;
+    padding-right: 14vw;
+    padding-left: 14vw;
   }
 }
 

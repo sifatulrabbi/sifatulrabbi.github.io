@@ -5,13 +5,11 @@
   width: max-content;
   height: max-content;
   cursor: pointer;
-  color: $primaryDark;
+  color: #fff;
   @include fontSize(true);
   letter-spacing: 0.055em;
   text-transform: uppercase;
   padding: 0.6rem 1rem;
-  margin-right: 7px;
-  margin-bottom: 7px;
   @include transition(color);
 
   &::before,
@@ -26,13 +24,15 @@
 
   &::before {
     width: 60%;
-    background-color: $primaryMain;
+    // background-color: rgb(240, 69, 126);
+    background-color: $primaryDark;
     @include transition(width);
   }
 
   &::after {
     width: 100%;
-    border: 2px solid $primaryMain;
+    // border: 2px solid rgb(240, 69, 126);
+    border: 2px solid $primaryDark;
     transform: translate(5px, 5px);
     @include transition(transform);
   }
@@ -60,5 +60,10 @@
     &::after {
       display: none;
     }
+  }
+
+  &.big {
+    height: 100%;
+    padding: 0.8rem 1.4rem;
   }
 }

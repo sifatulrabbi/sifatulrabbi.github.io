@@ -1,6 +1,7 @@
 @import './variables';
 
 .navbar {
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,7 +11,7 @@
   left: 0;
   height: 100px;
   @include resPadding();
-  border-radius: 0 0 15px 15px;
+  // border-radius: 0 0 15px 15px;
 
   &.showShadow {
     background-color: #fff;
@@ -27,6 +28,12 @@
       width: inherit;
       height: inherit;
       pointer-events: none;
+      margin-left: -15px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      width: 60px;
+      height: 60px;
     }
   }
 
