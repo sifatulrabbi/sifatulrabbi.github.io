@@ -10,16 +10,16 @@ $fontBody: 'Karla', sans-serif;
 
 @mixin fontSize($button: false) {
   @if $button {
-    font-size: 16px;
+    font-size: 14px;
   } @else {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @media screen and (max-width: 1000px) {
     @if $button {
-      font-size: 14px;
+      font-size: 12.5px;
     } @else {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 }
@@ -59,17 +59,6 @@ $fontBody: 'Karla', sans-serif;
   box-shadow: $shadow;
 }
 
-@mixin button($secondary: false, $big: false) {
-  @include fontSize(true);
-  @if $secondary {
-    background-color: hsl(0, 0%, 85%);
-  } @else {
-    background-color: hsl(0, 0%, 100%);
-  }
-  color: $primaryMain;
-  letter-spacing: 3%;
-}
-
 @mixin resPadding {
   padding: 0 1.5rem;
 
@@ -79,5 +68,5 @@ $fontBody: 'Karla', sans-serif;
 }
 
 @mixin transition($property: all) {
-  transition: $property 0.3s ease-in;
+  transition: $property 0.2s ease-in;
 }

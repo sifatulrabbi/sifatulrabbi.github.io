@@ -1,1 +1,6 @@
 @import './variables';
+
+.hero {
+  @include resPadding();
+  margin-top: 120px;
+}

@@ -1,0 +1,64 @@
+@import './variables';
+
+.button {
+  position: relative;
+  width: max-content;
+  height: max-content;
+  cursor: pointer;
+  color: $primaryDark;
+  @include fontSize(true);
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  @include transition(color);
+
+  &::before,
+  &::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+
+  &::before {
+    width: 60%;
+    background-color: $primaryMain;
+    @include transition(width);
+  }
+
+  &::after {
+    width: 100%;
+    border: 2px solid $primaryMain;
+    transform: translate(5px, 5px);
+    @include transition(transform);
+  }
+
+  &:hover {
+    color: #fff;
+
+    &::before {
+      width: 100%;
+    }
+
+    &::after {
+      transform: translate(0, 5px);
+    }
+  }
+
+  &.text {
+    padding: 0.6rem;
+    margin: 0;
+    color: $primaryMain;
+
+    &::before {
+      background-color: $primaryLight;
+    }
+    &::after {
+      display: none;
+    }
+  }
+}

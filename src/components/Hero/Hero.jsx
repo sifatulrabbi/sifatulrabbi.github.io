@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../Button/Button';
 
 const Hero = () => {
   return (
@@ -12,7 +13,8 @@ const Hero = () => {
         </h2>
         <div className="hero_cta">
           <div className="hero_cta_box">mdsifatulislam.rabbi@gmail.com</div>
-          <button className="hero_cta_button">Contact</button>
+          <Button big label="Contact" />
+          <Button text label="Github" />
         </div>
       </div>
       <div className="hero_bgArt"></div>
