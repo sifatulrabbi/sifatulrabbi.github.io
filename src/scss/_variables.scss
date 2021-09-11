@@ -69,3 +69,15 @@ $fontBody: 'Karla', sans-serif;
   color: $primaryMain;
   letter-spacing: 3%;
 }
+
+@mixin resPadding {
+  padding: 0 1.5rem;
+
+  @media screen and (min-width: 1000px) {
+    padding: 0 10vw;
+  }
+}
+
+@mixin transition($property: all) {
+  transition: $property 0.3s ease-in;
+}

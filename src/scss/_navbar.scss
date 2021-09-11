@@ -8,9 +8,44 @@
   top: 0;
   right: 0;
   left: 0;
+  height: 100px;
+  @include resPadding();
 
   &.showShadow {
     background-color: #fff;
     box-shadow: $shadow;
+    height: max-content;
+  }
+
+  &_logo {
+    width: 70px;
+    height: 70px;
+
+    img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+
+  &_linksList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_item {
+      padding: 1rem;
+      font-weight: 700;
+      color: $text;
+      cursor: pointer;
+
+      &:hover {
+        color: $primaryMain;
+        transform: translateY(1px);
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
   }
 }
