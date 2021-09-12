@@ -5,7 +5,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  height: 50px;
+  height: 3rem;
   z-index: 1000;
   background-color: $primaryMain;
   width: 100%;
@@ -20,14 +20,19 @@
     justify-content: space-around;
 
     &_link {
-      height: 3.2rem;
-      width: 3.2rem;
+      height: 3rem;
+      width: 3rem;
       border-radius: 50%;
       font-size: 1.1rem;
       color: $primaryDark;
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: $primaryMain;
+
+      &.active {
+        transform: translateY(-10px);
+      }
     }
   }
 }
