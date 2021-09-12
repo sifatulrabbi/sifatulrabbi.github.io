@@ -16,6 +16,7 @@ body {
   overflow-x: hidden;
   @include fontSize();
   font-family: $fontHeading;
+  position: relative;
 
   #root {
     width: 100%;
@@ -41,3 +42,4 @@ textarea {
 @import './button';
 @import './title';
 @import './projectSection';
+@import './bottomBar';

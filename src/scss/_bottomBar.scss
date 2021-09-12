@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  z-index: 1000;
+  background-color: $primaryMain;
+  width: 100%;
+  // box-shadow: $shadowColor 0px -6px 15px 0px;
+  @include resPadding();
+
+  &_nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &_link {
+      height: 3.2rem;
+      width: 3.2rem;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      color: $primaryDark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

@@ -4,6 +4,7 @@ import './scss/App.scss';
 const Navbar = lazy(() => import('./components/Navbar/Navbar'));
 const Hero = lazy(() => import('./components/Hero/Hero'));
 const ProjectSection = lazy(() => import('./components/ProjectSection/ProjectSection'));
+const BottomBar = lazy(() => import('./components/BottomBar/BottomBar'));
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Navbar />
         <Hero />
         <ProjectSection />
+        <BottomBar />
       </Suspense>
     </div>
   );
