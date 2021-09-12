@@ -24,14 +24,13 @@
 
   &::before {
     width: 60%;
-    // background-color: rgb(240, 69, 126);
     background-color: $primaryDark;
+    box-shadow: $shadow;
     @include transition(width);
   }
 
   &::after {
     width: 100%;
-    // border: 2px solid rgb(240, 69, 126);
     border: 2px solid $primaryDark;
     transform: translate(5px, 5px);
     @include transition(transform);

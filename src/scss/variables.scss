@@ -1,0 +1,40 @@
+$primaryMain: #3a95e9;
+$primaryLight: #ddf2ff;
+$primaryDark: #003e86;
+$text: #5c5c5c;
+$borderRadius: 15px;
+$shadowColor: rgba(0, 0, 0, 0.15);
+$shadow: $shadowColor 4px 6px 15px 0px;
+$breakPoint: 1000px;
+$fontHeading: 'Montserrat', sans-serif;
+$fontBody: 'Karla', sans-serif;
+
+@mixin fontSize($button: false) {
+  @if $button {
+    font-size: 14px;
+  } @else {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    @if $button {
+      font-size: 12.5px;
+    } @else {
+      font-size: 14px;
+    }
+  }
+}
+
+@mixin resPadding {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+
+  @media screen and (min-width: 1000px) {
+    padding-right: 14vw;
+    padding-left: 14vw;
+  }
+}
+
+@mixin transition($property: all) {
+  transition: $property 0.2s ease-in;
+}

@@ -3,6 +3,7 @@ import './scss/App.scss';
 
 const Navbar = lazy(() => import('./components/Navbar/Navbar'));
 const Hero = lazy(() => import('./components/Hero/Hero'));
+const ProjectSection = lazy(() => import('./components/ProjectSection/ProjectSection'));
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Suspense fallback={<div>loading...</div>}>
         <Navbar />
         <Hero />
+        <ProjectSection />
       </Suspense>
     </div>
   );

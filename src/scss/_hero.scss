@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-bottom: 6rem;
 
   &::before,
   &::after {
@@ -37,8 +38,13 @@
   }
 
   &_heading {
-    @include typography(h1);
+    font-size: clamp(2.4rem, 3vw, 4rem);
+    font-weight: 900;
+    color: $primaryDark;
+    line-height: 1;
+    text-align: center;
     margin-bottom: 1.5rem;
+    text-shadow: rgba(0, 0, 0, 0.15) 3px 4px 5px;
   }
 
   &_subHeading {
@@ -54,12 +60,8 @@
     display: flex;
     justify-content: center;
 
-    &_email {
-      display: none;
-    }
-
-    &_button {
-      height: 100%;
+    button {
+      text-transform: lowercase;
     }
   }
 
@@ -88,21 +90,13 @@
       width: 50%;
     }
 
+    &_heading,
     &_subHeading {
       text-align: left;
     }
 
     &_cta {
       justify-content: flex-start;
-
-      &_email {
-        display: block;
-        background-color: #fff;
-        box-shadow: $shadow;
-        padding: 1rem;
-        width: max-content;
-        font-size: 0.8rem;
-      }
     }
   }
 }

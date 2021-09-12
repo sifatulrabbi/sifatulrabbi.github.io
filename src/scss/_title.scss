@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+.title {
+  position: relative;
+  width: 100%;
+  height: max-content;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &_text,
+  &_watermark {
+    display: block;
+  }
+
+  &_text {
+    font-size: 1.1rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $primaryDark;
+  }
+
+  &_watermark {
+    z-index: -1;
+    font-size: clamp(4rem, 5vw, 6rem);
+    width: max-content;
+    font-weight: 900;
+    margin-top: -2.5rem;
+    color: $primaryLight;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+  }
+}
