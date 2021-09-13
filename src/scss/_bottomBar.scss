@@ -1,6 +1,7 @@
 @import './variables.scss';
 
 .bottomBar {
+  display: none;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -35,4 +36,8 @@
       }
     }
   }
+}
+
+@media screen and (min-width: 1000px) {
+  display: block;
 }
