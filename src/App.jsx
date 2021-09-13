@@ -5,6 +5,7 @@ const Navbar = lazy(() => import('./components/Navbar/Navbar'));
 const Hero = lazy(() => import('./components/Hero/Hero'));
 const ProjectSection = lazy(() => import('./components/ProjectSection/ProjectSection'));
 const BottomBar = lazy(() => import('./components/BottomBar/BottomBar'));
+const AboutMe = lazy(() => import('./components/AboutMe/AboutMe'));
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <Suspense fallback={<div>loading...</div>}>
         <Navbar />
         <Hero />
-        <ProjectSection />
         <BottomBar />
+        <ProjectSection />
+        <AboutMe />
       </Suspense>
     </div>
   );
