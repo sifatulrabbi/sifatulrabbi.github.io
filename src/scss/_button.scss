@@ -2,6 +2,7 @@
 
 .button {
   position: relative;
+  z-index: 5;
   width: max-content;
   height: max-content;
   cursor: pointer;
@@ -54,10 +55,16 @@
     color: $primaryMain;
 
     &::before {
-      background-color: $primaryLight;
+      // background-color: $primaryLight;
+      // box-shadow: none;
+      display: none;
     }
     &::after {
       display: none;
+    }
+
+    &:hover {
+      color: $primaryDark;
     }
   }
 

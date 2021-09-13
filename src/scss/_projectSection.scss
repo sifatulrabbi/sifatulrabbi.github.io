@@ -1,5 +1,26 @@
 @import './variables.scss';
 
 .projectSection {
-  margin-bottom: 6rem;
+  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 3rem;
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8rem;
+  }
 }
+
+@media screen and (min-width: 1000px) {
+  .projectSection {
+    grid-gap: 5rem;
+
+    &_wrapper {
+      grid-gap: 12rem;
+    }
+  }
+}
+
+@import './projectCard';

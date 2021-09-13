@@ -37,6 +37,10 @@ textarea {
   border: none;
 }
 
+p {
+  font-family: $fontBody;
+}
+
 @import './navbar';
 @import './hero';
 @import './button';
