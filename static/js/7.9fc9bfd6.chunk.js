@@ -1,2 +1,0 @@
-(this["webpackJsonpsifatul-portfolio"]=this["webpackJsonpsifatul-portfolio"]||[]).push([[7],{18:function(t,e,s){"use strict";s.r(e);s(1);var i=s(0),c=function(t){var e=t.title,s=e.split(" "),c=s[s.length-1];return Object(i.jsxs)("div",{className:"title",children:[Object(i.jsx)("span",{className:"title_text",children:e}),Object(i.jsx)("span",{className:"title_watermark",children:c})]})};e.default=function(){return Object(i.jsx)("div",{className:"projectSection",children:Object(i.jsx)(c,{title:"My Projects"})})}}}]);
-//# sourceMappingURL=7.9fc9bfd6.chunk.js.map
