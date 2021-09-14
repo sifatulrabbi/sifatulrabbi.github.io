@@ -4,7 +4,7 @@ import Title from '../Title/Title';
 
 const AboutMe = () => {
   return (
-    <div className="aboutMe">
+    <section className="aboutMe">
       <Title title="Me & Myself" />
       <div className="aboutMe_content">
         <img className="aboutMe_content_img" src="" alt="sifatul" />
@@ -36,7 +36,7 @@ const AboutMe = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
