@@ -6,9 +6,32 @@
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  box-shadow: $shadow;
+  // box-shadow: $shadow;
   text-align: center;
   background-color: #fff;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    transform: translate(-10px, -10px);
+    width: 100%;
+    height: 90%;
+    border: 2px solid $primaryMain;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    transform: translate(10px, 10px);
+    border-color: $primaryDark;
+  }
 
   &_icon {
     width: 7rem;
@@ -20,13 +43,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  &_actions {
-    width: 100%;
-    margin-top: 2rem;
-    height: max-content;
-    background-color: $primaryLight;
   }
 
   &_title {
