@@ -6,6 +6,7 @@ const Hero = lazy(() => import('./components/Hero/Hero'));
 const ProjectSection = lazy(() => import('./components/ProjectSection/ProjectSection'));
 const BottomBar = lazy(() => import('./components/BottomBar/BottomBar'));
 const AboutMe = lazy(() => import('./components/AboutMe/AboutMe'));
+const MyServices = lazy(() => import('./components/MyServices/MyServices'));
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <BottomBar />
         <ProjectSection />
         <AboutMe />
+        <MyServices />
       </Suspense>
     </div>
   );

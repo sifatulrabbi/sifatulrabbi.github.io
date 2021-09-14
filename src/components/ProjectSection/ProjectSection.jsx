@@ -5,7 +5,7 @@ import data from './data';
 
 const ProjectSection = () => {
   return (
-    <div className="projectSection">
+    <section className="projectSection">
       <Title title="My Projects" />
       <div className="projectSection_wrapper">
         {data.map((project) => (
@@ -19,7 +19,7 @@ const ProjectSection = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

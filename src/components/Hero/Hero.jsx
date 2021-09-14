@@ -4,7 +4,7 @@ import { bgIllustration } from '../../images';
 
 const Hero = () => {
   return (
-    <div className="hero">
+    <section className="hero">
       <div className="hero_content">
         <h1 className="hero_heading">Minimal and Responsive websites</h1>
         <h2 className="hero_subHeading">
@@ -17,7 +17,7 @@ const Hero = () => {
         </div>
       </div>
       <img className="hero_bgArt" src={bgIllustration} alt="" />
-    </div>
+    </section>
   );
 };
 
