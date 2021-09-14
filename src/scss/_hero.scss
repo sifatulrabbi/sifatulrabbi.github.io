@@ -59,6 +59,8 @@
     margin-top: 12vh;
     display: flex;
     justify-content: center;
+    background-color: $primaryMid;
+    width: max-content;
 
     button {
       text-transform: lowercase;

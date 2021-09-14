@@ -12,19 +12,11 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 1.5rem;
-    grid-gap: 2.5rem;
-    position: relative;
+    grid-gap: 4rem;
+  }
 
-    &::before {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      top: -20px;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80%;
-      border: 2px solid $primaryMain;
-    }
+  &_action {
+    margin-top: 3rem;
+    background-color: $primaryMain;
   }
 }
