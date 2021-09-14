@@ -35,6 +35,9 @@
 
   &_content {
     @include resPadding();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &_heading {
@@ -57,8 +60,6 @@
 
   &_cta {
     margin-top: 12vh;
-    display: flex;
-    justify-content: center;
     background-color: $primaryMid;
     width: max-content;
 
@@ -90,6 +91,10 @@
     &::after {
       height: 60%;
       width: 50%;
+    }
+
+    &_content {
+      align-items: flex-start;
     }
 
     &_heading,
