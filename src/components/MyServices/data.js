@@ -5,7 +5,7 @@ const data = [
         id: 'frontEnd3247809',
         title: 'Front end development',
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis aspernatur possimus dignissimos porro id modi explicabo hic sed? Dolorum itaque possimus magni neque sunt!',
-        icon: <FaLaptopCode />,
+        icon: <FaCode />,
     },
     {
         id: 'webUiDesign3247809',
