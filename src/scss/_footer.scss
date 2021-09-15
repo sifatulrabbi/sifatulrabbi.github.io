@@ -1,0 +1,140 @@
+.footer {
+    width: 100%;
+    position: relative;
+    @include resPadding();
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 1rem;
+    color: $primaryDark;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+    }
+
+    &::before {
+        top: 0;
+        left: 50%;
+        height: 2px;
+        width: 90%;
+        transform: translateX(-50%);
+        background-color: $primaryMain;
+    }
+
+    &_logo {
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        img {
+            height: 70px;
+            width: 70px;
+        }
+    }
+
+    &_issueMsg {
+        text-align: center;
+        padding: 1rem;
+        border: 2px dashed $primaryMain;
+        font-size: 0.8rem;
+        margin-top: 2rem;
+    }
+
+    &_pageLinks,
+    &_socialLinks {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9rem;
+
+        &_btn {
+            margin: 10px;
+            cursor: pointer;
+            height: max-content;
+            width: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &_pageLinks &_pageLinks_btn {
+        position: relative;
+        z-index: 2;
+        @include transition(color);
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 0%;
+            width: 0%;
+            @include transition(width);
+            background-color: $primaryDark;
+            z-index: -1;
+        }
+
+        &:hover::before {
+            height: 2px;
+            width: 100%;
+        }
+    }
+
+    &_socialLinks {
+        flex-direction: row;
+
+        &_btn {
+            margin: 0 1rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    &_copyright {
+        margin-top: 2rem;
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .emoji {
+        font-size: 1.1rem;
+        font-weight: 900;
+        text-shadow: 0px 0px 1px black;
+        color: $primaryDark;
+    }
+
+    &_link {
+        text-decoration: underline;
+        font-weight: 700;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .footer {
+        &_logo {
+            left: 14vw;
+            transform: translate(0, -50%);
+        }
+
+        &_pageLinks {
+            flex-direction: row;
+        }
+    }
+}
