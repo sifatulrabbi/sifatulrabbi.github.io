@@ -1,109 +1,109 @@
 @import './variables';
 
 .hero {
-  position: relative;
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 10rem;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-  }
-
-  &::before {
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: $primaryMain;
-  }
-
-  &::after {
-    z-index: -2;
-    top: 50%;
-    left: 50%;
-    border: 2px solid $primaryMain;
-    transform: translate(-50%, -50%);
-    height: calc(100% + 4rem);
-    width: 80%;
-  }
-
-  &_content {
-    @include resPadding();
+    position: relative;
+    min-height: 90vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-  }
+    justify-content: flex-start;
+    margin-bottom: 10rem;
 
-  &_heading {
-    font-size: clamp(2.4rem, 3vw, 4rem);
-    font-weight: 900;
-    color: $primaryDark;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    text-shadow: rgba(0, 0, 0, 0.15) 3px 4px 5px;
-  }
-
-  &_subHeading {
-    font-size: 0.9rem;
-    color: #fff;
-    font-weight: normal;
-    letter-spacing: 3px;
-    text-align: center;
-  }
-
-  &_cta {
-    margin-top: 12vh;
-    background-color: $primaryMid;
-    width: max-content;
-
-    button {
-      text-transform: lowercase;
-    }
-  }
-
-  &_bgArt {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .hero {
-    &_bgArt {
-      display: block;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 40vw;
-      transform: translate(0, -10%);
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
     }
 
     &::before {
-      width: 50%;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $primaryMain;
     }
 
     &::after {
-      height: 60%;
-      width: 50%;
+        z-index: -2;
+        top: 50%;
+        left: 50%;
+        border: 2px solid $primaryMain;
+        transform: translate(-50%, -50%);
+        height: calc(100% + 4rem);
+        width: 80%;
     }
 
     &_content {
-      align-items: flex-start;
+        @include resPadding();
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    &_heading,
+    &_heading {
+        font-size: clamp(2.4rem, 3vw, 4rem);
+        font-weight: 900;
+        color: $primaryDark;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        text-shadow: rgba(0, 0, 0, 0.15) 3px 4px 5px;
+    }
+
     &_subHeading {
-      text-align: left;
+        font-size: 0.9rem;
+        color: #fff;
+        font-weight: normal;
+        letter-spacing: 3px;
+        text-align: center;
     }
 
     &_cta {
-      justify-content: flex-start;
+        margin-top: 12vh;
+        background-color: $primaryMid;
+        width: max-content;
+
+        button {
+            text-transform: lowercase;
+        }
     }
-  }
+
+    &_bgArt {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .hero {
+        &_bgArt {
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 40vw;
+            transform: translate(0, -10%);
+        }
+
+        &::before {
+            width: 50%;
+        }
+
+        &::after {
+            height: 60%;
+            width: 50%;
+        }
+
+        &_content {
+            align-items: flex-start;
+        }
+
+        &_heading,
+        &_subHeading {
+            text-align: left;
+        }
+
+        &_cta {
+            justify-content: flex-start;
+        }
+    }
 }

@@ -11,43 +11,43 @@ $fontHeading: 'Montserrat', sans-serif;
 $fontBody: 'Karla', sans-serif;
 
 @mixin fontSize($button: false) {
-  line-height: 1.5;
-  @if $button {
-    font-size: 14px;
-  } @else {
-    font-size: 16px;
-  }
-
-  @media screen and (max-width: 1000px) {
+    line-height: 1.5;
     @if $button {
-      font-size: 13px;
+        font-size: 14px;
     } @else {
-      font-size: 15px;
+        font-size: 16px;
     }
-  }
+
+    @media screen and (max-width: 1000px) {
+        @if $button {
+            font-size: 13px;
+        } @else {
+            font-size: 15px;
+        }
+    }
 }
 
 @mixin fontSizeH2 {
-  font-size: 25px;
-  font-weight: 900;
-  color: $primaryMain;
-  line-height: 1;
+    font-size: 25px;
+    font-weight: 900;
+    color: $primaryMain;
+    line-height: 1;
 
-  @media screen and (max-width: 1000px) {
-    font-size: 20px;
-  }
+    @media screen and (max-width: 1000px) {
+        font-size: 20px;
+    }
 }
 
 @mixin resPadding {
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
 
-  @media screen and (min-width: 1000px) {
-    padding-right: 14vw;
-    padding-left: 14vw;
-  }
+    @media screen and (min-width: 1000px) {
+        padding-right: 14vw;
+        padding-left: 14vw;
+    }
 }
 
 @mixin transition($property: all) {
-  transition: $property 0.2s ease-in;
+    transition: $property 0.2s ease-in;
 }
