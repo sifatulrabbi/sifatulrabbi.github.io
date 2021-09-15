@@ -8,6 +8,7 @@ const BottomBar = lazy(() => import('./components/BottomBar/BottomBar'));
 const AboutMe = lazy(() => import('./components/AboutMe/AboutMe'));
 const MyServices = lazy(() => import('./components/MyServices/MyServices'));
 const ContactSection = lazy(() => import('./components/ContactSection/ContactSection'));
+const Footer = lazy(() => import('./components/Footer/Footer'));
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <AboutMe />
                 <MyServices />
                 <ContactSection />
+                <Footer />
             </Suspense>
         </div>
     );
