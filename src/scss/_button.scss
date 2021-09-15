@@ -55,8 +55,6 @@
         color: $primaryMain;
 
         &::before {
-            // background-color: $primaryLight;
-            // box-shadow: none;
             display: none;
         }
         &::after {
@@ -71,5 +69,6 @@
     &.big {
         height: 100%;
         padding: 0.8rem 1.4rem;
+        background-color: $primaryMid;
     }
 }

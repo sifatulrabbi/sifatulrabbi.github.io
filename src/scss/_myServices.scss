@@ -17,6 +17,8 @@
 
     &_action {
         margin-top: 3rem;
-        background-color: $primaryMain;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
