@@ -1,83 +1,83 @@
 .projectCard {
-  position: relative;
-  width: max-content;
-  max-width: 100%;
-  height: max-content;
-  @include resPadding();
-  display: grid;
-  grid-template-areas:
-    'img'
-    'content';
-  grid-gap: 2rem;
-
-  &::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: -20px;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    border: 2px solid $primaryMain;
-  }
-
-  &_img {
-    grid-area: img;
-    width: 100%;
-    height: 200px;
-    background-color: $primaryLight;
-    // box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 50px -30px;
-    box-shadow: $shadow;
-  }
-
-  &_content {
-    grid-area: content;
-    width: 100%;
-    max-width: 60ch;
-    padding: 2rem;
-    text-align: center;
-    display: grid;
-    justify-items: center;
-    grid-gap: 1.5rem;
     position: relative;
-    background-color: #fff;
-    box-shadow: $shadow;
-
-    &_title {
-      @include fontSizeH2();
-      width: 100%;
-    }
-
-    &_actions {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      grid-gap: 1rem;
-      background-color: $primaryLight;
-    }
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .projectCard {
-    grid-template-areas: 'content img';
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
+    width: max-content;
+    max-width: 100%;
+    height: max-content;
+    @include resPadding();
+    display: grid;
+    grid-template-areas:
+        'img'
+        'content';
+    grid-gap: 2rem;
 
     &::before {
-      width: 40%;
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: -20px;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        border: 2px solid $primaryMain;
     }
 
     &_img {
-      margin-top: -3rem;
-      height: 100%;
+        grid-area: img;
+        width: 100%;
+        height: 200px;
+        background-color: $primaryLight;
+        // box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 50px -30px;
+        box-shadow: $shadow;
     }
 
     &_content {
-      margin-bottom: -2rem;
-      text-align: left;
-      justify-items: flex-start;
+        grid-area: content;
+        width: 100%;
+        max-width: 60ch;
+        padding: 2rem;
+        text-align: center;
+        display: grid;
+        justify-items: center;
+        grid-gap: 1.5rem;
+        position: relative;
+        background-color: #fff;
+        box-shadow: $shadow;
+
+        &_title {
+            @include fontSizeH2();
+            width: 100%;
+        }
+
+        &_actions {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            grid-gap: 1rem;
+            background-color: $primaryLight;
+        }
     }
-  }
+}
+
+@media screen and (min-width: 1000px) {
+    .projectCard {
+        grid-template-areas: 'content img';
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+
+        &::before {
+            width: 40%;
+        }
+
+        &_img {
+            margin-top: -3rem;
+            height: 100%;
+        }
+
+        &_content {
+            margin-bottom: -2rem;
+            text-align: left;
+            justify-items: flex-start;
+        }
+    }
 }

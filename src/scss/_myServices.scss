@@ -1,22 +1,24 @@
 .myServices {
-  margin-bottom: 6rem;
-  width: 100%;
-  height: max-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &_cards {
-    margin-top: 3rem;
+    margin-bottom: 6rem;
+    width: 100%;
+    height: max-content;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1.5rem;
-    grid-gap: 4rem;
-  }
+    flex-direction: column;
+    align-items: center;
 
-  &_action {
-    margin-top: 3rem;
-    background-color: $primaryMain;
-  }
+    &_cards {
+        margin-top: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1.5rem;
+        grid-gap: 4rem;
+    }
+
+    &_action {
+        margin-top: 3rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }

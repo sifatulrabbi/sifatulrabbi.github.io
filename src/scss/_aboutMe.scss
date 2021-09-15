@@ -1,125 +1,125 @@
 @import './variables';
 
 .aboutMe {
-  width: 100%;
-  height: max-content;
-  margin-bottom: 10rem;
-  @include resPadding();
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+    width: 100%;
+    height: max-content;
+    margin-bottom: 10rem;
+    @include resPadding();
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
-  &_content {
-    position: relative;
-    width: max-content;
-    margin: 2rem;
-    max-width: 100%;
-    color: #fff;
-    display: grid;
-    justify-items: center;
-    grid-template-areas:
-      'img'
-      'myself'
-      'links';
+    &_content {
+        position: relative;
+        width: max-content;
+        margin: 2rem;
+        max-width: 100%;
+        color: #fff;
+        display: grid;
+        justify-items: center;
+        grid-template-areas:
+            'img'
+            'myself'
+            'links';
 
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      z-index: -1;
-    }
-
-    &::before {
-      background-color: $primaryMain;
-      bottom: 0;
-      height: 80%;
-      width: 150%;
-      left: 50%;
-      transform: translateX(-50%);
-      display: block;
-    }
-
-    &::after {
-      z-index: -2;
-      bottom: 0px;
-      height: 50%;
-      width: 90%;
-      background-color: rgba(0, 0, 0, 0.7);
-      filter: blur(15px);
-    }
-
-    &_img {
-      grid-area: img;
-      width: 220px;
-      height: 220px;
-      background-color: $primaryLight;
-      border-radius: 50%;
-      box-shadow: $shadow;
-    }
-
-    &_myself {
-      grid-area: myself;
-      width: 100%;
-      max-width: 680px;
-      height: max-content;
-      padding: 2rem;
-
-      &_text {
-        display: block;
-
-        &.big {
-          @include fontSizeH2();
-          color: #fff;
-          margin-bottom: 1rem;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
         }
-      }
-    }
 
-    &_links {
-      grid-area: links;
-      width: 100%;
-      height: max-content;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      flex-direction: row;
-      padding: 1rem;
-
-      &_btn {
-        font-size: 1.5rem;
-        color: $primaryDark;
-        cursor: pointer;
-        @include transition(color);
-
-        &:hover {
-          color: $primaryMid;
+        &::before {
+            background-color: $primaryMain;
+            bottom: 0;
+            height: 80%;
+            width: 150%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
         }
-      }
+
+        &::after {
+            z-index: -2;
+            bottom: 0px;
+            height: 50%;
+            width: 90%;
+            background-color: rgba(0, 0, 0, 0.7);
+            filter: blur(15px);
+        }
+
+        &_img {
+            grid-area: img;
+            width: 220px;
+            height: 220px;
+            background-color: $primaryLight;
+            border-radius: 50%;
+            box-shadow: $shadow;
+        }
+
+        &_myself {
+            grid-area: myself;
+            width: 100%;
+            max-width: 680px;
+            height: max-content;
+            padding: 2rem;
+
+            &_text {
+                display: block;
+
+                &.big {
+                    @include fontSizeH2();
+                    color: #fff;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        &_links {
+            grid-area: links;
+            width: 100%;
+            height: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: row;
+            padding: 1rem;
+
+            &_btn {
+                font-size: 1.5rem;
+                color: $primaryDark;
+                cursor: pointer;
+                @include transition(color);
+
+                &:hover {
+                    color: $primaryMid;
+                }
+            }
+        }
     }
-  }
 }
 
 @media screen and (min-width: 1000px) {
-  .aboutMe {
-    &_content {
-      grid-template-areas:
-        'img myself'
-        'links myself';
+    .aboutMe {
+        &_content {
+            grid-template-areas:
+                'img myself'
+                'links myself';
 
-      &::before {
-        height: 95%;
-      }
+            &::before {
+                height: 95%;
+            }
 
-      &::after {
-        width: 140%;
-      }
+            &::after {
+                width: 140%;
+            }
 
-      &_img {
-        margin-top: -2rem;
-        margin-left: -2rem;
-      }
+            &_img {
+                margin-top: -2rem;
+                margin-left: -2rem;
+            }
+        }
     }
-  }
 }

@@ -9,18 +9,18 @@ const AboutMe = lazy(() => import('./components/AboutMe/AboutMe'));
 const MyServices = lazy(() => import('./components/MyServices/MyServices'));
 
 function App() {
-  return (
-    <div className="app">
-      <Suspense fallback={<div>loading...</div>}>
-        <Navbar />
-        <Hero />
-        <BottomBar />
-        <ProjectSection />
-        <AboutMe />
-        <MyServices />
-      </Suspense>
-    </div>
-  );
+    return (
+        <div className="app">
+            <Suspense fallback={<div>loading...</div>}>
+                <Navbar />
+                <Hero />
+                <BottomBar />
+                <ProjectSection />
+                <AboutMe />
+                <MyServices />
+            </Suspense>
+        </div>
+    );
 }
 
 export default App;
