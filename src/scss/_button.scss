@@ -7,6 +7,7 @@
     height: max-content;
     cursor: pointer;
     color: #fff;
+    background-color: $primaryMid;
     @include fontSize(true);
     letter-spacing: 0.055em;
     text-transform: uppercase;
@@ -53,6 +54,7 @@
         padding: 0.6rem;
         margin: 0;
         color: $primaryMain;
+        background-color: transparent;
 
         &::before {
             display: none;
@@ -69,6 +71,5 @@
     &.big {
         height: 100%;
         padding: 0.8rem 1.4rem;
-        background-color: $primaryMid;
     }
 }

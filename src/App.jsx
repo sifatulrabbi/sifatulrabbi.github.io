@@ -7,6 +7,7 @@ const ProjectSection = lazy(() => import('./components/ProjectSection/ProjectSec
 const BottomBar = lazy(() => import('./components/BottomBar/BottomBar'));
 const AboutMe = lazy(() => import('./components/AboutMe/AboutMe'));
 const MyServices = lazy(() => import('./components/MyServices/MyServices'));
+const ContactSection = lazy(() => import('./components/ContactSection/ContactSection'));
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <ProjectSection />
                 <AboutMe />
                 <MyServices />
+                <ContactSection />
             </Suspense>
         </div>
     );
