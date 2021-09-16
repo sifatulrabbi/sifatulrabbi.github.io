@@ -41,6 +41,7 @@ p {
     font-family: $fontBody;
 }
 
+@import './animations';
 @import './navbar';
 @import './bottomBar';
 @import './button';
