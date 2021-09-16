@@ -1,4 +1,5 @@
 @import './variables';
+@import './animations';
 
 *,
 *::after,
@@ -20,7 +21,7 @@ body {
 
     #root {
         width: 100%;
-        height: 100%;
+        height: max-content;
         overflow-x: hidden;
     }
 }
@@ -41,7 +42,7 @@ p {
     font-family: $fontBody;
 }
 
-@import './animations';
+@import './loadingScreen';
 @import './navbar';
 @import './bottomBar';
 @import './button';
@@ -55,3 +56,7 @@ p {
 @import './contactSection';
 @import './contactForm';
 @import './footer';
+
+.homePage {
+    animation: onload-animation 0.4s ease-in forwards;
+}
