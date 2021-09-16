@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { logoWhite as logo } from '../../images';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [shadow, setShadow] = useState(false);
@@ -17,13 +18,19 @@ const Navbar = () => {
             <div className="navbar_logo">
                 <img src={logo} alt="Sifatul" />
             </div>
-            <nav>
-                <ul className="navbar_linksList">
-                    <li className="navbar_linksList_item">Home</li>
-                    <li className="navbar_linksList_item">Projects</li>
-                    <li className="navbar_linksList_item">Contact</li>
-                    <li className="navbar_linksList_item">About</li>
-                </ul>
+            <nav className="navbar_linksList">
+                <NavLink className="navbar_linksList_item" to="/">
+                    Home
+                </NavLink>
+                <NavLink className="navbar_linksList_item" to="#projects">
+                    Projects
+                </NavLink>
+                <NavLink className="navbar_linksList_item" to="#contact">
+                    Contact
+                </NavLink>
+                <NavLink className="navbar_linksList_item" to="#about">
+                    About
+                </NavLink>
             </nav>
         </div>
     );

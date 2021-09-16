@@ -33,15 +33,20 @@
 @media screen and (min-width: 1000px) {
     .navbar {
         &_linksList {
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
 
             &_item {
-                padding: 1rem;
+                height: 100%;
+                padding: 0 1rem;
                 color: $text;
                 cursor: pointer;
                 font-size: 0.9rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 @include transition(color);
 
                 &:hover {
@@ -55,7 +60,7 @@
             position: fixed;
             background-color: $primaryMain;
             box-shadow: $shadow;
-            height: max-content;
+            height: 60px;
             animation: navbar-show-anim 0.3s ease-in forwards;
 
             .navbar_linksList_item {

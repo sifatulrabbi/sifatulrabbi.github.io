@@ -1,10 +1,16 @@
 import React from 'react';
-import { FaFacebook, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 import Title from '../Title/Title';
+
+const links = {
+    github: 'https://github.com/temujins',
+    linkedIn: 'https://www.linkedin.com/in/sifatul-rabbi-6548b921b',
+    facebook: 'https://facebook.com/ttemijnRabbi',
+};
 
 const AboutMe = () => {
     return (
-        <section className="aboutMe">
+        <section id="about" className="aboutMe">
             <Title title="Me & Myself" />
             <div className="aboutMe_content">
                 <img className="aboutMe_content_img" src="" alt="sifatul" />
@@ -28,15 +34,25 @@ const AboutMe = () => {
                     </p>
                 </div>
                 <div className="aboutMe_content_links">
-                    <button className="aboutMe_content_links_btn">
+                    <button
+                        className="aboutMe_content_links_btn"
+                        onClick={() => window.open(links.github, '_blank')}
+                    >
                         <FaGithub />
                     </button>
-                    <button className="aboutMe_content_links_btn">
+                    <button
+                        className="aboutMe_content_links_btn"
+                        onClick={() => window.open(links.linkedIn, '_blank')}
+                    >
+                        <FaLinkedin />
+                    </button>
+                    <button
+                        className="aboutMe_content_links_btn"
+                        onClick={() => window.open(links.facebook, '_blank')}
+                    >
                         <FaFacebook />
                     </button>
-                    <button className="aboutMe_content_links_btn">
-                        <FaTwitter />
-                    </button>
+                    <button className="aboutMe_content_links_btn big">Resume</button>
                 </div>
             </div>
         </section>

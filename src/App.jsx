@@ -1,13 +1,21 @@
 import React, { lazy, Suspense, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './scss/App.scss';
 import LoadingScreen from './components/LoadingScreen/LoadingScreen';
+import useHashLinks from './hooks/useHashLinks';
 
-const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
-const ProjectPage = lazy(() => import('./pages/ProjectPage/ProjectPage'));
+const Navbar = lazy(() => import('./components/Navbar/Navbar'));
+const BottomBar = lazy(() => import('./components/BottomBar/BottomBar'));
+const Hero = lazy(() => import('./components/Hero/Hero'));
+const ProjectSection = lazy(() => import('./components/ProjectSection/ProjectSection'));
+const AboutMe = lazy(() => import('./components/AboutMe/AboutMe'));
+const MyServices = lazy(() => import('./components/MyServices/MyServices'));
+const ContactSection = lazy(() => import('./components/ContactSection/ContactSection'));
+const Footer = lazy(() => import('./components/Footer/Footer'));
 
 function App() {
     const [loading, setLoading] = useState(true);
+
+    useHashLinks();
 
     setTimeout(() => {
         setLoading(false);
@@ -16,21 +24,16 @@ function App() {
     if (loading) return <LoadingScreen />;
 
     return (
-        <Router>
-            <Switch>
-                <Suspense fallback={<LoadingScreen />}>
-                    <Route exact path="/">
-                        <HomePage />
-                    </Route>
-                    <Route exact path="/projects">
-                        <ProjectPage />
-                    </Route>
-                    <Route exact path="/loading">
-                        <LoadingScreen />
-                    </Route>
-                </Suspense>
-            </Switch>
-        </Router>
+        <Suspense fallback={<LoadingScreen />}>
+            <Navbar />
+            <BottomBar />
+            <Hero />
+            <AboutMe />
+            <ProjectSection />
+            <MyServices />
+            <ContactSection />
+            <Footer />
+        </Suspense>
     );
 }
 

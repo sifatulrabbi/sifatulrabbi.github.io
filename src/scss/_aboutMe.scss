@@ -14,7 +14,7 @@
     &_content {
         position: relative;
         width: max-content;
-        margin: 2rem;
+        margin: 6rem;
         max-width: 100%;
         color: #fff;
         display: grid;
@@ -34,7 +34,7 @@
         &::before {
             background-color: $primaryMain;
             bottom: 0;
-            height: 80%;
+            height: 90%;
             width: 150%;
             left: 50%;
             transform: translateX(-50%);
@@ -57,6 +57,7 @@
             background-color: $primaryLight;
             border-radius: 50%;
             box-shadow: $shadow;
+            transform: translateY(-50px);
         }
 
         &_myself {
@@ -64,7 +65,7 @@
             width: 100%;
             max-width: 680px;
             height: max-content;
-            padding: 2rem;
+            padding: 1.5rem;
 
             &_text {
                 display: block;
@@ -81,20 +82,35 @@
             grid-area: links;
             width: 100%;
             height: max-content;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            flex-direction: row;
             padding: 1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
 
             &_btn {
                 font-size: 1.5rem;
+                padding: 0.5rem;
                 color: $primaryDark;
                 cursor: pointer;
                 @include transition(color);
 
                 &:hover {
                     color: $primaryMid;
+                }
+
+                &.big {
+                    width: 100%;
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    background-color: $primaryMid;
+                    color: $primaryLight;
+                    margin-bottom: 2rem;
+                    margin-top: 1rem;
+                    @include transition(background-color);
+
+                    &:hover {
+                        background-color: $primaryDark;
+                    }
                 }
             }
         }
@@ -109,7 +125,7 @@
                 'links myself';
 
             &::before {
-                height: 95%;
+                height: 100%;
             }
 
             &::after {
@@ -119,6 +135,10 @@
             &_img {
                 margin-top: -2rem;
                 margin-left: -2rem;
+            }
+
+            &_myself {
+                padding: 3rem 1.5rem;
             }
         }
     }

@@ -4,10 +4,10 @@ import Title from '../Title/Title';
 
 const ContactSection = () => {
     return (
-        <div className="contactSection">
+        <section id="contact" className="contactSection">
             <Title title="Contact" />
             <ContactFrom />
-        </div>
+        </section>
     );
 };
 
