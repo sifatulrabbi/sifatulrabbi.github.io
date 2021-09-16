@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 import Title from '../Title/Title';
+import { myImg } from '../../images';
 
 const links = {
     github: 'https://github.com/temujins',
@@ -13,7 +14,7 @@ const AboutMe = () => {
         <section id="about" className="aboutMe">
             <Title title="Me & Myself" />
             <div className="aboutMe_content">
-                <img className="aboutMe_content_img" src="" alt="sifatul" />
+                <img className="aboutMe_content_img" src={myImg} alt="sifatul" />
                 <div className="aboutMe_content_myself">
                     <p className="aboutMe_content_myself_text">I'm</p>
                     <h2 className="aboutMe_content_myself_text big">

@@ -15,7 +15,7 @@ const Navbar = () => {
 
     return (
         <div className={`navbar ${shadow && 'showShadow'}`}>
-            <div className="navbar_logo">
+            <div className="navbar_logo" onClick={() => (window.location.href = '/')}>
                 <img src={logo} alt="Sifatul" />
             </div>
             <nav className="navbar_linksList">

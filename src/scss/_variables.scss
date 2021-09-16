@@ -1,6 +1,8 @@
 $primaryMain: #3a95e9;
 $primaryLight: #ddf2ff;
+// $primaryLight: #ee5e90;
 $primaryDark: #003e86;
+// $primaryDark: #7e87f2;
 $primaryMid: #0076c7;
 $text: #5c5c5c;
 $borderRadius: 15px;
@@ -20,9 +22,9 @@ $fontBody: 'Karla', sans-serif;
 
     @media screen and (max-width: 1000px) {
         @if $button {
-            font-size: 13px;
+            font-size: 14px;
         } @else {
-            font-size: 15px;
+            font-size: 16px;
         }
     }
 }
