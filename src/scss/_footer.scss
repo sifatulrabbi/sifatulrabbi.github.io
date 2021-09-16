@@ -10,11 +10,11 @@
     justify-content: space-between;
     grid-gap: 1rem;
     color: $primaryDark;
+    background-color: $primaryLight;
 
     &::before {
         content: '';
         position: absolute;
-        z-index: -1;
     }
 
     &::before {

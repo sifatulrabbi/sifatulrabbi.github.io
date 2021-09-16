@@ -2,10 +2,10 @@
 
 .hero {
     position: relative;
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     margin-bottom: 10rem;
 
     &::before,
@@ -44,9 +44,11 @@
         font-size: clamp(2.4rem, 3vw, 4rem);
         font-weight: 900;
         color: $primaryDark;
-        line-height: 1;
+        line-height: 1.1;
+        letter-spacing: -1px;
         text-align: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
         text-shadow: rgba(0, 0, 0, 0.15) 3px 4px 5px;
     }
 
@@ -63,7 +65,7 @@
         width: max-content;
 
         button {
-            text-transform: lowercase;
+            min-width: 10rem;
         }
     }
 
@@ -84,7 +86,7 @@
         }
 
         &::before {
-            width: 50%;
+            width: 60%;
         }
 
         &::after {

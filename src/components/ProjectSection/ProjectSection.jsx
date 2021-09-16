@@ -1,7 +1,6 @@
 import React from 'react';
 import Title from '../Title/Title';
 import ProjectCard from '../ProjectCard/ProjectCard';
-import Button from '../Button/Button';
 import data from './data';
 
 const ProjectSection = () => {
@@ -13,15 +12,11 @@ const ProjectSection = () => {
                     <ProjectCard
                         key={project.id}
                         title={project.title}
-                        label={project.label}
                         desc={project.desc}
                         img={project.img}
                         links={project.links}
                     />
                 ))}
-            </div>
-            <div className="projectSection_action">
-                <Button big label="View more" />
             </div>
         </section>
     );

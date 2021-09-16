@@ -43,11 +43,10 @@
 
         &::after {
             z-index: -2;
-            bottom: 0px;
-            height: 50%;
-            width: 90%;
-            background-color: rgba(0, 0, 0, 0.7);
-            filter: blur(15px);
+            top: 20px;
+            bottom: -20px;
+            width: 80%;
+            border: 2px solid $primaryMain;
         }
 
         &_img {
@@ -66,6 +65,8 @@
             max-width: 680px;
             height: max-content;
             padding: 1.5rem;
+            padding-top: 0;
+            text-align: center;
 
             &_text {
                 display: block;
@@ -129,7 +130,8 @@
             }
 
             &::after {
-                width: 140%;
+                top: -20px;
+                width: 120%;
             }
 
             &_img {
@@ -139,6 +141,7 @@
 
             &_myself {
                 padding: 3rem 1.5rem;
+                text-align: left;
             }
         }
     }

@@ -13,7 +13,7 @@ const Hero = () => {
                     UI/UX designer
                 </h2>
                 <div className="hero_cta">
-                    <Button big label="mdsifatulislam.rabbi@gmail.com" />
+                    <Button big label="Contact" />
                 </div>
             </div>
             <img className="hero_bgArt" src={bgIllustration} alt="" />

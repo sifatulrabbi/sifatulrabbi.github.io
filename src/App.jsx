@@ -4,7 +4,6 @@ import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 import useHashLinks from './hooks/useHashLinks';
 
 const Navbar = lazy(() => import('./components/Navbar/Navbar'));
-const BottomBar = lazy(() => import('./components/BottomBar/BottomBar'));
 const Hero = lazy(() => import('./components/Hero/Hero'));
 const ProjectSection = lazy(() => import('./components/ProjectSection/ProjectSection'));
 const AboutMe = lazy(() => import('./components/AboutMe/AboutMe'));
@@ -26,7 +25,6 @@ function App() {
     return (
         <Suspense fallback={<LoadingScreen />}>
             <Navbar />
-            <BottomBar />
             <Hero />
             <AboutMe />
             <ProjectSection />
