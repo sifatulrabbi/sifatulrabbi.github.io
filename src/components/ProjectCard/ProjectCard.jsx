@@ -7,7 +7,10 @@ const ProjectCard = ({ img, title, desc, links }) => {
             <img className="projectCard_img" src={img} alt="project" />
             <div className="projectCard_content">
                 <h3 className="projectCard_content_title">{title}</h3>
-                <p className="projectCard_content_desc">{desc}</p>
+                <p
+                    className="projectCard_content_desc"
+                    dangerouslySetInnerHTML={{ __html: desc }}
+                />
                 <div className="projectCard_content_actions">
                     {links && links.github && (
                         <Button
