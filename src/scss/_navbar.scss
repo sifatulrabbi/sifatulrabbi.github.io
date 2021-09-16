@@ -56,6 +56,7 @@
             background-color: $primaryMain;
             box-shadow: $shadow;
             height: max-content;
+            animation: navbar-show-anim 0.3s ease-in forwards;
 
             .navbar_linksList_item {
                 color: #fff;
