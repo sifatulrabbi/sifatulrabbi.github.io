@@ -1,29 +1,36 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './scss/App.scss';
+import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 
-const Navbar = lazy(() => import('./components/Navbar/Navbar'));
-const Hero = lazy(() => import('./components/Hero/Hero'));
-const ProjectSection = lazy(() => import('./components/ProjectSection/ProjectSection'));
-const BottomBar = lazy(() => import('./components/BottomBar/BottomBar'));
-const AboutMe = lazy(() => import('./components/AboutMe/AboutMe'));
-const MyServices = lazy(() => import('./components/MyServices/MyServices'));
-const ContactSection = lazy(() => import('./components/ContactSection/ContactSection'));
-const Footer = lazy(() => import('./components/Footer/Footer'));
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const ProjectPage = lazy(() => import('./pages/ProjectPage/ProjectPage'));
 
 function App() {
+    const [loading, setLoading] = useState(true);
+
+    setTimeout(() => {
+        setLoading(false);
+    }, 500);
+
+    if (loading) return <LoadingScreen />;
+
     return (
-        <div className="app">
-            <Suspense fallback={<div>loading...</div>}>
-                <Navbar />
-                <Hero />
-                <BottomBar />
-                <ProjectSection />
-                <AboutMe />
-                <MyServices />
-                <ContactSection />
-                <Footer />
-            </Suspense>
-        </div>
+        <Router>
+            <Switch>
+                <Suspense fallback={<LoadingScreen />}>
+                    <Route exact path="/">
+                        <HomePage />
+                    </Route>
+                    <Route exact path="/projects">
+                        <ProjectPage />
+                    </Route>
+                    <Route exact path="/loading">
+                        <LoadingScreen />
+                    </Route>
+                </Suspense>
+            </Switch>
+        </Router>
     );
 }
 
