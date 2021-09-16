@@ -65,7 +65,7 @@ const Footer = () => {
                         className="footer_link"
                         onClick={() => window.open(links.github, '_blank')}
                     >
-                        temujins
+                        me
                     </span>
                 </p>
                 <p>Copyright {'(c)'} 2021 Sifatul Rabbi</p>
