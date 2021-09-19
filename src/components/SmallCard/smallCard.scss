@@ -1,0 +1,45 @@
+@import '../../scss/variables';
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-gap: 1.5rem;
+    min-width: 25ch;
+    padding: 1rem;
+    border: 1px solid $text;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    text-align: center;
+
+    .caption {
+        color: $textDarkPrimary;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    &_icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: $primaryMain;
+    }
+
+    &:hover {
+        border-color: $primaryLight;
+    }
+
+    &.active {
+        border-color: $secondaryLight;
+    }
+
+    @media screen and(min-width: $breakPoint) {
+        flex-direction: row;
+        width: 100%;
+        text-align: left;
+    }
+}

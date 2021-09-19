@@ -6,25 +6,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10rem;
     color: $text;
     background-color: $primaryMain;
-
-    &::after {
-        content: '';
-        position: absolute;
-        z-index: -1;
-    }
-
-    &::after {
-        z-index: -2;
-        top: 50%;
-        left: 50%;
-        border: 2px solid $primaryMain;
-        transform: translate(-50%, -50%);
-        height: calc(100% + 4rem);
-        width: 80%;
-    }
 
     &_content {
         @include resPadding();
@@ -36,13 +19,17 @@
     &_heading {
         font-size: clamp(2.8rem, 4vw, 6rem);
         font-weight: 700;
-        color: $textPrimary;
+        color: $white;
         line-height: 1.1;
         letter-spacing: -2px;
         text-align: center;
         margin-bottom: 2rem;
         text-shadow: rgba(0, 0, 0, 0.15) 3px 4px 5px;
         font-family: $fontHeading;
+
+        &-colored {
+            color: $secondaryLight;
+        }
     }
 
     &_subHeading {
@@ -54,8 +41,8 @@
         margin-top: 12vh;
         width: max-content;
 
-        button {
-            min-width: 10rem;
+        &_btn {
+            @include btnSecondary();
         }
     }
 

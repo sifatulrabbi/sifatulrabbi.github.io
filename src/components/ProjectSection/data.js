@@ -1,4 +1,33 @@
-const data = [
+import { SiTypescript, SiNodeDotJs, SiJavascript, SiReact } from 'react-icons/si';
+
+const categories = [
+    {
+        id: 'javascriptProject',
+        title: 'JavaScript Project',
+        desc: 'This is my portfolio website. Build with React, SCSS. This website is custom',
+        icon: <SiJavascript />,
+    },
+    {
+        id: 'typescriptProject',
+        title: 'TypeScript Project',
+        desc: 'This is my portfolio website. Build with React, SCSS. This website is custom',
+        icon: <SiTypescript />,
+    },
+    {
+        id: 'reactJsProject',
+        title: 'ReactJs and frontend Project',
+        desc: 'This is my portfolio website. Build with React, SCSS. This website is custom',
+        icon: <SiReact />,
+    },
+    {
+        id: 'nodejsExpressProject',
+        title: 'nodejs with Express projects',
+        desc: 'This is my portfolio website. Build with React, SCSS. This website is custom',
+        icon: <SiNodeDotJs />,
+    },
+];
+
+const projects = [
     {
         id: 'https://github.com/temujins/temujins.github.io',
         title: 'Portfolio website',
@@ -61,4 +90,4 @@ const data = [
     },
 ];
 
-export default data;
+export { categories, projects };

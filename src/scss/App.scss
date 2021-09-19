@@ -13,15 +13,17 @@ html {
     padding: 0;
     font-size: inherit;
     font-family: inherit;
+    color: inherit;
 }
 
 body {
     min-height: 100vh;
     max-width: 100vw;
     overflow-x: hidden;
-    @include fontSize();
     font-family: $fontBody;
     position: relative;
+    font-size: $fontSize;
+    line-height: $lineHeight;
 
     #root {
         width: 100%;
@@ -52,4 +54,27 @@ a {
 
 .homePage {
     animation: onload-animation 0.4s ease-in forwards;
+}
+
+.title {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    font-family: $fontHeading;
+
+    @media screen and (min-width: $breakPoint) {
+        font-size: 2.2rem;
+
+        &.small {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.caption {
+    font-size: 0.9rem;
+    font-family: $fontBody;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: $secondaryLight;
 }

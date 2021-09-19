@@ -26,11 +26,7 @@ function App() {
         <Suspense fallback={<LoadingScreen />}>
             <Navbar />
             <Hero />
-            <AboutMe />
             <ProjectSection />
-            <MyServices />
-            <ContactSection />
-            <Footer />
         </Suspense>
     );
 }
