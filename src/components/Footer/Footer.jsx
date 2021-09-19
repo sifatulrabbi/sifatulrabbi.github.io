@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { logo } from '../../images';
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter, FaJs } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import './footer.scss';
 
 const links = {
     github: 'https://github.com/temujins',

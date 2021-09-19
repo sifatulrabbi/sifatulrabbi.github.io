@@ -4,7 +4,7 @@ const Button = ({ text, big, label, onClick }) => {
     return (
         <button
             className={text ? 'button text' : big ? 'button big' : 'button'}
-            onClick={() => onClick()}
+            onClick={() => onClick && onClick()}
         >
             <span className="button_label">{label}</span>
         </button>

@@ -1,11 +1,10 @@
 import React from 'react';
 import ContactFrom from '../ContactForm/ContactFrom';
-import Title from '../Title/Title';
+import './contactSection.scss';
 
 const ContactSection = () => {
     return (
         <section id="contact" className="contactSection">
-            <Title title="Contact" />
             <ContactFrom />
         </section>
     );

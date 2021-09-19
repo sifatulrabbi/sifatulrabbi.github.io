@@ -20,7 +20,7 @@ body {
     max-width: 100vw;
     overflow-x: hidden;
     @include fontSize();
-    font-family: $fontHeading;
+    font-family: $fontBody;
     position: relative;
 
     #root {
@@ -42,28 +42,13 @@ textarea {
     border: none;
 }
 
-p {
-    font-family: $fontBody;
-}
-
 a {
     text-decoration: none;
     color: inherit;
 }
 
 @import './loadingScreen';
-@import './navbar';
-@import './button';
-@import './title';
-@import './hero';
-@import './projectSection';
-@import './aboutMe';
 @import './scrollbar';
-@import './myServices';
-@import './serviceCard';
-@import './contactSection';
-@import './contactForm';
-@import './footer';
 
 .homePage {
     animation: onload-animation 0.4s ease-in forwards;

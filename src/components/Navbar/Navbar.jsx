@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { logoWhite as logo } from '../../images';
 import { NavLink } from 'react-router-dom';
+import './navbar.scss';
 
 const Navbar = () => {
     const [shadow, setShadow] = useState(false);
@@ -14,7 +15,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div className={`navbar ${shadow && 'showShadow'}`}>
+        <div className={`navbar ${shadow && 'show'}`}>
             <div className="navbar_logo" onClick={() => (window.location.href = '/')}>
                 <img src={logo} alt="Sifatul" />
             </div>
