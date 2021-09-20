@@ -8,17 +8,17 @@ const Hero = () => {
         <section className="hero">
             <div className="hero_content">
                 <h1 className="hero_heading">
-                    Minimal and
-                    <br />
-                    <span className="hero_heading-colored">Responsive</span>
-                    <br />
-                    websites
+                    <div>
+                        Minimal
+                        <span style={{ marginLeft: '.2em' }}>and</span>
+                    </div>
+                    <div>Responsive</div>
+                    <div className="hero_heading-colored">websites</div>
                 </h1>
-                <h2 className="hero_subHeading">
-                    Front-end web developer,
-                    <br />
-                    UI/UX designer
-                </h2>
+                <p className="hero_subHeading">
+                    A passionate and enthusiastic web developer waiting to build websites
+                    with any features you want
+                </p>
                 <div className="hero_cta">
                     <button className="hero_cta_btn">
                         Contact Now <FaEnvelope />

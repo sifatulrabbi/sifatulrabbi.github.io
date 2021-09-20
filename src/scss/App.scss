@@ -55,26 +55,3 @@ a {
 .homePage {
     animation: onload-animation 0.4s ease-in forwards;
 }
-
-.title {
-    font-size: 1.5rem;
-    line-height: 1.1;
-    font-weight: 700;
-    font-family: $fontHeading;
-
-    @media screen and (min-width: $breakPoint) {
-        font-size: 2.2rem;
-
-        &.small {
-            font-size: 1.1rem;
-        }
-    }
-}
-
-.caption {
-    font-size: 0.9rem;
-    font-family: $fontBody;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-    color: $secondaryLight;
-}

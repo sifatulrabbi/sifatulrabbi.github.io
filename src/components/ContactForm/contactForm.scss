@@ -1,4 +1,5 @@
 @import '../../scss/variables';
+@import '../../scss/styleMixins';
 
 .contactForm {
     width: 100%;
@@ -50,7 +51,7 @@
     &_input {
         width: 100%;
         background-color: #fff;
-        box-shadow: $shadow;
+        @include boxShadow();
         padding: 1.2rem;
         font-size: 0.9rem;
         font-family: $fontBody;

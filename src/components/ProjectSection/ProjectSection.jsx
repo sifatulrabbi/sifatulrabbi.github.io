@@ -1,7 +1,9 @@
 import React from 'react';
 import './projectSection.scss';
 import SmallCard from '../SmallCard/SmallCard';
-import { categories } from './data';
+import { categories, projects } from './data';
+import ProjectCard from '../ProjectCard/ProjectCard';
+import testImg from '../../images/test-img.jpg';
 
 const ProjectSection = () => {
     return (
@@ -27,7 +29,16 @@ const ProjectSection = () => {
                     ))}
                 </div>
             </div>
-            <div className="projectSection_projects"></div>
+            <div className="projectSection_projects">
+                {projects.map((project) => (
+                    <ProjectCard
+                        key={project.id}
+                        title={project.title}
+                        links={project.links}
+                        desc={project.desc}
+                    />
+                ))}
+            </div>
         </section>
     );
 };
