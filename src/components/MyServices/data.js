@@ -4,19 +4,19 @@ const data = [
     {
         id: 'frontEnd3247809',
         title: 'Front end development',
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis aspernatur possimus dignissimos porro id modi explicabo hic sed? Dolorum itaque possimus magni neque sunt!',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis aspernatur possimus dignissimos porro',
         icon: <FaCode />,
     },
     {
         id: 'webUiDesign3247809',
         title: 'Web UI design',
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis aspernatur possimus dignissimos porro id modi explicabo hic sed? Dolorum itaque possimus magni neque sunt!',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis aspernatur possimus dignissimos porro',
         icon: <FaPaintBrush />,
     },
     {
         id: 'designToCode3247809',
         title: 'Design to code conversion',
-        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis aspernatur possimus dignissimos porro id modi explicabo hic sed? Dolorum itaque possimus magni neque sunt!',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis aspernatur possimus dignissimos porro',
         icon: <FaLaptopCode />,
     },
 ];

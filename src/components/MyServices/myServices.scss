@@ -4,10 +4,14 @@
 .myServices {
     @include section();
     background-color: $primaryMain;
+    display: flex;
+    flex-direction: column;
 
     &_header {
         width: 100%;
         height: 100%;
+        max-width: 60ch;
+        margin-bottom: 3rem;
     }
 
     &_caption {
@@ -22,5 +26,12 @@
         .colored {
             color: $secondaryLight;
         }
+    }
+
+    &_cards {
+        width: 100%;
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }

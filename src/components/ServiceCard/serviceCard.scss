@@ -1,0 +1,33 @@
+@import '../../scss/variables';
+@import '../../scss/styleMixins';
+
+.serviceCard {
+    height: max-content;
+    width: 100%;
+    min-width: 300px;
+    padding: 1.2rem;
+    color: $text;
+    background-color: $primaryMid;
+    border-radius: $borderRadius;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid $primaryLight;
+
+    &_icon {
+        font-size: 2rem;
+        color: $secondaryLight;
+        margin-bottom: 1rem;
+    }
+
+    &_caption {
+        @include caption();
+        color: $white;
+    }
+
+    &_desc {
+        font-size: 0.9rem;
+    }
+}

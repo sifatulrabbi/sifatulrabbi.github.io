@@ -4,6 +4,7 @@
 .projectSection {
     @include section();
     color: $textDark;
+    grid-gap: 2.5rem;
 
     &_projectCat {
         width: 100%;
@@ -54,7 +55,7 @@
 @media screen and(min-width: $breakPoint) {
     .projectSection {
         padding-right: 2rem;
-        grid-template-columns: 0.7fr 1fr;
+        grid-template-columns: 0.6fr 1fr;
 
         &_projectCatCards {
             flex-direction: column;
