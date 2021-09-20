@@ -28,6 +28,7 @@ function App() {
             <Hero />
             <ProjectSection />
             <MyServices />
+            <ContactSection />
         </Suspense>
     );
 }

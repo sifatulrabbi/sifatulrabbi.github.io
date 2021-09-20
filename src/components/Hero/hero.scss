@@ -43,7 +43,7 @@
 
     &_cta {
         margin-top: 12vh;
-        width: max-content;
+        width: 100%;
 
         &_btn {
             @include btnSecondary();

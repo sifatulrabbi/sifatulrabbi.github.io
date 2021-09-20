@@ -6,6 +6,7 @@
     background-color: $primaryMain;
     display: flex;
     flex-direction: column;
+    min-height: max-content;
 
     &_header {
         width: 100%;
@@ -16,7 +17,7 @@
 
     &_caption {
         @include caption();
-        color: $secondaryLight;
+        color: $secondaryMain;
     }
 
     &_heading {
@@ -24,7 +25,7 @@
         color: $white;
 
         .colored {
-            color: $secondaryLight;
+            color: $secondaryMain;
         }
     }
 

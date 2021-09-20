@@ -7,7 +7,7 @@ const MyServices = () => {
     return (
         <section className="myServices">
             <div className="myServices_header">
-                <span className="myServices_caption">My Services and Skills</span>
+                <span className="myServices_caption">My Skills</span>
                 <h2 className="myServices_heading">
                     Lorem ipsum dolor sit amet
                     <span className="colored"> consecutor lorem</span> ipsum dolor ametsu

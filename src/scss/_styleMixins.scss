@@ -32,21 +32,26 @@
     z-index: 1;
     position: relative;
     overflow: hidden;
+    width: 100%;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        z-index: -1;
-        background-color: transparent;
-        @include transition(background-color);
-    }
+    @media screen and (min-width: $breakPoint) {
+        width: max-content;
 
-    &:hover::before {
-        background-color: rgba(0, 0, 0, 0.2);
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            background-color: transparent;
+            @include transition(background-color);
+        }
+
+        &:hover::before {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
     }
 }
 
@@ -86,6 +91,7 @@
     font-weight: 700;
     font-family: $fontHeading;
     letter-spacing: -1px;
+    color: $textDarkPrimary;
 
     @media screen and (min-width: $breakPoint) {
         font-size: 2.2rem;
