@@ -1,0 +1,2 @@
+(this["webpackJsonpsifatul-portfolio"]=this["webpackJsonpsifatul-portfolio"]||[]).push([[11],{50:function(s,t,i){"use strict";i.r(t);i(0);var o=i(3);t.default=function(){return Object(o.jsx)("section",{className:"myServices"})}}}]);
+//# sourceMappingURL=11.6251643a.chunk.js.map
