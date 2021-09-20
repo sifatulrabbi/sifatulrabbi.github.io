@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button/Button';
+import './contactForm.scss';
 
 const ContactFrom = () => {
     return (
@@ -41,7 +41,7 @@ const ContactFrom = () => {
                     required
                 />
             </div>
-            <Button label="Send" />
+            <button>Send</button>
         </form>
     );
 };

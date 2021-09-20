@@ -1,4 +1,5 @@
-@import './variables';
+@import '../../scss/variables';
+@import '../../scss/styleMixins';
 
 .hero {
     position: relative;
@@ -6,34 +7,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10rem;
-
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        z-index: -1;
-    }
-
-    &::before {
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: $primaryMain;
-    }
-
-    &::after {
-        z-index: -2;
-        top: 50%;
-        left: 50%;
-        border: 2px solid $primaryMain;
-        transform: translate(-50%, -50%);
-        height: calc(100% + 4rem);
-        width: 80%;
-    }
+    color: $text;
+    background-color: $primaryMain;
 
     &_content {
+        width: min-content;
         @include resPadding();
         display: flex;
         flex-direction: column;
@@ -41,22 +19,26 @@
     }
 
     &_heading {
-        font-size: clamp(2.4rem, 3vw, 4rem);
-        font-weight: 900;
-        color: $primaryDark;
+        font-size: clamp(2.8rem, 4vw, 5rem);
+        font-weight: 700;
+        color: $white;
         line-height: 1.1;
-        letter-spacing: -1px;
+        letter-spacing: -2px;
         text-align: center;
         margin-bottom: 2rem;
-        text-transform: uppercase;
         text-shadow: rgba(0, 0, 0, 0.15) 3px 4px 5px;
+        font-family: $fontHeading;
+
+        &-colored {
+            // background-color: $primaryDark;
+            color: $secondaryMain;
+        }
     }
 
     &_subHeading {
-        font-size: 0.9rem;
-        color: #fff;
+        // display: block;
+        width: 100%;
         font-weight: normal;
-        letter-spacing: 3px;
         text-align: center;
     }
 
@@ -64,8 +46,8 @@
         margin-top: 12vh;
         width: max-content;
 
-        button {
-            min-width: 10rem;
+        &_btn {
+            @include btnSecondary();
         }
     }
 
@@ -76,22 +58,15 @@
 
 @media screen and (min-width: 1000px) {
     .hero {
+        justify-content: flex-start;
+
         &_bgArt {
             display: block;
             position: absolute;
             left: 50%;
             top: 50%;
             width: 40vw;
-            transform: translate(0, -10%);
-        }
-
-        &::before {
-            width: 60%;
-        }
-
-        &::after {
-            height: 60%;
-            width: 50%;
+            transform: translate(0, -50%);
         }
 
         &_content {

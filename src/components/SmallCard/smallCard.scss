@@ -1,0 +1,49 @@
+@import '../../scss/variables';
+@import '../../scss/styleMixins';
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-gap: 1.5rem;
+    min-width: 25ch;
+    padding: 1rem;
+    border: 1px solid transparent /*$text*/;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+
+    .caption {
+        @include caption();
+        color: $textDarkPrimary;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    &_icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: $primaryMain;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: $primaryLight 0px 3px 0px 0px;
+    }
+
+    &.active {
+        border-color: $primaryLight;
+    }
+
+    @media screen and(min-width: $breakPoint) {
+        flex-direction: row;
+        width: 100%;
+        text-align: left;
+    }
+}

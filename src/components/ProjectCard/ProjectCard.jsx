@@ -1,32 +1,33 @@
 import React from 'react';
-import Button from '../Button/Button';
+import './projectCard.scss';
+import { VscGlobe } from 'react-icons/vsc';
+import { AiOutlineGithub } from 'react-icons/ai';
 
-const ProjectCard = ({ img, title, desc, links }) => {
+const ProjectCard = ({ img, links, title, desc }) => {
+    const openGithub = () => {
+        links.github && window.open(links.github, '_black');
+    };
+
+    const openLiveSite = () => {
+        links.live && window.open(links.live, '_black');
+    };
+
     return (
-        <div className="projectCard">
-            <img className="projectCard_img" src={img} alt="project" />
-            <div className="projectCard_content">
-                <h3 className="projectCard_content_title">{title}</h3>
+        <div className="projectCard" /*style={{ backgroundImage: `url(${img})` }}*/>
+            <div>
+                <h3 className="projectCard_title">{title}</h3>
                 <p
-                    className="projectCard_content_desc"
+                    className="projectCard_desc"
                     dangerouslySetInnerHTML={{ __html: desc }}
                 />
-                <div className="projectCard_content_actions">
-                    {links && links.github && (
-                        <Button
-                            text
-                            label="Github"
-                            onClick={() => window.open(links.github, '_blank')}
-                        />
-                    )}
-                    {links && links.live && (
-                        <Button
-                            text
-                            label="Live site"
-                            onClick={() => window.open(links.live, '_blank')}
-                        />
-                    )}
-                </div>
+            </div>
+            <div className="projectCard_action">
+                <button className="projectCard_action_icon" onClick={openLiveSite}>
+                    <VscGlobe />
+                </button>
+                <button className="projectCard_action_icon" onClick={openGithub}>
+                    <AiOutlineGithub />
+                </button>
             </div>
         </div>
     );

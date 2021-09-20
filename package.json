@@ -2,6 +2,7 @@
     "homepage": "https://temujins.github.io/",
     "name": "sifatul-portfolio",
     "version": "1.0.0",
+    "private": true,
     "license": "MIT",
     "dependencies": {
         "@testing-library/jest-dom": "^5.11.4",

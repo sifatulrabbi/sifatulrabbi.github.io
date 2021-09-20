@@ -1,0 +1,7 @@
+@import '../../scss/variables';
+@import '../../scss/styleMixins';
+
+.aboutMe {
+    color: $textDark;
+    @include section();
+}

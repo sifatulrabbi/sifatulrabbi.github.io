@@ -1,8 +1,37 @@
-const data = [
+import { SiTypescript, SiNodeDotJs, SiJavascript, SiReact } from 'react-icons/si';
+
+const categories = [
+    {
+        id: 'javascriptProject',
+        title: 'JavaScript Project',
+        desc: 'This is my portfolio website. Build with React, SCSS. This website is custom',
+        icon: <SiJavascript />,
+    },
+    {
+        id: 'typescriptProject',
+        title: 'TypeScript Project',
+        desc: 'This is my portfolio website. Build with React, SCSS. This website is custom',
+        icon: <SiTypescript />,
+    },
+    {
+        id: 'reactJsProject',
+        title: 'ReactJs and frontend Project',
+        desc: 'This is my portfolio website. Build with React, SCSS. This website is custom',
+        icon: <SiReact />,
+    },
+    {
+        id: 'nodejsExpressProject',
+        title: 'nodejs with Express projects',
+        desc: 'This is my portfolio website. Build with React, SCSS. This website is custom',
+        icon: <SiNodeDotJs />,
+    },
+];
+
+const projects = [
     {
         id: 'https://github.com/temujins/temujins.github.io',
         title: 'Portfolio website',
-        desc: 'This is my portfolio website. Build with React, SCSS. This website is custom designed and responsive.<br/><br/><b>Technologies used:</b><br/>ReactJS, SCSS, Github',
+        desc: 'This is my portfolio website custom designed, responsive and fast loading<br/><br/><b>Technologies used:</b><br/>ReactJS, SCSS, Github',
         img: '',
         links: {
             github: 'https://github.com/temujins/temujins.github.io',
@@ -12,7 +41,7 @@ const data = [
     {
         id: 'https://github.com/temujins/social_media_app',
         title: 'Social media website',
-        desc: "A simple social media website build with React and Material UI and Firebase. This website has user authentication feature firebase authentication. Also users can add, delete posts and comment on each other's posts.<br/><br/><b>Technologies used:</b><br/>ReactJS, Material-UI, Firebase",
+        desc: 'Features user authentication with firebase, add, delete posts and add comments<br/><br/><b>Technologies used:</b><br/>ReactJS, Material-UI, Firebase',
         img: '',
         links: {
             github: 'https://github.com/temujins/social_media_app',
@@ -22,7 +51,7 @@ const data = [
     {
         id: 'https://github.com/temujins/full-stack-blog-app',
         title: 'Blog website',
-        desc: 'A blog website where user can create sign up and login also they can change their use names and passwords. Authors can post articles with one cover picture they can also link their social media accounts. Articles can be filtered by tags.<br/><br/><b>Technologies used:</b><br/>node.js, ReactJS, MongoDB, Github, styled-components',
+        desc: 'A blog website with features such as sign up, login, add post, delete post, and search by tags, usernames<br/><br/><b>Technologies used:</b><br/>node.js, Express, ReactJS, MongoDB, Mongoose, Github',
         img: '',
         links: {
             github: 'https://github.com/temujins/full-stack-blog-app',
@@ -32,7 +61,7 @@ const data = [
     {
         id: 'https://github.com/temujins/todo-app-fm',
         title: 'Todo web app',
-        desc: 'Simple todo app. Here use can add and remove todo mark todo and complete, filter todo/tasks by their completion status. This app uses the localStorage to save and load the todo/tasks. It also has light and dark mode<br/><br/><b>Technologies used:</b><br/>TypeScript, ReactJS, styled-components',
+        desc: 'Add and remove todo mark todo as complete, filter todo/tasks by their completion status. Uses the localStorage to save and load the todo/tasks. Light and dark mode<br/><br/><b>Technologies used:</b><br/>TypeScript, ReactJS, styled-components',
         img: '',
         links: {
             github: 'https://github.com/temujins/todo-app-fm',
@@ -52,7 +81,7 @@ const data = [
     {
         id: 'https://github.com/temujins/snake-game',
         title: 'Simple Snake game',
-        desc: 'Simple snake game build with vanilla JavaScript. Here users can control the snake withe the keyboard arrow keys. This project also uses the object oriented concepts of JavaScript<br/><br/><b>Technologies used:</b><br/>JavaScript, HTML, CSS',
+        desc: 'Build with vanilla JavaScript.Control the snake with the keyboard arrow keys. Uses object oriented concepts of JavaScript<br/><br/><b>Technologies used:</b><br/>JavaScript, HTML, CSS',
         img: '',
         links: {
             github: 'https://github.com/temujins/snake-game',
@@ -61,4 +90,4 @@ const data = [
     },
 ];
 
-export default data;
+export { categories, projects };
