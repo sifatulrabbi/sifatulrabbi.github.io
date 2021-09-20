@@ -30,8 +30,7 @@
         font-family: $fontHeading;
 
         &-colored {
-            // background-color: $primaryDark;
-            color: $secondaryMain;
+            color: $secondaryLight;
         }
     }
 
@@ -48,6 +47,8 @@
 
         &_btn {
             @include btnSecondary();
+            background-color: $secondaryLight;
+            color: $primaryDark;
         }
     }
 

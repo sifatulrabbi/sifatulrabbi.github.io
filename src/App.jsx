@@ -27,6 +27,7 @@ function App() {
             <Navbar />
             <Hero />
             <ProjectSection />
+            <MyServices />
         </Suspense>
     );
 }

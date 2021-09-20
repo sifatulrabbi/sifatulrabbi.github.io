@@ -13,13 +13,13 @@ const useHashLinks = () => {
 
         switch (hashName) {
             case '#projects':
-                document.documentElement.scrollTop = projectsSection.offsetTop - 100;
+                document.documentElement.scrollTop = projectsSection.offsetTop - 60;
                 break;
             case '#contact':
-                document.documentElement.scrollTop = contactSection.offsetTop - 100;
+                document.documentElement.scrollTop = contactSection.offsetTop - 60;
                 break;
             case '#about':
-                document.documentElement.scrollTop = aboutSection.offsetTop - 100;
+                document.documentElement.scrollTop = aboutSection.offsetTop - 60;
                 break;
             default:
                 document.documentElement.scrollTop = 0;
