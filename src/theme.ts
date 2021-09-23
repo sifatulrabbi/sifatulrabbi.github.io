@@ -1,0 +1,44 @@
+const theme = {
+    palette: {
+        background: 'hsl(0, 0%, 2%)',
+        font: {
+            primary: 'hsl(0, 0%, 100%)',
+            secondary: 'hsl(0, 0%, 90%)',
+        },
+        primary: 'hsl(212, 100%, 47%)',
+    },
+    fontFamily: {
+        heading: `'Custom', sans-serif`,
+        body: `'Open Sans', sans-serif`,
+    },
+    fontSize: {
+        body: '16px',
+        h1: 'clamp(3.4rem, 8vw, 8rem)',
+        h2: 'clamp(1.4rem, 6vw, 2.2rem)',
+        caption: '1.1rem',
+    },
+    lineHeight: {
+        body: '1.5',
+        heading: '1',
+    },
+    breakPoint: '1200px',
+    responsive: (styles: string) => {
+        return `@media screen and (main-width: 1200px) {
+            ${styles}
+        }`;
+    },
+    padding: () => {
+        return `
+            padding-right:2rem;
+            padding-left:2rem;
+
+            @media screen and (min-width: 1200px) {
+                padding-right: 10vw;
+                padding-left: 10vw;
+            }
+        `;
+    },
+};
+
+export type ITheme = typeof theme;
+export default theme;
