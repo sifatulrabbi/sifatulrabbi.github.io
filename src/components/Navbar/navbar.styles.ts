@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.nav`
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
     height: max-content;
     background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
     font-family: ${(p) => p.theme.fontFamily.heading};
+    padding-top: 2rem;
 
     ul {
-        padding-top: 3rem;
         width: 100%;
         display: flex;
         justify-content: flex-end;
@@ -18,7 +18,7 @@ export const Wrapper = styled.nav`
         padding: ${(p) => p.theme.padding()};
 
         button {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             padding: 1rem;
             cursor: pointer;
             display: flex;
@@ -34,7 +34,7 @@ export const Wrapper = styled.nav`
     @media screen and (min-width: 1200px) {
         ul {
             button {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
 
             img {

@@ -38,6 +38,17 @@ const GlobalStyles = createGlobalStyle`
     ul {
         list-style-type: none;
     }
+
+    p {
+        font-family: ${theme.fontFamily.body};
+        font-size: .9rem;
+        color: ${theme.palette.font.secondary};
+
+
+        @media screen and (min-width: 1200px) {
+            font-size: 1rem;
+        }
+    }
 `;
 
 export default GlobalStyles;

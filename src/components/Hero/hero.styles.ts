@@ -35,6 +35,7 @@ export const Wrapper = styled.section`
         width: max-content;
         font-size: 0.8rem;
         color: ${(p) => p.theme.palette.primary};
+        letter-spacing: 1px;
     }
 
     @media screen and (min-width: 1200px) {

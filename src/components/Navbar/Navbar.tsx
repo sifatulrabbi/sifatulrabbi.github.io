@@ -7,11 +7,6 @@ const Navbar: React.FC = () => {
         <Wrapper>
             <ul>
                 <li>
-                    <button>
-                        <img src={logo} alt='' />
-                    </button>
-                </li>
-                <li>
                     <button>work</button>
                 </li>
                 <li>
@@ -19,6 +14,11 @@ const Navbar: React.FC = () => {
                 </li>
                 <li>
                     <button>skills</button>
+                </li>
+                <li>
+                    <button>
+                        <img src={logo} alt='' />
+                    </button>
                 </li>
             </ul>
         </Wrapper>

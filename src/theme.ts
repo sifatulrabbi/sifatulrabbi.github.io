@@ -3,7 +3,7 @@ const theme = {
         background: 'hsl(0, 0%, 2%)',
         font: {
             primary: 'hsl(0, 0%, 100%)',
-            secondary: 'hsl(0, 0%, 90%)',
+            secondary: 'hsl(0, 0%, 80%)',
         },
         primary: 'hsl(212, 100%, 47%)',
     },
@@ -14,7 +14,7 @@ const theme = {
     fontSize: {
         body: '16px',
         h1: 'clamp(3.4rem, 8vw, 8rem)',
-        h2: 'clamp(1.4rem, 6vw, 2.2rem)',
+        h2: 'clamp(2.2rem, 8vw, 7rem)',
         caption: '1.1rem',
     },
     lineHeight: {

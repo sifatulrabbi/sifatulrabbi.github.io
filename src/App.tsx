@@ -2,7 +2,7 @@ import React from 'react';
 import GlobalStyles from './GlobalStyles';
 import theme from './theme';
 import { ThemeProvider } from 'styled-components';
-import { Navbar, Hero } from './components';
+import { Navbar, Hero, Works, Footer } from './components';
 
 const App: React.FC = () => {
     return (
@@ -10,6 +10,8 @@ const App: React.FC = () => {
             <GlobalStyles />
             <Navbar />
             <Hero />
+            <Works />
+            <Footer />
         </ThemeProvider>
     );
 };
