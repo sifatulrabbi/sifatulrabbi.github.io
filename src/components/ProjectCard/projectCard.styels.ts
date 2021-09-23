@@ -6,6 +6,7 @@ interface Props {
 
 export const Wrapper = styled.div<Props>`
     width: 100%;
+    max-width: 1000px;
     height: max-content;
     display: flex;
     flex-direction: column-reverse;
@@ -26,6 +27,7 @@ export const Wrapper = styled.div<Props>`
             line-height: 1.5;
             font-size: 1.2rem;
             margin-bottom: 1rem;
+            letter-spacing: 1px;
         }
 
         .desc {
@@ -43,8 +45,12 @@ export const Wrapper = styled.div<Props>`
     @media screen and (min-width: 1200px) {
         flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
 
+        .textContainer {
+            padding-left: 4rem;
+        }
+
         .title {
-            font-size: 1rem;
+            /* font-size: 1rem; */
         }
     }
 `;

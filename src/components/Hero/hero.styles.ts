@@ -26,7 +26,6 @@ export const Wrapper = styled.section`
         }
 
         .filled {
-            margin-left: 3px;
             color: ${(p) => p.theme.palette.primary};
         }
     }
@@ -51,16 +50,23 @@ export const Wrapper = styled.section`
 
 export const HeroContent = styled.div`
     width: 100%;
-    margin-top: 6rem;
+    margin-top: 30vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    grid-gap: 1rem;
 
     .dateContainer {
+        z-index: 2;
         width: max-content;
         display: flex;
         grid-gap: 1.5rem;
         align-items: center;
+        background-color: ${(p) => p.theme.palette.background};
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
 
         .day {
             font-family: 'Syncopate', sans-serif;
@@ -84,6 +90,61 @@ export const HeroContent = styled.div`
                 letter-spacing: 0px;
             }
         }
+
+        @media screen and (max-width: 700px) {
+            transform: translateX(100%) rotate(90deg);
+        }
+    }
+
+    .worksBtn {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-self: flex-start;
+        max-width: 100%;
+
+        button {
+            text-align: left;
+            font-family: ${(p) => p.theme.fontFamily.body};
+            letter-spacing: 5px;
+            height: 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: opacity 0.3s ease-out;
+            width: 10rem;
+            position: relative;
+            opacity: 0.5;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -3rem;
+                bottom: -3rem;
+                right: -3rem;
+                left: -3rem;
+                z-index: -1;
+                border-radius: 50%;
+                border: 2px solid ${(p) => p.theme.palette.primary};
+            }
+        }
+    }
+
+    .aboutMe {
+        z-index: 2;
+        max-width: 20ch;
+
+        .btn {
+            margin-top: 2rem;
+            letter-spacing: 1px;
+        }
     }
 
     @media screen and (min-width: 1200px) {
@@ -91,6 +152,10 @@ export const HeroContent = styled.div`
             .month {
                 font-size: 1rem;
             }
+        }
+
+        .worksBtn {
+            align-self: center;
         }
     }
 `;

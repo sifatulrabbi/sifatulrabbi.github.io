@@ -14,7 +14,7 @@ export const Wrapper = styled.section`
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        align-items: centers;
+        align-items: center;
         grid-gap: 3rem;
     }
 
