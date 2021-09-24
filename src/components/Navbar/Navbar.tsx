@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
                     <button>skills</button>
                 </li>
                 <li>
-                    <button>
+                    <button className='logo'>
                         <img src={logo} alt='' />
                     </button>
                 </li>

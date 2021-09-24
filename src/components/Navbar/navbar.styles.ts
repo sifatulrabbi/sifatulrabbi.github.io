@@ -30,6 +30,15 @@ export const Wrapper = styled.nav`
             transition: transform 0.4s ease-out;
             transform-origin: left;
 
+            &.logo {
+                &::before {
+                    content: none;
+                }
+                &:hover {
+                    transform: none;
+                }
+            }
+
             &:hover {
                 transform: rotate(-3deg);
             }
