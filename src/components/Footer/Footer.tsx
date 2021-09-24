@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                     </li>
                 </ul>
                 <div className='copyright'>
-                    <span>Build with love and JavaScript by temujins</span>
+                    <span>Build with love and TypeScript by temujins</span>
                     <button>Go to top</button>
                 </div>
             </div>
