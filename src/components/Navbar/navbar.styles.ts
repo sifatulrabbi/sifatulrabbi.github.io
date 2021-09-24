@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.nav`
     position: fixed;
+    z-index: 1000;
     top: 0;
     right: 0;
     left: 0;
     height: max-content;
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(180deg, #000000 0%, transparent 100%);
     font-family: ${(p) => p.theme.fontFamily.heading};
     padding-top: 2rem;
 
@@ -19,11 +20,34 @@ export const Wrapper = styled.nav`
 
         button {
             font-size: 0.8rem;
-            padding: 1rem;
+            padding: 0.8rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
+            letter-spacing: 1px;
+            position: relative;
+            transition: transform 0.4s ease-out;
+            transform-origin: left;
+
+            &:hover {
+                transform: rotate(-3deg);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: ${(p) => p.theme.palette.primary};
+                height: 3px;
+                width: 0;
+                transition: width 0.4s ease-out;
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
         }
 
         img {

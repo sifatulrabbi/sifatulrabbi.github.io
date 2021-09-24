@@ -1,9 +1,9 @@
 const theme = {
     palette: {
-        background: 'hsl(0, 0%, 2%)',
+        background: 'hsl(212, 100%, 3%)',
         font: {
-            primary: 'hsl(0, 0%, 100%)',
-            secondary: 'hsl(0, 0%, 80%)',
+            primary: 'hsl(212, 100%, 100%)',
+            secondary: 'hsl(212, 10%, 60%)',
         },
         primary: 'hsl(212, 100%, 47%)',
     },
