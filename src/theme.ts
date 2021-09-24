@@ -1,6 +1,6 @@
 const theme = {
     palette: {
-        background: 'hsl(212, 100%, 2%)',
+        background: 'hsl(212, 100%, 3%)',
         font: {
             primary: 'hsl(212, 100%, 100%)',
             secondary: 'hsl(212, 10%, 60%)',
