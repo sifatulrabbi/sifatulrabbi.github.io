@@ -18,7 +18,7 @@ export const Wrapper = styled.nav`
         align-items: center;
         padding: ${(p) => p.theme.padding()};
 
-        button {
+        .navLink {
             font-size: 0.8rem;
             padding: 0.8rem;
             cursor: pointer;

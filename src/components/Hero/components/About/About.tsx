@@ -1,6 +1,10 @@
 import React from 'react';
 import { Wrapper } from './about.styles';
 
+const openGithub = () => {
+    window.open('https://github.com/temujins', '_blank');
+};
+
 const About: React.FC = () => {
     return (
         <Wrapper>
@@ -9,7 +13,9 @@ const About: React.FC = () => {
                 et, sequi reiciendis nemo mollitia architecto minus assumenda, inventore
                 repellendus ad ipsa doloremque harum suscipit sunt.
             </p>
-            <button className='aboutButton'>Contact</button>
+            <button className='aboutButton' onClick={openGithub}>
+                Github
+            </button>
         </Wrapper>
     );
 };

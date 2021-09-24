@@ -4,7 +4,7 @@ import { Wrapper } from './works.styles';
 
 const Works: React.FC = () => {
     return (
-        <Wrapper>
+        <Wrapper id='works'>
             <h2 className='title'>
                 selected_
                 <br />

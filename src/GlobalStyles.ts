@@ -39,6 +39,10 @@ const GlobalStyles = createGlobalStyle`
         list-style-type: none;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     p {
         font-family: ${theme.fontFamily.body};
         font-size: .9rem;

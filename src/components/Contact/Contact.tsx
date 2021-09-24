@@ -2,6 +2,10 @@ import React from 'react';
 import { Wrapper } from './contact.styles';
 
 const Contact: React.FC = () => {
+    const openLink = () => {
+        window.open('mailto:mdsifatulislam.rabbi@gmail.com', '_blank');
+    };
+
     return (
         <Wrapper>
             <h2 className='title'>
@@ -17,7 +21,9 @@ const Contact: React.FC = () => {
                 <br />
                 about one?
             </h2>
-            <button className='button'>Let's talk!</button>
+            <button className='button' onClick={openLink}>
+                Let's talk!
+            </button>
         </Wrapper>
     );
 };

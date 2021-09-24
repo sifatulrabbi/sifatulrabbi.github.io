@@ -4,7 +4,7 @@ import { Skill } from './components';
 
 const Skills: React.FC = () => {
     return (
-        <Wrapper>
+        <Wrapper id='skills'>
             <h2 className='skillsTitle'>
                 my_
                 <br />

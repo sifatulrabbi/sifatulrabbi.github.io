@@ -23,19 +23,11 @@ export const Wrapper = styled.div`
         letter-spacing: 4px;
         cursor: pointer;
         transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+        opacity: 0.5;
 
         &:hover {
             opacity: 1;
             transform: rotate(-5deg);
-        }
-
-        @media screen and (min-width: 1200px) {
-            opacity: 0.5;
-
-            &:hover {
-                opacity: 1;
-                transform: rotate(-5deg);
-            }
         }
     }
 `;
