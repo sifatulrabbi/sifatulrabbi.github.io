@@ -2,4 +2,4 @@
 
 ### I'm Md Sifatul Islam Rabbi
 
---Web developer, UI/UX designer--
+--Web developer, Freelancer--
