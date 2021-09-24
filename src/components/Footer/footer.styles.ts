@@ -30,6 +30,28 @@ export const Wrapper = styled.section`
             letter-spacing: 2px;
             cursor: pointer;
             line-height: 1;
+            transform-origin: left;
+            padding: 0.5rem;
+            transition: transform 0.4s ease-out;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: ${(p) => p.theme.palette.font.primary};
+                height: 3px;
+                width: 0;
+                transition: width 0.4s ease-out;
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+
+            &:hover {
+                transform: rotate(-3deg);
+            }
         }
     }
 
@@ -40,7 +62,8 @@ export const Wrapper = styled.section`
 
         span {
             font-size: 0.9rem;
-            color: ${(p) => p.theme.palette.font.secondary};
+            color: ${(p) => p.theme.palette.font.primary};
+            opacity: 0.8;
         }
 
         button {

@@ -12,7 +12,7 @@ export const Wrapper = styled.div<Props>`
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    grid-gap: 1rem;
+    grid-gap: 2rem;
 
     .textContainer {
         padding-left: 2rem;
@@ -25,13 +25,15 @@ export const Wrapper = styled.div<Props>`
         .title {
             font-family: ${(p) => p.theme.fontFamily.heading};
             line-height: 1.5;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 1rem;
             letter-spacing: 1px;
+            color: ${(p) => p.theme.palette.primary};
         }
 
         .desc {
             margin-left: 4rem;
+            font-size: 0.9rem;
         }
     }
 
@@ -47,10 +49,6 @@ export const Wrapper = styled.div<Props>`
 
         .textContainer {
             padding-left: 4rem;
-        }
-
-        .title {
-            /* font-size: 1rem; */
         }
     }
 `;

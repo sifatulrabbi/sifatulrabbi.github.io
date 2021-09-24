@@ -49,6 +49,15 @@ const GlobalStyles = createGlobalStyle`
             font-size: 1rem;
         }
     }
+
+    ::-webkit-scrollbar {
+        background-color: transparent;
+        width: .5rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: ${theme.palette.primary};
+    }
 `;
 
 export default GlobalStyles;
