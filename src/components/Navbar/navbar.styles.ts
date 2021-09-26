@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.nav`
+interface Props {
+    show: boolean;
+}
+
+export const Wrapper = styled.nav<Props>`
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -10,6 +14,8 @@ export const Wrapper = styled.nav`
     background: linear-gradient(180deg, #000000 0%, transparent 100%);
     font-family: ${(p) => p.theme.fontFamily.heading};
     padding-top: 2rem;
+    transition: transform 0.4s ease-out;
+    transform: ${({ show }) => (show ? 'translateY(0%)' : 'translateY(-100%)')};
 
     ul {
         width: 100%;

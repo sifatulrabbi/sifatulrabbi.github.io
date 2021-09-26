@@ -15,7 +15,7 @@ export const Wrapper = styled.section`
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        margin: 20vh 0 30vh 0;
+        margin: 30vh 0 30vh 0;
     }
 
     @media screen and (min-width: 1200px) {

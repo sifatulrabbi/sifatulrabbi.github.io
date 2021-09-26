@@ -34,7 +34,7 @@ export const Wrapper = styled.section`
             bottom: 0;
             left: 0;
             background-color: ${(p) => p.theme.palette.primary};
-            height: 10px;
+            height: 10%;
             width: 0;
             transition: width 0.4s ease-out;
         }
