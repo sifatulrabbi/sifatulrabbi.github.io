@@ -4,9 +4,14 @@ import DayStatus from '../DateStatus/DataStatus';
 import About from '../About/About';
 
 const Intro: React.FC = () => {
+    const handleClick = () => {
+        const div = document.getElementById('works');
+        div && div.scrollIntoView();
+    };
+
     return (
         <Wrapper>
-            <button className='ctaButton'>
+            <button className='ctaButton' onClick={handleClick}>
                 <span>
                     Show
                     <br />

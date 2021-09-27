@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import type { IData } from '../../types';
+
+interface Props {
+    data: IData;
+}
 
 const Wrapper = styled.div`
     width: 100%;
@@ -19,14 +24,15 @@ const Wrapper = styled.div`
     }
 `;
 
-const Skill: React.FC = () => {
+const Skill: React.FC<Props> = ({ data }) => {
     return (
         <Wrapper>
-            <h3 className='title'>TypeScript</h3>
-            <p>Lorem ipsum dolor sit</p>
-            <p>amet consectetur adipisicing</p>
-            <p>elit Cum fugit Temporibus</p>
-            <p>eveniet rem recusandae sint</p>
+            <h3 className='title'>{data.title}</h3>
+            <p>
+                {data.desc}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit Cum fugit
+                Temporibus eveniet rem recusandae sint
+            </p>
         </Wrapper>
     );
 };

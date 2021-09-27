@@ -16,6 +16,7 @@ export const Wrapper = styled.section`
         font-size: ${(p) => p.theme.fontSize.h2};
         font-family: ${(p) => p.theme.fontFamily.heading};
         margin-bottom: clamp(5rem, 10vw, 14rem);
+        margin-top: 2rem;
         line-height: 1;
 
         .colored {

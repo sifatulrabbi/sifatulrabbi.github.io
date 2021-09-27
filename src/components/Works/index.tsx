@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectCard from '../ProjectCard/ProjectCard';
+import { ProjectCard } from './components';
 import { Wrapper } from './works.styles';
 
 const Works: React.FC = () => {

@@ -22,7 +22,7 @@ export const Wrapper = styled.nav<Props>`
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding: ${(p) => p.theme.padding()};
+        padding: 0;
 
         .navLink {
             font-size: 0.8rem;
@@ -72,6 +72,7 @@ export const Wrapper = styled.nav<Props>`
 
     @media screen and (min-width: 1200px) {
         ul {
+            padding: 0 10vw;
             button {
                 font-size: 1rem;
             }

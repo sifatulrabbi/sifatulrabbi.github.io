@@ -1,6 +1,7 @@
 import React from 'react';
 import { Wrapper } from './skills.styles';
 import { Skill } from './components';
+import data from './data';
 
 const Skills: React.FC = () => {
     return (
@@ -16,10 +17,9 @@ const Skills: React.FC = () => {
                     asperiores facilis laboriosam dolores vero incidunt ad nesciunt iusto
                     praesentium.
                 </p>
-                <Skill />
-                <Skill />
-                <Skill />
-                <Skill />
+                {data.map((skill) => (
+                    <Skill key={skill.id} data={skill} />
+                ))}
             </div>
         </Wrapper>
     );

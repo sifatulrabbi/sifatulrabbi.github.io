@@ -21,23 +21,6 @@ const theme = {
         body: '1.5',
         heading: '1',
     },
-    breakPoint: '1200px',
-    responsive: (styles: string) => {
-        return `@media screen and (main-width: 1200px) {
-            ${styles}
-        }`;
-    },
-    padding: () => {
-        return `
-            padding-right:2rem;
-            padding-left:2rem;
-
-            @media screen and (min-width: 1200px) {
-                padding-right: 10vw;
-                padding-left: 10vw;
-            }
-        `;
-    },
 };
 
 export type ITheme = typeof theme;
