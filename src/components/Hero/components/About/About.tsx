@@ -1,9 +1,6 @@
 import React from 'react';
+import { goto } from '../../../../functions';
 import { Wrapper } from './about.styles';
-
-const openGithub = () => {
-    window.open('https://github.com/temujins', '_blank');
-};
 
 const About: React.FC = () => {
     return (
@@ -13,7 +10,7 @@ const About: React.FC = () => {
                 et, sequi reiciendis nemo mollitia architecto minus assumenda, inventore
                 repellendus ad ipsa doloremque harum suscipit sunt.
             </p>
-            <button className='aboutButton' onClick={openGithub}>
+            <button className='aboutButton' onClick={goto.github}>
                 Github
             </button>
         </Wrapper>

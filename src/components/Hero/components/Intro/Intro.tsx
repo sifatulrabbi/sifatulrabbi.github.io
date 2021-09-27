@@ -2,16 +2,12 @@ import React from 'react';
 import { Wrapper } from './intro.styles';
 import DayStatus from '../DateStatus/DataStatus';
 import About from '../About/About';
+import { goto } from '../../../../functions';
 
 const Intro: React.FC = () => {
-    const handleClick = () => {
-        const div = document.getElementById('works');
-        div && div.scrollIntoView();
-    };
-
     return (
         <Wrapper>
-            <button className='ctaButton' onClick={handleClick}>
+            <button className='ctaButton' onClick={goto.worksSection}>
                 <span>
                     Show
                     <br />
