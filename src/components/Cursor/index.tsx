@@ -6,13 +6,16 @@ const Wrapper = styled.div`
     z-index: 2500;
     height: 4rem;
     width: 4rem;
-    /* border: 2px solid ${(p) => p.theme.palette.primary}; */
     border: 2px solid #ffffff99;
     border-radius: 50%;
     transition: all 0.3s ease-out;
     transform: translate(-50%, -50%);
     pointer-events: none;
     animation: anim 1s ease-out infinite;
+
+    @media screen and (max-width: 1100px) {
+        display: none;
+    }
 
     &.showAnim {
         animation: clickAnim 300ms ease-out;
