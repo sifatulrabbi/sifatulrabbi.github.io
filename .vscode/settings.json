@@ -1,0 +1,9 @@
+{
+    "[typescript]": {
+        "breadcrumbs.showArrays": true,
+        "workbench.editor.languageDetection": true,
+        "outline.showTypeParameters": true,
+        "editor.wrappingStrategy": "advanced",
+        "breadcrumbs.showClasses": true
+    }
+}

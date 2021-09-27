@@ -25,8 +25,8 @@ const Wrapper = styled.h1`
 const HeroTitle: React.FC = () => {
     return (
         <Wrapper>
-            <span className='outlined'>
-                Hello<span className='filled'>.</span>
+            <span className="outlined">
+                Hello<span className="filled">.</span>
             </span>
             <br />
             <span>I am Sifatul</span>

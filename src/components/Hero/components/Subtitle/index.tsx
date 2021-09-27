@@ -36,9 +36,9 @@ const Wrapper = styled.div`
 const HeroSubtitle: React.FC = () => {
     return (
         <Wrapper>
-            <div className='logo'>{'#'}</div>
-            <h2 className='subTitle1'>Web developer</h2>
-            <h2 className='subTitle2'>Freelancer</h2>
+            <div className="logo">{'#'}</div>
+            <h2 className="subTitle1">Web developer</h2>
+            <h2 className="subTitle2">Freelancer</h2>
         </Wrapper>
     );
 };
