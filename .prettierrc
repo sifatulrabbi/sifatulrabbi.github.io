@@ -5,5 +5,7 @@
     "useTabs": false,
     "semi": true,
     "singleQuote": true,
-    "printWidth": 90
+    "printWidth": 90,
+    "jsxSingleQuote": true,
+    "htmlWhitespaceSensitivity": "css"
 }
