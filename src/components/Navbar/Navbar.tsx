@@ -5,10 +5,22 @@ import { Link } from 'react-router-dom';
 
 type HandleClick = (e: React.SyntheticEvent<HTMLAnchorElement>) => void;
 
-let prevScroll: number = 0;
-
 const openLink = () => {
     window.open('mailto:mdsifatulislam.rabbi@gmail.com', '_blank');
+};
+
+let prevScroll = 0;
+
+const handleClick: HandleClick = (e) => {
+    e.preventDefault();
+
+    if (e.currentTarget.dataset.goto === 'works') {
+        const div = document.getElementById('works');
+        div && div.scrollIntoView();
+    } else if (e.currentTarget.dataset.goto === 'skills') {
+        const div = document.getElementById('skills');
+        div && div.scrollIntoView();
+    }
 };
 
 const Navbar: React.FC = () => {
@@ -19,34 +31,18 @@ const Navbar: React.FC = () => {
 
         if (document.documentElement.scrollWidth > 1199) {
             setShow(true);
-            prevScroll = scroll;
             return;
         }
 
-        if (scroll > prevScroll) {
-            setShow(false);
-        } else {
-            setShow(true);
-        }
+        scroll > prevScroll ? setShow(false) : setShow(true);
 
         prevScroll = scroll;
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', detectScroll);
+        document.addEventListener('scroll', detectScroll);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
-    const handleClick: HandleClick = (e) => {
-        e.preventDefault();
-
-        if (e.currentTarget.dataset.goto === 'works') {
-            const div = document.getElementById('works')?.getBoundingClientRect().y;
-            div && document.documentElement.scrollTo(0, div);
-        } else if (e.currentTarget.dataset.goto === 'skills') {
-            const div = document.getElementById('skills')?.getBoundingClientRect().y;
-            div && document.documentElement.scrollTo(0, div);
-        }
-    };
 
     return (
         <Wrapper show={show}>
@@ -76,10 +72,8 @@ const Navbar: React.FC = () => {
                         contact
                     </button>
                 </li>
-                <li>
-                    <Link className='navLink logo' to='/'>
-                        <img src={logo} alt='' />
-                    </Link>
+                <li className='navLink logo' onClick={() => (window.location.href = '/')}>
+                    <img src={logo} alt='' />
                 </li>
             </ul>
         </Wrapper>

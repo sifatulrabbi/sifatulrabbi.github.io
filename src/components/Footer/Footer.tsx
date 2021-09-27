@@ -37,7 +37,9 @@ const Footer: React.FC = () => {
                 </ul>
                 <div className='copyright'>
                     <span>Build with love and TypeScript by me</span>
-                    <button>Go to top</button>
+                    <button onClick={() => document.documentElement.scrollTo(0, 0)}>
+                        Go to top
+                    </button>
                 </div>
             </div>
         </Wrapper>
