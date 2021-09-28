@@ -20,9 +20,7 @@ const Wrapper = styled.div`
     }
 
     &.showAnim {
-        &::before {
-            animation: clickAnim 300ms ease-out;
-        }
+        animation: clickAnim 300ms ease-out;
     }
 
     @keyframes anim {
