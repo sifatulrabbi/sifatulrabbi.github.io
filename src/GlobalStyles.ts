@@ -23,6 +23,7 @@ const GlobalStyles = createGlobalStyle`
         color: ${theme.palette.font.primary};
         background-color: ${theme.palette.background};
         overflow-x: hidden;
+        cursor: none;
 
         .customFont {
             font-family: ${theme.fontFamily.heading};

@@ -23,29 +23,8 @@ export const Wrapper = styled.div`
         letter-spacing: 1px;
         cursor: pointer;
         color: ${(p) => p.theme.palette.primary};
-        margin-top: 2rem;
-        position: relative;
-        padding: 1rem;
-        transform-origin: left;
-        transition: transform 0.4s ease-out;
-
-        &::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background-color: ${(p) => p.theme.palette.primary};
-            height: 3px;
-            width: 0;
-            transition: width 0.4s ease-out;
-        }
-
-        &:hover::before {
-            width: 100%;
-        }
-
-        &:hover {
-            transform: rotate(-3deg);
-        }
+        margin: 1rem;
+        margin-top: 3rem;
+        ${(p) => p.theme.hoverAnim}
     }
 `;

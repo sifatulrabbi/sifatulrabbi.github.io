@@ -26,15 +26,13 @@ export const Wrapper = styled.nav<Props>`
 
         .navLink {
             font-size: 0.8rem;
-            padding: 0.8rem;
             cursor: pointer;
+            margin: 0 0.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
             letter-spacing: 1px;
-            position: relative;
-            transition: transform 0.4s ease-out;
-            transform-origin: left;
+            ${(p) => p.theme.hoverAnim};
 
             &.logo {
                 &::before {
@@ -45,28 +43,9 @@ export const Wrapper = styled.nav<Props>`
                 }
             }
 
-            &:hover {
-                transform: rotate(-3deg);
+            img {
+                height: 1.5rem;
             }
-
-            &::before {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                background-color: ${(p) => p.theme.palette.primary};
-                height: 3px;
-                width: 0;
-                transition: width 0.4s ease-out;
-            }
-
-            &:hover::before {
-                width: 100%;
-            }
-        }
-
-        img {
-            height: 1.5rem;
         }
     }
 

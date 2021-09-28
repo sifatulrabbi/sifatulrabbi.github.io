@@ -31,26 +31,10 @@ export const Wrapper = styled.section`
             cursor: pointer;
             line-height: 1;
             transform-origin: left;
-            padding: 0.5rem;
-            transition: transform 0.4s ease-out;
+            ${(p) => p.theme.hoverAnim};
 
             &::before {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                background-color: ${(p) => p.theme.palette.font.primary};
-                height: 3px;
-                width: 0;
-                transition: width 0.4s ease-out;
-            }
-
-            &:hover::before {
-                width: 100%;
-            }
-
-            &:hover {
-                transform: rotate(-3deg);
+                background-color: ${(p) => p.theme.palette.primary};
             }
         }
     }

@@ -116,5 +116,6 @@
     "prettier.tabWidth": 4,
     "terminal.integrated.tabs.enabled": false,
     "prettier.jsxSingleQuote": true,
-    "workbench.colorTheme": "Night Wolf [dark blue]"
+    "workbench.colorTheme": "Night Wolf [dark blue]",
+    "cSpell.words": ["nobg"]
 }

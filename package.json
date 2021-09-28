@@ -41,8 +41,7 @@
         "@types/node": "^12.0.0",
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
-        "@types/styled-components": "^5.1.12",
-        "@types/uuidv4": "^5.0.0"
+        "@types/styled-components": "^5.1.12"
     },
     "scripts": {
         "start": "react-scripts start",

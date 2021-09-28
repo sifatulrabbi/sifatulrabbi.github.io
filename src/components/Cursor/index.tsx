@@ -4,35 +4,47 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
     position: absolute;
     z-index: 2500;
-    height: 4rem;
-    width: 4rem;
-    border: 2px solid #ffffff99;
-    border-radius: 50%;
-    transition: all 0.3s ease-out;
-    transform: translate(-50%, -50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid ${(p) => p.theme.palette.font.primary};
+    transform: translate(-50%, -50%) rotate(-20deg);
     pointer-events: none;
-    animation: anim 1s ease-out infinite;
+    transition: all 0.1s ease-out;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 5rem;
+        width: 5rem;
+        border: 2px solid ${(p) => p.theme.palette.font.primary};
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        animation: anim 1s linear infinite;
+    }
 
     @media screen and (max-width: 1100px) {
         display: none;
     }
 
     &.showAnim {
-        animation: clickAnim 300ms ease-out;
+        &::before {
+            animation: clickAnim 300ms ease-out;
+        }
     }
 
     @keyframes anim {
-        0% {
-            transform: translate(-50%, -50%) scale(1);
-        }
-        30% {
-            transform: translate(-50%, -50%) scale(1.2);
-        }
-        60% {
-            transform: translate(-50%, -50%) scale(0.9);
-        }
+        0%,
         100% {
             transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+            transform: translate(-50%, -50%) scale(1.3);
+        }
+        70% {
+            transform: translate(-50%, -50%) scale(0.8);
         }
     }
 
@@ -40,18 +52,18 @@ const Wrapper = styled.div`
         0%,
         100% {
             transform: translate(-50%, -50%) scale(1);
-            border: 2px solid ${(p) => p.theme.palette.font.secondary};
+            border-color: ${(p) => p.theme.palette.font.secondary};
         }
         50% {
-            transform: translate(-50%, -50%) scale(2);
+            transform: translate(-50%, -50%) scale(3);
             border-color: ${(p) => p.theme.palette.primary};
         }
     }
 `;
 
 const Cursor: React.FC = () => {
-    const [y, setY] = useState<number>(0);
-    const [x, setX] = useState<number>(0);
+    const [y, setY] = useState<number>(100);
+    const [x, setX] = useState<number>(100);
     const [animClass, animClassSet] = useState<string>('');
 
     const changePos = (e: MouseEvent) => {

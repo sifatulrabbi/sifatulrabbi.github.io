@@ -21,6 +21,27 @@ const theme = {
         body: '1.5',
         heading: '1',
     },
+    hoverAnim: `position: relative;
+        transition: transform .3s ease-out;
+
+        &:hover {
+            transform: scaleY(1.5);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background-color: hsl(212, 100%, 2%);
+            height: 0;
+            width: 100%;
+            transition: height 0.2s ease-out;
+        }
+
+        &:hover::before {
+            height: 3px;
+    }`,
 };
 
 export type ITheme = typeof theme;
