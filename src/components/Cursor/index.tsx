@@ -4,26 +4,16 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
     position: absolute;
     z-index: 2500;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 10px solid ${(p) => p.theme.palette.font.primary};
     transform: translate(-50%, -50%) rotate(-20deg);
     pointer-events: none;
     transition: all 0.1s ease-out;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        height: 5rem;
-        width: 5rem;
-        border: 2px solid ${(p) => p.theme.palette.font.primary};
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-        animation: anim 1s linear infinite;
-    }
+    height: 5rem;
+    width: 5rem;
+    border: 1px solid ${(p) => p.theme.palette.font.primary};
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: anim 1s linear infinite;
 
     @media screen and (max-width: 1100px) {
         display: none;
