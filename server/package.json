@@ -5,7 +5,7 @@
     "author": "temujins <mdsifatulislam.rabbi@gmail.com>",
     "repository": "https://github.com/temujins/temujins.github.io.git",
     "license": "MIT",
-    "main": "server.ts",
+    "main": "src/server.ts",
     "dependencies": {
         "cors": "^2.8.5",
         "dotenv": "^10.0.0",
@@ -22,6 +22,6 @@
     },
     "scripts": {
         "start": "nodemon ./src/server.ts",
-        "build": "rm -rf ./build && tsc"
+        "build": "rm -rf build && prettier --write src/ && tsc"
     }
 }
