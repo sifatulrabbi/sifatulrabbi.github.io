@@ -8,6 +8,7 @@ export const Wrapper = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    overflow-x: hidden;
 
     .contentWrapper {
         width: 100%;

@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
     }
 
     .text {
+        line-height: ${(p) => p.theme.lineHeight};
         font-size: 0.9rem;
         color: ${(p) => p.theme.palette.font.secondary};
     }
