@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
     width: max-content;
     height: max-content;
     display: flex;
+    align-items: center;
     grid-gap: 1rem;
     background-color: ${(p) => p.theme.palette.background};
     padding: 1rem;
@@ -18,9 +19,10 @@ export const Wrapper = styled.div`
 
     .day {
         font-size: ${(p) => p.theme.fontSize.h1};
-        font-family: 'Syncopate', sans-serif;
+        font-family: ${(p) => p.theme.fontFamily.heading};
         font-weight: 900;
         color: transparent;
+        line-height: 1;
         -webkit-text-stroke: 2px white;
     }
 

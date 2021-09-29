@@ -18,6 +18,7 @@ const Wrapper = styled.div`
         font-family: ${(p) => p.theme.fontFamily.heading};
         color: ${(p) => p.theme.palette.primary};
         margin-bottom: 0.5rem;
+        font-size: 1.2rem;
     }
 
     p {

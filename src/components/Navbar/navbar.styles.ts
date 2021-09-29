@@ -8,9 +8,10 @@ export const Wrapper = styled.nav<Props>`
     position: fixed;
     z-index: 1000;
     top: 0;
-    right: 0;
     left: 0;
+    right: 0;
     height: max-content;
+    max-width: 99.5vw;
     background: linear-gradient(180deg, #000000 0%, transparent 100%);
     font-family: ${(p) => p.theme.fontFamily.heading};
     padding-top: 2rem;
@@ -25,7 +26,6 @@ export const Wrapper = styled.nav<Props>`
         padding: 0;
 
         .navLink {
-            font-size: 0.8rem;
             cursor: pointer;
             margin: 0 0.8rem;
             display: flex;

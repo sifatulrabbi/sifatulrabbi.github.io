@@ -26,7 +26,6 @@ export const Wrapper = styled.section`
 
         button {
             font-family: ${(p) => p.theme.fontFamily.heading};
-            font-size: 0.9rem;
             letter-spacing: 2px;
             cursor: pointer;
             line-height: 1;

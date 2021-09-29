@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
     width: max-content;
     height: max-content;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-family: ${(p) => p.theme.fontFamily.heading};
     color: ${(p) => p.theme.palette.primary};
     margin-top: 6vh;
@@ -29,16 +29,15 @@ const Wrapper = styled.div`
 
     @media screen and (min-width: 1200px) {
         align-self: flex-end;
-        font-size: 1rem;
     }
 `;
 
 const HeroSubtitle: React.FC = () => {
     return (
         <Wrapper>
-            <div className="logo">{'#'}</div>
-            <h2 className="subTitle1">Web developer</h2>
-            <h2 className="subTitle2">Freelancer</h2>
+            <div className='logo'>{'#'}</div>
+            <h2 className='subTitle1'>Web developer</h2>
+            <h2 className='subTitle2'>Freelancer</h2>
         </Wrapper>
     );
 };
