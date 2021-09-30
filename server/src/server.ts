@@ -1,12 +1,18 @@
 import express from 'express';
 import cors from 'cors';
 import config from './config/config';
+/** routers */
+import worksRouter from './routers/works.router';
+import skillsRouter from './routers/skills.router';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
+app.use('/works', worksRouter);
+app.use('/skills', skillsRouter);
+
 app.listen(config.PORT, () => {
-    console.log('running');
+    console.log(`running on port http://localhost:${config.PORT}`);
 });
