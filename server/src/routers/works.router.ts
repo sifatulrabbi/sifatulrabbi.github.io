@@ -8,7 +8,7 @@ worksRouter.get('/', async (req, res) => {
         const works = await controller.getWorks();
         res.status(201).json(works);
     } catch (err) {
-        res.status(500).json({ error: err });
+        res.status(500).json({ message: err });
     }
 });
 
