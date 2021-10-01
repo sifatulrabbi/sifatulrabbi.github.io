@@ -2,7 +2,7 @@ import React from 'react';
 import GlobalStyles from './GlobalStyles';
 import theme from './theme';
 import { ThemeProvider } from 'styled-components';
-import { Cursor, Navbar, Hero, Works, Footer, Contact, Skills } from './components';
+import { Navbar } from './components';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 const App: React.FC = () => {
@@ -10,13 +10,9 @@ const App: React.FC = () => {
         <Router>
             <ThemeProvider theme={theme}>
                 <GlobalStyles />
-                <Cursor />
-                <Navbar />
-                <Hero />
-                <Works />
-                <Skills />
-                <Contact />
-                <Footer />
+                <div id='app'>
+                    <Navbar />
+                </div>
             </ThemeProvider>
         </Router>
     );

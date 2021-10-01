@@ -1,38 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { Wrapper } from './navbar.styles';
+import { Component } from 'react';
+import { Wrapper } from './navar.styles';
 import { logo } from '../../images';
-import { goto, scrollDetect } from '../../functions';
 
-const Navbar: React.FC = () => {
-    const [show, setShow] = useState<boolean>(true);
-
-    useEffect(() => {
-        document.addEventListener('scroll', function () {
-            setShow(scrollDetect());
-        });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    return (
-        <Wrapper show={show}>
-            <ul>
-                <li className='navLink' onClick={goto.worksSection}>
-                    work
-                </li>
-                <li className='navLink' onClick={goto.skillsSection}>
-                    skills
-                </li>
-                <li>
-                    <button className='navLink' onClick={goto.mailTo}>
-                        contact
+class Navbar extends Component {
+    render() {
+        return (
+            <Wrapper>
+                <nav className='navbar'>
+                    <button className='navbar_logo_button'>
+                        <img className='navbar_logo_button_img' src={logo} alt='logo' />
                     </button>
-                </li>
-                <li className='navLink logo' onClick={goto.reload}>
-                    <img src={logo} alt='' />
-                </li>
-            </ul>
-        </Wrapper>
-    );
-};
+                </nav>
+                <div className='contentBar'></div>
+            </Wrapper>
+        );
+    }
+}
 
 export default Navbar;

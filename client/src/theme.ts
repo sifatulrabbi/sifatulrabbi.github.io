@@ -1,49 +1,33 @@
-const theme = {
+import { DefaultTheme } from 'styled-components';
+
+const theme: DefaultTheme = {
     palette: {
-        background: 'hsl(212, 100%, 1%)',
-        font: {
-            primary: 'hsl(212, 100%, 100%)',
-            secondary: 'hsl(212, 10%, 60%)',
+        main: 'hsl(212, 100%, 47%)',
+        dark: 'hsl(212, 100%, 10%)',
+        light: 'hsl(212, 100%, 98%)',
+        shadow: 'hsla(212, 100%, 47%, 0.2)',
+    },
+    shadow: function (): string[] {
+        return [
+            `${this.palette.shadow} 0px 5px 15px 0px`,
+            `${this.palette.shadow} 0px 0px 25px 0px`,
+        ];
+    },
+    bordrRadius: '10px',
+    typography: {
+        fontSize: {
+            h1: 'clamp()',
+            h2: 'clamp()',
+            h3: 'clamp()',
+            body: '16px',
         },
-        primary: 'hsl(212, 100%, 47%)',
+        fontFamily: {
+            heading: `'Poppins', sans-serif`,
+            body: `'Noto Sans', sans-serif`,
+        },
     },
-    fontFamily: {
-        heading: `'Montserrat', sans-serif`,
-        body: `'Noto Sans', sans-serif`,
-    },
-    fontSize: {
-        body: '16px',
-        h1: 'clamp(4.5rem, 12vw, 16rem)',
-        h2: 'clamp(3.5rem, 8vw, 10rem)',
-        h3: 'clamp(1.5rem, 5vw, 2rem)',
-    },
-    lineHeight: {
-        body: '1.5',
-        heading: '1.1',
-    },
-    hoverAnim: `position: relative;
-        transition: transform .3s ease-out;
-
-        &:hover {
-            transform: scaleY(1.3);
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            background-color: hsl(212, 100%, 2%);
-            height: 0;
-            width: 100%;
-            transform: translateY(-50%);
-            transition: height 0.2s ease-out;
-        }
-
-        &:hover::before {
-            height: 3px;
-    }`,
+    breakpoint: '1200px',
+    lineHeight: '1.5',
 };
 
-export type ITheme = typeof theme;
 export default theme;

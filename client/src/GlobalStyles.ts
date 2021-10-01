@@ -17,40 +17,29 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-family: ${theme.fontFamily.body};
-        line-height: ${theme.lineHeight};
-        font-size: ${theme.fontSize.body};
-        color: ${theme.palette.font.primary};
-        background-color: ${theme.palette.background};
-        overflow-x: hidden;
-
-        .customFont {
-            font-family: ${theme.fontFamily.heading};
-        }
+        font-family: ${({ theme }) => theme.typography.fontFamily.body};
+        color: ${({ theme }) => theme.palette.dark};
+        line-height: ${({ theme }) => theme.lineHeight};
+        font-size: ${({ theme }) => theme.typography.fontSize.body};
     }
 
-    button, input, textarea {
-        background-color: transparent;
-        outline: none;
+    button {
         border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
     }
 
-    ul {
-        list-style-type: none;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    p {
-        font-family: ${theme.fontFamily.body};
-        font-size: .9rem;
-        color: ${theme.palette.font.secondary};
-
-
-        @media screen and (min-width: 1200px) {
-            font-size: 1rem;
+    #app {
+        height: 100vh;
+        width: clamp(100%, 100%, 100vw);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(5%, 65px) 1fr;
+        
+        @media screen and (min-width: ${({ theme }) => theme.breakpoint}) {
+            grid-template-columns:  minmax(5%, 65px) 1fr;
+            grid-template-rows: 1fr;
         }
     }
 
@@ -60,7 +49,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: ${theme.palette.primary};
+        background-color: ${theme.palette.main};
     }
 `;
 
