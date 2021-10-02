@@ -24,7 +24,7 @@ export const Wrapper = styled.div<Props>`
 
         .title {
             font-family: ${(p) => p.theme.fontFamily.heading};
-            line-height: 1.5;
+            line-height: 1.1;
             font-size: ${(p) => p.theme.fontSize.h3};
             margin-bottom: 1rem;
             letter-spacing: 1px;

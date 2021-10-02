@@ -1,4 +1,4 @@
-interface IWork {
+export interface IWork {
     id: string;
     title: string;
     desc: string;
@@ -7,35 +7,39 @@ interface IWork {
         live?: string;
     };
     imgUrl?: string;
+    reverse: boolean;
 }
 
 const data: IWork[] = [
     {
-        id: 'socialMediaApp01',
-        title: 'social_media_<br/>app',
-        desc: '',
+        id: 'arkanoidGame01',
+        title: 'arkanoid_<br/>game',
+        desc: 'img elements must have an alt prop, either with meaningful text, or an empty string for decorative images',
         link: {
-            github: 'https:github.com/temujins/socialize-react-app',
+            github: 'https:github.com/temujins',
             live: 'https://socialize-react-app.web.app',
         },
+        reverse: false,
+    },
+    {
+        id: 'fullsatckMern01',
+        title: 'Blog_<br/>website',
+        desc: 'img elements must have an alt prop, either with meaningful text, or an empty string for decorative images',
+        link: {
+            github: 'https:github.com/temujins',
+            live: 'https://socialize-react-app.web.app',
+        },
+        reverse: true,
     },
     {
         id: 'socialMediaApp01',
         title: 'social_media_<br/>app',
-        desc: '',
+        desc: 'img elements must have an alt prop, either with meaningful text, or an empty string for decorative images',
         link: {
-            github: 'https:github.com/temujins/socialize-react-app',
+            github: 'https:github.com/temujins',
             live: 'https://socialize-react-app.web.app',
         },
-    },
-    {
-        id: 'socialMediaApp01',
-        title: 'social_media_<br/>app',
-        desc: '',
-        link: {
-            github: 'https:github.com/temujins/socialize-react-app',
-            live: 'https://socialize-react-app.web.app',
-        },
+        reverse: false,
     },
 ];
 
