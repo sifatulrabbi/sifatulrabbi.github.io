@@ -7,4 +7,5 @@ export const Wrapper = styled.section`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: ${({ theme }) => theme.palette.light};
 `;

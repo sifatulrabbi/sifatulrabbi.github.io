@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Wrapper } from './content.styles';
 
 interface Props {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
-class index extends Component<Props> {
-    render() {
-        return <Wrapper>{this.props.children}</Wrapper>;
-    }
-}
+const Content: React.FC<Props> = ({ children }) => {
+  return <Wrapper>{children}</Wrapper>;
+};
 
-export default index;
+export default Content;

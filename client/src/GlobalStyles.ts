@@ -35,10 +35,10 @@ const GlobalStyles = createGlobalStyle`
         width: clamp(100%, 100%, 100vw);
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: minmax(5%, 65px) 1fr;
+        grid-template-rows: 65px 1fr;
         
         @media screen and (min-width: ${({ theme }) => theme.breakpoint}) {
-            grid-template-columns:  minmax(5%, 65px) 1fr;
+            grid-template-columns:  65px 1fr;
             grid-template-rows: 1fr;
         }
     }
