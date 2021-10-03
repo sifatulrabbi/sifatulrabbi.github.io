@@ -2,7 +2,7 @@ import React from 'react';
 import GlobalStyles from './GlobalStyles';
 import theme from './theme';
 import { ThemeProvider } from 'styled-components';
-import { Navbar, Content } from './components';
+import { Navbar, Content, Hero } from './components';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 const App: React.FC = () => {
@@ -13,7 +13,7 @@ const App: React.FC = () => {
                 <div id='app'>
                     <Navbar />
                     <Content>
-                        <div></div>
+                        <Hero />
                     </Content>
                 </div>
             </ThemeProvider>

@@ -16,14 +16,14 @@ const theme: DefaultTheme = {
     bordrRadius: '10px',
     typography: {
         fontSize: {
-            h1: 'clamp()',
-            h2: 'clamp()',
-            h3: 'clamp()',
+            h1: 'clamp(4rem, 6vw, 9rem)',
+            h2: 'clamp(2rem, 4vw, 4rem)',
+            h3: 'clamp(1.2rem, 1vw, 2rem)',
             body: '16px',
         },
         fontFamily: {
             heading: `'Poppins', sans-serif`,
-            body: `'Noto Sans', sans-serif`,
+            body: `'Poppins', sans-serif`,
         },
     },
     breakpoint: '1200px',
