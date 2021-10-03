@@ -6,16 +6,19 @@ interface Props {
   showSet: () => void;
 }
 
-const Navbar: React.FC<Props> = ({ showSet }) => {
-  return (
-    <Wrapper>
-      <nav className='navbar'>
-        <button className='navbar_logo_button' onClick={showSet}>
-          <img className='navbar_logo_button_img' src={logo} alt='logo' />
-        </button>
-      </nav>
-    </Wrapper>
-  );
-};
+class Navbar extends React.Component<Props> {
+  render() {
+    const { showSet } = this.props;
+    return (
+      <Wrapper>
+        <nav className='navbar'>
+          <button className='navbar_logo_button' onClick={showSet}>
+            <img className='navbar_logo_button_img' src={logo} alt='logo' />
+          </button>
+        </nav>
+      </Wrapper>
+    );
+  }
+}
 
 export default Navbar;

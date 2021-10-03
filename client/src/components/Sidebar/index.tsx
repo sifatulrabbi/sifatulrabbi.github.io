@@ -5,10 +5,12 @@ interface Props {
   show: boolean;
 }
 
-const Sidebar: React.FC<Props> = (props) => {
-  const { show } = props;
+class Sidebar extends React.Component<Props> {
+  render() {
+    const { show } = this.props;
 
-  return <Wrapper className={show ? 'show' : 'hide'}></Wrapper>;
-};
+    return <Wrapper className={show ? 'show' : 'hide'}></Wrapper>;
+  }
+}
 
 export default Sidebar;

@@ -5,8 +5,12 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Content: React.FC<Props> = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
-};
+class Content extends React.Component<Props> {
+  render() {
+    const { children } = this.props;
+
+    return <Wrapper>{children}</Wrapper>;
+  }
+}
 
 export default Content;

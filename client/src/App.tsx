@@ -5,27 +5,40 @@ import { ThemeProvider } from 'styled-components';
 import { Navbar, Content, Hero, Sidebar } from './components';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-const App: React.FC = () => {
-  const [show, showSet] = useState(false);
+interface Props {}
 
-  const handleShow = () => {
-    showSet((prev) => !prev);
+interface State {
+  show: boolean;
+}
+
+class App extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      show: false,
+    };
+  }
+
+  public changeShow = (): void => {
+    this.setState({ show: !this.state.show });
   };
 
-  return (
-    <Router>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <div id='app'>
-          <Navbar showSet={handleShow} />
-          <Sidebar show={show} />
-          <Content>
-            <Hero />
-          </Content>
-        </div>
-      </ThemeProvider>
-    </Router>
-  );
-};
+  render() {
+    return (
+      <Router>
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <div id='app'>
+            <Navbar showSet={this.changeShow} />
+            <Sidebar show={this.state.show} />
+            <Content>
+              <Hero />
+            </Content>
+          </div>
+        </ThemeProvider>
+      </Router>
+    );
+  }
+}
 
 export default App;

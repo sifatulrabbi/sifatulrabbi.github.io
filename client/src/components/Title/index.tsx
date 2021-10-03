@@ -28,12 +28,19 @@ const Wrapper = styled.div<IStyled>`
             letter-spacing: 3px;`};
 `;
 
-const Title: React.FC<Props> = ({ text, variant }) => {
-  return (
-    <Wrapper variant={variant}>
-      <span className='text' dangerouslySetInnerHTML={{ __html: text }}></span>
-    </Wrapper>
-  );
-};
+class Title extends React.Component<Props> {
+  render() {
+    const { text, variant } = this.props;
+
+    return (
+      <Wrapper variant={variant}>
+        <span
+          className='text'
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></span>
+      </Wrapper>
+    );
+  }
+}
 
 export default Title;

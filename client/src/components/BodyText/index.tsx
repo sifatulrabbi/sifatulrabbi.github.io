@@ -17,12 +17,16 @@ const Wrapper = styled.div`
   }
 `;
 
-const BodyText: React.FC<Props> = ({ text }) => {
-  return (
-    <Wrapper>
-      <span className='text'>{text}</span>
-    </Wrapper>
-  );
-};
+class BodyText extends React.Component<Props> {
+  render() {
+    const { text } = this.props;
+
+    return (
+      <Wrapper>
+        <span className='text'>{text}</span>
+      </Wrapper>
+    );
+  }
+}
 
 export default BodyText;

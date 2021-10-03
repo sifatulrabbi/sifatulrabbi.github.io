@@ -1,7 +1,10 @@
 import React from 'react';
 
-const Navbar: React.FC = () => {
-  return <div></div>;
-};
+interface Props {}
+class Navbar extends React.Component<Props> {
+  render() {
+    return <div></div>;
+  }
+}
 
 export default Navbar;
