@@ -8,8 +8,8 @@ const theme = {
         primary: 'hsl(212, 100%, 47%)',
     },
     fontFamily: {
-        heading: `'Fira Sans', sans-serif`,
-        body: `'Merriweather', sans-serif`,
+        heading: `'Montserrat', sans-serif`,
+        body: `'Noto Sans', sans-serif`,
     },
     fontSize: {
         body: '16px',
