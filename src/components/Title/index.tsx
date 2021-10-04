@@ -23,9 +23,9 @@ const Wrapper = styled.div<IStyled>`
       ? `font-size: ${theme.typography.fontSize.h2};`
       : variant === 'h3'
       ? `font-size: ${theme.typography.fontSize.h3};`
-      : `font-size: ${theme.typography.fontSize.body};
+      : `font-size: .8rem;
             text-transform: uppercase;
-            letter-spacing: 3px;`};
+            letter-spacing: 2px;`};
 `;
 
 class Title extends React.Component<Props> {
