@@ -114,7 +114,7 @@
   "debug.console.fontFamily": "'Fira Code Retina', default",
   "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
   "prettier.tabWidth": 4,
-  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.tabs.enabled": false,
   "prettier.jsxSingleQuote": true,
   "workbench.colorTheme": "Night Wolf [dark blue]",
   "cSpell.words": ["nobg"]

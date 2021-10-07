@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import GlobalStyles from './GlobalStyles';
 import theme from './theme';
 import { ThemeProvider } from 'styled-components';
-import { Navbar, Content, Hero, Sidebar } from './components';
+import { Navbar, Content, Hero, Sidebar, Overlay } from './components';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 interface Props {}
@@ -11,7 +11,7 @@ interface State {
   show: boolean;
 }
 
-class App extends React.Component<Props, State> {
+class App extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -31,11 +31,12 @@ class App extends React.Component<Props, State> {
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           <div id='app'>
-            <Navbar showSet={this.changeShow} show={show} />
+            <Navbar setShow={this.changeShow} show={show} />
             <Sidebar show={this.state.show} />
             <Content>
               <Hero />
             </Content>
+            <Overlay show={show} setShow={this.changeShow} />
           </div>
         </ThemeProvider>
       </Router>
