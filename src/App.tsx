@@ -24,12 +24,14 @@ class App extends React.Component<Props, State> {
   };
 
   render() {
+    const { show } = this.state;
+
     return (
       <Router>
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           <div id='app'>
-            <Navbar showSet={this.changeShow} />
+            <Navbar showSet={this.changeShow} show={show} />
             <Sidebar show={this.state.show} />
             <Content>
               <Hero />
