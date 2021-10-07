@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
         line-height: inherit;
         font-size: inherit;
     }
-    
+
     body {
         font-family: ${({ theme }) => theme.typography.fontFamily.body};
         color: ${({ theme }) => theme.palette.dark};
