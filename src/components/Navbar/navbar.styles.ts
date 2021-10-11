@@ -5,7 +5,7 @@ export const Wrapper = styled.nav<{ show: boolean; shrink: boolean }>`
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1500;
+  z-index: 1000;
   width: 100%;
   height: 100px;
   background-color: transparent;
@@ -27,34 +27,51 @@ export const Wrapper = styled.nav<{ show: boolean; shrink: boolean }>`
     margin-left: -10px;
   }
 
-  .navbar-list {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-gap: 1rem;
+  @media screen and (min-width: ${({ theme }) => theme.breakpoint}) {
+    padding: 0 3vw;
+  }
+`;
 
-    &-btn {
-      cursor: pointer;
-      padding: 0.5rem;
-      color: ${({ theme }) => theme.palette.light};
+export const MenuButton = styled.button<{ active: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  position: relative;
 
-      &:hover {
-        color: ${({ theme }) => theme.palette.main};
-      }
+  .bar {
+    display: block;
+    height: 3px;
+    background-color: ${({ theme }) => theme.palette.main};
+    border-radius: ${({ theme }) => theme.borderRadius};
+    transition: ${({ theme }) => theme.transition()};
+    position: absolute;
+    z-index: 1500;
+    top: 50%;
+    right: ${({ active }) => (active ? `50%` : `0`)};
 
-      &-label {
-        color: inherit;
-        transition: ${({ theme }) => theme.transition('color')};
-      }
+    &.small {
+      ${({ active }) =>
+        active
+          ? `width: 100%;
+            transform: translate(50%, -50%) rotate(-45deg);`
+          : `width: 80%;
+            transform: translate(0, 150%);`};
+    }
 
-      .colored {
-        color: ${({ theme }) => theme.palette.main};
-      }
+    &.big {
+      ${({ active }) =>
+        active
+          ? `width: 100%;
+            transform: translate(50%, -50%) rotate(45deg);`
+          : `width: 100%;
+            transform: translate(0, -300%);`};
     }
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint}) {
-    padding: 0 3vw;
+    display: none;
   }
 `;

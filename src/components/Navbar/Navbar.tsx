@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Wrapper } from './navbar.styles';
+import { NavMenu, NavMenuBtn, Overlay } from './components';
 import { logo } from '../../images';
-import { Caption } from '../Typography';
 import scrollDetect from '../../utils/scrollDetect';
 
 interface Props {}
-type ILinkItems = {
-  id: string;
-  name: string;
-}[];
+export type ILinkItems = { id: string; name: string }[];
 
 const Navbar: React.FC<Props> = () => {
   const [linkItems] = useState<ILinkItems>([
@@ -27,6 +24,7 @@ const Navbar: React.FC<Props> = () => {
   ]);
   const [shrink, setShrink] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(true);
+  const [active, setActive] = useState<boolean>(false);
 
   const updateHide = () => {
     setShow(scrollDetect());
@@ -38,6 +36,10 @@ const Navbar: React.FC<Props> = () => {
     }
   };
 
+  const handleMenuClick = (): void => {
+    setActive((prev) => !prev);
+  };
+
   useEffect(() => {
     document.addEventListener('scroll', updateHide);
   }, []);
@@ -45,18 +47,9 @@ const Navbar: React.FC<Props> = () => {
   return (
     <Wrapper show={show} shrink={shrink}>
       <img className='navbar-logo' src={logo} alt='logo' />
-      <ul className='navbar-list'>
-        {linkItems.map((item) => (
-          <li key={item.id}>
-            <button className='navbar-list-btn'>
-              <Caption classes='navbar-list-btn-label'>
-                {item.name}
-                <span className='colored'>{'()'}</span>
-              </Caption>
-            </button>
-          </li>
-        ))}
-      </ul>
+      <NavMenu active={active} linkItems={linkItems} />
+      <NavMenuBtn active={active} handleClick={handleMenuClick} />
+      <Overlay active={active} setActive={setActive} />
     </Wrapper>
   );
 };
