@@ -4,7 +4,8 @@ export const theme = {
     dark: 'hsl(212, 100%, 9%)',
     light: 'hsl(212, 100%, 93%)',
     grayish: 'hsl(212, 25%, 55%)',
-    transparent: 'hsla(190, 100%, 56%, 20%)',
+    transDark: 'hsla(212, 100%, 9%, 85%)',
+    transparent: 'hsla(190, 100%, 56%, 25%)',
   },
   typography: {
     fontFamily: {
