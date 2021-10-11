@@ -3,14 +3,12 @@ import theme from './theme';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle, { AppWrapper } from './GlobalStyles';
 /** Components */
-import { Hero, Navbar } from './components';
+import { Hero, Navbar, About } from './components';
 
 interface Props {}
 interface State {}
 
 class App extends React.Component<Props, State> {
-  state = {};
-
   render() {
     return (
       <ThemeProvider theme={theme}>
@@ -18,6 +16,7 @@ class App extends React.Component<Props, State> {
         <AppWrapper>
           <Navbar />
           <Hero />
+          <About />
         </AppWrapper>
       </ThemeProvider>
     );
