@@ -13,6 +13,6 @@ export const Wrapper = styled.section`
   .hero-desc {
     margin-bottom: 4rem;
     width: 100%;
-    max-width: 60ch;
+    max-width: 70ch;
   }
 `;
