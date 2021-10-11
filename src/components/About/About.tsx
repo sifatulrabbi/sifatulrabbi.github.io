@@ -10,7 +10,7 @@ class About extends Component<Props, State> {
   render() {
     return (
       <Wrapper>
-        <SectionTitle label={'About Me'} index={1} />
+        <SectionTitle label={'About Me'} index={2} />
         <article className='grid'>
           <Body1 classes='about-me' secondary>
             Hello! My name is Brittany and I enjoy creating things that live on
