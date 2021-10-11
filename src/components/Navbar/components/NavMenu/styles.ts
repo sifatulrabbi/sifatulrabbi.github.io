@@ -34,9 +34,8 @@ export const Wrapper = styled.ul<{ active: boolean }>`
     right: 0;
     bottom: 0;
     height: 100vh;
-    width: max-content;
+    width: 50%;
     padding: 2rem;
-    align-items: flex-end;
     background-color: ${({ theme }) => theme.palette.dark};
     box-shadow: ${({ theme }) => theme.shadow[1]};
     transition: ${({ theme }) => theme.transition('transform')};

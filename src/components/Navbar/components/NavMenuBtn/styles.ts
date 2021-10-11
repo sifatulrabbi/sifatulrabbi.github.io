@@ -5,8 +5,9 @@ export const Wrapper = styled.button<{ active: boolean }>`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 35px;
-  width: 35px;
+  z-index: 1500;
+  height: 40px;
+  width: 40px;
   position: relative;
 
   .bar {
@@ -16,7 +17,6 @@ export const Wrapper = styled.button<{ active: boolean }>`
     border-radius: ${({ theme }) => theme.borderRadius};
     transition: ${({ theme }) => theme.transition()};
     position: absolute;
-    z-index: 1500;
     top: 50%;
     right: ${({ active }) => (active ? `50%` : `0`)};
 
