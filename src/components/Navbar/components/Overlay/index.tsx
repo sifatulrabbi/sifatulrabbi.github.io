@@ -11,11 +11,13 @@ const Wrapper = styled.div<{ active: boolean }>`
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 120vh;
   width: 100vh;
   z-index: -2;
-  background-color: rgba(0, 0, 0, 0.5);
-  ${({ active }) => (active ? `display: block;` : `display: none`)}
+  background-color: ${({ theme }) => theme.palette.transDark};
+  transition: ${({ theme }) => theme.transition('transform')};
+  transform: ${({ active }) =>
+    active ? `translate(0%, 0%)` : `translate(150%, 0%)`};
 `;
 
 class Overlay extends Component<Props, State> {

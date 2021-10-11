@@ -34,12 +34,16 @@ export const Wrapper = styled.ul<{ active: boolean }>`
     right: 0;
     bottom: 0;
     height: 100vh;
-    width: 50%;
+    width: 70%;
     padding: 2rem;
     background-color: ${({ theme }) => theme.palette.dark};
     box-shadow: ${({ theme }) => theme.shadow[1]};
-    transition: ${({ theme }) => theme.transition('transform')};
+    transition: ${({ theme }) => theme.transition('transform', true)};
     transform: ${({ active }) =>
       active ? `translate(0, 0)` : `translate(150%, 0%)`};
+
+    .list-label {
+      font-size: 1rem;
+    }
   }
 `;
