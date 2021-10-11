@@ -13,9 +13,8 @@ const Wrapper = styled.div<{ active: boolean }>`
   right: 0;
   height: 100vh;
   width: 100vh;
-  z-index: -1;
-  backdrop-filter: blur(5px);
-  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -2;
+  background-color: rgba(0, 0, 0, 0.5);
   ${({ active }) => (active ? `display: block;` : `display: none`)}
 `;
 
