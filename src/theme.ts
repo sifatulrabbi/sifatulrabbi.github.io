@@ -4,7 +4,7 @@ export const theme = {
     dark: 'hsl(212, 100%, 9%)',
     light: 'hsl(212, 100%, 93%)',
     grayish: 'hsl(212, 25%, 55%)',
-    transDark: 'hsla(212, 100%, 9%, 85%)',
+    transDark: 'hsla(212, 100%, 9%, 90%)',
     transparent: 'hsla(190, 100%, 56%, 25%)',
   },
   typography: {
@@ -23,8 +23,8 @@ export const theme = {
   },
   breakpoint: '900px',
   borderRadius: '5px',
-  transition: function (prop: string = 'all') {
-    return `${prop} 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms`;
+  transition: function (prop: string = 'all', long?: true) {
+    return `${prop} ${long ? '1s' : '350ms'} cubic-bezier(0.4, 0, 0.2, 1) 0ms`;
   },
   padding: function () {
     return `
