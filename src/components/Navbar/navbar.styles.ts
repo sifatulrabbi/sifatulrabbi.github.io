@@ -32,6 +32,6 @@ export const Wrapper = styled.nav<{
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint}) {
-    padding: 0 3vw;
+    padding: 0 5vw;
   }
 `;

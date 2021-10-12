@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Wrapper } from './styles';
 import { Caption } from '../../../Typography';
 import type { ILinkItems } from '../../Navbar';
+import Button from '../../../Button';
 
 interface Props {
   active: boolean;
@@ -25,6 +26,7 @@ class NavMenu extends Component<Props, State> {
             </button>
           </li>
         ))}
+        <Button label='Resume' />
       </Wrapper>
     );
   }
