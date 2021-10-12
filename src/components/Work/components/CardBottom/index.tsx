@@ -1,13 +1,44 @@
 import React, { Component } from 'react';
+import { IconType } from 'react-icons';
+import styled from 'styled-components';
+import { Caption } from '../../../Typography';
 
-interface Props {}
+interface Props {
+  tags: string[];
+  links: {
+    icon: IconType;
+    link: string;
+  }[];
+  reverse?: boolean;
+}
 interface State {}
 
+const Bottom = styled.div<{ reverse?: boolean }>``;
+
 class CardBottom extends Component<Props, State> {
-  state = {};
+  openLink(link: string) {
+    window.open(link, '_blank');
+  }
 
   render() {
-    return <div></div>;
+    return (
+      <Bottom>
+        <div className='tags'>
+          {this.props.tags.map((tag) => (
+            <Caption key={tag} secondary>
+              {tag}
+            </Caption>
+          ))}
+        </div>
+        <div className='links'>
+          {this.props.links.map((link) => (
+            <button key={link.link} onClick={() => this.openLink(link.link)}>
+              <link.icon />
+            </button>
+          ))}
+        </div>
+      </Bottom>
+    );
   }
 }
 
