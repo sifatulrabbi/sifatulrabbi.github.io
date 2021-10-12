@@ -18,6 +18,11 @@ export const TitleH3 = styled(TitleH2)<IStyles>`
   font-size: ${({ theme }) => theme.typography.fontSize.h3};
 `;
 
+export const TitleH4 = styled(TitleH2)<IStyles>`
+  ${TitleH3};
+  font-size: ${({ theme }) => theme.typography.fontSize.h4};
+`;
+
 export const Body1Wrapper = styled.p<IStyles>`
   font-weight: 400;
   font-size: ${({ theme }) => theme.typography.fontSize.body1};

@@ -16,6 +16,7 @@ export const theme = {
       h1: 'clamp(2.6rem, 4.5vw, 5rem)',
       h2: '2rem',
       h3: '1.7rem',
+      h4: '1.3rem',
       body1: '1rem',
       body2: '.9rem',
       caption: '.8rem',
