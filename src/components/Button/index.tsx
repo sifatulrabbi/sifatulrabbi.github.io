@@ -26,7 +26,7 @@ class Button extends React.Component<Props, State> {
         onClick={this.handleClick.bind(this)}
         className={classes}
       >
-        <Caption big>{label}</Caption>
+        <Caption>{label}</Caption>
       </Wrapper>
     );
   }
