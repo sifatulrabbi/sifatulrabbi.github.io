@@ -17,7 +17,7 @@ export const Wrapper = styled.nav<{
   padding: 0 1.5rem;
   transform: translateY(${({ show }) => (show ? '0%' : '-100%')});
   transition: ${({ theme }) => theme.transition()};
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(15px);
 
   ${({ shrink, theme }) =>
     shrink
