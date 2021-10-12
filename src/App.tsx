@@ -20,6 +20,7 @@ class App extends React.Component<Props, State> {
           <Hero />
           <Work />
           <About />
+          {/** TODO: #42 Contact section */}
         </AppWrapper>
       </ThemeProvider>
     );
