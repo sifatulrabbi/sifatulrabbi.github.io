@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import { Title } from './styles';
 import { Caption, H4 } from '../../../Typography';
 
 interface Props {
@@ -8,14 +8,12 @@ interface Props {
 }
 interface State {}
 
-const Title = styled.div<{ reverse?: boolean }>``;
-
 class CardTitle extends Component<Props, State> {
   state = {};
 
   render() {
     return (
-      <Title>
+      <Title reverse={this.props.reverse}>
         <Caption>Featured Project</Caption>
         <H4>{this.props.title}</H4>
       </Title>
