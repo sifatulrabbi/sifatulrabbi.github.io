@@ -6,7 +6,7 @@ import { WorkCard } from './components';
 
 interface Props {}
 interface State {
-  works: WorksData;
+  works: WorksData[];
 }
 
 class Works extends Component<Props, State> {
@@ -22,8 +22,12 @@ class Works extends Component<Props, State> {
       <Wrapper>
         <SectionTitle label="Things I've built" index={1} />
         <div className='cards'>
-          {[0, 1, 2, 3].map((index) => (
-            <WorkCard key={index + Math.random() * 100} />
+          {this.state.works.map((work, index) => (
+            <WorkCard
+              key={work.id}
+              work={work}
+              reverse={index === 1 ? true : false}
+            />
           ))}
         </div>
       </Wrapper>

@@ -25,14 +25,17 @@ class CardBottom extends Component<Props, State> {
       <Bottom>
         <div className='tags'>
           {this.props.tags.map((tag) => (
-            <Caption key={tag} secondary>
+            <Caption key={`${tag}${Math.random() * 1000}`} secondary>
               {tag}
             </Caption>
           ))}
         </div>
         <div className='links'>
           {this.props.links.map((link) => (
-            <button key={link.link} onClick={() => this.openLink(link.link)}>
+            <button
+              key={`${link.link}${Math.random() * 1000}`}
+              onClick={() => this.openLink(link.link)}
+            >
               <link.icon />
             </button>
           ))}

@@ -15,9 +15,12 @@ class App extends React.Component<Props, State> {
         <GlobalStyle />
         <AppWrapper>
           <Navbar />
+          {/* TODO: #41 Sticky links in desktop mode */}
+          {/* TODO: #40 Sticky mailto in desktop mode */}
           <Hero />
           <Work />
           <About />
+          {/** TODO: #42 Contact section */}
         </AppWrapper>
       </ThemeProvider>
     );
