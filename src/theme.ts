@@ -25,7 +25,7 @@ export const theme = {
   breakpoint: '900px',
   borderRadius: '3px',
   transition: function (prop: string = 'all', long?: true) {
-    return `${prop} ${long ? '1s' : '350ms'} cubic-bezier(0.4, 0, 0.2, 1) 0ms`;
+    return `${prop} ${long ? '.8s' : '350ms'} cubic-bezier(0.4, 0, 0.2, 1) 0ms`;
   },
   padding: function () {
     return `
