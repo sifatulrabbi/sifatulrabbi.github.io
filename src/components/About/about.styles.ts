@@ -20,6 +20,22 @@ export const Wrapper = styled.section`
   .about-me {
     width: 100%;
     max-width: 57ch;
+
+    .skills-list {
+      margin-top: 2rem;
+      width: 100%;
+      height: max-content;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0.5rem 0;
+    }
+
+    .skills-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      color: ${({ theme }) => theme.palette.main};
+    }
   }
 
   .imgWrapper {
@@ -31,10 +47,9 @@ export const Wrapper = styled.section`
     background-image: url(${myImg});
     background-size: cover;
     background-position: center;
-    background-blend-mode: soft-light;
-    background-color: ${({ theme }) => theme.palette.transparent};
+    ${({ theme }) => theme.overlay()};
 
-    &::before {
+    &::after {
       content: '';
       position: absolute;
       height: 100%;
@@ -51,7 +66,7 @@ export const Wrapper = styled.section`
     &:hover {
       background-blend-mode: normal;
 
-      &::before {
+      &::after {
         transform: translate(5%, 5%);
       }
     }
