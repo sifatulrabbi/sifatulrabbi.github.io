@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Wrapper } from './about.styles';
 import SectionTitle from '../SectionTitle/SectionTitle';
-import { Body1 } from '../Typography';
+import { Body1, Caption } from '../Typography';
+import data from './data';
+import { FiChevronRight } from 'react-icons/fi';
+import { v4 as uuid } from 'uuid';
 
 interface Props {}
 interface State {}
@@ -12,27 +15,36 @@ class About extends Component<Props, State> {
       <Wrapper>
         <SectionTitle label={'About Me'} index={2} />
         <article className='grid'>
-          <Body1 classes='about-me' secondary>
-            Hello! My name is Brittany and I enjoy creating things that live on
-            the internet. My interest in web development started back in 2012
-            when I decided to try editing custom Tumblr themes — turns out
-            hacking together a custom reblog button taught me a lot about HTML &
-            CSS!
-            <br />
-            <br />
-            Fast-forward to today, and I’ve had the privilege of working at an
-            advertising agency, a start-up, a huge corporation, and a
-            student-led design studio. My main focus these days is building
-            accessible, inclusive products and digital experiences at
-            Upstatement for a variety of clients.
-            <br />
-            <br />
-            I also recently launched a course that covers everything you need to
-            build a web app with the Spotify API using Node & React.
-            <br />
-            <br />
-            Here are a few technologies I’ve been working with recently:
-          </Body1>
+          <div className='about-me'>
+            <Body1 secondary>
+              I'm Md Sifatul Islam Rabbi, self-taught and a passionate web
+              developer from Bangladesh. I'm currently working as a freelancer.
+              <br />
+              <br />I always love technology, and I like building things. My web
+              development journey started as I was trying to understand why some
+              website doesn't look good on a mobile phone. Then I learned about
+              HTML, CSS, and JavaScript. I learned how I could use these web
+              technologies to build my websites and started loving web
+              development.
+              <br />
+              <br />
+              As a web developer, I love the ReactJS framework not only that I
+              prefer styling my website with custom CSS codes. I make sure to
+              use the latest and best practices. I'm focused on the front-end
+              and creating the best and smoothest UI for websites.
+              <br />
+              <br />
+              Here is a list of technologies I'm very good at:
+            </Body1>
+            <div className='skills-list'>
+              {data.skills.map((skill) => (
+                <div key={uuid()} className='skills-item'>
+                  <FiChevronRight />
+                  <Caption secondary>{skill}</Caption>
+                </div>
+              ))}
+            </div>
+          </div>
           <div className='imgWrapper'></div>
         </article>
       </Wrapper>

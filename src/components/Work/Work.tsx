@@ -3,6 +3,7 @@ import { Wrapper } from './work.styles';
 import data, { WorksData } from './data';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { WorkCard } from './components';
+import { v4 as uuid } from 'uuid';
 
 interface Props {}
 interface State {
@@ -24,7 +25,7 @@ class Works extends Component<Props, State> {
         <div className='cards'>
           {this.state.works.map((work, index) => (
             <WorkCard
-              key={work.id}
+              key={uuid()}
               work={work}
               reverse={index === 1 ? true : false}
             />

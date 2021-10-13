@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import { Desc } from './styles';
 import { Body2 } from '../../../Typography';
 
 interface Props {
   desc: string;
-  reverse?: boolean;
+  reverse: boolean;
 }
 interface State {}
-
-const Desc = styled.div<{ reverse?: boolean }>``;
 
 class CardDesc extends Component<Props, State> {
   render() {

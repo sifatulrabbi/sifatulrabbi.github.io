@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { Bottom } from './styles';
 import { IconType } from 'react-icons';
-import styled from 'styled-components';
 import { Caption } from '../../../Typography';
+import { v4 as uuid } from 'uuid';
 
 interface Props {
   tags: string[];
@@ -9,11 +10,9 @@ interface Props {
     icon: IconType;
     link: string;
   }[];
-  reverse?: boolean;
+  reverse: boolean;
 }
 interface State {}
-
-const Bottom = styled.div<{ reverse?: boolean }>``;
 
 class CardBottom extends Component<Props, State> {
   openLink(link: string) {
@@ -22,10 +21,10 @@ class CardBottom extends Component<Props, State> {
 
   render() {
     return (
-      <Bottom>
+      <Bottom reverse={this.props.reverse}>
         <div className='tags'>
           {this.props.tags.map((tag) => (
-            <Caption key={`${tag}${Math.random() * 1000}`} secondary>
+            <Caption key={uuid()} secondary>
               {tag}
             </Caption>
           ))}
@@ -33,10 +32,11 @@ class CardBottom extends Component<Props, State> {
         <div className='links'>
           {this.props.links.map((link) => (
             <button
-              key={`${link.link}${Math.random() * 1000}`}
+              key={uuid()}
               onClick={() => this.openLink(link.link)}
+              className='btn'
             >
-              <link.icon />
+              <link.icon className='btn-icon' />
             </button>
           ))}
         </div>

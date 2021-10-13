@@ -1,11 +1,13 @@
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import { IconType } from 'react-icons';
+import { testImg } from '../../images';
 
 export type WorksData = {
   id: string;
   name: string;
   desc: string;
   tags: string[];
+  img: string;
   links: {
     icon: IconType;
     link: string;
@@ -18,6 +20,7 @@ const data: WorksData[] = [
     name: 'Arkanoid Game',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
     tags: ['TypeScript', 'CSS', 'HTML'],
+    img: testImg,
     links: [
       { icon: FiGithub, link: 'hello' },
       { icon: FiExternalLink, link: 'hello' },
@@ -28,6 +31,7 @@ const data: WorksData[] = [
     name: 'Social media app',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
     tags: ['React', 'JavaScript', 'styled components', 'firebase'],
+    img: testImg,
     links: [
       { icon: FiGithub, link: 'hello' },
       { icon: FiExternalLink, link: 'hello' },
@@ -38,6 +42,7 @@ const data: WorksData[] = [
     name: 'Full stack blog',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
     tags: ['React', 'JavaScript', 'styled components', 'firebase'],
+    img: testImg,
     links: [
       { icon: FiGithub, link: 'hello' },
       { icon: FiExternalLink, link: 'hello' },
