@@ -52,6 +52,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "deploy:push": "git push && yarn run deploy"
+    "deploy:test": "echo test script working"
   }
 }
