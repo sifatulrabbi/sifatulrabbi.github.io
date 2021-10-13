@@ -16,6 +16,6 @@ export const Wrapper = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    grid-gap: 4rem;
+    grid-gap: 15vh;
   }
 `;
