@@ -1,5 +1,5 @@
 import React from 'react';
-import { TitleH1, TitleH2 } from './styles';
+import { TitleH2 } from './styles';
 import { Props } from './types';
 
 const H2 = (props: Props) => {
