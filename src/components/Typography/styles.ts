@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { IStyles } from './types';
 
 export const TitleH1 = styled.span<IStyles>`
+  display: block;
   font-size: ${({ theme }) => theme.typography.fontSize.h1};
   color: ${({ theme, secondary }) =>
     secondary ? theme.palette.grayish : theme.palette.light};

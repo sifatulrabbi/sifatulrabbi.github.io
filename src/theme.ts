@@ -16,7 +16,7 @@ export const theme = {
 
     fontSize: {
       h1: 'clamp(2.6rem, 4.5vw, 5rem)',
-      h2: '2rem',
+      h2: '2.3rem',
       h3: '1.7rem',
       h4: '1.3rem',
       body1: '1rem',
