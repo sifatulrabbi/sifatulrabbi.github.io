@@ -12,6 +12,7 @@ export const Header = styled.header`
 
   .label {
     position: relative;
+    width: max-content;
 
     &::before {
       content: '';

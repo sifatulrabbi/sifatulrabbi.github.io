@@ -3,7 +3,7 @@ import theme from './theme';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle, { AppWrapper } from './GlobalStyles';
 /** Components */
-import { Hero, Navbar, About, Work, Contact } from './components';
+import { Hero, Navbar, About, Work, Contact, Footer } from './components';
 
 interface Props {}
 interface State {}
@@ -21,6 +21,7 @@ class App extends React.Component<Props, State> {
           <Work />
           <About />
           <Contact />
+          <Footer />
         </AppWrapper>
       </ThemeProvider>
     );
