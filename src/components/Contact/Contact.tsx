@@ -17,7 +17,7 @@ class Contact extends Component<Props, State> {
           is always open. Whether you have a question or just want to say hi,
           I’ll try my best to get back to you!
         </Body1>
-        <Button label='Say Hello!' classes='contact-btn' />
+        <Button big label='Say Hello!' classes='contact-btn' />
       </Wrapper>
     );
   }
