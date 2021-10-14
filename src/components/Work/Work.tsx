@@ -4,8 +4,11 @@ import data, { WorksData } from './data';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { WorkCard } from './components';
 import { v4 as uuid } from 'uuid';
+import { IData } from '../../libs/getRepoData';
 
-interface Props {}
+interface Props {
+  data: IData[];
+}
 interface State {
   works: WorksData[];
 }
@@ -19,6 +22,8 @@ class Works extends Component<Props, State> {
   }
 
   render() {
+    console.log(this.props.data);
+
     return (
       <Wrapper>
         <SectionTitle label="Things I've built" index={1} />
