@@ -11,7 +11,7 @@ export const theme = {
   typography: {
     fontFamily: {
       primary: `'Epilogue', Helvetica, sans-serif`,
-      secondary: `'jetBrains Mono', monospace`,
+      secondary: `'Fira Code', monospace`,
     },
 
     fontSize: {

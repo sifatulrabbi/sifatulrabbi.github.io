@@ -15,11 +15,7 @@ const Works: React.FC = () => {
       <SectionTitle label="Things I've built" index={1} />
       <div className='cards'>
         {works.map((work, index) => (
-          <WorkCard
-            key={uuid()}
-            work={work}
-            reverse={index === 1 ? true : false}
-          />
+          <WorkCard key={uuid()} work={work} reverse={index % 2 !== 0} />
         ))}
       </div>
     </Wrapper>
