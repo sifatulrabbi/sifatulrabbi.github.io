@@ -4,12 +4,8 @@ import { Props } from './types';
 
 const H1 = (props: Props) => {
   return (
-    <h1>
-      <TitleH1
-        secondary={props.secondary}
-        gutterBottom={props.gutterBottom}
-        className={props.classes}
-      >
+    <h1 className={props.classes}>
+      <TitleH1 secondary={props.secondary} gutterBottom={props.gutterBottom}>
         {props.children}
       </TitleH1>
     </h1>
