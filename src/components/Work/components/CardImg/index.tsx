@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BGImg } from './styles';
 
 interface Props {
   img: string;
 }
-interface State {}
 
-class CardImg extends Component<Props, State> {
-  render() {
-    return <BGImg img={this.props.img}></BGImg>;
-  }
-}
+const CardImg: React.FC<Props> = ({ img }) => {
+  return <BGImg img={img}></BGImg>;
+};
 
 export default CardImg;

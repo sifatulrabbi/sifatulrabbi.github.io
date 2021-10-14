@@ -8,28 +8,19 @@ interface Props {
   label: string;
   classes?: string;
 }
-interface State {}
 
-class Button extends React.Component<Props, State> {
-  handleClick(e: React.SyntheticEvent<HTMLButtonElement>) {
-    if (this.props.callBack) {
-      return this.props.callBack(e);
+const Button: React.FC<Props> = ({ big, callBack, label, classes }) => {
+  const handleClick = (e: React.SyntheticEvent<HTMLButtonElement>) => {
+    if (callBack) {
+      return callBack(e);
     }
-  }
+  };
 
-  render() {
-    const { big, classes, label } = this.props;
-
-    return (
-      <Wrapper
-        big={big}
-        onClick={this.handleClick.bind(this)}
-        className={classes}
-      >
-        <Caption>{label}</Caption>
-      </Wrapper>
-    );
-  }
-}
+  return (
+    <Wrapper big={big} onClick={handleClick} className={classes}>
+      <Caption>{label}</Caption>
+    </Wrapper>
+  );
+};
 
 export default Button;
