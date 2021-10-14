@@ -4,10 +4,9 @@ import { NavMenu, NavMenuBtn, Overlay } from './components';
 import { logo } from '../../images';
 import scrollDetect from '../../utils/scrollDetect';
 
-interface Props {}
 export type ILinkItems = { id: string; name: string }[];
 
-const Navbar: React.FC<Props> = () => {
+const Navbar: React.FC = () => {
   const [linkItems] = useState<ILinkItems>([
     {
       id: 'work',

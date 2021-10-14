@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
   active: boolean;
   setActive: (arg: boolean) => void;
 }
-interface State {}
 
 const Wrapper = styled.div<{ active: boolean }>`
   position: fixed;
@@ -20,19 +19,12 @@ const Wrapper = styled.div<{ active: boolean }>`
     active ? `translate(0%, 0%)` : `translate(150%, 0%)`};
 `;
 
-class Overlay extends Component<Props, State> {
-  handleClick() {
-    this.props.setActive(false);
-  }
+const Overlay: React.FC<Props> = ({ setActive, active }) => {
+  const handleClick = (): void => {
+    setActive(false);
+  };
 
-  render() {
-    return (
-      <Wrapper
-        active={this.props.active}
-        onClick={this.handleClick.bind(this)}
-      />
-    );
-  }
-}
+  return <Wrapper active={active} onClick={handleClick} />;
+};
 
 export default Overlay;
