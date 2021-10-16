@@ -11,9 +11,9 @@ interface Props {
 
 const Button: React.FC<Props> = ({ big, callBack, label, classes }) => {
   const handleClick = (e: React.SyntheticEvent<HTMLButtonElement>) => {
-    if (callBack) {
+    if (typeof callBack === 'function') {
       return callBack(e);
-    }
+    } else return callBack;
   };
 
   return (
