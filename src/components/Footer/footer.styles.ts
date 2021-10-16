@@ -9,6 +9,7 @@ export const Wrapper = styled.footer`
   align-items: center;
   grid-gap: 0.5rem;
   text-align: center;
+  padding-top: 10vh;
 
   button {
     cursor: pointer;
