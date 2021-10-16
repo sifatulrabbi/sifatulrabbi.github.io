@@ -1,3 +1,9 @@
 export { default as logo } from './logo.png';
 export { default as myImg } from './my-img.png';
 export { default as testImg } from './test-img.jpg';
+export { default as myPortfolioWebsite } from './my-portfolio-website.png';
+export { default as snakeGame } from './snake-game.png';
+export { default as todoApp } from './todo-app-fm.jpg';
+export { default as socialMediaApp } from './social-media-app.png';
+export { default as fullstackBlog } from './fullstack-blog.png';
+export { default as arkanoidGame } from './arkanoid-game.jpg';
