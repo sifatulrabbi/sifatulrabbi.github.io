@@ -1,19 +1,19 @@
 import React from 'react';
 import { Wrapper } from './styles';
 import { Caption } from '../../../Typography';
-import type { ILinkItems } from '../../Navbar';
+import type { Data } from '../../data';
 import Button from '../../../Button';
 import { gotoSection } from '../../../../utils';
 
 interface Props {
   active: boolean;
-  linkItems: ILinkItems;
-  handleMenuClick: () => void;
+  linkItems: Data;
+  setSidebarActive: (arg: boolean) => void;
 }
 
-const NavMenu: React.FC<Props> = ({ active, linkItems, handleMenuClick }) => {
+const NavMenu: React.FC<Props> = ({ active, linkItems, setSidebarActive }) => {
   const handleClick = (id: string) => {
-    handleMenuClick();
+    setSidebarActive(false);
 
     setTimeout(() => {
       gotoSection(id);

@@ -43,11 +43,11 @@ export const theme = {
     return `${prop} ${long ? '.8s' : '350ms'} cubic-bezier(0.4, 0, 0.2, 1) 0ms`;
   },
 
-  padding: function () {
+  padding: function (override?: string) {
     return `
-    padding: 1.5rem;
+    padding: ${override ? override : '1.5rem'} 1.5rem;
     @media screen and (min-width: ${this.breakpoint}) {
-      padding: 1.5rem 18vw;
+      padding: ${override ? override : '1.5rem'} 18vw;
     }
     `;
   },

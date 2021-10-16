@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const AppWrapper = styled.main`
-  ${({ theme }) => theme.padding()};
+  ${({ theme }) => theme.padding('100px')};
   width: 100%;
   height: max-content;
   min-height: 100vh;

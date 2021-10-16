@@ -1,4 +1,11 @@
-import { testImg } from '../../images';
+import {
+  fullstackBlog,
+  arkanoidGame,
+  snakeGame,
+  myPortfolioWebsite,
+  socialMediaApp,
+  todoApp,
+} from '../../images';
 
 export type WorksData = {
   name: string;
@@ -16,7 +23,7 @@ const data: WorksData[] = [
     name: 'Arkanoid Game',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
     tags: ['TypeScript', 'CSS', 'HTML'],
-    img: testImg,
+    img: arkanoidGame,
     links: {
       github: 'https://github.com/temujins/ts-arkanoid-game',
       external: 'https://temujins.github.io/ts-arkanoid-game/',
@@ -27,7 +34,7 @@ const data: WorksData[] = [
     name: 'Full Stack blog',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
     tags: ['React', 'JavaScript', 'Styled Components', 'MongoDB'],
-    img: testImg,
+    img: fullstackBlog,
     links: {
       github: 'https://github.com/temujins/full-stack-blog-app',
       external: '',
@@ -38,7 +45,7 @@ const data: WorksData[] = [
     name: 'Social Media website',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
     tags: ['React', 'JavaScript', 'Styled Components', 'Firebase'],
-    img: testImg,
+    img: socialMediaApp,
     links: {
       github: 'https://github.com/temujins/social_media_app',
       external: 'https://socialize-reactapp.web.app/',
@@ -49,7 +56,7 @@ const data: WorksData[] = [
     name: 'My Portfolio website',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
     tags: ['TypeScript', 'React', 'Styled Components'],
-    img: testImg,
+    img: myPortfolioWebsite,
     links: {
       github: 'https://github.com/temujins/temujins.github.io',
       external: '',
@@ -60,7 +67,7 @@ const data: WorksData[] = [
     name: 'Todo app',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
     tags: ['TypeScript', 'React', 'Styled Components'],
-    img: testImg,
+    img: todoApp,
     links: {
       github: 'https://github.com/temujins/todo-app-fm',
       external: 'https://react-ts-todo-app.vercel.app/',
@@ -71,7 +78,7 @@ const data: WorksData[] = [
     name: 'Simple Snake Game',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
     tags: ['JavaScript', 'HTML', 'CSS'],
-    img: testImg,
+    img: snakeGame,
     links: {
       github: 'https://github.com/temujins/snake-game',
       external: '',

@@ -69,7 +69,7 @@ export const SocialLinksWrapper = styled(Div)`
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoint}) {
     position: absolute;
-    bottom: 8rem;
+    bottom: 13rem;
     left: 50%;
     transform: translateX(-50%) rotate(0);
 
