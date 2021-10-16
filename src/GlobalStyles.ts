@@ -55,6 +55,7 @@ export const AppWrapper = styled.main`
   align-items: center;
   justify-content: flex-start;
   grid-gap: 40vh;
+  position: relative;
 `;
 
 export default GlobalStyle;
