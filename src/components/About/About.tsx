@@ -8,7 +8,7 @@ import { v4 as uuid } from 'uuid';
 
 const About: React.FC = () => {
   return (
-    <Wrapper>
+    <Wrapper id='about'>
       <SectionTitle label={'About Me'} index={2} />
       <article className='grid'>
         <div className='about-me'>

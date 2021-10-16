@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper id='contact'>
       <Caption big>03. What's next?</Caption>
       <H2 classes='contact-title'>Get in touch</H2>
       <Body1 classes='contact-desc' secondary>
