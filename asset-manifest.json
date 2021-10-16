@@ -1,19 +1,24 @@
 {
   "files": {
-    "main.js": "/static/js/main.7c5c55d0.chunk.js",
-    "main.js.map": "/static/js/main.7c5c55d0.chunk.js.map",
+    "main.js": "/static/js/main.90869bf1.chunk.js",
+    "main.js.map": "/static/js/main.90869bf1.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a21e7d97.js",
     "runtime-main.js.map": "/static/js/runtime-main.a21e7d97.js.map",
-    "static/js/2.e03941e6.chunk.js": "/static/js/2.e03941e6.chunk.js",
-    "static/js/2.e03941e6.chunk.js.map": "/static/js/2.e03941e6.chunk.js.map",
+    "static/js/2.c46bfdd4.chunk.js": "/static/js/2.c46bfdd4.chunk.js",
+    "static/js/2.c46bfdd4.chunk.js.map": "/static/js/2.c46bfdd4.chunk.js.map",
     "index.html": "/index.html",
-    "static/js/2.e03941e6.chunk.js.LICENSE.txt": "/static/js/2.e03941e6.chunk.js.LICENSE.txt",
+    "static/js/2.c46bfdd4.chunk.js.LICENSE.txt": "/static/js/2.c46bfdd4.chunk.js.LICENSE.txt",
+    "static/media/arkanoid-game.43006a7a.jpg": "/static/media/arkanoid-game.43006a7a.jpg",
+    "static/media/fullstack-blog.20178670.png": "/static/media/fullstack-blog.20178670.png",
     "static/media/my-img.f105ab1b.png": "/static/media/my-img.f105ab1b.png",
-    "static/media/test-img.2a7e3b79.jpg": "/static/media/test-img.2a7e3b79.jpg"
+    "static/media/my-portfolio-website.ba56b10e.png": "/static/media/my-portfolio-website.ba56b10e.png",
+    "static/media/social-media-app.66ad4223.png": "/static/media/social-media-app.66ad4223.png",
+    "static/media/test-img.2a7e3b79.jpg": "/static/media/test-img.2a7e3b79.jpg",
+    "static/media/todo-app-fm.b2dc38ea.jpg": "/static/media/todo-app-fm.b2dc38ea.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.a21e7d97.js",
-    "static/js/2.e03941e6.chunk.js",
-    "static/js/main.7c5c55d0.chunk.js"
+    "static/js/2.c46bfdd4.chunk.js",
+    "static/js/main.90869bf1.chunk.js"
   ]
 }
