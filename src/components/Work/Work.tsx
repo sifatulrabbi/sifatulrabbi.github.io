@@ -11,7 +11,7 @@ const Works: React.FC = () => {
   const [works] = useState<Work>(data);
 
   return (
-    <Wrapper>
+    <Wrapper id='work'>
       <SectionTitle label="Things I've built" index={1} />
       <div className='cards'>
         {works.map((work, index) => (

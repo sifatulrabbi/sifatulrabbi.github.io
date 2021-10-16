@@ -54,8 +54,14 @@ export const AppWrapper = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  grid-gap: 40vh;
+  grid-gap: 20vh;
   position: relative;
+
+  #work,
+  #about,
+  #contact {
+    padding-top: 20vh;
+  }
 `;
 
 export default GlobalStyle;

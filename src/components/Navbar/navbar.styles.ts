@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.nav<{
   show: boolean;
   shrink: boolean;
+  sidebarActive: boolean;
 }>`
   position: fixed;
   top: 0;
@@ -15,7 +16,10 @@ export const Wrapper = styled.nav<{
   justify-content: space-between;
   align-items: center;
   padding: 0 1.5rem;
-  transform: translateY(${({ show }) => (show ? '0%' : '-100%')});
+  transform: translateY(
+    ${({ sidebarActive, show }) =>
+      sidebarActive ? '0%' : show ? '0%' : '-100%'}
+  );
   transition: ${({ theme }) => theme.transition()};
   backdrop-filter: blur(15px);
 

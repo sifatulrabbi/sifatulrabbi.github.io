@@ -5,7 +5,7 @@ import { FiLinkedin, FiTwitter, FiGithub, FiFacebook } from 'react-icons/fi';
 const SocialLinks: React.FC = () => {
   const [links] = useState([
     { icon: FiGithub, link: 'https://github.com/temujins' },
-    { icon: FiLinkedin, link: 'https://linkedin.com/in/' },
+    { icon: FiLinkedin, link: 'https://www.linkedin.com/in/temujins/' },
     { icon: FiTwitter, link: 'https://twitter.com/sifatul_rabbi/' },
     { icon: FiFacebook, link: 'https://facebook.com/ttemujinRabbi' },
   ]);
