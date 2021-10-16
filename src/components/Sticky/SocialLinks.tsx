@@ -18,7 +18,7 @@ const SocialLinks: React.FC = () => {
     <SocialLinksWrapper>
       {links.map((link) => (
         <button key={link.link} onClick={() => gotoLink(link.link)}>
-          <link.icon />
+          <link.icon className='icon' />
         </button>
       ))}
     </SocialLinksWrapper>

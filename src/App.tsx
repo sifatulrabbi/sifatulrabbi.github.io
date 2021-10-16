@@ -2,7 +2,8 @@ import React from 'react';
 import theme from './theme';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle, { AppWrapper } from './GlobalStyles';
-import { Hero, Navbar, About, Work, Contact, Footer } from './components';
+// prettier-ignore
+import { Hero, Navbar, About, Work, Contact, Footer, StickyEmail, StickyLinks, } from './components';
 
 const App: React.FC = () => {
   return (
@@ -10,8 +11,8 @@ const App: React.FC = () => {
       <GlobalStyle />
       <AppWrapper>
         <Navbar />
-        {/* TODO: #41 Sticky links in desktop mode */}
-        {/* TODO: #40 Sticky mailto in desktop mode */}
+        <StickyEmail />
+        <StickyLinks />
         <Hero />
         <Work />
         <About />
