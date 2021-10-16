@@ -3,24 +3,10 @@ import { Wrapper } from './navbar.styles';
 import { NavMenu, NavMenuBtn, Overlay } from './components';
 import { logo } from '../../images';
 import { scrollDetect } from '../../utils';
-
-export type ILinkItems = { id: string; name: string }[];
+import data, { Data } from './data';
 
 const Navbar: React.FC = () => {
-  const [linkItems] = useState<ILinkItems>([
-    {
-      id: 'work',
-      name: '.Work',
-    },
-    {
-      id: 'about',
-      name: '.About',
-    },
-    {
-      id: 'contact',
-      name: '.Contact',
-    },
-  ]);
+  const [linkItems] = useState<Data>(data);
   const [shrink, setShrink] = useState<boolean>(false);
   const [navbarShow, setNavbarShow] = useState<boolean>(true);
   const [sidebarActive, setSidebarActive] = useState<boolean>(false);
@@ -39,17 +25,26 @@ const Navbar: React.FC = () => {
     setSidebarActive((prev) => !prev);
   };
 
+  const handleIconClick = (): void => {
+    window.location.href = '/';
+  };
+
   useEffect(() => {
     document.addEventListener('scroll', updateHide);
   }, []);
 
   return (
     <Wrapper show={navbarShow} shrink={shrink} sidebarActive={sidebarActive}>
-      <img className='navbar-logo' src={logo} alt='logo' />
+      <img
+        className='navbar-logo'
+        src={logo}
+        alt='logo'
+        onClick={handleIconClick}
+      />
       <NavMenu
         active={sidebarActive}
         linkItems={linkItems}
-        handleMenuClick={handleMenuClick}
+        setSidebarActive={setSidebarActive}
       />
       <NavMenuBtn active={sidebarActive} handleClick={handleMenuClick} />
       <Overlay active={sidebarActive} setActive={setSidebarActive} />

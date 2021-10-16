@@ -33,6 +33,7 @@ export const Wrapper = styled.nav<{
   .navbar-logo {
     height: 50px;
     margin-left: -10px;
+    cursor: pointer;
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoint}) {
