@@ -10,7 +10,9 @@ const Email: React.FC = () => {
   return (
     <EmailWrapper>
       <button onClick={gotoLink}>
-        <Caption secondary>mdsifatulislam.rabbi@gmail.com</Caption>
+        <Caption secondary classes='label'>
+          mdsifatulislam.rabbi@gmail.com
+        </Caption>
       </button>
     </EmailWrapper>
   );
