@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Wrapper } from './navbar.styles';
 import { NavMenu, NavMenuBtn, Overlay } from './components';
 import { logo } from '../../images';
-import scrollDetect from '../../utils/scrollDetect';
+import { scrollDetect } from '../../utils';
 
 export type ILinkItems = { id: string; name: string }[];
 
@@ -22,11 +22,11 @@ const Navbar: React.FC = () => {
     },
   ]);
   const [shrink, setShrink] = useState<boolean>(false);
-  const [show, setShow] = useState<boolean>(true);
-  const [active, setActive] = useState<boolean>(false);
+  const [navbarShow, setNavbarShow] = useState<boolean>(true);
+  const [sidebarActive, setSidebarActive] = useState<boolean>(false);
 
   const updateHide = () => {
-    setShow(scrollDetect());
+    setNavbarShow(scrollDetect());
 
     if (document.documentElement.scrollTop > 50) {
       setShrink(true);
@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
   };
 
   const handleMenuClick = (): void => {
-    setActive((prev) => !prev);
+    setSidebarActive((prev) => !prev);
   };
 
   useEffect(() => {
@@ -44,11 +44,15 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <Wrapper show={show} shrink={shrink}>
+    <Wrapper show={navbarShow} shrink={shrink} sidebarActive={sidebarActive}>
       <img className='navbar-logo' src={logo} alt='logo' />
-      <NavMenu active={active} linkItems={linkItems} />
-      <NavMenuBtn active={active} handleClick={handleMenuClick} />
-      <Overlay active={active} setActive={setActive} />
+      <NavMenu
+        active={sidebarActive}
+        linkItems={linkItems}
+        handleMenuClick={handleMenuClick}
+      />
+      <NavMenuBtn active={sidebarActive} handleClick={handleMenuClick} />
+      <Overlay active={sidebarActive} setActive={setSidebarActive} />
     </Wrapper>
   );
 };
