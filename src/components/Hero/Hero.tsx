@@ -2,8 +2,13 @@ import React from 'react';
 import { Wrapper } from './hero.styles';
 import { H1, Caption, Body1 } from '../Typography';
 import Button from '../Button';
+import { gotoSection } from '../../utils';
 
 const Hero: React.FC = () => {
+  const handleCTAClick = (): void => {
+    gotoSection('work');
+  };
+
   return (
     <Wrapper>
       <Caption big gutterBottom>
@@ -16,7 +21,7 @@ const Hero: React.FC = () => {
         Currently working as a freelancer. I'm focused on the front-end and
         creating the best and smoothest UI for websites.
       </Body1>
-      <Button label='See my works' big callBack={(e) => e} />
+      <Button label='See my works' big callBack={handleCTAClick} />
     </Wrapper>
   );
 };
