@@ -21,8 +21,8 @@ export type WorksData = {
 const data: WorksData[] = [
   {
     name: 'Arkanoid Game',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
-    tags: ['TypeScript', 'CSS', 'HTML'],
+    desc: 'A TypeScript arkanoid web game. Built with TypeScript, HTML and CSS. Start the game by clicking start button. Game can be restarted in the middle of the session. There are types of bricks with different hit point. Break all the bricks and the game will be finished',
+    tags: ['TypeScript', 'CSS', 'HTML', 'Canvas'],
     img: arkanoidGame,
     links: {
       github: 'https://github.com/temujins/ts-arkanoid-game',
@@ -32,8 +32,8 @@ const data: WorksData[] = [
 
   {
     name: 'Full Stack blog',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
-    tags: ['React', 'JavaScript', 'Styled Components', 'MongoDB'],
+    desc: 'This is a full stack blog web app for posting and reading articles about different topics. The sign up and login method is managed with node js. This web app uses mongodb as the database. Also uses bcrypt for hashing user password.',
+    tags: ['React', 'JavaScript', 'Styled Components', 'MongoDB', 'Bcrypt'],
     img: fullstackBlog,
     links: {
       github: 'https://github.com/temujins/full-stack-blog-app',
@@ -43,7 +43,7 @@ const data: WorksData[] = [
 
   {
     name: 'Social Media website',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
+    desc: 'A simple social media website with react and firebase. The website database is firestore. User authentication is handled by firebase google authenticator. Features are creating new user account, posting in news feed, getting notifications in notification tab, commenting and liking posts.',
     tags: ['React', 'JavaScript', 'Styled Components', 'Firebase'],
     img: socialMediaApp,
     links: {
@@ -54,7 +54,7 @@ const data: WorksData[] = [
 
   {
     name: 'My Portfolio website',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
+    desc: "This my portfolio website. This website is completely responsive. Built with React and TypeScript. I'm currently working to build a api for my website to get the data and images it needs. Currently the data and the images are static.",
     tags: ['TypeScript', 'React', 'Styled Components'],
     img: myPortfolioWebsite,
     links: {
@@ -65,7 +65,7 @@ const data: WorksData[] = [
 
   {
     name: 'Todo app',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
+    desc: "A todo app project with React and TypeScript. A todo app is a good example of CRUD operations. This app saves the data in the local-storage. But soon I'm building a api to handle the data and save it in a database online. This website is responsive and has light/dark mode switch.",
     tags: ['TypeScript', 'React', 'Styled Components'],
     img: todoApp,
     links: {
@@ -76,8 +76,8 @@ const data: WorksData[] = [
 
   {
     name: 'Simple Snake Game',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt exercitationem provident non dolorum maxime ex suscipit voluptas, reprehenderit dignissimos natus.',
-    tags: ['JavaScript', 'HTML', 'CSS'],
+    desc: 'A snake game to work with the user inputs ans canvas. This game is a simple snake game with simple ui. There is three difficulty levels user can choose freely. Biting the edge of the board will kill the snake and the game will end.  ',
+    tags: ['JavaScript', 'HTML', 'CSS', 'Canvas'],
     img: snakeGame,
     links: {
       github: 'https://github.com/temujins/snake-game',
