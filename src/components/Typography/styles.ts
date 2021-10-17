@@ -27,7 +27,8 @@ export const TitleH4 = styled(TitleH2)<IStyles>`
 export const Body1Wrapper = styled.p<IStyles>`
   font-weight: 400;
   font-size: ${({ theme }) => theme.typography.fontSize.body1};
-  line-height: 1.5;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
   color: ${({ theme, secondary }) =>
     secondary ? theme.palette.grayish : theme.palette.light};
 `;
