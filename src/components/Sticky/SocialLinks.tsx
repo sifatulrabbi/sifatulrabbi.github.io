@@ -4,10 +4,22 @@ import { FiLinkedin, FiTwitter, FiGithub, FiFacebook } from 'react-icons/fi';
 
 const SocialLinks: React.FC = () => {
   const [links] = useState([
-    { icon: FiGithub, link: 'https://github.com/temujins' },
-    { icon: FiLinkedin, link: 'https://www.linkedin.com/in/temujins/' },
-    { icon: FiTwitter, link: 'https://twitter.com/sifatul_rabbi/' },
-    { icon: FiFacebook, link: 'https://facebook.com/ttemujinRabbi' },
+    { name: 'Github', icon: FiGithub, link: 'https://github.com/temujins' },
+    {
+      name: 'LinkedIn',
+      icon: FiLinkedin,
+      link: 'https://www.linkedin.com/in/temujins/',
+    },
+    {
+      name: 'Twitter',
+      icon: FiTwitter,
+      link: 'https://twitter.com/sifatul_rabbi/',
+    },
+    {
+      name: 'Facebook',
+      icon: FiFacebook,
+      link: 'https://facebook.com/ttemujinRabbi',
+    },
   ]);
 
   const gotoLink = (link: string): void => {
@@ -17,7 +29,11 @@ const SocialLinks: React.FC = () => {
   return (
     <SocialLinksWrapper>
       {links.map((link) => (
-        <button key={link.link} onClick={() => gotoLink(link.link)}>
+        <button
+          key={link.link}
+          aria-label={link.name}
+          onClick={() => gotoLink(link.link)}
+        >
           <link.icon className='icon' />
         </button>
       ))}
