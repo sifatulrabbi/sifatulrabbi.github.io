@@ -1,13 +1,19 @@
-import React from 'react';
-import { Hero, About, Work, Contact } from '../../components';
+import React, { lazy, Suspense } from 'react';
+import { Hero } from '../../components';
+
+const Work = lazy(() => import('../../components/Work/Work'));
+const About = lazy(() => import('../../components/About/About'));
+const Contact = lazy(() => import('../../components/Contact/Contact'));
 
 const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
-      <Work />
-      <About />
-      <Contact />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Work />
+        <About />
+        <Contact />
+      </Suspense>
     </>
   );
 };

@@ -20,6 +20,13 @@ const NavMenu: React.FC<Props> = ({ active, linkItems, setSidebarActive }) => {
     }, 200);
   };
 
+  const showResume = (): void => {
+    window.open(
+      'https://drive.google.com/file/d/1HnKbiQcQ4_K9DahNIV5au2As0Htr4Ojf/view?usp=sharing',
+      '_blank'
+    );
+  };
+
   return (
     <Wrapper active={active}>
       {linkItems.map((item) => (
@@ -32,7 +39,7 @@ const NavMenu: React.FC<Props> = ({ active, linkItems, setSidebarActive }) => {
           </button>
         </li>
       ))}
-      <Button label='Resume' />
+      <Button label='Resume' callBack={showResume} />
     </Wrapper>
   );
 };
