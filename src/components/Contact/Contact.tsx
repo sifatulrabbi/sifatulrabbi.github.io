@@ -13,9 +13,7 @@ const Contact: React.FC = () => {
       <Caption big>03. What's next?</Caption>
       <H2 classes='contact-title'>Get in touch</H2>
       <Body1 classes='contact-desc' secondary>
-        Although I’m not currently looking for any new opportunities, my inbox
-        is always open. Whether you have a question or just want to say hi, I’ll
-        try my best to get back to you!
+        I'm always interested to learn more and build awesome projects. If you have any projects in mind feel free to leave me a hi. I will get back to you as soon as possible!
       </Body1>
       <Button
         big
