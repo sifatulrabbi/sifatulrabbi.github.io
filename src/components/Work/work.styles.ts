@@ -7,6 +7,7 @@ export const Wrapper = styled.section`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  ${({ theme }) => theme.padding()};
 
   .cards {
     width: 100%;

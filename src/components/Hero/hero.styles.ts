@@ -2,15 +2,17 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.section`
   width: 100%;
-  height: max-content;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   grid-gap: 1rem;
-  padding: 10vh 0;
+  padding-top: 5rem;
+  ${({ theme }) => theme.padding()};
 
   .hero-desc {
+    margin-top: 2rem;
     margin-bottom: 4rem;
     width: 100%;
     max-width: 70ch;

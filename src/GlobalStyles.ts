@@ -46,7 +46,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const AppWrapper = styled.main`
-  ${({ theme }) => theme.padding('100px')};
   width: 100%;
   height: max-content;
   min-height: 100vh;
@@ -56,12 +55,6 @@ export const AppWrapper = styled.main`
   justify-content: flex-start;
   grid-gap: 20vh;
   position: relative;
-
-  #work,
-  #about,
-  #contact {
-    padding-top: 20vh;
-  }
 `;
 
 export default GlobalStyle;

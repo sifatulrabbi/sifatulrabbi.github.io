@@ -8,9 +8,13 @@ export const Card = styled.div<{ reverse: boolean }>`
   grid-template-columns: 1fr;
   position: relative;
   align-items: center;
-  grid-gap: 2rem 0;
+  grid-gap: 2rem;
   transition: ${({ theme }) => theme.transition('border-color')};
   border-radius: ${({ theme }) => theme.borderRadius};
+  background: ${({ theme }) => theme.palette.dark};
+  box-shadow: ${({ theme }) => theme.shadow[0]};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  padding: 1rem;
 
   &:hover {
     border-color: ${({ theme }) => theme.palette.main};

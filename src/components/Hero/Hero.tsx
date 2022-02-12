@@ -15,9 +15,15 @@ const Hero: React.FC = () => {
         Hello, my name is
       </Caption>
       <H1>Sifatul Rabbi</H1>
-      <H1 secondary>I do web development</H1>
+      <H1 secondary>
+        I build Scalable
+        <br />
+        Web Apps
+      </H1>
       <Body1 secondary classes='hero-desc'>
-        A passionate Web developer from Bangladesh. Currently working as a freelancer. Expert in JavaScript and CSS. Experienced in front-end and API development. My primary goal is to explore the web development world
+        A passionate Web developer from Bangladesh. Currently working as a
+        freelancer. Expert in JavaScript and CSS. Experienced in front-end and
+        API development. My primary goal is to explore the web development world
       </Body1>
       <Button label='See my works' big callBack={handleCTAClick} />
     </Wrapper>

@@ -6,6 +6,7 @@ export const Bottom = styled.div<{ reverse: boolean }>`
   grid-gap: 2rem;
   align-items: flex-start;
   padding: 0.5rem;
+  width: 100%;
 
   .tags,
   .links,
@@ -23,6 +24,8 @@ export const Bottom = styled.div<{ reverse: boolean }>`
   }
 
   .links {
+    width: 100%;
+
     .btn {
       font-size: 1.5rem;
       color: ${({ theme }) => theme.palette.light};

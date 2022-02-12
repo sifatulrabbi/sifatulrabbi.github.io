@@ -10,6 +10,8 @@ export const Wrapper = styled.footer`
   grid-gap: 0.5rem;
   text-align: center;
   padding-top: 10vh;
+  padding-bottom: 3rem;
+  ${({ theme }) => theme.padding()};
 
   button {
     cursor: pointer;

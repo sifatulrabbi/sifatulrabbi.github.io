@@ -26,7 +26,7 @@ export const Wrapper = styled.nav<{
   ${({ shrink, theme }) =>
     shrink
       ? `height: 70px; box-shadow: ${theme.shadow[1]};
-        background-color: ${theme.palette.transDark};`
+        background-color: ${theme.palette.dark};`
       : `height: 100px;
         background-color: ${theme.palette.dark};`};
 

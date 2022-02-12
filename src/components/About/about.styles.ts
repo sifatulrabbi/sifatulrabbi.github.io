@@ -9,6 +9,7 @@ export const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  ${({ theme }) => theme.padding()};
 
   .grid {
     display: grid;
@@ -41,8 +42,8 @@ export const Wrapper = styled.section`
   .imgWrapper {
     justify-self: center;
     position: relative;
-    height: clamp(180px, 20vw, 300px);
-    width: clamp(180px, 20vw, 300px);
+    height: clamp(250px, 20vw, 300px);
+    width: clamp(250px, 20vw, 300px);
     border-radius: ${({ theme }) => theme.borderRadius};
     background-image: url(${myImg});
     background-size: cover;
