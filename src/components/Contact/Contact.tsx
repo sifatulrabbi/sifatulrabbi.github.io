@@ -11,9 +11,11 @@ const Contact: React.FC = () => {
   return (
     <Wrapper id='contact'>
       <Caption big>03. What's next?</Caption>
-      <H2 classes='contact-title'>Get in touch</H2>
+      <H2 classes='contact-title'>Let's build something amazing</H2>
       <Body1 classes='contact-desc' secondary>
-        I'm always interested to learn more and build awesome projects. If you have any projects in mind feel free to leave me a hi. I will get back to you as soon as possible!
+        I'm always excited to learn more and build awesome projects. If you have
+        any projects in mind feel free to leave me a hi. I will get back to you
+        as soon as possible!
       </Body1>
       <Button
         big

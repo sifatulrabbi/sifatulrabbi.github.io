@@ -4,14 +4,16 @@ interface IData {
 
 const data: IData = {
   skills: [
-    'TypeScript',
     'JavaScript',
-    'React',
-    'Node.js',
-    'Express.js',
+    'TypeScript',
     'HTML',
     'CSS',
     'SCSS',
+    'React',
+    'Bootstrap',
+    'Node.js',
+    'Express.js',
+    'Socket.io',
     'MongoDB',
   ],
 };

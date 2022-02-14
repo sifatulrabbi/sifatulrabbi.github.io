@@ -7,3 +7,4 @@ export { default as todoApp } from './todo-app-fm.jpg';
 export { default as socialMediaApp } from './social-media-app.png';
 export { default as fullstackBlog } from './fullstack-blog.png';
 export { default as arkanoidGame } from './arkanoid-game.jpg';
+export { default as courier007Cover } from './courier007-cover.png';
