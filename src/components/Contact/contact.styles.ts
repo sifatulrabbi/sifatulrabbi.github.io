@@ -12,6 +12,7 @@ export const Wrapper = styled.section`
   .contact-title {
     margin-top: 1rem;
     margin-bottom: 2rem;
+    text-align: center;
   }
 
   .contact-desc {

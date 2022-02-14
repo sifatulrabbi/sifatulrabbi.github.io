@@ -21,9 +21,9 @@ const Hero: React.FC = () => {
         Web Apps
       </H1>
       <Body1 secondary classes='hero-desc'>
-        A passionate Web developer from Bangladesh. Currently working as a
-        freelancer. Expert in JavaScript and CSS. Experienced in front-end and
-        API development. My primary goal is to explore the web development world
+        I am a Hard-working self-taught web developer, currently working on a
+        Courier service startup. I love learning about software architecture and
+        cloud-computing
       </Body1>
       <Button label='See my works' big callBack={handleCTAClick} />
     </Wrapper>

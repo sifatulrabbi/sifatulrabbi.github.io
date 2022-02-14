@@ -14,20 +14,18 @@ const About: React.FC = () => {
         <div className='about-me'>
           <Body1 secondary>
             I'm Md Sifatul Islam Rabbi, self-taught and a passionate web
-            developer from Bangladesh. I'm currently working as a freelancer.
+            developer from Bangladesh. I'm currently working Courier 007, an
+            courier service startup in Bangladesh.
             <br />
-            <br />I always love technology, and I like building things. My web
-            development journey started as I was trying to understand why some
-            website doesn't look good on a mobile phone. Then I learned about
-            HTML, CSS, and JavaScript. I learned how I could use these web
-            technologies to build my websites and started loving web
-            development.
+            <br />I always loved technology, and I like building things. My web
+            development journey started as I was trying to understand how to can
+            we post articles in a website. The first programming language I
+            leaned was JavaScript.
             <br />
             <br />
-            As a web developer, I love the ReactJS framework not only that I
-            prefer styling my website with custom CSS codes. I make sure to use
-            the latest and best practices. I'm focused on the front-end and
-            creating the best and smoothest UI for websites.
+            As a developer I love the logical part more. I love writing and
+            building responsive and functional websites. I am a hard working
+            person and always trying to reach the new height.
             <br />
             <br />
             Here is a list of technologies I'm very good at:

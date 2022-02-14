@@ -5,6 +5,7 @@ import {
   myPortfolioWebsite,
   socialMediaApp,
   todoApp,
+  courier007Cover,
 } from '../../images';
 
 export type WorksData = {
@@ -20,24 +21,22 @@ export type WorksData = {
 
 const data: WorksData[] = [
   {
-    name: 'Arkanoid Game',
-    desc: 'A TypeScript arkanoid web game. Built with TypeScript, HTML and CSS. Start the game by clicking start button. Game can be restarted in the middle of the session. There are types of bricks with different hit point. Break all the bricks and the game will be finished',
-    tags: ['TypeScript', 'CSS', 'HTML', 'Canvas'],
-    img: arkanoidGame,
+    name: 'Courier Service application',
+    desc: 'Courier 007 is a courier service located in Bangladesh. Currently I am building both the frontend and the backend application for this company. The top features of this app are tracking parcels, user registrations, admin panel, full responsive UI, scalability',
+    tags: [
+      'React',
+      'Node.js',
+      'TypeScript',
+      'Bootstrap',
+      'SCSS',
+      'Express.js',
+      'MongoDB',
+      'Socket.io',
+    ],
+    img: courier007Cover,
     links: {
-      github: 'https://github.com/temujins/ts-arkanoid-game',
-      external: 'https://temujins.github.io/ts-arkanoid-game/',
-    },
-  },
-
-  {
-    name: 'Full Stack blog',
-    desc: 'This is a full stack blog web app for posting and reading articles about different topics. The sign up and login method is managed with node js. This web app uses mongodb as the database. Also uses bcrypt for hashing user password.',
-    tags: ['React', 'JavaScript', 'Styled Components', 'MongoDB', 'Bcrypt'],
-    img: fullstackBlog,
-    links: {
-      github: 'https://github.com/temujins/full-stack-blog-app',
-      external: '',
+      github: 'https://github.com/Courier-007',
+      external: 'https://courier-007-website.vercel.app',
     },
   },
 
@@ -47,8 +46,30 @@ const data: WorksData[] = [
     tags: ['React', 'JavaScript', 'Styled Components', 'Firebase'],
     img: socialMediaApp,
     links: {
-      github: 'https://github.com/temujins/social_media_app',
+      github: 'https://github.com/sifatulrabbi/social_media_app',
       external: 'https://socialize-reactapp.web.app/',
+    },
+  },
+
+  {
+    name: 'Full Stack blog',
+    desc: 'This is a full stack blog web app for posting and reading articles about different topics. The sign up and login method is managed with node js. This web app uses mongodb as the database. Also uses bcrypt for hashing user password.',
+    tags: ['React', 'Node.js', 'JavaScript', 'Styled Components', 'MongoDB'],
+    img: fullstackBlog,
+    links: {
+      github: 'https://github.com/sifatulrabbi/full-stack-blog-app',
+      external: '',
+    },
+  },
+
+  {
+    name: 'Arkanoid Game',
+    desc: 'A TypeScript arkanoid web game. Built with TypeScript, HTML and CSS. Start the game by clicking start button. Game can be restarted in the middle of the session. There are types of bricks with different hit point. Break all the bricks and the game will be finished',
+    tags: ['TypeScript', 'CSS', 'HTML', 'HTML5-canvas'],
+    img: arkanoidGame,
+    links: {
+      github: 'https://github.com/sifatulrabbi/ts-arkanoid-game',
+      external: 'https://sifatulrabbi.github.io/ts-arkanoid-game/',
     },
   },
 
@@ -58,8 +79,8 @@ const data: WorksData[] = [
     tags: ['TypeScript', 'React', 'Styled Components'],
     img: myPortfolioWebsite,
     links: {
-      github: 'https://github.com/temujins/temujins.github.io',
-      external: '',
+      github: 'https://github.com/sifatulrabbi/sifatulrabbi.github.io',
+      external: 'https://sifatulislam.github.io',
     },
   },
 
@@ -69,7 +90,7 @@ const data: WorksData[] = [
     tags: ['TypeScript', 'React', 'Styled Components'],
     img: todoApp,
     links: {
-      github: 'https://github.com/temujins/todo-app-fm',
+      github: 'https://github.com/sifatulrabbi/todo-app-fm',
       external: 'https://react-ts-todo-app.vercel.app/',
     },
   },
@@ -80,7 +101,7 @@ const data: WorksData[] = [
     tags: ['JavaScript', 'HTML', 'CSS', 'Canvas'],
     img: snakeGame,
     links: {
-      github: 'https://github.com/temujins/snake-game',
+      github: 'https://github.com/sifatulrabbi/snake-game',
       external: '',
     },
   },
