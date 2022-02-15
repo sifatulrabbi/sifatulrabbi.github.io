@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/static/js/main.2df1d0d7.chunk.js",
-    "main.js.map": "/static/js/main.2df1d0d7.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.a21e7d97.js",
-    "runtime-main.js.map": "/static/js/runtime-main.a21e7d97.js.map",
-    "static/js/2.b250db2a.chunk.js": "/static/js/2.b250db2a.chunk.js",
-    "static/js/2.b250db2a.chunk.js.map": "/static/js/2.b250db2a.chunk.js.map",
+    "main.js": "/static/js/main.0377656c.chunk.js",
+    "main.js.map": "/static/js/main.0377656c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2edb704a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2edb704a.js.map",
+    "static/js/2.9e9b1838.chunk.js": "/static/js/2.9e9b1838.chunk.js",
+    "static/js/2.9e9b1838.chunk.js.map": "/static/js/2.9e9b1838.chunk.js.map",
     "index.html": "/index.html",
-    "static/js/2.b250db2a.chunk.js.LICENSE.txt": "/static/js/2.b250db2a.chunk.js.LICENSE.txt",
+    "static/js/2.9e9b1838.chunk.js.LICENSE.txt": "/static/js/2.9e9b1838.chunk.js.LICENSE.txt",
     "static/media/arkanoid-game.43006a7a.jpg": "/static/media/arkanoid-game.43006a7a.jpg",
     "static/media/courier007-cover.6ea97199.png": "/static/media/courier007-cover.6ea97199.png",
     "static/media/fullstack-blog.20178670.png": "/static/media/fullstack-blog.20178670.png",
@@ -18,8 +18,8 @@
     "static/media/todo-app-fm.b2dc38ea.jpg": "/static/media/todo-app-fm.b2dc38ea.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a21e7d97.js",
-    "static/js/2.b250db2a.chunk.js",
-    "static/js/main.2df1d0d7.chunk.js"
+    "static/js/runtime-main.2edb704a.js",
+    "static/js/2.9e9b1838.chunk.js",
+    "static/js/main.0377656c.chunk.js"
   ]
 }
