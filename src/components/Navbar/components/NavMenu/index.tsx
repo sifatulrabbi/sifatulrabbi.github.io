@@ -22,7 +22,7 @@ const NavMenu: React.FC<Props> = ({ active, linkItems, setSidebarActive }) => {
 
   const showResume = (): void => {
     window.open(
-      'https://drive.google.com/file/d/1ytzzidZlxSmCm5COAp3XXU9zCIQoie7y/view?usp=sharing',
+      'https://drive.google.com/file/d/18eam_Zgdv2agYnI9FLeNoI2mYYhrSOp5/view?usp=sharing',
       '_blank'
     );
   };

@@ -5,6 +5,9 @@
   "license": "MIT",
   "repository": "https://github.com/temujins/temujins.github.io.git",
   "author": "temujins <mdsifatulislam.rabbi@gmail.com>",
+  "engines": {
+    "node": "12.x.x"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
