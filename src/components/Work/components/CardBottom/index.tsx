@@ -2,7 +2,6 @@ import React from 'react';
 import { Bottom } from './styles';
 import { Caption } from '../../../Typography';
 import { v4 as uuid } from 'uuid';
-import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import Button from '../../../Button';
 
 interface Props {
@@ -29,15 +28,9 @@ const CardBottom: React.FC<Props> = ({ reverse, tags, links }) => {
         ))}
       </div>
       <div className='links'>
-        <Button label='Learn more' classes='link-btn' />
-        <div style={{ flexGrow: 1 }} />
-        <button onClick={() => openLink(links.github)} className='btn'>
-          <FiGithub className='btn-icon' />
-        </button>
+        <Button callBack={() => openLink(links.github)} label='Github' />
         {links.external && (
-          <button onClick={() => openLink(links.external)} className='btn'>
-            <FiExternalLink className='btn-icon' />
-          </button>
+          <Button callBack={() => openLink(links.external)} label='Link' />
         )}
       </div>
     </Bottom>

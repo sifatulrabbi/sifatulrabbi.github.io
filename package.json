@@ -1,10 +1,10 @@
 {
-  "homepage": "https://temujins.github.io/",
+  "homepage": "https://sifatulrabbi.github.io/",
   "private": true,
   "version": "3.0.0",
   "license": "MIT",
-  "repository": "https://github.com/temujins/temujins.github.io.git",
-  "author": "temujins <mdsifatulislam.rabbi@gmail.com>",
+  "repository": "https://github.com/sifatulrabbi/sifatulrabbi.github.io.git",
+  "author": "Md Sifatul Islam Rabbi <mdsifatulislam.rabbi@gmail.com>",
   "engines": {
     "node": "12.x.x"
   },

@@ -45,7 +45,8 @@ export const Bottom = styled.div<{ reverse: boolean }>`
   @media screen and (min-width: ${({ theme }) => theme.breakpoint}) {
     align-items: ${({ reverse }) => (reverse ? 'flex-start' : 'flex-end')};
 
-    .tags {
+    .tags,
+    .links {
       justify-content: ${({ reverse }) =>
         reverse ? 'flex-start' : 'flex-end'};
     }
