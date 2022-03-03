@@ -10,8 +10,8 @@ export const theme = {
 
   typography: {
     fontFamily: {
-      primary: `'Epilogue', Helvetica, sans-serif`,
-      secondary: `'JetBrains Mono', monospace`,
+      primary: "'Epilogue', Helvetica, sans-serif",
+      secondary: "'Space Mono', monospace",
     },
 
     fontSize: {

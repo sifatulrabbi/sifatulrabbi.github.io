@@ -18,7 +18,7 @@ const Button: React.FC<Props> = ({ big, callBack, label, classes }) => {
 
   return (
     <Wrapper big={big} onClick={handleClick} className={classes}>
-      <Caption>{label}</Caption>
+      <Caption big={big}>{label}</Caption>
     </Wrapper>
   );
 };

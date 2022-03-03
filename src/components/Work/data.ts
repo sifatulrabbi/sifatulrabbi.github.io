@@ -36,7 +36,7 @@ const data: WorksData[] = [
     img: courier007Cover,
     links: {
       github: 'https://github.com/Courier-007',
-      external: 'https://courier-007-website.vercel.app',
+      external: 'https://courier-007.web.app',
     },
   },
 
@@ -91,7 +91,7 @@ const data: WorksData[] = [
     img: todoApp,
     links: {
       github: 'https://github.com/sifatulrabbi/todo-app-fm',
-      external: 'https://react-ts-todo-app.vercel.app/',
+      external: 'https://react-ts-todo-app.vercel.app',
     },
   },
 

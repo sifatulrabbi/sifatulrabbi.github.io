@@ -25,7 +25,12 @@ const Hero: React.FC = () => {
         Courier service startup. I love learning about software architecture and
         cloud-computing
       </Body1>
-      <Button label='See my works' big callBack={handleCTAClick} />
+      <Button
+        label='See my works'
+        big
+        callBack={handleCTAClick}
+        classes='hero-btn'
+      />
     </Wrapper>
   );
 };
