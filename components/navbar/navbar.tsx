@@ -1,4 +1,5 @@
 import React from "react";
+import NavMenu from "./nav-menu";
 
 const Navbar: React.FC = () => {
     const [show, setShow] = React.useState(false);
@@ -10,7 +11,7 @@ const Navbar: React.FC = () => {
     return (
         <div>
             <button
-                className="fixed top-4 right-4 flex rounded-full bg-black h-12 w-12 shadow-md"
+                className="fixed top-4 right-4 flex rounded-full bg-black h-12 w-12 shadow-md z-50"
                 onClick={toggleShow}
             >
                 <div
@@ -33,6 +34,7 @@ const Navbar: React.FC = () => {
                     } transition-transform ease-out duration-300`}
                 />
             </button>
+            <NavMenu show={show} />
         </div>
     );
 };
