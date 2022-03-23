@@ -1,5 +1,8 @@
 module.exports = {
-    content: ["./pages/**/*.{tsx}", "./components/**/*.{tsx}"],
+    content: [
+        "./pages/**/*.{tsx,ts,js,jsx}",
+        "./components/**/*.{tsx,ts,jsx,js}",
+    ],
     theme: {
         fontFamily: {
             primary: ["Montserrat", "sans-serif"],
