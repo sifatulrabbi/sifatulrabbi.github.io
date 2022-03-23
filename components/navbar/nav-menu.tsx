@@ -17,14 +17,18 @@ const NavMenu: React.FC<Props> = ({show}) => {
             }`}
         >
             <div className={`h-full w-12 bg-black`} />
-            <div className="w-full flex flex-col p-6">
-                <Img
-                    src={logo}
-                    alt="Sifatul Rabbi logo"
-                    height={50}
-                    width={46}
-                    layout="fixed"
-                />
+            <div className="flex flex-col p-6">
+                <Link href="/">
+                    <a>
+                        <Img
+                            src={logo}
+                            alt="Sifatul Rabbi logo"
+                            height={50}
+                            width={46}
+                            layout="fixed"
+                        />
+                    </a>
+                </Link>
                 <div className="w-full mb-16" />
                 {siteLinks.map((link) => (
                     <Link key={v4()} href={link.path}>
