@@ -1,5 +1,3 @@
-# Hi there
+# Md Sifatul Islam Rabbi
 
-### I'm Md Sifatul Islam Rabbi
-
-Web developer, Freelancer
+Full stack Web developer
