@@ -1,7 +1,7 @@
 import React from "react";
-import NavMenu from "./nav-menu";
+import {NavMenu} from "./nav-menu";
 
-const Navbar: React.FC = () => {
+export const Navbar: React.FC = () => {
     const [show, setShow] = React.useState(false);
 
     function toggleShow() {

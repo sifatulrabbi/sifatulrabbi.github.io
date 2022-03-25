@@ -5,7 +5,7 @@ interface Props {
     title: string;
 }
 
-const Head: React.FC<Props> = ({title}) => {
+export const Head: React.FC<Props> = ({title}) => {
     return (
         <NextHead>
             <meta
@@ -18,5 +18,3 @@ const Head: React.FC<Props> = ({title}) => {
         </NextHead>
     );
 };
-
-export default Head;

@@ -1,5 +1,5 @@
 import type {NextPage, NextPageContext} from "next";
-import {Head, Intro} from "../components";
+import {Head, Intro, Services} from "../components";
 
 interface Props {
     message: string;
@@ -10,6 +10,7 @@ const Home: NextPage<Props> = ({}) => {
         <>
             <Head title={"Home"} />
             <Intro />
+            <Services />
         </>
     );
 };

@@ -1,11 +1,11 @@
 import React from "react";
-import {logo, introImg} from "../../assets/images";
+import {logo, introImg} from "../assets/images";
 import Img from "next/image";
 
-const Intro: React.FC = () => {
+export const Intro: React.FC = () => {
     return (
-        <div className="w-full bg-black min-h-screen">
-            <div className="flex flex-col flex-1 justify-between mx-auto p-6 lg:px-[10vw] lg:flex-row">
+        <div className="w-full min-h-screen bg-black">
+            <div className="flex flex-col flex-1 justify-between px-container lg:flex-row">
                 <div>
                     <Img
                         src={logo}
@@ -14,7 +14,7 @@ const Intro: React.FC = () => {
                         width={46}
                         layout="fixed"
                     />
-                    <h6 className="text-lg text-light mt-10">
+                    <h6 className="text-lg text-light mt-14">
                         Hello there, I&apos;m Sifatul
                     </h6>
                     <h1 className="text-white text-h1 mt-4 mb-[10vh] lg:max-w-lg">
@@ -37,5 +37,3 @@ const Intro: React.FC = () => {
         </div>
     );
 };
-
-export default Intro;

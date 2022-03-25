@@ -8,6 +8,16 @@
     @apply font-primary font-bold;
 }
 
+.text-h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.13;
+    @apply font-primary font-bold;
+}
+
 .btn-primary {
     @apply text-white text-base bg-blue px-8 py-3 rounded-lg mb-[10vh] transition-all duration-300 ease-out hover:-translate-y-1 focus:brightness-125;
+}
+
+.px-container {
+    @apply w-full p-6 lg:px-[10vw];
 }

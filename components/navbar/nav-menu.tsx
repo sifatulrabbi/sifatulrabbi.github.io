@@ -9,7 +9,7 @@ interface Props {
     show: boolean;
 }
 
-const NavMenu: React.FC<Props> = ({show}) => {
+export const NavMenu: React.FC<Props> = ({show}) => {
     return (
         <div
             className={`fixed flex top-0 bottom-0 right-0 left-0 bg-white transition-transform ease-in-out duration-300 z-40 ${
@@ -55,5 +55,3 @@ const NavMenu: React.FC<Props> = ({show}) => {
         </div>
     );
 };
-
-export default NavMenu;
