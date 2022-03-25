@@ -1,25 +1,23 @@
 import type {NextPage, NextPageContext} from "next";
-import {Head} from "../components";
+import {Head, Intro} from "../components";
 
 interface Props {
     message: string;
 }
 
-const Home: NextPage<Props> = ({message}) => {
+const Home: NextPage<Props> = ({}) => {
     return (
         <>
             <Head title={"Home"} />
-            <div>
-                <h1>{message}</h1>
-            </div>
+            <Intro />
         </>
     );
 };
 
-export async function getStaticProps(ctx: NextPageContext) {
-    return {
-        props: {message: "Hello Next.js"},
-    };
-}
+// export async function getStaticProps(ctx: NextPageContext) {
+//     return {
+//         props: {message: "Hello Next.js"},
+//     };
+// }
 
 export default Home;
