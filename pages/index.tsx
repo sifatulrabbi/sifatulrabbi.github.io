@@ -15,10 +15,10 @@ const Home: NextPage<Props> = ({}) => {
     );
 };
 
-// export async function getStaticProps(ctx: NextPageContext) {
-//     return {
-//         props: {message: "Hello Next.js"},
-//     };
-// }
+export async function getStaticProps(ctx: NextPageContext) {
+    return {
+        props: {message: "Hello Next.js"},
+    };
+}
 
 export default Home;

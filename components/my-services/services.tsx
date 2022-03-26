@@ -2,6 +2,7 @@ import React from "react";
 import {Header} from "../header";
 import {servicesImg} from "../../assets/images";
 import Img from "next/image";
+import {Cards} from "./cards";
 
 export const Services: React.FC = () => {
     return (
@@ -12,7 +13,7 @@ export const Services: React.FC = () => {
                         caption="My Services"
                         title="Personalized solutions for your web applications"
                     />
-                    <p className="mt-8 max-w-xl">
+                    <p className="mt-8 max-w-xl text-dark">
                         Lorem ipsum dolor sit, amet consectetur adipisicing
                         elit. Quidem, architecto dolore iure aperiam eaque quas?
                         Modi at voluptas quam hic perspiciatis dolores ullam
@@ -27,6 +28,7 @@ export const Services: React.FC = () => {
                     />
                 </div>
             </div>
+            <Cards />
         </div>
     );
 };

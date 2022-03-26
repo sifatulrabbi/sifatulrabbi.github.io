@@ -11,7 +11,7 @@ export const Navbar: React.FC = () => {
     return (
         <div>
             <button
-                className="fixed top-4 right-4 flex rounded-full bg-black h-12 w-12 shadow-md z-50"
+                className="fixed top-4 right-4 flex rounded-full bg-black h-12 w-12 shadow-md z-50 m-0 lg:mr-[10vw]"
                 onClick={toggleShow}
             >
                 <div

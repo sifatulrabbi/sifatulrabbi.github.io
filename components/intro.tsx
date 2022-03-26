@@ -14,17 +14,19 @@ export const Intro: React.FC = () => {
                         width={46}
                         layout="fixed"
                     />
-                    <h6 className="text-lg text-light mt-14">
+                    <h6 className="text-lg text-light mt-14 font-secondary">
                         Hello there, I&apos;m Sifatul
                     </h6>
-                    <h1 className="text-white text-h1 mt-4 mb-[10vh] lg:max-w-lg">
+                    <h1 className="text-white text-h1 mt-4 mb-[10vh] lg:max-w-lg font-primary">
                         A Full Stack Web Developer
                         <br />
                         to help you grow
                         <br />
                         your business online
                     </h1>
-                    <button className="btn-primary">My Services</button>
+                    <button className="btn-primary font-primary">
+                        My Services
+                    </button>
                 </div>
                 <div className="w-[25vw] self-center min-w-[200px] h-auto">
                     <Img
