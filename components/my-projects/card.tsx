@@ -42,7 +42,7 @@ export const Card: React.FC<Props> = ({
                 className="flex flex-col rounded-lg justify-start align-top p-6 max-w-md"
                 style={{backgroundColor: bgColor}}
             >
-                <h4 className="text-black text-primary font-bold text-2xl mb-6">
+                <h4 className="text-black font-primary font-bold text-xl mb-6">
                     {name}
                 </h4>
                 <p className="text-dark text-base">{summary}</p>
