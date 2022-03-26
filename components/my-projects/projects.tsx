@@ -5,11 +5,10 @@ import {BgText} from "../bg-text";
 
 export const Projects: React.FC = () => {
     return (
-        <section className="overflow-hidden pt-12 bg-black">
+        <section className="overflow-hidden pt-12 mt-[10vh]">
             <div className="relative px-container flex flex-col">
-                <BgText dark text="Projects" />
+                <BgText text="Projects" />
                 <Header
-                    dark
                     caption="My Projects"
                     title="Applications and websites I have built"
                 />

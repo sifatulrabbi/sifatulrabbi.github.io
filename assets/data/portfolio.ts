@@ -15,7 +15,7 @@ export const portfolioData = {
         {
             id: "1",
             name: "Courier Seven website and API",
-            bgColor: "#180020",
+            bgColor: "#F8ECFF",
             banner: courierSevenBanner,
             summary:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam ",
@@ -35,7 +35,7 @@ export const portfolioData = {
         {
             id: "2",
             name: "Courier service company landing page",
-            bgColor: "#040914",
+            bgColor: "#E8EFFF",
             banner: courierSevenBanner,
             summary:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam ",
@@ -55,7 +55,7 @@ export const portfolioData = {
         {
             id: "3",
             name: "Courier service company landing page",
-            bgColor: "#001e10",
+            bgColor: "#E9FFF4",
             banner: courierSevenBanner,
             summary:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam ",
@@ -75,7 +75,7 @@ export const portfolioData = {
         {
             id: "4",
             name: "Courier service company landing page",
-            bgColor: "#272727",
+            bgColor: "#FFF7E9",
             banner: courierSevenBanner,
             summary:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam ",

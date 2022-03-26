@@ -13,6 +13,7 @@ interface Props {
         github?: string;
         live?: string;
     };
+    reverse?: boolean;
 }
 
 export const Card: React.FC<Props> = ({
@@ -22,30 +23,35 @@ export const Card: React.FC<Props> = ({
     stack,
     bgColor,
     links: {github, live},
+    reverse,
 }) => {
     return (
         <div
-            className="p-6 max-h-fit rounded-lg max-w-md"
-            style={{backgroundColor: bgColor}}
+            className={`max-h-fit rounded-lg flex gap-12 bg-dark bg-opacity-5 max-w-5xl flex-col transition-all duration-300 ease-in ${
+                reverse ? "lg:flex-row-reverse" : "lg:flex-row"
+            } hover:shadow-lg hover:-translate-y-[2px]`}
         >
-            <div className="mb-12">
+            <div className="min-w-[280px] max-w-md w-full self-center p-6">
                 <Img
                     src={banner}
                     alt="Full stack Web development"
                     layout="intrinsic"
                 />
             </div>
-            <div className="flex flex-col justify-start align-top">
-                <h4 className="text-white text-primary font-bold text-2xl mb-6">
+            <div
+                className="flex flex-col rounded-lg justify-start align-top p-6 max-w-md"
+                style={{backgroundColor: bgColor}}
+            >
+                <h4 className="text-black text-primary font-bold text-2xl mb-6">
                     {name}
                 </h4>
-                <p className="text-light text-base">{summary}</p>
+                <p className="text-dark text-base">{summary}</p>
                 <div className="flex flex-col mt-8 mb-10">
                     <span className="text-blue text-base mb-3">Stack</span>
                     <ul className="flex flex-row gap-4">
                         {stack.map((Icon) => (
                             <li key={v4()}>
-                                <Icon className="text-xl text-white" />
+                                <Icon className="text-xl text-black" />
                             </li>
                         ))}
                     </ul>

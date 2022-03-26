@@ -7,7 +7,7 @@ import {BgText} from "../bg-text";
 
 export const Services: React.FC = () => {
     return (
-        <div className="relative overflow-hidden flex flex-col flex-1 justify-between my-[10vh] px-container py-6">
+        <div className="relative overflow-hidden flex flex-col flex-1 justify-between mt-[10vh] px-container py-6">
             <BgText text="Services" />
             <div className="flex flex-col justify-between lg:flex-row">
                 <div className="mb-8">

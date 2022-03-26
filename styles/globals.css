@@ -30,25 +30,21 @@ body {
 }
 
 .btn-primary {
-    @apply text-white text-base bg-blue px-8 py-3 rounded-lg font-primary transition-all duration-300 ease-out hover:-translate-y-1 focus:brightness-125;
+    @apply text-white text-base bg-blue px-8 py-3 rounded-lg font-primary transition-all duration-300 ease-in hover:-translate-y-1 focus:brightness-125;
 }
 
 .btn-primary-small {
-    @apply text-white text-sm bg-blue px-5 py-2 rounded-lg font-primary transition-all duration-300 ease-out hover:-translate-y-1 focus:brightness-125;
+    @apply text-white text-sm bg-blue px-5 py-2 rounded-lg font-primary transition-all duration-300 ease-in hover:-translate-y-1 focus:brightness-125;
 }
 
 .btn-secondary {
-    @apply text-white text-base bg-blue bg-opacity-20 px-8 py-3 rounded-lg font-primary transition-all duration-300 ease-out hover:-translate-y-1 focus:brightness-125;
+    @apply text-blue text-base bg-blue bg-opacity-10 px-8 py-3 rounded-lg font-primary transition-all duration-300 ease-in hover:-translate-y-1 focus:brightness-125;
 }
 
 .btn-secondary-small {
-    @apply text-white text-sm bg-blue bg-opacity-20 px-5 py-2 rounded-lg font-primary transition-all duration-300 ease-out hover:-translate-y-1 focus:brightness-125;
+    @apply text-blue text-sm bg-blue bg-opacity-10 px-5 py-2 rounded-lg font-primary transition-all duration-300 ease-in hover:-translate-y-1 focus:brightness-125;
 }
 
 .px-container {
     @apply w-full px-6 lg:px-[10vw];
-}
-
-.shadow-custom {
-    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.15);
 }
