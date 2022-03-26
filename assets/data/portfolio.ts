@@ -35,7 +35,7 @@ export const portfolioData = {
         {
             id: "2",
             name: "Courier service company landing page",
-            bgColor: "#180020",
+            bgColor: "#040914",
             banner: courierSevenBanner,
             summary:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam ",
@@ -55,7 +55,7 @@ export const portfolioData = {
         {
             id: "3",
             name: "Courier service company landing page",
-            bgColor: "#180020",
+            bgColor: "#001e10",
             banner: courierSevenBanner,
             summary:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam ",
@@ -75,7 +75,7 @@ export const portfolioData = {
         {
             id: "4",
             name: "Courier service company landing page",
-            bgColor: "#180020",
+            bgColor: "#272727",
             banner: courierSevenBanner,
             summary:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam ",

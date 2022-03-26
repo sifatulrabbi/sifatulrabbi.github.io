@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+*::after,
+*::before,
+* {
+    @apply font-secondary;
+}
+
+body {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+}
+
 .text-h1 {
     font-size: clamp(36px, 5vw, 56px);
     line-height: 1.13;
@@ -14,12 +25,28 @@
     @apply font-primary font-bold;
 }
 
+.btn-hover {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 focus:brightness-125;
+}
+
 .btn-primary {
-    @apply text-white text-base bg-blue px-8 py-3 rounded-lg mb-[10vh] transition-all duration-300 ease-out hover:-translate-y-1 focus:brightness-125;
+    @apply text-white text-base bg-blue px-8 py-3 rounded-lg font-primary transition-all duration-300 ease-out hover:-translate-y-1 focus:brightness-125;
+}
+
+.btn-primary-small {
+    @apply text-white text-sm bg-blue px-5 py-2 rounded-lg font-primary transition-all duration-300 ease-out hover:-translate-y-1 focus:brightness-125;
+}
+
+.btn-secondary {
+    @apply text-white text-base bg-blue bg-opacity-20 px-8 py-3 rounded-lg font-primary transition-all duration-300 ease-out hover:-translate-y-1 focus:brightness-125;
+}
+
+.btn-secondary-small {
+    @apply text-white text-sm bg-blue bg-opacity-20 px-5 py-2 rounded-lg font-primary transition-all duration-300 ease-out hover:-translate-y-1 focus:brightness-125;
 }
 
 .px-container {
-    @apply w-full p-6 lg:px-[10vw];
+    @apply w-full px-6 lg:px-[10vw];
 }
 
 .shadow-custom {

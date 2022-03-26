@@ -5,7 +5,7 @@ import Img from "next/image";
 export const Intro: React.FC = () => {
     return (
         <div className="w-full min-h-screen bg-black">
-            <div className="flex flex-col flex-1 justify-between px-container lg:flex-row">
+            <div className="flex flex-col flex-1 justify-between px-container py-6 lg:flex-row">
                 <div>
                     <Img
                         src={logo}
@@ -24,11 +24,11 @@ export const Intro: React.FC = () => {
                         <br />
                         your business online
                     </h1>
-                    <button className="btn-primary font-primary">
+                    <button className="btn-primary mb-[10vh]">
                         My Services
                     </button>
                 </div>
-                <div className="w-[25vw] self-center min-w-[200px] h-auto">
+                <div className="w-[25vw] self-center min-w-[200px] h-auto mb-[5vh]">
                     <Img
                         src={introImg}
                         alt="Full stack web developer"
