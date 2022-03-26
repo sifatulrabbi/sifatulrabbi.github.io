@@ -6,7 +6,12 @@ import {
     SiNodedotjs,
     SiSass,
 } from "react-icons/si";
-import {courierSevenBanner} from "../images";
+import {
+    courierSevenBanner,
+    fullstackBlogBanner,
+    todoAppBanner,
+    socialMediaBanner,
+} from "../images";
 
 export const portfolioData = {
     caption: "My Skills and Expertise",
@@ -34,9 +39,9 @@ export const portfolioData = {
         },
         {
             id: "2",
-            name: "Courier service company landing page",
+            name: "Social Media Application",
             bgColor: "#E8EFFF",
-            banner: courierSevenBanner,
+            banner: socialMediaBanner,
             summary:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam ",
             stack: [
@@ -54,9 +59,9 @@ export const portfolioData = {
         },
         {
             id: "3",
-            name: "Courier service company landing page",
+            name: "Full Stack Blog Application",
             bgColor: "#E9FFF4",
-            banner: courierSevenBanner,
+            banner: fullstackBlogBanner,
             summary:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam ",
             stack: [
@@ -74,9 +79,9 @@ export const portfolioData = {
         },
         {
             id: "4",
-            name: "Courier service company landing page",
+            name: "ToDo Application",
             bgColor: "#FFF7E9",
-            banner: courierSevenBanner,
+            banner: todoAppBanner,
             summary:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam ",
             stack: [
