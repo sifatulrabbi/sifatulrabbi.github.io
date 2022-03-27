@@ -1,5 +1,5 @@
 import type {NextPage, NextPageContext} from "next";
-import {Head, Intro, Projects, Services} from "../components";
+import {Head, Intro, Projects, Services, Footer} from "../components";
 
 interface Props {
     message: string;
@@ -12,6 +12,7 @@ const Home: NextPage<Props> = ({}) => {
             <Intro />
             <Services />
             <Projects />
+            <Footer />
         </>
     );
 };
