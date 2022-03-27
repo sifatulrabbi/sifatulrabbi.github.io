@@ -30,7 +30,7 @@ body {
 }
 
 .text-body {
-    @apply text-dark font-secondary text-sm lg:text-base;
+    @apply text-dark font-secondary text-base;
 }
 
 .btn-hover {
