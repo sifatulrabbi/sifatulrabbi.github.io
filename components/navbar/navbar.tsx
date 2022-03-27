@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
                     } transition-transform ease-out duration-300`}
                 />
                 <div
-                    className={`w-[3px] rounded-full bg-blue transition-transform absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 ${
+                    className={`w-[3px] rounded-full bg-white transition-transform absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 ${
                         !show ? "h-6" : "h-0"
                     } transition-all ease-out duration-300`}
                 />

@@ -11,9 +11,25 @@ class MyDocument extends Document {
                         content="Solving problems and struggling to learn something new every day motivates me more than anything."
                     />
                     <meta name="robots" content="index, follow" />
-                    <link rel="icon" href="favicon.png" />
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300;400;500;700&display=swap"
+                        rel="preconnect"
+                        href="https://fonts.googleapis.com"
+                    />
+                    <link
+                        rel="preconnect"
+                        href="https://fonts.gstatic.com"
+                        crossOrigin="true"
+                    />
+                    {/* <link
+                        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&family=Montserrat:wght@400;700;900&display=swap"
+                        rel="stylesheet"
+                    /> */}
+                    {/* <link
+                        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;700;900&display=swap"
+                        rel="stylesheet"
+                    /> */}
+                    <link
+                        href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Merriweather:wght@300;400;700&display=swap"
                         rel="stylesheet"
                     />
                 </Head>

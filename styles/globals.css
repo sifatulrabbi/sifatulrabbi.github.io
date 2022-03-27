@@ -16,13 +16,21 @@ body {
 .text-h1 {
     font-size: clamp(36px, 5vw, 56px);
     line-height: 1.13;
-    @apply font-primary font-bold;
+    @apply font-primary font-black;
 }
 
 .text-h2 {
     font-size: clamp(28px, 4vw, 40px);
     line-height: 1.13;
-    @apply font-primary font-bold;
+    @apply font-primary font-black;
+}
+
+.text-caption {
+    @apply font-secondary text-base tracking-wider uppercase font-bold;
+}
+
+.text-body {
+    @apply text-dark font-secondary text-sm lg:text-base;
 }
 
 .btn-hover {
@@ -30,19 +38,19 @@ body {
 }
 
 .btn-primary {
-    @apply text-white text-base bg-blue px-8 py-3 rounded-lg font-primary transition-all duration-300 ease-in hover:-translate-y-1 focus:brightness-125;
+    @apply text-white text-base bg-black px-8 py-3 rounded-lg font-primary transition-all duration-300 ease-in hover:-translate-y-1 focus:brightness-125;
 }
 
 .btn-primary-small {
-    @apply text-white text-sm bg-blue px-5 py-2 rounded-lg font-primary transition-all duration-300 ease-in hover:-translate-y-1 focus:brightness-125;
+    @apply text-white text-sm bg-black px-5 py-2 rounded-lg font-primary transition-all duration-300 ease-in hover:-translate-y-1 focus:brightness-125;
 }
 
 .btn-secondary {
-    @apply text-blue text-base bg-blue bg-opacity-10 px-8 py-3 rounded-lg font-primary transition-all duration-300 ease-in hover:-translate-y-1 focus:brightness-125;
+    @apply text-black text-base bg-black bg-opacity-10 px-8 py-3 rounded-lg font-primary transition-all duration-300 ease-in hover:-translate-y-1 focus:brightness-125;
 }
 
 .btn-secondary-small {
-    @apply text-blue text-sm bg-blue bg-opacity-10 px-5 py-2 rounded-lg font-primary transition-all duration-300 ease-in hover:-translate-y-1 focus:brightness-125;
+    @apply text-black text-sm bg-black bg-opacity-10 px-5 py-2 rounded-lg font-primary transition-all duration-300 ease-in hover:-translate-y-1 focus:brightness-125;
 }
 
 .px-container {
