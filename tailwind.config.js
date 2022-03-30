@@ -2,19 +2,20 @@ module.exports = {
     content: [
         "./pages/**/*.{tsx,ts,js,jsx}",
         "./components/**/*.{tsx,ts,jsx,js}",
+        "./features/**/*.{tsx,ts,jsx,js}",
     ],
     theme: {
         fontFamily: {
-            primary: ["Merriweather", "sans-serif"],
-            // secondary: ["IBM Plex Sans", "sans-serif"],
-            secondary: ["Fira Sans", "serif"],
+            primary: ["Epilogue", "sans-serif"],
+            secondary: ["IBM Plex Sans", "serif"],
+            mono: ["JetBrains Mono", "monospace"],
         },
         colors: {
-            blue: "#0070ff",
-            black: "#0d0d0d",
+            primary: "#0070FF",
+            secondary: "#576F8E",
+            // black: "#0D1520",
+            black: "#181818",
             white: "#fff",
-            dark: "#484848",
-            light: "#e6e6e6",
         },
     },
     plugins: [],
