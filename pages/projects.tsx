@@ -1,14 +1,6 @@
-import type {NextPage, NextPageContext} from "next";
-import {Head, FeaturedProjectCard, ProjectCard} from "../components";
-import {
-    SiTypescript,
-    SiNodedotjs,
-    SiExpress,
-    SiPostgresql,
-    SiNextdotjs,
-} from "react-icons/si";
-import {fullstackBlogBanner, todoAppBanner} from "../assets/images";
-import Link from "next/link";
+import type {NextPage} from "next";
+import {Head} from "../components";
+import {FeaturedProjectsView, ProjectsView} from "../features";
 
 interface Props {
     message: string;
@@ -27,24 +19,9 @@ const Projects: NextPage<Props> = ({}) => {
                     personal projects
                 </p>
             </section>
-            <section>
-                <h3 className="text-xl font-medium font-primary text-black">
-                    Featured projects
-                </h3>
-                <div>
-                    <ProjectCard
-                        title="Full Stack Blogging Website"
-                        img={fullstackBlogBanner}
-                        summary="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used."
-                        icons={[
-                            SiTypescript,
-                            SiNodedotjs,
-                            SiNextdotjs,
-                            SiExpress,
-                        ]}
-                        link="/"
-                    />
-                </div>
+            <section className="flex flex-col gap-8">
+                <FeaturedProjectsView />
+                <ProjectsView />
             </section>
         </>
     );

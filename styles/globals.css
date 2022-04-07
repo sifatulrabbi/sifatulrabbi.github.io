@@ -42,20 +42,20 @@ body {
 
 @layer components {
     .btn-primary {
-        @apply rounded-md font-primary px-4 py-[8px] border-[4px] border-double border-gray-700 text-sm font-medium;
+        @apply rounded-md font-primary px-4 py-[8px] border-[4px] border-double border-gray-700 text-sm font-medium hover:text-primary hover:border-primary transition-all duration-200;
     }
 
     .btn-secondary {
-        @apply rounded-md font-primary px-4 py-[10px] border-[1px] border-dashed border-gray-700 text-sm font-medium;
+        @apply rounded-md font-primary px-4 py-[10px] border-[1px] border-dashed border-gray-700 text-sm font-medium hover:text-primary hover:border-primary transition-all duration-200;
     }
 
     .btn-alt {
-        @apply rounded-md font-primary px-4 py-[10px] border-[1px] border-gray-700 text-sm font-medium;
+        @apply rounded-md font-primary px-4 py-[10px] border-[1px] border-gray-700 text-sm font-medium hover:text-primary hover:border-primary transition-all duration-200;
     }
 }
 
 @layer utilities {
     .w-container {
-        @apply max-w-4xl mx-auto;
+        @apply w-full md:max-w-[60vw] mx-auto;
     }
 }
