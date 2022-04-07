@@ -32,12 +32,12 @@ function Icon({name}: BtnProps) {
 }
 
 export const MobileBar: React.FC = () => {
-    const [active, setAction] = useRecoilState(activePathState);
+    const [active, setActive] = useRecoilState(activePathState);
     const router = useRouter();
 
     React.useEffect(() => {
-        setAction(router.pathname);
-    }, [router.pathname, setAction]);
+        setActive(router.pathname);
+    }, [router.pathname, setActive]);
 
     return (
         <nav className="z-50 fixed md:hidden bottom-0 right-0 left-0 h-[60px] flex flex-row justify-around items-center px-4 bg-white bg-opacity-95">
