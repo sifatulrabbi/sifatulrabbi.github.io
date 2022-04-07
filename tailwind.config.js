@@ -6,16 +6,8 @@ module.exports = {
     ],
     theme: {
         fontFamily: {
-            primary: ["Epilogue", "sans-serif"],
-            secondary: ["IBM Plex Sans", "serif"],
-            mono: ["JetBrains Mono", "monospace"],
-        },
-        colors: {
-            primary: "#0070FF",
-            secondary: "#576F8E",
-            // black: "#0D1520",
-            black: "#181818",
-            white: "#fff",
+            primary: ["Fira Sans", "sans-serif"],
+            secondary: ["Noto Serif", "serif"],
         },
     },
     plugins: [],

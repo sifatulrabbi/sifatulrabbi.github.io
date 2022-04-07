@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --color-primary: #0070ff;
+    --color-secondary: #576f8e;
+}
+
 *::after,
 *::before,
 * {
@@ -11,15 +16,29 @@
 body {
     max-width: 100vw !important;
     overflow-x: hidden !important;
-    @apply bg-white text-secondary;
+    @apply bg-white text-gray-700;
 }
 
-.text-h1 {
-    @apply font-bold font-primary;
-    font-size: clamp(46px, 5vw, 88px);
-    line-height: 1;
+@layer base {
+    h1 {
+        @apply text-3xl lg:text-4xl text-black font-bold font-primary mb-4;
+    }
+
+    h4 {
+        @apply font-medium text-black text-xl font-primary mb-4;
+    }
+
+    section {
+        @apply w-full flex flex-col justify-start items-start p-4;
+    }
 }
 
-.btn-primary {
-    @apply bg-primary text-white font-mono px-5 py-3 rounded-md transition-all duration-200 ease-out hover:bg-opacity-90;
+@layer components {
+    .btn-primary {
+        @apply rounded-md font-primary px-4 py-[8px] border-[4px] border-double border-gray-700 text-sm font-medium;
+    }
+
+    .btn-secondary {
+        @apply rounded-md font-primary px-4 py-[10px] border-[1px] border-dashed border-gray-700 text-sm font-medium;
+    }
 }
