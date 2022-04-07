@@ -17,7 +17,7 @@ interface Props {
 const Home: NextPage<Props> = ({}) => {
     return (
         <>
-            <Head title={"Home"} />
+            <Head title="Home" />
             {/* hero section */}
             <section className="justify-start mt-[60px] pt-[8vh]">
                 <h1>Hi, I am Sifatul Rabbi</h1>
@@ -42,7 +42,7 @@ const Home: NextPage<Props> = ({}) => {
 
             {/* fav tech-stack */}
             <section className="mt-[5vh]">
-                <h4>Current favorite tech-stack</h4>
+                <h3>Current favorite tech-stack</h3>
                 <div className="flex justify-start items-center gap-4">
                     <SiTypescript className="text-4xl text-black" />
                     <SiNextdotjs className="text-4xl text-black" />

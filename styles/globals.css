@@ -23,8 +23,16 @@ body {
         @apply text-3xl lg:text-4xl text-black font-bold font-primary mb-4;
     }
 
+    h2 {
+        @apply text-2xl lg:text-3xl text-black font-bold font-primary mb-4;
+    }
+
+    h3 {
+        @apply font-medium text-black text-xl lg:text-2xl font-primary mb-4;
+    }
+
     h4 {
-        @apply font-medium text-black text-xl font-primary mb-4;
+        @apply font-medium text-black text-lg lg:text-xl font-primary mb-4;
     }
 
     section {
