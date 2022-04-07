@@ -56,7 +56,7 @@ export const ContactMeForm: React.FC = () => {
                 type="submit"
                 className="btn-primary flex items-center gap-2"
             >
-                Send Now <BiSend />
+                Send now <BiSend />
             </button>
         </form>
     );

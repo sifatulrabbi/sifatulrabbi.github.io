@@ -44,7 +44,7 @@ export const FeaturedProjectCard: React.FC<Props> = ({
                 </div>
                 <div className="mt-8 flex justify-start items-center gap-4">
                     <Link href={link}>
-                        <a className="btn-primary block">Live Site</a>
+                        <a className="btn-primary block">Live site</a>
                     </Link>
                     <Link href={link}>
                         <a className="btn-secondary block">Github</a>

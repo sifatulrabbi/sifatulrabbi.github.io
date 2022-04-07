@@ -7,6 +7,7 @@ import {
     SiPostgresql,
     SiNextdotjs,
 } from "react-icons/si";
+import {BiBriefcase, BiUser} from "react-icons/bi";
 import Link from "next/link";
 import {FeaturedProjectsView} from "../features";
 import Image from "next/image";
@@ -31,13 +32,13 @@ const Home: NextPage<Props> = ({}) => {
                     </p>
                     <div className="flex gap-4 mt-8">
                         <Link href="/projects">
-                            <a className="flex justify-center items-center btn-primary">
-                                See my works
+                            <a className="flex justify-center items-center btn-primary gap-2">
+                                My projects <BiBriefcase />
                             </a>
                         </Link>
                         <Link href="/contact">
-                            <a className="flex justify-center items-center btn-secondary">
-                                Learn about me
+                            <a className="flex justify-center items-center btn-secondary gap-2">
+                                About me <BiUser />
                             </a>
                         </Link>
                     </div>
@@ -71,7 +72,7 @@ const Home: NextPage<Props> = ({}) => {
                 <FeaturedProjectsView />
                 <Link href="/projects">
                     <a className="btn-alt w-full max-w-xs mx-auto text-center">
-                        See More Projects
+                        See more projects
                     </a>
                 </Link>
             </section>

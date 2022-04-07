@@ -8,7 +8,7 @@ const Contact: NextPage = () => {
         <section className="mt-[60px] md:grid md:grid-cols-2 gap-6 min-h-[75vh]">
             <div>
                 <div className="mb-6">
-                    <h3 className="mb-2">Contact Me</h3>
+                    <h3 className="mb-2">Contact me</h3>
                     <p className="text-sm">
                         I am always excited about new ideas meeting with new
                         people.
