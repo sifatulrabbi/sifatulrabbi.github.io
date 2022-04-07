@@ -8,6 +8,7 @@ import {
     SiNextdotjs,
 } from "react-icons/si";
 import {BiBriefcase, BiUser} from "react-icons/bi";
+import {} from "react-icons/ai";
 import Link from "next/link";
 import {FeaturedProjectsView} from "../features";
 import Image from "next/image";

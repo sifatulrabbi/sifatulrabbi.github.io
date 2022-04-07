@@ -1,13 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import {
-    SiGithub,
-    SiUpwork,
-    SiFiverr,
-    SiFacebook,
-    SiTwitter,
-    SiLinkedin,
-} from "react-icons/si";
+import {SiGithub, SiFacebook, SiTwitter, SiLinkedin} from "react-icons/si";
 
 export const Footer: React.FC = () => {
     return (
@@ -32,16 +25,6 @@ export const Footer: React.FC = () => {
                     <Link href="/">
                         <a>
                             <SiFacebook className="text-2xl " />
-                        </a>
-                    </Link>
-                    <Link href="/">
-                        <a>
-                            <SiUpwork className="text-2xl " />
-                        </a>
-                    </Link>
-                    <Link href="/">
-                        <a>
-                            <SiFiverr className="text-2xl " />
                         </a>
                     </Link>
                 </div>
