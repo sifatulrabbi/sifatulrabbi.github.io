@@ -1,5 +1,5 @@
 import type {NextPage, NextPageContext} from "next";
-import {Head} from "../components";
+import {Head, FeaturedProjectCard} from "../components";
 import {
     SiTypescript,
     SiNodedotjs,
@@ -7,6 +7,7 @@ import {
     SiPostgresql,
     SiNextdotjs,
 } from "react-icons/si";
+import {fullstackBlogBanner, todoAppBanner} from "../assets/images";
 
 interface Props {
     message: string;
@@ -43,7 +44,18 @@ const Home: NextPage<Props> = ({}) => {
             </section>
 
             {/* featured projects section */}
-            <section></section>
+            <section className="flex flex-row flex-wrap gap-6">
+                <FeaturedProjectCard
+                    title="Full Stack Blogging Website"
+                    img={fullstackBlogBanner}
+                    link="/"
+                />
+                <FeaturedProjectCard
+                    title="ToDo Application"
+                    img={todoAppBanner}
+                    link="/"
+                />
+            </section>
         </>
     );
 };
