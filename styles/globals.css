@@ -29,7 +29,7 @@ body {
     }
 
     section {
-        @apply w-full flex flex-col justify-start items-start p-4;
+        @apply w-full flex flex-col justify-start items-start p-4 w-container;
     }
 }
 
@@ -40,5 +40,15 @@ body {
 
     .btn-secondary {
         @apply rounded-md font-primary px-4 py-[10px] border-[1px] border-dashed border-gray-700 text-sm font-medium;
+    }
+
+    .btn-alt {
+        @apply rounded-md font-primary px-4 py-[10px] border-[1px] border-gray-700 text-sm font-medium;
+    }
+}
+
+@layer utilities {
+    .w-container {
+        @apply max-w-4xl mx-auto;
     }
 }

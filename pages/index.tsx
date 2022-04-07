@@ -8,6 +8,7 @@ import {
     SiNextdotjs,
 } from "react-icons/si";
 import {fullstackBlogBanner, todoAppBanner} from "../assets/images";
+import Link from "next/link";
 
 interface Props {
     message: string;
@@ -26,13 +27,21 @@ const Home: NextPage<Props> = ({}) => {
                     more.
                 </p>
                 <div className="flex gap-4 mt-8">
-                    <button className="btn-primary">See my works</button>
-                    <button className="btn-secondary">Learn about me</button>
+                    <Link href="/">
+                        <a className="flex justify-center items-center btn-primary">
+                            See my works
+                        </a>
+                    </Link>
+                    <Link href="/">
+                        <a className="flex justify-center items-center btn-secondary">
+                            Learn about me
+                        </a>
+                    </Link>
                 </div>
             </section>
 
             {/* fav tech-stack */}
-            <section>
+            <section className="mt-[5vh]">
                 <h4>Current favorite tech-stack</h4>
                 <div className="flex justify-start items-center gap-4">
                     <SiTypescript className="text-4xl text-black" />
@@ -44,7 +53,7 @@ const Home: NextPage<Props> = ({}) => {
             </section>
 
             {/* featured projects section */}
-            <section className="flex flex-row flex-wrap gap-6">
+            <section className="flex flex-row flex-wrap gap-4 mt-[5vh]">
                 <FeaturedProjectCard
                     title="Full Stack Blogging Website"
                     img={fullstackBlogBanner}
@@ -55,6 +64,11 @@ const Home: NextPage<Props> = ({}) => {
                     img={todoAppBanner}
                     link="/"
                 />
+                <Link href="/">
+                    <a className="btn-alt w-full text-center">
+                        See More Projects
+                    </a>
+                </Link>
             </section>
         </>
     );
