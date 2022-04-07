@@ -6,6 +6,7 @@ module.exports = {
         "./components/**/*.{tsx,ts,jsx,js}",
         "./features/**/*.{tsx,ts,jsx,js}",
     ],
+    darkMode: "class",
     theme: {
         fontFamily: {
             primary: ["Fira Sans", "sans-serif"],

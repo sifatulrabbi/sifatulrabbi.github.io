@@ -11,7 +11,7 @@ import {
 
 export const Footer: React.FC = () => {
     return (
-        <footer className="w-full p-4 mt-[5vh]">
+        <footer className="w-full p-4 mt-[5vh] mb-[60px] md:mb-0">
             <section className="border-t-[1px] border-gray-400 flex flex-col justify-center items-center gap-6">
                 <div className="flex justify-center items-center gap-4">
                     <Link href="/">
