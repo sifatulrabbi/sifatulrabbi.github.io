@@ -29,7 +29,7 @@ export const Navbar: React.FC = () => {
             <div className="w-container w-full flex justify-between items-center">
                 <Logo height={40} width={40} />
                 <div className="flex flex-row justify-center items-center gap-4">
-                    <div className="hidden md:flex flex-row justify-center items-center gap-4">
+                    <div className="hidden lg:flex flex-row justify-center items-center gap-4">
                         {links.map((link) => (
                             <Link key={v4()} href={link.path}>
                                 <a

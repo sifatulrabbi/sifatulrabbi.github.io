@@ -1,5 +1,5 @@
 import React from "react";
-import {FeaturedProjectCard, ProjectCard} from "../components";
+import {FeaturedProjectCard} from "../components";
 import {featuredProjectsSelector} from "../states";
 import {useRecoilValue} from "recoil";
 import {v4} from "uuid";

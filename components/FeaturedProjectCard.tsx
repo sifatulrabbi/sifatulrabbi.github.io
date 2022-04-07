@@ -18,11 +18,11 @@ export const FeaturedProjectCard: React.FC<Props> = ({
     icons,
 }) => {
     return (
-        <div className="max-w-[500px] md:max-w-full grid grid-cols-1 md:grid-cols-2 overflow-hidden w-full gap-4 border-[1px] border-gray-400 p-4 rounded-md">
+        <div className="max-w-[500px] lg:max-w-full grid grid-cols-1 lg:grid-cols-2 overflow-hidden w-full gap-4 border-[1px] border-gray-400 p-4 rounded-lg">
             <div className="max-w-[500px] w-full max-h-[260px] overflow-hidden">
                 <Img
                     src={img}
-                    alt="Feature project of Md Sifatul Islam Rabbi"
+                    alt="Featured project of Md Sifatul Islam Rabbi"
                     layout="intrinsic"
                     className="object-cover w-auto h-auto"
                 />

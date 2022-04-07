@@ -11,7 +11,7 @@ export const ProjectsView: React.FC = () => {
             <h3 className="text-xl font-medium font-primary text-black">
                 Other projects
             </h3>
-            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {otherProjects.map((project) => (
                     <ProjectCard key={v4()} {...project} />
                 ))}
