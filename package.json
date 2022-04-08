@@ -2,7 +2,7 @@
     "name": "sifatulrabbi.github.io",
     "homepage": "https://sifatulrabbi.github.io",
     "description": "Md Sifatul Islam Rabbi | Full stack web developer",
-    "version": "1.0.0",
+    "version": "3.0.0",
     "author": {
         "name": "Md Sifatul Islam Rabbi",
         "email": "mdsiftulislam.rabbi@gmail.com",
@@ -12,16 +12,19 @@
         "next.js",
         "react",
         "typescript",
-        "tailwind"
+        "tailwind",
+        "node.js",
+        "express.js"
     ],
     "private": true,
     "scripts": {
         "start:dev": "next dev",
         "build": "next build",
         "start": "next start",
+        "export": "next export",
         "lint": "next lint",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d ./.next",
+        "predeploy": "npm run build && npm run export && touch out/.nojekyll",
+        "deploy": "gh-pages -d ./out",
         "format": "prettier --write ./"
     },
     "dependencies": {
