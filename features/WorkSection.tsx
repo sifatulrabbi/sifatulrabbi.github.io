@@ -14,15 +14,6 @@ const workData = [
     },
     {
         title: "Back End Developer",
-        company: "Upwork",
-        details: [
-            "Lorem ipsum dolor sit amet consectetur adipisicing",
-            "Lorem ipsum dolor sit amet consectetur",
-            "Lorem ipsum dolor sit amet consectetur adipisicing adipisicing",
-        ],
-    },
-    {
-        title: "Front End Developer",
         company: "Fiverr",
         details: [
             "Lorem ipsum dolor sit amet consectetur adipisicing",

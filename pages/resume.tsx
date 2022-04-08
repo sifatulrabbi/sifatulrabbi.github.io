@@ -98,7 +98,7 @@ const Resume: NextPage = () => {
                     <WorkSection />
                     <Link href="/projects">
                         <a className="block w-max btn-primary mt-4">
-                            See other projects
+                            See personal projects
                         </a>
                     </Link>
                 </div>

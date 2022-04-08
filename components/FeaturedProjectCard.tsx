@@ -2,6 +2,8 @@ import React from "react";
 import Img from "next/image";
 import Link from "next/link";
 import {IconType} from "react-icons";
+import {SiGithub} from "react-icons/si";
+import {AiOutlineLink} from "react-icons/ai";
 import {v4} from "uuid";
 
 interface Props {
@@ -44,10 +46,14 @@ export const FeaturedProjectCard: React.FC<Props> = ({
                 </div>
                 <div className="mt-8 flex justify-start items-center gap-4">
                     <Link href={link}>
-                        <a className="btn-primary block">Live site</a>
+                        <a className="btn-primary flex items-center gap-2">
+                            Live site <AiOutlineLink />
+                        </a>
                     </Link>
                     <Link href={link}>
-                        <a className="btn-secondary block">Github</a>
+                        <a className="btn-secondary flex items-center gap-2">
+                            Github <SiGithub />
+                        </a>
                     </Link>
                 </div>
             </div>
