@@ -3,8 +3,8 @@ import {v4} from "uuid";
 import {links} from "./data";
 import {useRouter} from "next/router";
 import Link from "next/link";
-import {useRecoilState} from "recoil";
-import {activePathState} from "../../states";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {activePathState, darkModeState} from "../../states";
 import {
     BiHomeAlt,
     BiMessageSquareDetail,
@@ -34,14 +34,19 @@ function Icon({name}: BtnProps) {
 export const MobileBar: React.FC = () => {
     const [active, setActive] = useRecoilState(activePathState);
     const router = useRouter();
+    const darkMode = useRecoilValue(darkModeState);
 
     React.useEffect(() => {
         setActive(router.pathname);
     }, [router.pathname, setActive]);
 
     return (
-        <nav className="z-50 fixed lg:hidden bottom-0 right-0 left-0 h-[60px] flex">
-            <div className="w-container flex flex-row justify-around items-center px-4 bg-white bg-opacity-95">
+        <nav
+            className={`z-50 fixed lg:hidden bottom-0 right-0 left-0 h-[60px] flex ${
+                darkMode ? "dark" : "light"
+            }`}
+        >
+            <div className="w-container flex flex-row justify-around items-center px-4 theme-styles bg-white dark:bg-slate-700 bg-opacity-95 dark:opacity-95">
                 {links.map((link) => (
                     <Link key={v4()} href={link.path}>
                         <a
