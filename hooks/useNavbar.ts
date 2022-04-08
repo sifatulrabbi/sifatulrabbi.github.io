@@ -17,16 +17,14 @@ export function useNavbar() {
     }, [router.pathname]);
 
     React.useEffect(() => {
-        if (
-            window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches
-        ) {
-            setDarkMode(true);
-        } else {
-            setDarkMode(false);
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+        const mode = new Promise((resolve: (matchMedia: boolean) => void) => {
+            const matchMedia = window.matchMedia
+                ? window.matchMedia("(prefers-color-scheme: dark)").matches
+                : false;
+            return resolve(matchMedia);
+        });
+        mode.then((matchMedia) => setDarkMode(matchMedia));
+    }, [setDarkMode]);
 
     return {
         active,
