@@ -1,5 +1,6 @@
 {
     "name": "sifatulrabbi.github.io",
+    "homepage": "https://sifatulrabbi.github.io",
     "description": "Md Sifatul Islam Rabbi | Full stack web developer",
     "version": "1.0.0",
     "author": {
@@ -19,7 +20,8 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "deploy": "gh-pages -d .next",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d ./.next",
         "format": "prettier --write ./"
     },
     "dependencies": {
