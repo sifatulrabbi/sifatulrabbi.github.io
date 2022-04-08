@@ -19,6 +19,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "deploy": "gh-pages -d .next",
         "format": "prettier --write ./"
     },
     "dependencies": {
