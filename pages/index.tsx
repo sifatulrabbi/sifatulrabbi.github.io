@@ -36,7 +36,7 @@ const Home: NextPage<Props> = ({}) => {
                                 My projects <BiBriefcase />
                             </a>
                         </Link>
-                        <Link href="/contact">
+                        <Link href="/resume">
                             <a className="flex justify-center items-center btn-secondary gap-2">
                                 About me <BiUser />
                             </a>

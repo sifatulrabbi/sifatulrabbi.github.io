@@ -8,6 +8,7 @@ import {
     SiNextdotjs,
 } from "react-icons/si";
 import {fullstackBlogBanner} from "../assets/images";
+import {featuredProjectsData, projectsData} from "../assets/data";
 
 export interface IProject {
     title: string;
@@ -26,24 +27,7 @@ export const featuredProjectsSelector = selector({
     key: "featuredProjectsSelector",
     get: ({get}) => {
         const defaultValues = get(projectsState);
-        return [
-            {
-                title: "Blogging website | Full Stack",
-                summary:
-                    "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.",
-                img: fullstackBlogBanner,
-                link: "/projects",
-                icons: [SiExpress, SiNodedotjs, SiNextdotjs, SiTypescript],
-            },
-            {
-                title: "Blogging website | Full Stack",
-                summary:
-                    "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.",
-                img: fullstackBlogBanner,
-                link: "/projects",
-                icons: [SiExpress, SiNodedotjs, SiNextdotjs, SiTypescript],
-            },
-        ];
+        return featuredProjectsData;
     },
 });
 
@@ -51,39 +35,6 @@ export const otherProjectsSelector = selector({
     key: "otherProjectsSelector",
     get: ({get}) => {
         const defaultValues = get(projectsState);
-        return [
-            {
-                title: "Blogging website | Full Stack",
-                summary:
-                    "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.",
-                img: fullstackBlogBanner,
-                link: "/projects",
-                icons: [SiExpress, SiNodedotjs, SiNextdotjs, SiTypescript],
-            },
-            {
-                title: "Blogging website | Full Stack",
-                summary:
-                    "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.",
-                img: fullstackBlogBanner,
-                link: "/projects",
-                icons: [SiExpress, SiNodedotjs, SiNextdotjs, SiTypescript],
-            },
-            {
-                title: "Blogging website | Full Stack",
-                summary:
-                    "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.",
-                img: fullstackBlogBanner,
-                link: "/projects",
-                icons: [SiExpress, SiNodedotjs, SiNextdotjs, SiTypescript],
-            },
-            {
-                title: "Blogging website | Full Stack",
-                summary:
-                    "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used.",
-                img: fullstackBlogBanner,
-                link: "/projects",
-                icons: [SiExpress, SiNodedotjs, SiNextdotjs, SiTypescript],
-            },
-        ];
+        return projectsData;
     },
 });

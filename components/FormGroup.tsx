@@ -25,7 +25,10 @@ export const FormGroup: React.FC<Props> = ({
 
     return (
         <div className="w-full flex flex-col justify-start items start">
-            <label htmlFor={name} className="w-full font-primary font-medium">
+            <label
+                htmlFor={name}
+                className="w-full font-primary font-medium mb-1"
+            >
                 {label}
                 {required ? "*" : ""}
             </label>

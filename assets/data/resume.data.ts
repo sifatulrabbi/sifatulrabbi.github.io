@@ -15,3 +15,33 @@ export const softSkills = [
     "Team work",
     "Punctuality",
 ];
+
+export const workExperiences = [
+    {
+        title: "Full stack developer",
+        company: "Upwork",
+        details: [
+            "Lorem ipsum dolor sit amet consectetur adipisicing",
+            "Lorem ipsum dolor sit amet consectetur",
+            "Lorem ipsum dolor sit amet consectetur adipisicing adipisicing",
+        ],
+    },
+    {
+        title: "Backend developer",
+        company: "Fiverr",
+        details: [
+            "Lorem ipsum dolor sit amet consectetur adipisicing",
+            "Lorem ipsum dolor sit amet consectetur",
+            "Lorem ipsum dolor sit amet consectetur adipisicing adipisicing",
+        ],
+    },
+    {
+        title: "Frontend developer",
+        company: "Fiverr",
+        details: [
+            "Lorem ipsum dolor sit amet consectetur adipisicing",
+            "Lorem ipsum dolor sit amet consectetur",
+            "Lorem ipsum dolor sit amet consectetur adipisicing adipisicing",
+        ],
+    },
+];

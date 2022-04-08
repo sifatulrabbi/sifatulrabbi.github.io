@@ -1,22 +1,18 @@
 import React from "react";
 import Img from "next/image";
 import Link from "next/link";
-import {IconType} from "react-icons";
 import {SiGithub} from "react-icons/si";
 import {AiOutlineLink} from "react-icons/ai";
 import {v4} from "uuid";
+import {IProjectCardFeatured} from "../interfaces";
 
-interface Props {
-    img: any;
-    title: string;
-    link: string;
-    icons: IconType[];
-}
+interface Props extends IProjectCardFeatured {}
 
 export const FeaturedProjectCard: React.FC<Props> = ({
     img,
     title,
-    link,
+    summary,
+    links: {live, github},
     icons,
 }) => {
     return (
@@ -30,28 +26,29 @@ export const FeaturedProjectCard: React.FC<Props> = ({
                 />
             </div>
             <div className="flex flex-col justify-start items-start">
-                <h4 className="bottom-0 left-0 right-0 font-primary font-medium text-lg text-center block mb-2">
+                <h4 className="bottom-0 left-0 right-0 font-primary font-medium text-lg text-start block mb-4">
                     {title}
                 </h4>
-                <p className="text-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sapiente Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Nam accusamus maiores soluta id! Lorem ipsum dolor sit
-                    amet consectetur adipisicing elit. Pariatur, fugiat?
-                </p>
+                <p className="text-sm">{summary}</p>
                 <div className="flex flex-row justify-start items-center gap-4 mt-4">
                     {icons.map((Icon) => (
                         <Icon key={v4()} className="text-2xl" />
                     ))}
                 </div>
                 <div className="mt-8 flex justify-start items-center gap-4">
-                    <Link href={link}>
-                        <a className="btn-primary flex items-center gap-2">
+                    <Link href={live}>
+                        <a
+                            target="_blank"
+                            className="btn-primary flex items-center gap-2"
+                        >
                             Live site <AiOutlineLink />
                         </a>
                     </Link>
-                    <Link href={link}>
-                        <a className="btn-secondary flex items-center gap-2">
+                    <Link href={github}>
+                        <a
+                            target="_blank"
+                            className="btn-secondary flex items-center gap-2"
+                        >
                             Github <SiGithub />
                         </a>
                     </Link>

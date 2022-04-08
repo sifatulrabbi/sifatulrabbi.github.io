@@ -8,7 +8,7 @@ export const FeaturedProjectsView: React.FC = () => {
     const featuredProjects = useRecoilValue(featuredProjectsSelector);
     return (
         <div className="w-full flex flex-col justify-start items-start">
-            <h3 className="text-xl font-medium font-primary">
+            <h3 className="text-xl font-medium font-primary mb-4">
                 Featured Projects
             </h3>
             <div className="w-full flex flex-col justify-start items-center gap-4">
