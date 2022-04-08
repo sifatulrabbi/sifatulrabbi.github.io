@@ -1,16 +1,14 @@
 import React from "react";
 import {v4} from "uuid";
 import {links} from "./data";
-import {useRouter} from "next/router";
 import Link from "next/link";
-import {useRecoilState, useRecoilValue} from "recoil";
-import {activePathState, darkModeState} from "../../states";
 import {
     BiHomeAlt,
     BiMessageSquareDetail,
     BiReceipt,
     BiArchive,
 } from "react-icons/bi";
+import {useNavbar} from "../../hooks";
 
 interface BtnProps {
     name: string;
@@ -32,13 +30,7 @@ function Icon({name}: BtnProps) {
 }
 
 export const MobileBar: React.FC = () => {
-    const [active, setActive] = useRecoilState(activePathState);
-    const router = useRouter();
-    const darkMode = useRecoilValue(darkModeState);
-
-    React.useEffect(() => {
-        setActive(router.pathname);
-    }, [router.pathname, setActive]);
+    const {darkMode, active} = useNavbar();
 
     return (
         <nav

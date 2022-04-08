@@ -2,24 +2,12 @@ import React from "react";
 import {Logo} from "../../components";
 import Link from "next/link";
 import {v4} from "uuid";
-import {useRouter} from "next/router";
 import {links} from "./data";
 import {BiMoon, BiSun} from "react-icons/bi";
-import {useRecoilState} from "recoil";
-import {darkModeState} from "../../states";
+import {useNavbar} from "../../hooks";
 
 export const Navbar: React.FC = () => {
-    const router = useRouter();
-    const [active, setActive] = React.useState("/");
-    const [darkMode, setDarkMode] = useRecoilState(darkModeState);
-
-    function toggleDarkMode() {
-        setDarkMode((prev) => !prev);
-    }
-
-    React.useEffect(() => {
-        setActive(router.pathname);
-    }, [router.pathname]);
+    const {active, toggleDarkMode, darkMode} = useNavbar();
 
     return (
         <header
