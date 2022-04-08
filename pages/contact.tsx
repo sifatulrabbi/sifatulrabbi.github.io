@@ -8,7 +8,7 @@ const Contact: NextPage = () => {
     return (
         <>
             <Head title="Contact" />
-            <section className="mt-[60px] lg:grid lg:grid-cols-2 gap-6 min-h-[75vh]">
+            <section className="mt-[60px] lg:grid lg:grid-cols-2 gap-6 min-h-[75vh] theme-styles">
                 <div>
                     <div className="mb-6">
                         <h3 className="mb-2">Contact me</h3>

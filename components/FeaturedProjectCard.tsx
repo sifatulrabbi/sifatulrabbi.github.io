@@ -30,7 +30,7 @@ export const FeaturedProjectCard: React.FC<Props> = ({
                 />
             </div>
             <div className="flex flex-col justify-start items-start">
-                <h4 className="bottom-0 left-0 right-0 font-primary font-medium text-lg text-center text-black block mb-2">
+                <h4 className="bottom-0 left-0 right-0 font-primary font-medium text-lg text-center block mb-2">
                     {title}
                 </h4>
                 <p className="text-sm">

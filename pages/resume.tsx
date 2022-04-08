@@ -26,16 +26,16 @@ const Resume: NextPage = () => {
     return (
         <>
             <Head title="Resume" />
-            <section className="mt-[60px] gap-6">
+            <section className="mt-[60px] gap-6 theme-styles">
                 <div className="flex flex-row flex-wrap justify-start items-end gap-8">
                     {/* image with fixed height and width */}
-                    <div className="flex border-gray-400 border-[1px] rounded-md">
+                    <div className="flex border-[1px] rounded-md">
                         <Image
                             src={me}
                             alt="Md Sifatul Islam Rabbi"
                             height={140}
                             width={140}
-                            className="border-[1px] border-gray-400 rounded-md"
+                            className="border-[1px] rounded-md"
                         />
                     </div>
 
@@ -107,31 +107,31 @@ const Resume: NextPage = () => {
                 <div className="flex flex-col gap-4">
                     <h3 className="mb-0">Skills</h3>
                     <div>
-                        <span className="block mb-2 font-medium font-primary text-black">
+                        <span className="block mb-2 font-medium font-primary text-black dark:text-white">
                             Programming languages
                         </span>
                         <SkillsSection data={languagesData} />
                     </div>
                     <div>
-                        <span className="block mb-2 font-medium font-primary text-black">
+                        <span className="block mb-2 font-medium font-primary text-black dark:text-white">
                             Frameworks
                         </span>
                         <SkillsSection data={frameworksData} />
                     </div>
                     <div>
-                        <span className="block mb-2 font-medium font-primary text-black">
+                        <span className="block mb-2 font-medium font-primary text-black dark:text-white">
                             Databases
                         </span>
                         <SkillsSection data={databaseData} />
                     </div>
                     <div>
-                        <span className="block mb-2 font-medium font-primary text-black">
+                        <span className="block mb-2 font-medium font-primary text-black dark:text-white">
                             Tools
                         </span>
                         <SkillsSection data={toolsData} />
                     </div>
                     <div>
-                        <span className="block mb-2 font-medium font-primary text-black">
+                        <span className="block mb-2 font-medium font-primary text-black dark:text-white">
                             Soft skills
                         </span>
                         <SkillsSection data={softSkills} />
@@ -141,8 +141,8 @@ const Resume: NextPage = () => {
                 {/* education section */}
                 <div>
                     <h3 className="mb-2">Education</h3>
-                    <div className="p-4 border-[1px] border-gray-500 rounded-md">
-                        <h4 className="text-black font-medium font-primary mb-2">
+                    <div className="p-4 border-[1px] rounded-md">
+                        <h4 className="font-medium font-primary mb-2">
                             B.Sc in Psychology
                             <br />
                             <i className="text-base">

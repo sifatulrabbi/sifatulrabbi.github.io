@@ -37,7 +37,7 @@ export const FormGroup: React.FC<Props> = ({
                     placeholder={placeholder}
                     value={value}
                     onChange={handleChange}
-                    className="w-full p-2 rounded-md border-[1px] border-gray-500 outline-none min-h-[140px] focus:border-primary"
+                    className="w-full p-2 rounded-md border-[1px] bg-transparent text-black dark:text-white outline-none min-h-[140px] focus:border-primary"
                 />
             ) : (
                 <input
@@ -48,7 +48,7 @@ export const FormGroup: React.FC<Props> = ({
                     placeholder={placeholder}
                     value={value}
                     onChange={handleChange}
-                    className="w-full p-2 rounded-md border-[1px] border-gray-500 outline-none focus:border-primary"
+                    className="w-full p-2 rounded-md border-[1px] bg-transparent text-black dark:text-white outline-none focus:border-primary"
                 />
             )}
         </div>

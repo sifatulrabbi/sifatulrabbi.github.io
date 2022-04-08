@@ -46,7 +46,7 @@ export const ContactMeForm: React.FC = () => {
     return (
         <form
             action="submit"
-            className="w-full flex flex-col justify-start items-start gap-4 p-4 rounded-lg border-4 border-gray-500 text-sm"
+            className="w-full flex flex-col justify-start items-start gap-4 p-4 rounded-lg border-4 text-sm"
         >
             <h4>Send an Email</h4>
             {formData.map((data) => (

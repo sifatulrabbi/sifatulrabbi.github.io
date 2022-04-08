@@ -22,9 +22,9 @@ const Home: NextPage<Props> = ({}) => {
         <>
             <Head title="Home" />
             {/* hero section */}
-            <section className="justify-start mt-[60px] pt-[8vh] lg:grid lg:grid-cols-2">
+            <section className="justify-start mt-[60px] pt-[8vh] lg:grid lg:grid-cols-2 theme-styles">
                 <div>
-                    <h1>Hi, I am Sifatul Rabbi</h1>
+                    <h1 className="mb-4">Hi, I am Sifatul Rabbi</h1>
                     <p className="text-sm leading-6">
                         Currently working as a freelancing Full Stack Developer.
                         I have passion for software development and want to
@@ -44,7 +44,7 @@ const Home: NextPage<Props> = ({}) => {
                     </div>
                 </div>
                 <div className="w-full hidden justify-end lg:flex">
-                    <div className="max-w-[300px] max-h-[300px] min-h-[100px] min-w-[100px] h-[30vw] w-[30vw]">
+                    <div className="max-w-[250px] max-h-[250px] min-h-[100px] min-w-[100px] h-[30vw] w-[30vw]">
                         <Image
                             src={introImg}
                             alt="Md Sifatul Islam Rabbi"
@@ -56,19 +56,19 @@ const Home: NextPage<Props> = ({}) => {
             </section>
 
             {/* fav tech-stack */}
-            <section className="mt-[5vh]">
+            <section className="mt-[5vh] theme-styles">
                 <h3>Current favorite tech-stack</h3>
                 <div className="flex justify-start items-center gap-4">
-                    <SiTypescript className="text-4xl text-black" />
-                    <SiNextdotjs className="text-4xl text-black" />
-                    <SiNodedotjs className="text-4xl text-black" />
-                    <SiExpress className="text-4xl text-black" />
-                    <SiPostgresql className="text-4xl text-black" />
+                    <SiTypescript className="text-4xl text-black dark:text-white" />
+                    <SiNextdotjs className="text-4xl text-black dark:text-white" />
+                    <SiNodedotjs className="text-4xl text-black dark:text-white" />
+                    <SiExpress className="text-4xl text-black dark:text-white" />
+                    <SiPostgresql className="text-4xl text-black dark:text-white" />
                 </div>
             </section>
 
             {/* featured projects section */}
-            <section className="flex flex-col gap-6 mt-[5vh]">
+            <section className="flex flex-col gap-6 mt-[5vh] theme-styles theme-styles">
                 <FeaturedProjectsView />
                 <Link href="/projects">
                     <a className="btn-alt w-full max-w-xs mx-auto text-center">

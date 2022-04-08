@@ -10,7 +10,7 @@ const Projects: NextPage<Props> = ({}) => {
     return (
         <>
             <Head title="Projects" />
-            <section className="mt-[60px]">
+            <section className="mt-[60px] theme-styles">
                 <h2 className="text-2xl font-bold font-primary text-black mb-4">
                     Projects
                 </h2>
@@ -19,7 +19,7 @@ const Projects: NextPage<Props> = ({}) => {
                     personal projects
                 </p>
             </section>
-            <section className="flex flex-col gap-8">
+            <section className="flex flex-col gap-8 theme-styles">
                 <FeaturedProjectsView />
                 <ProjectsView />
             </section>
