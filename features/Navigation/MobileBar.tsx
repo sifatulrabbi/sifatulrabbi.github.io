@@ -38,7 +38,7 @@ export const MobileBar: React.FC = () => {
                 darkMode ? "dark" : "light"
             }`}
         >
-            <div className="w-container flex flex-row justify-around items-center px-4 theme-styles bg-white dark:bg-slate-700 bg-opacity-95 dark:opacity-95">
+            <div className="w-container flex flex-row justify-between items-center px-6 theme-styles bg-white dark:bg-slate-700 bg-opacity-95 dark:opacity-95">
                 {links.map((link) => (
                     <Link key={v4()} href={link.path}>
                         <a

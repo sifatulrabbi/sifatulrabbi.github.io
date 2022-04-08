@@ -48,28 +48,28 @@ const Resume: NextPage = () => {
 
                         {/* contact links */}
                         <div className="w-full flex flex-row justify-start items-center text-xl gap-4 mt-4">
-                            <Link href="/">
-                                <a>
+                            <Link href="https://github.com/sifatulrabbi">
+                                <a target="_blank">
                                     <SiGithub />
                                 </a>
                             </Link>
-                            <Link href="/">
-                                <a>
+                            <Link href="mailto:mdsifatulislam.rabbi@gmail.com">
+                                <a target="_blank">
                                     <SiGmail />
                                 </a>
                             </Link>
-                            <Link href="/">
-                                <a>
+                            <Link href="https://linkedin.com/in/temujins">
+                                <a target="_blank">
                                     <SiLinkedin />
                                 </a>
                             </Link>
-                            <Link href="/">
-                                <a>
+                            <Link href="#">
+                                <a target="_blank">
                                     <SiUpwork className="text-2xl " />
                                 </a>
                             </Link>
-                            <Link href="https://www.fiverr.com/temujins?up_rollout=true">
-                                <a>
+                            <Link href="https://www.fiverr.com/temujins">
+                                <a target="_blank">
                                     <SiFiverr className="text-2xl " />
                                 </a>
                             </Link>

@@ -7,23 +7,23 @@ export const Footer: React.FC = () => {
         <footer className="w-full p-4 mt-[5vh] mb-[60px] lg:mb-0 theme-styles">
             <section className="border-t-[1px] flex flex-col justify-center items-center gap-6">
                 <div className="flex justify-center items-center gap-4">
-                    <Link href="/">
-                        <a>
+                    <Link href="https://github.com/sifatulrabbi">
+                        <a target="_blank">
                             <SiGithub className="text-2xl " />
                         </a>
                     </Link>
-                    <Link href="/">
-                        <a>
+                    <Link href="https://linkedin.com/in/temujins">
+                        <a target="_blank">
                             <SiLinkedin className="text-2xl " />
                         </a>
                     </Link>
-                    <Link href="/">
-                        <a>
+                    <Link href="https://twitter.com/sifatul_rabbi">
+                        <a target="_blank">
                             <SiTwitter className="text-2xl " />
                         </a>
                     </Link>
-                    <Link href="/">
-                        <a>
+                    <Link href="https://facebook.com/ttemujins">
+                        <a target="_blank">
                             <SiFacebook className="text-2xl " />
                         </a>
                     </Link>

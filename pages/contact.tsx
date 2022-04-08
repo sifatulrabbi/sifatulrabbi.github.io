@@ -18,28 +18,43 @@ const Contact: NextPage = () => {
                         </p>
                     </div>
                     <div className="flex flex-row flex-wrap gap-2 items-center">
-                        <Link href="/">
-                            <a className="font-primary font-medium underline hover:text-primary p-1">
+                        <Link href="#">
+                            <a
+                                target="_blank"
+                                className="font-primary font-medium underline hover:text-primary p-1"
+                            >
                                 Upwork
                             </a>
                         </Link>
-                        <Link href="/">
-                            <a className="font-primary font-medium underline hover:text-primary p-1">
+                        <Link href="https://fiverr.com/temujins">
+                            <a
+                                target="_blank"
+                                className="font-primary font-medium underline hover:text-primary p-1"
+                            >
                                 Fiverr
                             </a>
                         </Link>
-                        <Link href="/">
-                            <a className="font-primary font-medium underline hover:text-primary p-1">
+                        <Link href="/https://linkedin.com/in/temujins">
+                            <a
+                                target="_blank"
+                                className="font-primary font-medium underline hover:text-primary p-1"
+                            >
                                 Linked In
                             </a>
                         </Link>
-                        <Link href="/">
-                            <a className="font-primary font-medium underline hover:text-primary p-1">
+                        <Link href="/https://twitter.com/sifatul_rabbi">
+                            <a
+                                target="_blank"
+                                className="font-primary font-medium underline hover:text-primary p-1"
+                            >
                                 Twitter
                             </a>
                         </Link>
-                        <Link href="/">
-                            <a className="font-primary font-medium underline hover:text-primary p-1">
+                        <Link href="/https://facebook.com/ttemujins">
+                            <a
+                                target="_blank"
+                                className="font-primary font-medium underline hover:text-primary p-1"
+                            >
                                 Facebook
                             </a>
                         </Link>

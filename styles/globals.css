@@ -36,7 +36,7 @@ body {
     }
 
     section {
-        @apply w-full flex flex-col justify-start items-start p-4 w-container;
+        @apply w-full flex flex-col justify-start items-start px-6 py-4 w-container;
     }
 }
 

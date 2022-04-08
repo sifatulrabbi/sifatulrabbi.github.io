@@ -11,7 +11,7 @@ export const Navbar: React.FC = () => {
 
     return (
         <header
-            className={`z-[50] fixed top-0 left-0 right-0 bg-white dark:bg-slate-700 bg-opacity-95 dark:opacity-95 px-4 flex justify-center items-center h-[60px] ${
+            className={`z-[50] fixed top-0 left-0 right-0 bg-white dark:bg-slate-700 bg-opacity-95 dark:opacity-95 px-6 flex justify-center items-center h-[60px] ${
                 darkMode ? "dark" : "light"
             }`}
             style={{borderTop: "5px solid #0077ff"}}
