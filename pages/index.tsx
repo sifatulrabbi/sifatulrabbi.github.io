@@ -26,9 +26,9 @@ const Home: NextPage<Props> = ({}) => {
                 <div>
                     <h1 className="mb-4">Hi, I am Sifatul Rabbi</h1>
                     <p className="text-sm leading-6">
-                        Currently working as a freelancing Full Stack Developer.
-                        I have passion for software development and want to
-                        learn more.
+                        Currently working as a freelance Full Stack Developer.
+                        I have a passion for web application development and want to
+                        learn more about cloud computing.
                     </p>
                     <div className="flex gap-4 mt-8">
                         <Link href="/projects">
