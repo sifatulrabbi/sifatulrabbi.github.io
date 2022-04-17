@@ -14,37 +14,42 @@ import Image from "next/image";
 import {introImg} from "../assets/images";
 
 interface Props {
-    message: string;
+    bio: string;
 }
 
-const Home: NextPage<Props> = ({}) => {
+const Home: NextPage<Props> = ({bio}) => {
     return (
         <>
             <Head title="Home" />
             {/* hero section */}
             <section className="justify-start mt-[60px] pt-[8vh] lg:grid lg:grid-cols-2 theme-styles">
                 <div>
-                    <h1 className="mb-4">Hi, I am Sifatul Rabbi</h1>
-                    <p className="text-sm leading-6">
-                        Currently working as a freelancing Full Stack Developer.
-                        I have passion for software development and want to
-                        learn more.
+                    <div className="mb-4">
+                        <h1 className="w-max font-primary opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_3s_forwards]">
+                            Hi, I am Sifatul Rabbi
+                        </h1>
+                        <span className="block mt-4 w-max font-monospace relative z-0 hero-text theme-styles">
+                            Full stack developer
+                        </span>
+                    </div>
+                    <p className="text-sm leading-6 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_3.2s_forwards]">
+                        {bio}
                     </p>
                     <div className="flex gap-4 mt-8">
                         <Link href="/projects">
-                            <a className="flex justify-center items-center btn-primary gap-2">
+                            <a className="flex justify-center items-center btn-primary gap-2 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_3.4s_forwards]">
                                 My projects <BiBriefcase />
                             </a>
                         </Link>
                         <Link href="/resume">
-                            <a className="flex justify-center items-center btn-secondary gap-2">
+                            <a className="flex justify-center items-center btn-secondary gap-2 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_3.5s_forwards]">
                                 About me <BiUser />
                             </a>
                         </Link>
                     </div>
                 </div>
                 <div className="w-full hidden justify-end lg:flex">
-                    <div className="max-w-[250px] max-h-[250px] min-h-[100px] min-w-[100px] h-[30vw] w-[30vw]">
+                    <div className="max-w-[250px] max-h-[250px] min-h-[100px] min-w-[100px] h-[30vw] w-[30vw] opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_3.7s_forwards]">
                         <Image
                             src={introImg}
                             alt="Md Sifatul Islam Rabbi"
@@ -57,18 +62,20 @@ const Home: NextPage<Props> = ({}) => {
 
             {/* fav tech-stack */}
             <section className="mt-[5vh] theme-styles">
-                <h3>Current favorite tech-stack</h3>
+                <h3 className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_3.9s_forwards]">
+                    Current favorite tech-stack
+                </h3>
                 <div className="flex justify-start items-center gap-4">
-                    <SiTypescript className="text-4xl text-black dark:text-white" />
-                    <SiNextdotjs className="text-4xl text-black dark:text-white" />
-                    <SiNodedotjs className="text-4xl text-black dark:text-white" />
-                    <SiExpress className="text-4xl text-black dark:text-white" />
-                    <SiPostgresql className="text-4xl text-black dark:text-white" />
+                    <SiTypescript className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_4.1s_forwards]" />
+                    <SiNextdotjs className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_4.2s_forwards]" />
+                    <SiNodedotjs className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_4.3s_forwards]" />
+                    <SiExpress className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_4.4s_forwards]" />
+                    <SiPostgresql className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_4.5s_forwards]" />
                 </div>
             </section>
 
             {/* featured projects section */}
-            <section className="flex flex-col gap-6 mt-[5vh] theme-styles theme-styles">
+            <section className="flex flex-col gap-6 mt-[5vh] theme-styles theme-styles opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_4.7s_forwards]">
                 <FeaturedProjectsView />
                 <Link href="/projects">
                     <a className="btn-alt w-full max-w-xs mx-auto text-center">
@@ -82,7 +89,9 @@ const Home: NextPage<Props> = ({}) => {
 
 export async function getStaticProps(ctx: NextPageContext) {
     return {
-        props: {message: "Hello Next.js"},
+        props: {
+            bio: "I provide web development services to businesses and individuals to grow their business on the web. I am skilled in both front-end and back-end development. Let's work together and build your desired web services.",
+        },
     };
 }
 

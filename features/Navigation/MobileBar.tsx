@@ -34,7 +34,7 @@ export const MobileBar: React.FC = () => {
 
     return (
         <nav
-            className={`z-50 fixed lg:hidden bottom-0 right-0 left-0 h-[60px] flex ${
+            className={`z-50 fixed lg:hidden bottom-0 right-0 left-0 h-[60px] flex translate-y-full animate-[mobileBarAnim_500ms_ease_forwards] ${
                 darkMode ? "dark" : "light"
             }`}
         >

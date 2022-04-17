@@ -11,6 +11,7 @@ module.exports = {
         fontFamily: {
             primary: ["Fira Sans", "sans-serif"],
             secondary: ["Noto Serif", "serif"],
+            monospace: ["Fira Code", "monospace"],
         },
         extend: {
             colors: {
