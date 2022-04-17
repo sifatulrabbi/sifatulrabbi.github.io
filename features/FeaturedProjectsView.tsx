@@ -4,10 +4,16 @@ import {featuredProjectsSelector} from "../states";
 import {useRecoilValue} from "recoil";
 import {v4} from "uuid";
 
-export const FeaturedProjectsView: React.FC = () => {
+interface Props {
+    className?: string;
+}
+
+export const FeaturedProjectsView: React.FC<Props> = ({className}) => {
     const featuredProjects = useRecoilValue(featuredProjectsSelector);
     return (
-        <div className="w-full flex flex-col justify-start items-start">
+        <div
+            className={`w-full flex flex-col justify-start items-start ${className}`}
+        >
             <h3 className="text-xl font-medium font-primary mb-4">
                 Featured Projects
             </h3>
