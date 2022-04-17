@@ -29,7 +29,7 @@ const Resume: NextPage = () => {
             <section className="mt-[60px] gap-6 theme-styles">
                 <div className="flex flex-row flex-wrap justify-start items-end gap-8">
                     {/* image with fixed height and width */}
-                    <div className="flex border-[1px] rounded-md">
+                    <div className="flex border-[1px] rounded-md opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.5s_forwards]">
                         <Image
                             src={me}
                             alt="Md Sifatul Islam Rabbi"
@@ -41,35 +41,52 @@ const Resume: NextPage = () => {
 
                     {/* bottom aligned name and designation */}
                     <div className="flex flex-col">
-                        <h2 className="mb-2">Md Sifatul Islam Rabbi</h2>
-                        <p>
+                        <h2 className="mb-2 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.7s_forwards]">
+                            Md Sifatul Islam Rabbi
+                        </h2>
+                        <p className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.9s_forwards]">
                             <i>Full Stack Developer</i>
                         </p>
 
                         {/* contact links */}
                         <div className="w-full flex flex-row justify-start items-center text-xl gap-4 mt-4">
                             <Link href="https://github.com/sifatulrabbi">
-                                <a target="_blank">
+                                <a
+                                    target="_blank"
+                                    className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.1s_forwards]"
+                                >
                                     <SiGithub />
                                 </a>
                             </Link>
                             <Link href="mailto:mdsifatulislam.rabbi@gmail.com">
-                                <a target="_blank">
+                                <a
+                                    target="_blank"
+                                    className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.2s_forwards]"
+                                >
                                     <SiGmail />
                                 </a>
                             </Link>
                             <Link href="https://linkedin.com/in/temujins">
-                                <a target="_blank">
+                                <a
+                                    target="_blank"
+                                    className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.3s_forwards]"
+                                >
                                     <SiLinkedin />
                                 </a>
                             </Link>
                             <Link href="#">
-                                <a target="_blank">
+                                <a
+                                    target="_blank"
+                                    className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.4s_forwards]"
+                                >
                                     <SiUpwork className="text-2xl " />
                                 </a>
                             </Link>
                             <Link href="https://www.fiverr.com/temujins">
-                                <a target="_blank">
+                                <a
+                                    target="_blank"
+                                    className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.5s_forwards]"
+                                >
                                     <SiFiverr className="text-2xl " />
                                 </a>
                             </Link>
@@ -79,8 +96,10 @@ const Resume: NextPage = () => {
 
                 {/* about me section */}
                 <div>
-                    <h3 className="mb-2">A bit about me</h3>
-                    <p className="text-sm leading-6">
+                    <h3 className="mb-2 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.7s_forwards]">
+                        A bit about me
+                    </h3>
+                    <p className="text-sm leading-6 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.9s_forwards]">
                         In an online forum, I saw how to show text in the
                         browser console. That idea and the process caught my
                         interest, and I had started learning about web
@@ -93,7 +112,7 @@ const Resume: NextPage = () => {
                 </div>
 
                 {/* work experience section */}
-                <div>
+                <div className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_2.1s_forwards]">
                     <h3 className="mb-2">Works</h3>
                     <WorkSection />
                     <Link href="/projects">

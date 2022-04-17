@@ -40,7 +40,7 @@ export const MobileBar: React.FC = () => {
         >
             <div className="w-container flex flex-row justify-between items-center px-6 theme-styles bg-white dark:bg-slate-700 bg-opacity-95 dark:opacity-95">
                 {links.map((link) => (
-                    <Link key={v4()} href={link.path}>
+                    <Link key={v4()} href={link.path} replace>
                         <a
                             className={`flex flex-col justify-center items-center p-2 text-2xl ${
                                 active === link.path ? "text-primary" : ""

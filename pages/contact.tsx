@@ -34,7 +34,7 @@ const Contact: NextPage = () => {
                                 Fiverr
                             </a>
                         </Link>
-                        <Link href="/https://linkedin.com/in/temujins">
+                        <Link href="https://linkedin.com/in/temujins">
                             <a
                                 target="_blank"
                                 className="font-primary font-medium underline hover:text-primary p-1"
@@ -42,7 +42,7 @@ const Contact: NextPage = () => {
                                 Linked In
                             </a>
                         </Link>
-                        <Link href="/https://twitter.com/sifatul_rabbi">
+                        <Link href="https://twitter.com/sifatul_rabbi">
                             <a
                                 target="_blank"
                                 className="font-primary font-medium underline hover:text-primary p-1"
@@ -50,7 +50,7 @@ const Contact: NextPage = () => {
                                 Twitter
                             </a>
                         </Link>
-                        <Link href="/https://facebook.com/ttemujins">
+                        <Link href="https://facebook.com/ttemujins">
                             <a
                                 target="_blank"
                                 className="font-primary font-medium underline hover:text-primary p-1"

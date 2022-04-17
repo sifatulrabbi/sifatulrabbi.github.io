@@ -21,7 +21,7 @@ export const Navbar: React.FC = () => {
                 <div className="flex flex-row justify-center items-center gap-4">
                     <div className="hidden lg:flex flex-row justify-center items-center gap-4">
                         {links.map((link) => (
-                            <Link key={v4()} href={link.path}>
+                            <Link key={v4()} href={link.path} replace>
                                 <a
                                     className={`font-primary p-1 hover:border-b-2 theme-styles bg-transparent dark:bg-transparent ${
                                         active === link.path
