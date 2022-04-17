@@ -46,15 +46,21 @@ export const ContactMeForm: React.FC = () => {
     return (
         <form
             action="submit"
-            className="w-full flex flex-col justify-start items-start gap-4 p-4 rounded-lg border-4 text-sm"
+            className="w-full flex flex-col justify-start items-start gap-4 p-4 rounded-lg border-4 text-sm opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.4s_forwards]"
         >
-            <h4>Send an Email</h4>
+            <h4 className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.6s_forwards]">
+                Send an Email
+            </h4>
             {formData.map((data) => (
-                <FormGroup key={v4()} {...data} />
+                <FormGroup
+                    key={v4()}
+                    {...data}
+                    className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.8s_forwards]"
+                />
             ))}
             <button
                 type="submit"
-                className="btn-primary flex items-center gap-2"
+                className="btn-primary flex items-center gap-2 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_2.0s_forwards]"
             >
                 Send now <BiSend />
             </button>

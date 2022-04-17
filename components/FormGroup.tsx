@@ -6,6 +6,7 @@ interface Props {
     label: string;
     name: string;
     placeholder?: string;
+    className?: string;
 }
 
 export const FormGroup: React.FC<Props> = ({
@@ -14,6 +15,7 @@ export const FormGroup: React.FC<Props> = ({
     name,
     label,
     placeholder = "",
+    className,
 }) => {
     const [value, setValue] = React.useState("");
 
@@ -24,7 +26,9 @@ export const FormGroup: React.FC<Props> = ({
     }
 
     return (
-        <div className="w-full flex flex-col justify-start items start">
+        <div
+            className={`w-full flex flex-col justify-start items start ${className}`}
+        >
             <label
                 htmlFor={name}
                 className="w-full font-primary font-medium mb-1"
