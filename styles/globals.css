@@ -88,23 +88,5 @@ body {
     animation: grow 500ms linear 0s infinite reverse;
 }
 
-/* loading animations */
-@keyframes grow {
-    from {
-        transform: scale(0, 0);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1, 1);
-        opacity: 1;
-    }
-}
-
-@keyframes move {
-    from {
-        transform: translateX(0px);
-    }
-    to {
-        transform: translateX(45px);
-    }
-}
+@import url("./animations.css");
+@import url("./homePageAnim.css");
