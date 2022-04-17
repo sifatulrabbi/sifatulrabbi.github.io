@@ -39,3 +39,10 @@
         transform: translateX(45px);
     }
 }
+
+/* footer animations */
+@keyframes footerBorderGrow {
+    to {
+        width: 100%;
+    }
+}
