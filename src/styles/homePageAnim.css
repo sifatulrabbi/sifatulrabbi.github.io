@@ -1,0 +1,35 @@
+.hero-text {
+  --typewriterTime: 2.5s;
+  --typewriterAnim: typewriter var(--typewriterTime) steps(20, end) 0.5s
+    forwards;
+
+  font-size: clamp(18px, 3vw, 24px);
+}
+
+.hero-text::before,
+.hero-text::after {
+  content: "";
+  @apply absolute top-0 bottom-0 left-0 right-0;
+}
+
+.hero-text::before {
+  @apply bg-white dark:bg-slate-700;
+  animation: var(--typewriterAnim);
+}
+
+.hero-text::after {
+  @apply z-10 bg-primary top-[80%] h-[0.2em] w-[1em] opacity-0;
+  animation: var(--typewriterAnim), typewriterBlink 0.6s ease-in infinite;
+}
+
+@keyframes typewriter {
+  to {
+    @apply left-full;
+  }
+}
+
+@keyframes typewriterBlink {
+  to {
+    @apply opacity-100;
+  }
+}
