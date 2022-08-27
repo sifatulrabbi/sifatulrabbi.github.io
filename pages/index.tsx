@@ -25,24 +25,24 @@ const Home: NextPage<Props> = ({bio}) => {
             <section className="justify-start mt-[60px] pt-[8vh] lg:grid lg:grid-cols-2 theme-styles">
                 <div>
                     <div className="mb-4">
-                        <h1 className="w-max font-primary opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_3s_forwards]">
+                        <h1 className="w-max font-primary opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_forwards]">
                             Hi, I am Sifatul Rabbi
                         </h1>
                         <span className="block mt-4 w-max font-monospace relative z-0 hero-text theme-styles">
                             Full stack developer
                         </span>
                     </div>
-                    <p className="text-sm leading-6 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_3.2s_forwards]">
+                    <p className="text-sm leading-6 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.2s_forwards]">
                         {bio}
                     </p>
                     <div className="flex gap-4 mt-8">
                         <Link href="/projects">
-                            <a className="flex justify-center items-center btn-primary gap-2 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_3.4s_forwards]">
+                            <a className="flex justify-center items-center btn-primary gap-2 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.4s_forwards]">
                                 My projects <BiBriefcase />
                             </a>
                         </Link>
                         <Link href="/resume">
-                            <a className="flex justify-center items-center btn-secondary gap-2 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_3.5s_forwards]">
+                            <a className="flex justify-center items-center btn-secondary gap-2 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.5s_forwards]">
                                 About me <BiUser />
                             </a>
                         </Link>
@@ -62,20 +62,20 @@ const Home: NextPage<Props> = ({bio}) => {
 
             {/* fav tech-stack */}
             <section className="mt-[5vh] theme-styles">
-                <h3 className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_3.9s_forwards]">
+                <h3 className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.7s_forwards]">
                     Current favorite tech-stack
                 </h3>
                 <div className="flex justify-start items-center gap-4">
-                    <SiTypescript className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_4.1s_forwards]" />
-                    <SiNextdotjs className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_4.2s_forwards]" />
-                    <SiNodedotjs className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_4.3s_forwards]" />
-                    <SiExpress className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_4.4s_forwards]" />
-                    <SiPostgresql className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_4.5s_forwards]" />
+                    <SiTypescript className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.7s_forwards]" />
+                    <SiNextdotjs className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.75s_forwards]" />
+                    <SiNodedotjs className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.8s_forwards]" />
+                    <SiExpress className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.85s_forwards]" />
+                    <SiPostgresql className="text-4xl text-black dark:text-white opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.9s_forwards]" />
                 </div>
             </section>
 
             {/* featured projects section */}
-            <section className="flex flex-col gap-6 mt-[5vh] theme-styles theme-styles opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_4.7s_forwards]">
+            <section className="flex flex-col gap-6 mt-[5vh] theme-styles theme-styles opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.7s_forwards]">
                 <FeaturedProjectsView />
                 <Link href="/projects">
                     <a className="btn-alt w-full max-w-xs mx-auto text-center">
