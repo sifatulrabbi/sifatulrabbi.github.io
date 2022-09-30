@@ -6,5 +6,13 @@
 	"semi": false,
 	"singleQuote": false,
 	"jsxSingleQuote": false,
-	"useTabs": true
+	"useTabs": true,
+	"overrides": [
+		{
+			"files": ["*.yaml", "*.yml"],
+			"options": {
+				"tabWidth": 2
+			}
+		}
+	]
 }
