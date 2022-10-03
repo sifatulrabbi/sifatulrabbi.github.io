@@ -8,8 +8,12 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				primary: "#0070ff",
-				secondary: "#576f8e",
+				primary: "#1778F2",
+				secondary: "#FF9C28",
+				error: "#FF4A4A",
+				success: "#00C274",
+				warning: "#FFB156",
+				dark: "#242E42",
 			},
 		},
 	},
