@@ -14,8 +14,9 @@ module.exports = {
 				success: "#00C274",
 				warning: "#FFB156",
 				dark: "#242E42",
+				textSecondary: "#717784",
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/typography")],
 }
