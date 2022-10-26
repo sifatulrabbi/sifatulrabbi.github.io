@@ -20,7 +20,7 @@ const navItems = [
 
 export const NavbarMenu: React.FC = () => {
 	return (
-		<ul className="flex flex-row justify-start items-center gap-2">
+		<ul className="hidden lg:flex flex-row justify-start items-center gap-4">
 			{navItems.map(({name, path, nestedItems}) => (
 				<NavMenuItem
 					key={v4()}
@@ -29,6 +29,7 @@ export const NavbarMenu: React.FC = () => {
 					nestedItems={nestedItems}
 				/>
 			))}
+			<button className="btn btn-primary btn-small">Get a Quote</button>
 		</ul>
 	)
 }
