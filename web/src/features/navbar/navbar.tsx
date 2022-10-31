@@ -14,24 +14,21 @@ export const Navbar: React.FC = () => {
 					<span className="text-primary font-bold">.dev</span>
 				</a>
 			</Link>
-			<NavbarMenu />
+			<NavbarMenu show={show} />
 			<button
 				name="nav button"
 				onClick={() => setShow((p) => !p)}
-				className="relative h-[16px] w-[25px] flex justify-center items-center"
+				className="lg:hidden relative h-[16px] w-[25px] flex justify-center items-center"
 			>
 				<div
-					data-barTop
 					className={`w-full h-[2px] bg-gray-600 absolute left-1/2 -translate-x-1/2 transition-all duration-300 ease-in
 					${show ? "top-1/2 -translate-y-1/2 -rotate-45" : "-translate-y-0 top-0"}`}
 				/>
 				<div
-					data-barCenter
 					className={`w-[80%] h-[2px] bg-gray-600 absolute top-1/2 -translate-y-1/2 transition-all duration-300 ease-in
 					${show ? "opacity-0 -right-full" : "opacity-100 -right-0"}`}
 				/>
 				<div
-					data-barBottom
 					className={`w-full h-[2px] bg-gray-600 absolute left-1/2 -translate-x-1/2 transition-all duration-300 ease-in
 					${show ? "top-1/2 -translate-y-1/2 rotate-45" : "-translate-y-full top-full"}`}
 				/>
