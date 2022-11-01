@@ -1,0 +1,36 @@
+.scroll-indicator {
+	@apply bg-dark;
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	border-radius: 8px;
+	top: 2px;
+	left: 50%;
+	transform: translateX(-50%);
+	animation: scroll-indicator-anim 1.5s ease-out infinite;
+	opacity: 0;
+
+	@keyframes scroll-indicator-anim {
+		0% {
+			opacity: 0;
+			top: 2px;
+			height: 8px;
+			width: 8px;
+		}
+		40% {
+			opacity: 1;
+			top: 2px;
+			height: 8px;
+			width: 8px;
+		}
+		75% {
+			width: 6px;
+			height: 12px;
+		}
+		100% {
+			opacity: 1;
+			top: 34px;
+			height: 8px;
+		}
+	}
+}
