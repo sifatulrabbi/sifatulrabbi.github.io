@@ -19,7 +19,7 @@
 			"@/app/*": ["./src"],
 			"@/components": ["./src/components"],
 			"@/hooks": ["./src/hooks"],
-			"@/features": ["./src/features"],
+			"@/modules": ["src/modules"],
 			"@/states": ["./src/states"],
 			"@/services": ["./src/services"],
 			"@/interfaces": ["./src/interfaces"]

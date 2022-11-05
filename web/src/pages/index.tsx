@@ -1,7 +1,7 @@
 import React from "react"
 
 import {PageWrapper} from "@/components"
-import {HeroSection} from "@/features"
+import {HeroSection} from "@/modules"
 
 const HomePage: React.FC = () => {
 	return (

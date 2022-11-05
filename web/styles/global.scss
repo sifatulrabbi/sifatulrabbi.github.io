@@ -94,6 +94,9 @@ body {
 }
 
 @layer utilities {
+	.text-h1 {
+		@apply text-5xl font-bold;
+	}
 }
 
 @import "./components";
