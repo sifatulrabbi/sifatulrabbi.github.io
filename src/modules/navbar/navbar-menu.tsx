@@ -15,7 +15,7 @@ const navItems = [
 export const NavbarMenu: React.FC<{show: boolean}> = ({show}) => {
 	return (
 		<ul
-			className={`flex flex-col fixed top-[60px] left-0 items-start lg:flex-row justify-start lg:items-center gap-6 transition-[transform] duration-300 ease-in p-4 w-full md:px-[10vw]
+			className={`bg-white flex flex-col fixed top-[60px] left-0 items-start lg:flex-row justify-start lg:items-center gap-6 transition-[transform] duration-300 ease-in p-4 w-full md:px-[10vw]
 			${show ? "-translate-x-0" : "-translate-x-full"}
 			lg:relative lg:top-0 lg:left-0 lg:-translate-x-0 lg:p-0 lg:px-0 lg:w-max`}
 		>
