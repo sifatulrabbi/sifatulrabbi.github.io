@@ -14,7 +14,7 @@ export const ServiceCard: React.FC<Props> = ({
 	color,
 }) => {
 	return (
-		<div className="flex flex-col justify-start items-start gap-4 max-w-xs sm:max-w-sm md:max-w-auto">
+		<div className="flex flex-col justify-start items-center  md:items-start gap-4 max-w-xs sm:max-w-sm md:max-w-auto">
 			<span
 				className="text-3xl p-4 rounded-lg"
 				style={{ backgroundColor: color + "15", color: color }}
