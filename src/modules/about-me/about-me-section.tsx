@@ -15,7 +15,7 @@ export const AboutMeSection: React.FC = () => {
 				</p>
 			</div>
 			{/* description section */}
-			<div className="grid gird-cols-1 lg:grid-cols-[1.5fr_1fr] mt-[8vh] gap-6">
+			<div className="grid gird-cols-1 lg:grid-cols-[1.3fr_1fr] mt-[8vh] gap-8">
 				{/* about image */}
 				<div className="w-full relative justify-start items-center flex">
 					<div className="absolute w-[120px] h-[120px]">
@@ -39,16 +39,16 @@ export const AboutMeSection: React.FC = () => {
 					<div className="rounded-xl w-full h-full bg-gray-200"></div>
 				</div>
 				{/* about me content */}
-				<div className="w-full justify-start items-start flex flex-col gap-8">
-					<div className="flex flex-col justify-start items-start gap-6 max-w-md">
-						<h5 className="uppercase text-sm text-primary">
+				<div className="w-full justify-start items-center md:items-start flex flex-col gap-8">
+					<div className="flex flex-col justify-start items-center md:items-start gap-6 max-w-md">
+						<h5 className="uppercase text-sm text-primary text-left">
 							Who am I
 						</h5>
-						<h3 className="text-h3 w-full text-left">
-							&ldquo;Learning never has{" "}
-							<span className="text-primary">Limits</span>&rdquo;
+						<h3 className="text-h3 w-full text-center md:text-left">
+							&ldquo;Learning never has
+							<span className="text-primary"> Limits</span>&rdquo;
 						</h3>
-						<p>
+						<p className="text-center md:text-left">
 							I love coding, solving problems, building amazing
 							projects, reading books & many other cool stuffs. I
 							love coding, solving problems, building amazing
@@ -73,7 +73,7 @@ export const AboutMeSection: React.FC = () => {
 								/>
 							</div>
 							<div className="flex flex-col justify-start items-start">
-								<span className="text-green-600 text-sm font-medium">
+								<span className="text-green-600 text-sm font-medium tracking-wider">
 									TOP RATED
 								</span>
 								<span className="text-sm">
@@ -83,7 +83,7 @@ export const AboutMeSection: React.FC = () => {
 						</div>
 					</div>
 
-					<div className="w-full flex flex-row justify-start items-start gap-6">
+					<div className="w-full flex flex-col md:flex-row justify-start items-center md:items-start gap-4 md:gap-6">
 						<button className="btn btn-primary">
 							View My Projects
 						</button>

@@ -1,7 +1,7 @@
 import React from "react"
 
-import {PageWrapper} from "@/components"
-import {HeroSection, AboutModule, ServicesModule} from "@/modules"
+import { PageWrapper } from "@/components"
+import { HeroSection, AboutModule, ServicesModule } from "@/modules"
 
 const HomePage: React.FC = () => {
 	return (

@@ -1,8 +1,8 @@
 import React from "react"
-import {ScrollDownIndicator} from "./scrolldown-indicator"
-import {Avatar} from "./avatar"
-import {Content} from "./content"
-import {CTA} from "./cta"
+import { ScrollDownIndicator } from "./scrolldown-indicator"
+import { Avatar } from "./avatar"
+import { Content } from "./content"
+import { CTA } from "./cta"
 
 export const HeroSection: React.FC = () => {
 	return (

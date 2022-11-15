@@ -1,7 +1,7 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 
 import Link from "next/link"
-import {NavbarMenu} from "./navbar-menu"
+import { NavbarMenu } from "./navbar-menu"
 
 export const Navbar: React.FC = () => {
 	const [show, setShow] = useState(false)
