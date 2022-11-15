@@ -1,3 +1,4 @@
+import Image from "next/image"
 import React from "react"
 
 export const AboutMeSection: React.FC = () => {
@@ -14,9 +15,30 @@ export const AboutMeSection: React.FC = () => {
 				</p>
 			</div>
 			{/* description section */}
-			<div className="grid gird-cols-1 lg:grid-cols-[1.5fr_1fr] mt-[8vh]">
+			<div className="grid gird-cols-1 lg:grid-cols-[1.5fr_1fr] mt-[8vh] gap-6">
 				{/* about image */}
-				<div className="w-full relative justify-start items-center flex"></div>
+				<div className="w-full relative justify-start items-center flex">
+					<div className="absolute w-[120px] h-[120px]">
+						<Image
+							src="/3d-hat.png"
+							height="200px"
+							width="200px"
+							alt=""
+							className="w-full h-full object-cover"
+						/>
+					</div>
+					<div className="absolute w-[120px] h-[120px]">
+						<Image
+							src="/3d-rocket.png"
+							height="200px"
+							width="200px"
+							alt=""
+							className="w-full h-full object-cover"
+						/>
+					</div>
+					<div className="rounded-xl w-full h-full bg-gray-200"></div>
+				</div>
+				{/* about me content */}
 				<div className="w-full justify-start items-start flex flex-col gap-8">
 					<div className="flex flex-col justify-start items-start gap-6 max-w-md">
 						<h5 className="uppercase text-sm text-primary">
@@ -39,7 +61,27 @@ export const AboutMeSection: React.FC = () => {
 						</p>
 					</div>
 
-					<div></div>
+					<div>
+						<div className="flex flex-row justify-start items-center bg-white rounded-lg px-4 py-2 border-1 shadow-lg gap-2">
+							<div>
+								<Image
+									src="/badge.png"
+									height="30px"
+									width="30px"
+									alt=""
+									className="w-full h-full object-cover"
+								/>
+							</div>
+							<div className="flex flex-col justify-start items-start">
+								<span className="text-green-600 text-sm font-medium">
+									TOP RATED
+								</span>
+								<span className="text-sm">
+									on <span className="font-bold">Upwork</span>
+								</span>
+							</div>
+						</div>
+					</div>
 
 					<div className="w-full flex flex-row justify-start items-start gap-6">
 						<button className="btn btn-primary">
