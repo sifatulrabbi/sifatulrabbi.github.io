@@ -1,4 +1,5 @@
 import { PackageType, ServiceType } from "@/app/constants"
+import type { ReactNode } from "react"
 
 export interface IPackage {
 	id: string
@@ -14,4 +15,10 @@ export interface IPackage {
 	active: boolean
 	/** $/hour rate for this job */
 	rate: number
+}
+
+export interface ISkill {
+	icon: string
+	name: string
+	description: string
 }

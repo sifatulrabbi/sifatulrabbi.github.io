@@ -1,7 +1,12 @@
 import React from "react"
 
 import { PageWrapper } from "@/components"
-import { HeroSection, AboutModule, ServicesModule } from "@/modules"
+import {
+	HeroSection,
+	AboutModule,
+	ServicesModule,
+	SkillsModule,
+} from "@/modules"
 
 const HomePage: React.FC = () => {
 	return (
@@ -9,6 +14,7 @@ const HomePage: React.FC = () => {
 			<HeroSection />
 			<AboutModule.AboutMeSection />
 			<ServicesModule.ServicesSection />
+			<SkillsModule.SkillsSection />
 		</PageWrapper>
 	)
 }

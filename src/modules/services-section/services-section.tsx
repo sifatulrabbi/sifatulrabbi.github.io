@@ -42,7 +42,7 @@ export const ServicesSection: React.FC = () => {
 					))}
 				</div>
 				<button className="btn-big btn-primary mt-12">
-					Send Me a Custom Offer
+					Custom Offer
 				</button>
 			</div>
 		</div>
