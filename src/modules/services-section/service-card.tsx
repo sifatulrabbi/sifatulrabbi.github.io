@@ -21,8 +21,10 @@ export const ServiceCard: React.FC<Props> = ({
 			>
 				{icon}
 			</span>
-			<h3 className="text-h3">{name}</h3>
-			<p className="opacity-80 md:text-[1.1rem]">{description}</p>
+			<h4 className="text-h4">{name}</h4>
+			<p className="opacity-80 md:text-[1.1rem] text-center md:text-left">
+				{description}
+			</p>
 		</div>
 	)
 }

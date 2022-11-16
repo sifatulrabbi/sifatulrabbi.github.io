@@ -16,7 +16,7 @@
 		"incremental": true,
 		"baseUrl": "./",
 		"paths": {
-			"@/app/*": ["./src"],
+			"@/app/*": ["./src/*"],
 			"@/components": ["./src/components"],
 			"@/hooks": ["./src/hooks"],
 			"@/modules": ["src/modules"],
