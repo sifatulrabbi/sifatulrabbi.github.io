@@ -9,8 +9,8 @@ interface Props {
 
 export const SkillCard: React.FC<Props> = ({ skill }) => {
 	return (
-		<div className="flex flex-row justify-start items-center bg-white rounded-lg border-1 shadow-lg p-4 gap-4">
-			<div className="flex justify-center items-center h-[50px] w-[50px] rounded overflow-hidden">
+		<div className="flex flex-col md:flex-row justify-start items-start md:items-center bg-white rounded-lg border-1 shadow-lg p-4 gap-4">
+			<div className="flex justify-center items-center h-[30px] w-[30px] min-w-[30px] rounded overflow-hidden">
 				<Image
 					src={skill.icon}
 					alt=""

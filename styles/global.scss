@@ -88,11 +88,17 @@ body {
 	}
 
 	.btn-dark {
-		@apply bg-dark text-white duration-300 z-[1] transition-all hover:bg-black relative overflow-hidden before:absolute before:top-0 before:right-0 before:left-0 before:bottom-0 before:bg-black before:z-[-1] before:opacity-0 hover:before:opacity-100;
+		@apply bg-dark text-white duration-300 z-[1] transition-all hover:bg-black relative overflow-hidden before:absolute before:top-0 before:right-0 before:left-0 before:bottom-0 before:bg-[#364563] before:z-[-1] before:opacity-0 hover:before:opacity-100;
+		background: linear-gradient(180deg, #364563 0%, #242e42 100%);
 	}
 
 	.btn-white {
 		@apply bg-white text-dark border-[1px] border-gray-100 hover:bg-gray-100;
+	}
+
+	.btn-green {
+		@apply text-white duration-300 z-[1] transition-all relative overflow-hidden before:absolute before:top-0 before:right-0 before:left-0 before:bottom-0 before:bg-success before:z-[-1] before:opacity-0 hover:before:opacity-100;
+		background: linear-gradient(180deg, #00c274 0%, #00995b 100%);
 	}
 }
 

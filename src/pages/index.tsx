@@ -6,6 +6,8 @@ import {
 	AboutModule,
 	ServicesModule,
 	SkillsModule,
+	CTASection,
+	ReviewsModule,
 } from "@/modules"
 
 const HomePage: React.FC = () => {
@@ -15,6 +17,8 @@ const HomePage: React.FC = () => {
 			<AboutModule.AboutMeSection />
 			<ServicesModule.ServicesSection />
 			<SkillsModule.SkillsSection />
+			<CTASection />
+			<ReviewsModule.ReviewsSection />
 		</PageWrapper>
 	)
 }

@@ -22,3 +22,11 @@ export interface ISkill {
 	name: string
 	description: string
 }
+
+export interface IReview {
+	avatar: string
+	name: string
+	company: string
+	role: string
+	text: string
+}
