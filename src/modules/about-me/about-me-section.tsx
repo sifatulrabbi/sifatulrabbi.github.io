@@ -49,15 +49,15 @@ export const AboutMeSection: React.FC = () => {
 							<span className="text-primary"> Limits</span>&rdquo;
 						</h3>
 						<p className="text-center md:text-left">
-							I love coding, solving problems, building amazing
-							projects, reading books & many other cool stuffs. I
-							love coding, solving problems, building amazing
-							projects, reading books & many other cool stuffs.
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Vero minima consequuntur porro pariatur nobis
+							quia laborum itaque quisquam ex atque Lorem ipsum.
 							<br />
-							<br />I love coding, solving problems, building
-							amazing projects, reading books & many other cool
-							stuffs. I love coding, solving problems, building
-							amazing projects, reading books.
+							<br />
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Explicabo praesentium dignissimos assumenda!
+							Non corrupti asperiores vero ipsum fugit dolorum
+							repellendus pariatur eius!
 						</p>
 					</div>
 
