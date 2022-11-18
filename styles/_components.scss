@@ -34,3 +34,71 @@
 		}
 	}
 }
+
+.review-card-fadeout-right {
+	animation: change-left 1s ease-in forwards infinite;
+
+	@keyframes change-left {
+		0% {
+			opacity: 1;
+			transform: translateX(0) scale(1);
+		}
+		50% {
+			opacity: 0.5;
+			transform: translateX(20%) scale(0.8);
+		}
+		100% {
+			opacity: 0;
+			transform: translateX(60%) scale(0.8);
+		}
+	}
+}
+
+.review-card-fadeout-left {
+	animation: change-left 1s ease-in forwards infinite;
+
+	@keyframes change-left {
+		0% {
+			opacity: 1;
+			transform: translateX(0) scale(1);
+		}
+		50% {
+			opacity: 0.5;
+			transform: translateX(-20%) scale(0.8);
+		}
+		100% {
+			opacity: 0;
+			transform: translateX(-60%) scale(0.8);
+		}
+	}
+}
+
+.review-card-fadein-right {
+	animation: change-left 1s ease-in forwards infinite;
+
+	@keyframes change-left {
+		0% {
+			opacity: 0;
+			transform: translateX(60%) scale(1.2);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0) scale(1);
+		}
+	}
+}
+
+.review-card-fadein-left {
+	animation: change-left 1s ease-in forwards infinite;
+
+	@keyframes change-left {
+		0% {
+			opacity: 0;
+			transform: translateX(-60%) scale(1.2);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0) scale(1);
+		}
+	}
+}

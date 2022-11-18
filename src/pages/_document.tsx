@@ -11,7 +11,7 @@ class MyDocument extends Document {
 						content="Solving problems and struggling to learn something new every day motivates me more than anything."
 					/>
 					<meta name="robots" content="index, follow" />
-					<link rel="icon" href="/favicon.png" />
+					<link rel="icon" href="/logo.png" />
 					<link
 						rel="preconnect"
 						href="https://fonts.googleapis.com"
