@@ -4,7 +4,6 @@ import { v4 } from "uuid"
 import { FaChevronRight } from "react-icons/fa"
 import { ReviewCard } from "./review-card"
 import { myReviews } from "@/app/assets/data"
-import { IReview } from "../../interfaces"
 
 export const ReviewsSection: React.FC = () => {
 	const [activeIndex, setActiveIndex] = useState<number>(0)
@@ -34,6 +33,7 @@ export const ReviewsSection: React.FC = () => {
 	}
 
 	const updateActiveIndex = (i: number) => {
+		if (activeIndex === i) return
 		setPrevIndex(activeIndex)
 		setActiveIndex(i)
 		setIsRight(activeIndex < i)

@@ -27,7 +27,7 @@ export const myReviews: IReview[] = [
 		name: "Sifatul Rabbi",
 		company: "Pentadots",
 		role: "Founder & CEO",
-		text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit odio voluptatibus totam officia consequatur hic atque beatae necessitatibus consectetur. adipisicing elit. Suscipit odio voluptatibus totam officia consequatur hic atque beatae necessitatibus consectetur adipisicing elit. Suscipit odio voluptatibus totam officia consequatur hic atque beatae necessitatibus consectetur adipisicing elit. Suscipit odio voluptatibus totam officia consequatur hic atque beatae necessitatibus consectetur",
+		text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit odio voluptatibus totam officia consequatur hic atque beatae necessitatibus consectetur. adipisicing elit. Suscipit odio voluptatibus totam officia consequatur hic atque beatae necessitatibus consectetur adipisicing elit. Suscipit odio voluptatibus totam officia consequatur hic atque beatae necessitatibus consectetur adipisicing elit",
 	},
 	{
 		avatar: "/me.png",

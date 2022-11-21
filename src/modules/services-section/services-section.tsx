@@ -27,10 +27,10 @@ export const ServicesSection: React.FC = () => {
 
 			{/* packages */}
 			<div className="mt-[8vh] flex flex-col justify-start items-center">
-				<h2 className="text-h1 text-dark w-full text-center mb-4">
+				<h1 className="text-h1 text-dark w-full text-center mb-4">
 					Suitable <span className="text-primary">Packages</span> For
 					You!
-				</h2>
+				</h1>
 				<p className="text-lg w-full text-center">
 					Pick the best package that suits you. Or send me a custom
 					offer if needed!

@@ -58,9 +58,6 @@ body {
 	}
 }
 
-@layer base {
-}
-
 @layer components {
 	.btn {
 		@apply flex flex-row justify-center items-center px-6 py-2 rounded-lg font-medium transition-all duration-300 before:transition-all before:duration-300 after:transition-all after:duration-300 hover:bg-gray-100 border-[1px] border-gray-200;
@@ -100,9 +97,7 @@ body {
 		@apply text-white duration-300 z-[1] transition-all relative overflow-hidden before:absolute before:top-0 before:right-0 before:left-0 before:bottom-0 before:bg-success before:z-[-1] before:opacity-0 hover:before:opacity-100;
 		background: linear-gradient(180deg, #00c274 0%, #00995b 100%);
 	}
-}
 
-@layer utilities {
 	.text-h1 {
 		@apply text-4xl md:text-5xl font-bold;
 	}
@@ -126,6 +121,13 @@ body {
 	.border-1 {
 		@apply border-[1px] border-gray-100;
 	}
+}
+
+.truncate {
+	max-width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 @import "./components";

@@ -1,5 +1,5 @@
-import { PackageType, ServiceType } from "@/app/constants"
-import type { ReactNode } from "react"
+import type { PackageType, ServiceType } from "@/app/constants"
+import type { SyntheticEvent } from "react"
 
 export interface IPackage {
 	id: string
@@ -29,4 +29,21 @@ export interface IReview {
 	company: string
 	role: string
 	text: string
+}
+
+export interface IInputGroup<V = string | number, Element = HTMLInputElement> {
+	name: string
+	value: V | undefined
+	onChange: (e: SyntheticEvent<Element>) => void
+	label?: string
+	placeholder?: string
+	type?:
+		| "text"
+		| "number"
+		| "email"
+		| "number"
+		| "currency"
+		| "formattedNumber"
+	inputStyle?: string
+	labelStyle?: string
 }

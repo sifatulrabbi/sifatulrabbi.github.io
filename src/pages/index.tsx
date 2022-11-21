@@ -8,6 +8,7 @@ import {
 	SkillsModule,
 	CTASection,
 	ReviewsModule,
+	ContactsModule,
 } from "@/modules"
 
 const HomePage: React.FC = () => {
@@ -19,6 +20,7 @@ const HomePage: React.FC = () => {
 			<SkillsModule.SkillsSection />
 			<CTASection />
 			<ReviewsModule.ReviewsSection />
+			<ContactsModule.ContactsSection />
 		</PageWrapper>
 	)
 }
