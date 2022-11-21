@@ -1,5 +1,7 @@
-import { BasicInput } from "./basic-input"
+import { Input } from "./input"
+import { Textarea } from "./textarea"
 
 export const Inputs = {
-	BasicInput,
+	Input,
+	Textarea,
 }

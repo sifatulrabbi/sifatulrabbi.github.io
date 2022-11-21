@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import type { IInputGroup } from "@/interfaces"
 
-export const BasicInput: React.FC<IInputGroup> = (p) => {
+export const Input: React.FC<IInputGroup> = (p) => {
 	const [isFocused, setIsFocused] = useState(false)
 
 	return (
@@ -21,6 +21,7 @@ export const BasicInput: React.FC<IInputGroup> = (p) => {
 				type={p.type || "text"}
 				value={p.value}
 				onChange={p.onChange}
+				required={p.required}
 				placeholder={p.placeholder}
 				className={`w-full outline-none border-b-2 py-1 text-sm text-dark
 				${isFocused ? "focus:border-primary " : "border-textSecondary"}`}

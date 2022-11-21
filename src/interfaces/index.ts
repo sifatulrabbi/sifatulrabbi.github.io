@@ -1,5 +1,5 @@
 import type { PackageType, ServiceType } from "@/app/constants"
-import type { SyntheticEvent } from "react"
+import type { ChangeEventHandler, SyntheticEvent } from "react"
 
 export interface IPackage {
 	id: string
@@ -34,9 +34,10 @@ export interface IReview {
 export interface IInputGroup<V = string | number, Element = HTMLInputElement> {
 	name: string
 	value: V | undefined
-	onChange: (e: SyntheticEvent<Element>) => void
+	onChange: ChangeEventHandler<Element>
 	label?: string
 	placeholder?: string
+	required?: boolean
 	type?:
 		| "text"
 		| "number"

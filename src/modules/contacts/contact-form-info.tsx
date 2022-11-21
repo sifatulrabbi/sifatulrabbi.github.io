@@ -33,7 +33,7 @@ export const ContactFormInfo: React.FC = () => {
 					</a>
 				</Link>
 			</div>
-			<div className="w-full min-h-[60px] mt-8 flex justify-end items-end pb-4">
+			<div className="w-full min-h-[60px] mt-auto flex justify-end items-end pb-4">
 				<Image
 					src="/contact-card-bg.svg"
 					alt=""
