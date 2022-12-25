@@ -22,7 +22,8 @@
 			"@/modules": ["src/modules"],
 			"@/states": ["./src/states"],
 			"@/services": ["./src/services"],
-			"@/interfaces": ["./src/interfaces"]
+			"@/interfaces": ["./src/interfaces"],
+			"@/utils": ["./src/utils"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

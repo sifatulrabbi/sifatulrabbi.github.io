@@ -9,6 +9,7 @@ import {
 	CTASection,
 	ReviewsModule,
 	ContactsModule,
+	FaqModule,
 } from "@/modules"
 
 const HomePage: React.FC = () => {
@@ -21,6 +22,7 @@ const HomePage: React.FC = () => {
 			<CTASection />
 			<ReviewsModule.ReviewsSection />
 			<ContactsModule.ContactsSection />
+			<FaqModule.FaqSection />
 		</PageWrapper>
 	)
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { myServices } from "@/app/assets/data"
+import { mailerService } from "@/services"
 
 import { ContactFormInfo } from "./contact-form-info"
 import { Inputs } from "@/components"
@@ -11,12 +12,24 @@ export const ContactForm: React.FC = () => {
 	const [email, setEmail] = useState("")
 	const [message, setMessage] = useState("")
 	const [subject, setSubject] = useState("")
-	const [startBudget, setStartBudget] = useState<number>()
-	const [endBudget, setEndBudget] = useState<number>()
+	const [startBudget, setStartBudget] = useState<number | string>("")
+	const [endBudget, setEndBudget] = useState<number | string>("")
 	const [serviceType, setServiceType] = useState("")
 
-	const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
 		e.preventDefault()
+		if (!name || !email || !subject || !message) {
+			return
+		}
+		const { data, error } = await mailerService.sendEmail(
+			subject,
+			"<" + name + ">" + email,
+			message,
+		)
+		if (!data || error) {
+			console.error(error)
+		}
+		console.error(data)
 	}
 
 	const convertStrToNum = (v: string): number | undefined => {
@@ -101,7 +114,8 @@ export const ContactForm: React.FC = () => {
 							value={startBudget}
 							onChange={(e) =>
 								setStartBudget(
-									convertStrToNum(e.currentTarget.value),
+									convertStrToNum(e.currentTarget.value) ||
+										"",
 								)
 							}
 							required
@@ -114,7 +128,8 @@ export const ContactForm: React.FC = () => {
 							value={endBudget}
 							onChange={(e) =>
 								setEndBudget(
-									convertStrToNum(e.currentTarget.value),
+									convertStrToNum(e.currentTarget.value) ||
+										"",
 								)
 							}
 							required
