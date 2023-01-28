@@ -15,10 +15,13 @@
 		"node.js",
 		"express.js"
 	],
+	"engines": {
+		"node": "16.x"
+	},
 	"scripts": {
+		"start": "NODE_ENV=production node server.js",
 		"start:dev": "next dev",
 		"build": "next build",
-		"start": "next start",
 		"export": "next export",
 		"lint": "next lint",
 		"predeploy": "npm run build && npm run export && touch ./out/.nojekyll && echo 'www.sifatulrabbi.github.io' > ./out/CNAME",
