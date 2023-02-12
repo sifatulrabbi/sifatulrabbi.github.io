@@ -1,5 +1,9 @@
 module.exports = {
-	content: ["./src/**/*.{tsx,ts,js,jsx}"],
+	content: [
+		"./node_modules/flowbite-react/**/*.js",
+		"./src/**/*.{tsx,ts,js,jsx}",
+		"./public/**/*.html",
+	],
 	darkMode: "class",
 	theme: {
 		fontFamily: {
@@ -18,5 +22,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require("@tailwindcss/typography")],
+	plugins: [require("@tailwindcss/typography"), require("flowbite/plugin")],
 }
