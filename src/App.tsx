@@ -1,5 +1,6 @@
-import Navbar from "@/components/Navbar"
 import { Outlet } from "react-router"
+import Navbar from "@/components/Navbar"
+import FooterSection from "@/modules/FooterSection"
 
 const App = () => {
   return (
@@ -7,6 +8,7 @@ const App = () => {
       <Navbar />
       <div className="w-full h-[62px]" />
       <Outlet />
+      <FooterSection />
     </main>
   )
 }
