@@ -6,7 +6,7 @@ const AboutSection: React.FC = () => {
     <SectionContainer id="about">
       <article className="format text-center mb-[6vh]">
         <h1 className="mb-4">AboutMe</h1>
-        <p>A bit about me and how I started my journey</p>
+        <p className="lead">A bit about me and how I started my journey</p>
       </article>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[2rem]">
@@ -18,7 +18,9 @@ const AboutSection: React.FC = () => {
 
         <div className="format text-center md:text-left">
           <h2>
-            "Learning has no <span className="text-blue-600">Limits</span>"
+            <q>
+              Learning has no <span className="text-blue-600">Limits</span>
+            </q>
           </h2>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla,

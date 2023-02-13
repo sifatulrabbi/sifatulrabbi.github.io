@@ -7,3 +7,7 @@
 *::before {
   box-sizing: border-box;
 }
+
+.format {
+  @apply format-lead:text-lg format-lead:md:text-xl format-h1:mb-4;
+}
