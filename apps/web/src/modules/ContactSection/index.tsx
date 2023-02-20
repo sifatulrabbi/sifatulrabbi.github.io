@@ -1,6 +1,6 @@
-import SectionContainer from "@/components/SectionContainer"
-import Form from "./Form"
-import { MdOutlineEmail, MdOutlinePhone } from "react-icons/md"
+import SectionContainer from "@/components/SectionContainer";
+import Form from "./Form";
+import { MdOutlineEmail, MdOutlinePhone } from "react-icons/md";
 
 const ContactSection: React.FC = () => {
   return (
@@ -48,7 +48,7 @@ const ContactSection: React.FC = () => {
         <Form />
       </div>
     </SectionContainer>
-  )
-}
+  );
+};
 
-export default ContactSection
+export default ContactSection;

@@ -15,4 +15,4 @@ module.exports = {
     require("flowbite-typography"),
     // require("@tailwindcss/typography"),
   ],
-}
+};

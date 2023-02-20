@@ -1,5 +1,5 @@
 const WorksPage: React.FC = () => {
-  return <div>WorksPage</div>
-}
+  return <div>WorksPage</div>;
+};
 
-export default WorksPage
+export default WorksPage;

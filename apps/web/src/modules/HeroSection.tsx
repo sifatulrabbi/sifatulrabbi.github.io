@@ -1,5 +1,5 @@
-import SectionContainer from "@/components/SectionContainer"
-import { Button } from "flowbite-react"
+import SectionContainer from "@/components/SectionContainer";
+import { Button } from "flowbite-react";
 
 const HeroSection: React.FC = () => {
   return (
@@ -34,7 +34,7 @@ const HeroSection: React.FC = () => {
         </Button>
       </div>
     </SectionContainer>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;

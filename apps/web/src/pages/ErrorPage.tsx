@@ -1,9 +1,9 @@
-import { Link, useRouteError } from "react-router-dom"
-import { Button } from "flowbite-react"
+import { Link, useRouteError } from "react-router-dom";
+import { Button } from "flowbite-react";
 
 const ErrorPage: React.FC = () => {
-  const error = useRouteError() as any
-  console.error(error)
+  const error = useRouteError() as any;
+  console.error(error);
 
   return (
     <div className=" w-full min-h-screen max-h-screen flex flex-col justify-center items-center">
@@ -18,7 +18,7 @@ const ErrorPage: React.FC = () => {
         <Button>Back to Home</Button>
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default ErrorPage
+export default ErrorPage;

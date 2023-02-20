@@ -1,13 +1,13 @@
-import { Label, TextInput, Radio, Textarea, Button } from "flowbite-react"
-import { useState } from "react"
-import { MdSend } from "react-icons/md"
+import { Label, TextInput, Radio, Textarea, Button } from "flowbite-react";
+import { useState } from "react";
+import { MdSend } from "react-icons/md";
 
 const Form: React.FC = () => {
-  const [clientName, setClientName] = useState("")
-  const [clientEmail, setClientEmail] = useState("")
-  const [clientPhone, setClientPhone] = useState("")
-  const [service, setService] = useState("")
-  const [message, setMessage] = useState("")
+  const [clientName, setClientName] = useState("");
+  const [clientEmail, setClientEmail] = useState("");
+  const [clientPhone, setClientPhone] = useState("");
+  const [service, setService] = useState("");
+  const [message, setMessage] = useState("");
 
   const infoSection = [
     {
@@ -37,17 +37,17 @@ const Form: React.FC = () => {
       onChange: (e: React.SyntheticEvent<HTMLInputElement>) =>
         setClientPhone(e.currentTarget.value),
     },
-  ]
+  ];
 
   const services = [
     "Fullstack development",
     "Frontend development",
     "Backend development",
-  ]
+  ];
 
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+  };
 
   return (
     <form onSubmit={handleSubmit} className="p-4 format flex flex-col gap-4">
@@ -105,7 +105,7 @@ const Form: React.FC = () => {
         Send
       </Button>
     </form>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;

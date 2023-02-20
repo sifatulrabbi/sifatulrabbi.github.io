@@ -1,6 +1,6 @@
-import { BsFacebook, BsTwitter, BsGithub } from "react-icons/bs"
-import SectionContainer from "@/components/SectionContainer"
-import { NavLink } from "react-router-dom"
+import { BsFacebook, BsTwitter, BsGithub } from "react-icons/bs";
+import SectionContainer from "@/components/SectionContainer";
+import { NavLink } from "react-router-dom";
 
 const FooterSection: React.FC = () => {
   return (
@@ -76,7 +76,7 @@ const FooterSection: React.FC = () => {
         </article>
       </SectionContainer>
     </footer>
-  )
-}
+  );
+};
 
-export default FooterSection
+export default FooterSection;

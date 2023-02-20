@@ -1,8 +1,8 @@
 const SectionContainer: React.FC<{
-  id?: string
-  children: React.ReactNode
-  className?: string
-  noMargin?: boolean
+  id?: string;
+  children: React.ReactNode;
+  className?: string;
+  noMargin?: boolean;
 }> = ({ children, id, className, noMargin }) => {
   return (
     <section
@@ -15,7 +15,7 @@ const SectionContainer: React.FC<{
     >
       {children}
     </section>
-  )
-}
+  );
+};
 
-export default SectionContainer
+export default SectionContainer;

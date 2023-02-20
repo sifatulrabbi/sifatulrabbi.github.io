@@ -1,6 +1,6 @@
-import AboutSection from "@/modules/AboutSection"
-import HeroSection from "@/modules/HeroSection"
-import ContactSection from "@/modules/ContactSection"
+import AboutSection from "@/modules/AboutSection";
+import HeroSection from "@/modules/HeroSection";
+import ContactSection from "@/modules/ContactSection";
 
 const index: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const index: React.FC = () => {
       <AboutSection />
       <ContactSection />
     </>
-  )
-}
+  );
+};
 
-export default index
+export default index;

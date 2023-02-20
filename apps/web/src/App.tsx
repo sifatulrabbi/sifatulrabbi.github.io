@@ -1,6 +1,6 @@
-import { Outlet } from "react-router"
-import Navbar from "@/components/Navbar"
-import FooterSection from "@/modules/FooterSection"
+import { Outlet } from "react-router";
+import Navbar from "@/components/Navbar";
+import FooterSection from "@/modules/FooterSection";
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <Outlet />
       <FooterSection />
     </main>
-  )
-}
+  );
+};
 
-export default App
+export default App;

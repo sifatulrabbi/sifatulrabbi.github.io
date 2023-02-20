@@ -1,9 +1,9 @@
-import { createBrowserRouter } from "react-router-dom"
-import App from "@/App"
-import ErrorPage from "@/pages/ErrorPage"
-import HomePage from "@/pages/HomePage"
-import AboutPage from "@/pages/AboutPage"
-import ContactPage from "@/pages/ContactPage"
+import { createBrowserRouter } from "react-router-dom";
+import App from "@/App";
+import ErrorPage from "@/pages/ErrorPage";
+import HomePage from "@/pages/HomePage";
+import AboutPage from "@/pages/AboutPage";
+import ContactPage from "@/pages/ContactPage";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +25,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-])
+]);
 
-export default router
+export default router;

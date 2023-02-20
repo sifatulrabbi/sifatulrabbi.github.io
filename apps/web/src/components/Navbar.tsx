@@ -1,22 +1,29 @@
-import { Navbar as FNavbar, Button } from "flowbite-react"
-import { NavLink, useLocation } from "react-router-dom"
+import { Navbar as FNavbar, Button } from "flowbite-react";
+import { NavLink, useLocation } from "react-router-dom";
+import { MdLightMode } from "react-icons/md";
 
 const navbarItems = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Works", path: "/works" },
   { name: "Services", path: "/services" },
-]
+];
 
 const Navbar: React.FC = () => {
-  const location = useLocation()
+  const location = useLocation();
 
   const matchPath = (path: string) => {
-    if (path === "/") return path === location.pathname
-    const match = location.pathname.match(new RegExp(path, "gi"))
-    if (match && match.length > 0) return true
-    return false
-  }
+    if (path === "/") return path === location.pathname;
+    const match = location.pathname.match(new RegExp(path, "gi"));
+    if (match && match.length > 0) return true;
+    return false;
+  };
+
+  const handleChangeTheme = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ) => {
+    e.preventDefault();
+  };
 
   return (
     <FNavbar
@@ -48,9 +55,15 @@ const Navbar: React.FC = () => {
             {item.name}
           </FNavbar.Link>
         ))}
+        <FNavbar.Link
+          onClick={(e) => handleChangeTheme(e)}
+          className="flex justify-center items-center cursor-pointer"
+        >
+          <MdLightMode className="text-lg" />
+        </FNavbar.Link>
       </FNavbar.Collapse>
     </FNavbar>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

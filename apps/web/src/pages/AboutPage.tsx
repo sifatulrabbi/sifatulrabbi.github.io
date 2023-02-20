@@ -1,11 +1,11 @@
-import AboutSection from "@/modules/AboutSection"
+import AboutSection from "@/modules/AboutSection";
 
 const AboutPage: React.FC = () => {
   return (
     <>
       <AboutSection />
     </>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;
