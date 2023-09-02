@@ -1,22 +1,22 @@
 import React from "react";
-import {ProjectCard} from "../components";
-import {otherProjectsSelector} from "../states";
-import {useRecoilValue} from "recoil";
-import {v4} from "uuid";
-import {useInViewport} from "react-in-viewport";
+import { ProjectCard } from "../components";
+import { otherProjectsSelector } from "../states";
+import { useRecoilValue } from "recoil";
+import { v4 } from "uuid";
+import { useInViewport } from "react-in-viewport";
 
 interface Props {
     className?: string;
 }
 
-export const ProjectsView: React.FC<Props> = ({className}) => {
+export const ProjectsView: React.FC<Props> = ({ className }) => {
     const elementRef = React.useRef(null);
-    const {inViewport} = useInViewport(
+    const { inViewport } = useInViewport(
         // @ts-ignore
         elementRef,
         {},
-        {disconnectOnLeave: false},
-        {className},
+        { disconnectOnLeave: false },
+        { className },
     );
 
     const otherProjects = useRecoilValue(otherProjectsSelector);
@@ -32,7 +32,7 @@ export const ProjectsView: React.FC<Props> = ({className}) => {
                         : ""
                 }`}
             >
-                Other projects
+                Personal Projects
             </h3>
             <div
                 className={`mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 opacity-0 translate-y-4 ${

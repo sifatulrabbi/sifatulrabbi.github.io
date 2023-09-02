@@ -17,7 +17,7 @@
     ],
     "private": true,
     "scripts": {
-        "start:dev": "next dev",
+        "dev": "next dev",
         "build": "next build",
         "start": "next start",
         "start:cpanel": "node ./server.js",
@@ -28,6 +28,7 @@
         "format": "prettier --write ./"
     },
     "dependencies": {
+        "dayjs": "^1.11.9",
         "next": "^12.1.4",
         "react": "^18.0.0-rc.3",
         "react-dom": "^18.0.0-rc.3",

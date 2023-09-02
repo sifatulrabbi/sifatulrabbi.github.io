@@ -1,44 +1,40 @@
 import React from "react";
-import {v4} from "uuid";
-import {links} from "./data";
+import { v4 } from "uuid";
+import { links } from "./data";
 import Link from "next/link";
 import {
     BiHomeAlt,
     BiMessageSquareDetail,
-    BiReceipt,
     BiArchive,
+    BiUser,
 } from "react-icons/bi";
-import {useNavbar} from "../../hooks";
+import { useNavbar } from "../../hooks";
 
 interface BtnProps {
     name: string;
     active: boolean;
 }
 
-function Icon({name}: BtnProps) {
+function Icon({ name }: BtnProps) {
     return name === "Home" ? (
         <BiHomeAlt />
-    ) : name === "Projects" ? (
+    ) : name === "Works" ? (
         <BiArchive />
     ) : name === "Contact" ? (
         <BiMessageSquareDetail />
-    ) : name === "Resume" ? (
-        <BiReceipt />
+    ) : name === "About" ? (
+        <BiUser />
     ) : (
         <span />
     );
 }
 
 export const MobileBar: React.FC = () => {
-    const {darkMode, active} = useNavbar();
+    const { active } = useNavbar();
 
     return (
-        <nav
-            className={`z-50 fixed lg:hidden bottom-0 right-0 left-0 h-[60px] flex translate-y-full animate-[mobileBarAnim_500ms_ease_forwards] ${
-                darkMode ? "dark" : "light"
-            }`}
-        >
-            <div className="w-container flex flex-row justify-between items-center px-6 theme-styles bg-white dark:bg-slate-700 bg-opacity-95 dark:opacity-95">
+        <nav className="z-50 fixed dark:bg-bgContainer-dark bg-white lg:hidden bottom-0 right-0 left-0 h-[60px] flex translate-y-full animate-[mobileBarAnim_500ms_ease_forwards]">
+            <div className="w-container flex flex-row justify-between items-center px-6 theme-styles bg-white dark:bg-bgContainer-dark bg-opacity-95 dark:opacity-95">
                 {links.map((link) => (
                     <Link key={v4()} href={link.path} replace>
                         <a

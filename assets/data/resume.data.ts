@@ -1,48 +1,77 @@
-export const languagesData = ["TypeScript", "JavaScript", "CSS", "SQL"];
+export const languagesData = ["TypeScript", "JavaScript", "Go", "Python"];
 
-export const frameworksData = ["Node.js", "Express.js", "Next.js", "React.js"];
+export const frameworksData = [
+    "Node.js",
+    "Express.js",
+    "Next.js",
+    "React.js",
+    "Vue.js",
+    "Gin",
+    "FastAPI",
+    "Flask",
+];
 
-export const cssData = ["SASS", "TailwindCSS", "Bootstrap"];
+export const databaseData = ["MongoDB", "PostgreSQL", "Redis"];
 
-export const databaseData = ["MongoDB", "PostgreSQL"];
+export const othersData = [
+    "Firebase",
+    "HTML",
+    "CSS",
+    "SCSS",
+    "TailwindCSS",
+    "Bootstrap",
+];
 
-export const toolsData = ["Github", "Firebase", "Linux", "VPS", "cPanel"];
-
-export const softSkills = [
-    "Hard working",
-    "Passionate",
-    "Honesty",
-    "Team work",
-    "Punctuality",
+export const skills = [
+    "Full Stack Development",
+    "Quick Technological Adaptability",
+    "Problem Solving",
+    "Effective communication",
+    "Git & Github",
+    "Docker",
+    "Linux",
+    "GCP",
+    "REST",
+    "gRPC",
+    "Microservices",
 ];
 
 export const workExperiences = [
     {
+        title: "Full Stack Developer",
+        company: "HelloScribe A.I",
+        type: "Contract",
+        duration: { start: "11/2022", end: "" },
+        description:
+            "HelloScribe is a helpful AI for research, writing, and brainstorming. It utilizes the modern AI technologies and has many tools for PR marketers and writers to assist their professional workloads.",
+        details: [
+            "Quickly learned system needs, added important features, and fixed bugs, leading to more active users.",
+            "Led the transition to v2 of the system, which includes migrating from Vue2 to Vue3, upgrading from Node.js 12 to Node 18, and enhancing data models for scalability.",
+            "Improved user sign-in by adding Auth0 and strengthening authentication & authorization in both backend and frontend.",
+            "Collaborated with a team of four, reviewing code, synchronizing changes, and assisting in feature integration to the platform.",
+            "Tech stack: JavaScript, Node.js, Express.js, MongoDB, Vue.js, TailwindCSS, SCSS, Auth0, Web Sockets.",
+        ],
+    },
+    {
         title: "Full stack developer",
-        company: "Upwork",
+        company: "X-Booker",
+        type: "Contract",
+        duration: { start: "04/2022", end: "" },
+        description:
+            "X-Booker is the ultimate tool for streamlining business operations. It manages site visits and data while implementing automation. It leverages Google services and other modern technologies to create custom automation, making business management smoother.",
         details: [
-            "Developing websites with serverless backend",
-            "Email subscription, and email notification",
-            "CRUD operations with NoSQL/SQL database",
-            "Connecting the front-end with the back-end",
+            "Built a SaaS platform for property survey businesses, making tasks smoother and engaging for the users.",
+            "Set up login using Google SSO and Firebase; added third-party storage for files and used Firestore as the database.",
+            "Added Google services like Calendars, Gmail, and Maps to the platform.",
+            "Combined system automation with key external features and managed app deployment on GCP Kubernetes using Docker.",
+            "Tech stack: TypeScript, Express.js, Node.js, Next.js, TailwindCSS, SCSS, Docker, Kubernetes, GCP, Firebase.",
         ],
     },
     {
-        title: "Backend developer",
-        company: "Fiverr",
-        details: [
-            "Fixing bug in WebSocket application",
-            "Building a in app notification system",
-            "Deploying Node.js application on VPS using Nginx",
-        ],
-    },
-    {
-        title: "Frontend developer",
-        company: "Fiverr",
-        details: [
-            "Building responsive landing pages with React",
-            "Delivering before deadlines",
-            "Fetching data from external APIs",
-        ],
+        title: "Full Stack Developer",
+        company: "Freelance",
+        type: "Freelance",
+        duration: { start: "3/2022", end: "" },
+        details: [],
     },
 ];

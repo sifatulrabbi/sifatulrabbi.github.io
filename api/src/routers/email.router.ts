@@ -1,11 +1,11 @@
-import {Router} from "express";
-import {emailService} from "../services";
+import { Router } from "express";
+import { emailService } from "../services";
 
 const emailRouter = Router();
 
 // checking the route
 emailRouter.get("/", (req, res) => {
-    res.status(200).json({message: "Email service is working"});
+    res.status(200).json({ message: "Email service is working" });
 });
 
 // sending email router
@@ -16,10 +16,10 @@ emailRouter.post("/", (req, res, next) => {
             next(err); // sending a bad request error
         } else if (!result) {
             // sending a internal error
-            res.status(500).json({message: "Unable to sent email"});
+            res.status(500).json({ message: "Unable to sent email" });
         } else {
             // sending email successfully sent
-            res.status(200).json({message: "Success"});
+            res.status(200).json({ message: "Success" });
         }
     });
 });

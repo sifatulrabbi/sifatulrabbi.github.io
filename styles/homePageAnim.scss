@@ -1,6 +1,6 @@
 .hero-text {
-    --typewriterTime: 2.5s;
-    --typewriterAnim: typewriter var(--typewriterTime) steps(20, end) 0.5s
+    --typewriterTime: 1.5s;
+    --typewriterAnim: typewriter var(--typewriterTime) steps(22, end) 0.5s
         forwards;
 
     font-size: clamp(18px, 3vw, 24px);
@@ -13,7 +13,7 @@
 }
 
 .hero-text::before {
-    @apply bg-white dark:bg-slate-700;
+    @apply bg-white dark:bg-bgContainer-dark;
     animation: var(--typewriterAnim);
 }
 

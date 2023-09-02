@@ -1,11 +1,11 @@
 import React from "react";
 import Img from "next/image";
 import Link from "next/link";
-import {SiGithub} from "react-icons/si";
-import {AiOutlineLink} from "react-icons/ai";
-import {v4} from "uuid";
-import {IProjectCardFeatured} from "../interfaces";
-import {useInViewport} from "react-in-viewport";
+import { SiGithub } from "react-icons/si";
+import { AiOutlineLink } from "react-icons/ai";
+import { v4 } from "uuid";
+import { IProjectCardFeatured } from "../interfaces";
+import { useInViewport } from "react-in-viewport";
 
 interface Props extends IProjectCardFeatured {
     className?: string;
@@ -15,22 +15,22 @@ export const FeaturedProjectCard: React.FC<Props> = ({
     img,
     title,
     summary,
-    links: {live, github},
+    links: { live, github },
     icons,
 }) => {
     const elementRef = React.useRef(null);
-    const {inViewport} = useInViewport(
+    const { inViewport } = useInViewport(
         // @ts-ignore
         elementRef,
         {},
-        {disconnectOnLeave: false},
-        {img, title, summary, links: {live, github}, icons},
+        { disconnectOnLeave: false },
+        { img, title, summary, links: { live, github }, icons },
     );
 
     return (
         <div
             ref={elementRef}
-            className="max-w-[500px] lg:max-w-full grid grid-cols-1 lg:grid-cols-2 transition-[width] ease duration-400 overflow-hidden w-full gap-4 border-[1px] border-gray-400 p-4 rounded-lg"
+            className="max-w-[500px] lg:max-w-full grid grid-cols-1 lg:grid-cols-2 transition-[width] ease duration-400 overflow-hidden w-full gap-4 border-[1px] border-slate-400 p-4 rounded-lg"
         >
             <div
                 className={`max-w-[500px] max-h-[260px] overflow-hidden opacity-0 translate-y-4 ${

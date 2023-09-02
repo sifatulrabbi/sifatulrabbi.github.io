@@ -1,4 +1,4 @@
-import {introImg} from "../images";
+import { introImg } from "../images";
 
 export const homeData = {
     caption: "Hi there, I'm Sifatul",

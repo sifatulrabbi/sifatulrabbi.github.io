@@ -18,8 +18,8 @@ import {
     SiReactrouter,
     SiMaterialui,
 } from "react-icons/si";
-import {b2bApplication, todoAppBanner, socialMediaBanner} from "../images";
-import {IProjectCard, IProjectCardFeatured} from "../../interfaces";
+import { b2bApplication, todoAppBanner, socialMediaBanner } from "../images";
+import { IProjectCard, IProjectCardFeatured } from "../../interfaces";
 
 export const featuredProjectsData: IProjectCardFeatured[] = [
     {

@@ -1,7 +1,7 @@
 import React from "react";
-import {FormGroup} from "../components";
-import {v4} from "uuid";
-import {BiSend} from "react-icons/bi";
+import { FormGroup } from "../components";
+import { v4 } from "uuid";
+import { BiSend } from "react-icons/bi";
 
 interface IFromData {
     required?: boolean;
@@ -46,7 +46,7 @@ export const ContactMeForm: React.FC = () => {
     return (
         <form
             action="submit"
-            className="w-full flex flex-col justify-start items-start gap-4 p-4 rounded-lg border-4 text-sm opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.4s_forwards]"
+            className="w-full flex flex-col justify-start items-start gap-4 p-4 rounded-lg border-4 border-slate-400 text-sm opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.4s_forwards]"
         >
             <h4 className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.6s_forwards]">
                 Send an Email

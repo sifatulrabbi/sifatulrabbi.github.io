@@ -1,6 +1,12 @@
 import Link from "next/link";
 import React from "react";
-import {SiGithub, SiFacebook, SiTwitter, SiLinkedin} from "react-icons/si";
+import {
+    SiGithub,
+    SiFacebook,
+    SiTwitter,
+    SiLinkedin,
+    SiGmail,
+} from "react-icons/si";
 
 export const Footer: React.FC = () => {
     return (
@@ -9,22 +15,22 @@ export const Footer: React.FC = () => {
                 <div className="flex justify-center items-center gap-4">
                     <Link href="https://github.com/sifatulrabbi">
                         <a target="_blank">
-                            <SiGithub className="text-2xl " />
+                            <SiGithub className="text-2xl lg:hover:text-primary" />
                         </a>
                     </Link>
-                    <Link href="https://linkedin.com/in/temujins">
+                    <Link href="https://linkedin.com/in/sfiatulrabbi">
                         <a target="_blank">
-                            <SiLinkedin className="text-2xl " />
+                            <SiLinkedin className="text-2xl lg:hover:text-primary" />
                         </a>
                     </Link>
                     <Link href="https://twitter.com/sifatul_rabbi">
                         <a target="_blank">
-                            <SiTwitter className="text-2xl " />
+                            <SiTwitter className="text-2xl lg:hover:text-primary" />
                         </a>
                     </Link>
-                    <Link href="https://facebook.com/ttemujins">
+                    <Link href="mailto:sifatul@sifatul.com">
                         <a target="_blank">
-                            <SiFacebook className="text-2xl " />
+                            <SiGmail className="text-2xl lg:hover:text-primary" />
                         </a>
                     </Link>
                 </div>

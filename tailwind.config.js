@@ -1,10 +1,8 @@
-const colors = require("tailwindcss/colors");
-
 module.exports = {
     content: [
         "./pages/**/*.{tsx,ts,js,jsx}",
         "./components/**/*.{tsx,ts,jsx,js}",
-        "./features/**/*.{tsx,ts,jsx,js}",
+        "./modules/**/*.{tsx,ts,jsx,js}",
     ],
     darkMode: "class",
     theme: {
@@ -16,7 +14,13 @@ module.exports = {
         extend: {
             colors: {
                 primary: "#0070ff",
-                secondary: "#576f8e",
+                secondary: "#FF8F00",
+                textPrimary: "",
+                textSecondary: "",
+                bgContainer: {
+                    light: "#fff",
+                    dark: "#1C2532",
+                },
             },
         },
     },

@@ -1,20 +1,19 @@
 import React from "react";
 import Link from "next/link";
-import {v4} from "uuid";
-import {links} from "./data";
-import {BiMoon, BiSun} from "react-icons/bi";
-import {useNavbar} from "../../hooks";
-import {default as LogoImg} from "../../assets/images/logo.png";
+import { v4 } from "uuid";
+import { links } from "./data";
+import { BiMoon, BiSun } from "react-icons/bi";
+import { useNavbar } from "../../hooks";
+import { default as LogoImg } from "../../assets/images/logo.png";
 import Image from "next/image";
 
 export const Navbar: React.FC = () => {
-    const {active, toggleDarkMode, darkMode} = useNavbar();
+    const { active, toggleDarkMode, darkMode } = useNavbar();
 
     return (
         <header
-            className={`z-[50] fixed top-0 left-0 right-0 bg-white dark:bg-slate-700 bg-opacity-95 dark:opacity-95 px-6 flex justify-center items-center h-[60px] -translate-y-full animate-[navbarAnim_500ms_ease_forwards] 
-            ${darkMode ? "dark" : "light"}`}
-            style={{borderTop: "5px solid #0077ff"}}
+            className="z-[50] fixed top-0 left-0 right-0 bg-white dark:bg-bgContainer-dark bg-opacity-95 dark:opacity-95 px-6 flex justify-center items-center h-[60px] -translate-y-full animate-[navbarAnim_500ms_ease_forwards]"
+            style={{ borderTop: "5px solid #0077ff" }}
         >
             <div className="w-container w-full flex justify-between items-center theme-styles bg-transparent dark:bg-transparent">
                 <Link href="/">

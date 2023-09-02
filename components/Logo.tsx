@@ -7,7 +7,7 @@ interface Props {
     white?: boolean;
 }
 
-export const Logo: React.FC<Props> = ({width, height, white}) => {
+export const Logo: React.FC<Props> = ({ width, height, white }) => {
     return (
         <Link href="/">
             <a>

@@ -1,6 +1,6 @@
-import {IconType} from "react-icons";
-import {atom, selector} from "recoil";
-import {featuredProjectsData, projectsData} from "../assets/data";
+import { IconType } from "react-icons";
+import { atom, selector } from "recoil";
+import { featuredProjectsData, projectsData } from "../assets/data";
 
 export interface IProject {
     title: string;
@@ -17,7 +17,7 @@ export const projectsState = atom<IProject[]>({
 
 export const featuredProjectsSelector = selector({
     key: "featuredProjectsSelector",
-    get: ({get}) => {
+    get: ({ get }) => {
         const defaultValues = get(projectsState);
         return featuredProjectsData;
     },
@@ -25,7 +25,7 @@ export const featuredProjectsSelector = selector({
 
 export const otherProjectsSelector = selector({
     key: "otherProjectsSelector",
-    get: ({get}) => {
+    get: ({ get }) => {
         const defaultValues = get(projectsState);
         return projectsData;
     },

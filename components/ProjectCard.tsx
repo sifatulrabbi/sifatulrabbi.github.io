@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import {IconType} from "react-icons";
-import {SiGithub} from "react-icons/si";
-import {v4} from "uuid";
-import {useInViewport} from "react-in-viewport";
+import { IconType } from "react-icons";
+import { SiGithub } from "react-icons/si";
+import { v4 } from "uuid";
+import { useInViewport } from "react-in-viewport";
 
 interface Props {
     title: string;
@@ -13,21 +13,26 @@ interface Props {
     icons: IconType[];
 }
 
-export const ProjectCard: React.FC<Props> = ({title, link, summary, icons}) => {
+export const ProjectCard: React.FC<Props> = ({
+    title,
+    link,
+    summary,
+    icons,
+}) => {
     const elementRef = React.useRef(null);
-    const {inViewport} = useInViewport(
+    const { inViewport } = useInViewport(
         // @ts-ignore
         elementRef,
         {},
-        {disconnectOnLeave: false},
-        {title, link, summary, icons},
+        { disconnectOnLeave: false },
+        { title, link, summary, icons },
     );
 
     return (
         <Link href={link}>
             <a
                 ref={elementRef}
-                className="relative overflow-hidden rounded-md border-[1px] border-gray-400 p-4 flex flex-col justify-start items-start transition-all hover:border-primary hover:-translate-y-1"
+                className="relative overflow-hidden rounded-md border-[1px] border-slate-400 p-4 flex flex-col justify-start items-start transition-all hover:border-primary hover:-translate-y-1"
             >
                 <h4
                     className={`mb-4 mr-6 opacity-0 translate-y-4 ${

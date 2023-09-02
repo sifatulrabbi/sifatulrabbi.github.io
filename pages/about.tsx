@@ -1,35 +1,30 @@
-import {NextPage} from "next";
+import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import {me} from "../assets/images";
-import {Head, SkillsSection} from "../components";
-import {
-    SiLinkedin,
-    SiGmail,
-    SiGithub,
-    SiUpwork,
-    SiFiverr,
-} from "react-icons/si";
-import {AiOutlineFilePdf} from "react-icons/ai";
-import {BiMessageSquareDetail} from "react-icons/bi";
-import {WorkSection} from "../features";
+import { me } from "../assets/images";
+import { Head, SkillsSection } from "../components";
+import { SiLinkedin, SiGmail, SiGithub, SiGoogledrive } from "react-icons/si";
+import { FaGoogleDrive } from "react-icons/fa";
+import { BiLinkExternal } from "react-icons/bi";
+import { BiMessageSquareDetail } from "react-icons/bi";
+import { WorkSection } from "../modules";
 import {
     databaseData,
     frameworksData,
     languagesData,
-    softSkills,
-    toolsData,
+    skills,
+    othersData,
 } from "../assets/data";
 
 const Resume: NextPage = () => {
     return (
         <>
-            <Head title="Resume" />
-            <section className="mt-[60px] gap-6 theme-styles">
+            <Head title="About" />
+            <section className="mt-[60px] gap-8 theme-styles">
                 <div className="flex flex-row flex-wrap justify-start items-end gap-8">
                     {/* image with fixed height and width */}
-                    <div className="flex border-[1px] rounded-md opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.5s_forwards]">
+                    <div className="flex border border-slate-600 dark:border-slate-300 rounded-lg opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.5s_forwards] p-1">
                         <Image
                             src={me}
                             alt="Md Sifatul Islam Rabbi"
@@ -53,41 +48,25 @@ const Resume: NextPage = () => {
                             <Link href="https://github.com/sifatulrabbi">
                                 <a
                                     target="_blank"
-                                    className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.1s_forwards]"
+                                    className="opacity-0 translate-y-4 lg:hover:text-primary animate-[textSlideUp_0.5s_ease_1.1s_forwards]"
                                 >
                                     <SiGithub />
                                 </a>
                             </Link>
-                            <Link href="mailto:mdsifatulislam.rabbi@gmail.com">
+                            <Link href="mailto:sifatul@sifatul.com">
                                 <a
                                     target="_blank"
-                                    className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.2s_forwards]"
+                                    className="opacity-0 translate-y-4 lg:hover:text-primary animate-[textSlideUp_0.5s_ease_1.2s_forwards]"
                                 >
                                     <SiGmail />
                                 </a>
                             </Link>
-                            <Link href="https://linkedin.com/in/temujins">
+                            <Link href="https://linkedin.com/in/sifatulrabbi">
                                 <a
                                     target="_blank"
-                                    className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.3s_forwards]"
+                                    className="opacity-0 translate-y-4 lg:hover:text-primary animate-[textSlideUp_0.5s_ease_1.3s_forwards]"
                                 >
                                     <SiLinkedin />
-                                </a>
-                            </Link>
-                            <Link href="#">
-                                <a
-                                    target="_blank"
-                                    className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.4s_forwards]"
-                                >
-                                    <SiUpwork className="text-2xl " />
-                                </a>
-                            </Link>
-                            <Link href="https://www.fiverr.com/temujins">
-                                <a
-                                    target="_blank"
-                                    className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.5s_forwards]"
-                                >
-                                    <SiFiverr className="text-2xl " />
                                 </a>
                             </Link>
                         </div>
@@ -97,27 +76,27 @@ const Resume: NextPage = () => {
                 {/* about me section */}
                 <div>
                     <h3 className="mb-2 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.7s_forwards]">
-                        A bit about me
+                        My Goal
                     </h3>
                     <p className="text-sm leading-6 opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_1.9s_forwards]">
-                        In an online forum, I saw how to show text in the
-                        browser console. That idea and the process caught my
-                        interest, and I had started learning about web
-                        development and its fundamentals. Solving problems and
-                        struggling to learn something new every day motivates me
-                        more than anything. I want to work with a team to learn
-                        and build more applications to solve cloud-computing
-                        problems.
+                        I am an experienced full-stack developer proficient in
+                        building robust web and server applications. My
+                        freelance journey provided valuable insights into
+                        software development. And with a genuine passion for
+                        creating software, I am eager to collaborate remotely
+                        within a team, delivering tangible value to your
+                        company.
                     </p>
                 </div>
 
                 {/* work experience section */}
-                <div className="opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_2.1s_forwards]">
-                    <h3 className="mb-2">Works</h3>
+                <div className="w-full opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_2.1s_forwards]">
+                    <h3 className="mb-2">Experiences</h3>
                     <WorkSection />
                     <Link href="/projects">
-                        <a className="block w-max btn-primary mt-4">
-                            See personal projects
+                        <a className="w-max btn-secondary mt-4">
+                            My Projects
+                            <BiLinkExternal />
                         </a>
                     </Link>
                 </div>
@@ -125,6 +104,9 @@ const Resume: NextPage = () => {
                 {/* Tech skills section */}
                 <div className="flex flex-col gap-4">
                     <h3 className="mb-0">Skills</h3>
+                    <div>
+                        <SkillsSection data={skills} />
+                    </div>
                     <div>
                         <span className="block mb-2 font-medium font-primary text-black dark:text-white">
                             Programming languages
@@ -145,42 +127,26 @@ const Resume: NextPage = () => {
                     </div>
                     <div>
                         <span className="block mb-2 font-medium font-primary text-black dark:text-white">
-                            Tools
+                            Others
                         </span>
-                        <SkillsSection data={toolsData} />
-                    </div>
-                    <div>
-                        <span className="block mb-2 font-medium font-primary text-black dark:text-white">
-                            Soft skills
-                        </span>
-                        <SkillsSection data={softSkills} />
+                        <SkillsSection data={othersData} />
                     </div>
                 </div>
 
                 {/* education section */}
                 <div>
-                    <h3 className="mb-2">Education</h3>
-                    <div className="p-4 border-[1px] rounded-md">
-                        <h4 className="font-medium font-primary mb-2">
-                            B.Sc in Psychology
-                            <br />
-                            <i className="text-base">
-                                Dhaka College, Dhaka, Bangladesh
-                            </i>
-                        </h4>
-                        <p className="text-sm">
-                            <strong>Start: </strong>
-                            01 January, 2020
-                            <br />
-                            <strong>End: </strong>
-                            2025 {"(expected)"}
-                        </p>
-                    </div>
+                    <h3 className="mb-4">Education</h3>
+                    <h4 className="font-medium font-primary">
+                        B.Sc in Psychology
+                    </h4>
+                    <i className="text-base font-normal">
+                        Dhaka College, Dhaka, Bangladesh
+                    </i>
                 </div>
                 <div className="flex items-center gap-4 mt-6">
-                    <Link href="https://drive.google.com/drive/folders/1qsKxVt3KroW4zP9RyvKCdgKqUiEaJUTz">
+                    <Link href="https://drive.google.com/file/d/1qDVutyfAVCArOU5QAYwUm1W_F1Yj7Y1x/view?usp=sharing">
                         <a className="btn-primary flex items-center gap-2">
-                            Get PDF <AiOutlineFilePdf />
+                            Get PDF <FaGoogleDrive />
                         </a>
                     </Link>
                     <Link href="/contact">

@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 import config from "../config";
-import type {IMail, DoneFnc, IMailSentInfo} from "../interfaces";
+import type { IMail, DoneFnc, IMailSentInfo } from "../interfaces";
 
 class EmailService {
     private readonly transporter: nodemailer.Transporter; // the transporter instance
