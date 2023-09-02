@@ -19,8 +19,8 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start",
-        "start:cpanel": "node ./server.js",
+        "start-next": "NODE_ENV=production next start",
+        "start": "NODE_ENV=production node ./server.js",
         "export": "next export",
         "lint": "next lint",
         "predeploy": "npm run build && npm run export && touch ./out/.nojekyll && echo 'www.sifatulrabbi.github.io' > ./out/CNAME",
