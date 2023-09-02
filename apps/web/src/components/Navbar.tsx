@@ -1,6 +1,6 @@
 import { Navbar as FNavbar, Button } from "flowbite-react";
 import { NavLink, useLocation } from "react-router-dom";
-import { MdLightMode } from "react-icons/md";
+import { MdLightMode, MdDarkMode } from "react-icons/md";
 
 const navbarItems = [
   { name: "Home", path: "/" },
@@ -19,11 +19,7 @@ const Navbar: React.FC = () => {
     return false;
   };
 
-  const handleChangeTheme = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-  ) => {
-    e.preventDefault();
-  };
+  const handleChangeTheme = () => {};
 
   return (
     <FNavbar
@@ -38,7 +34,13 @@ const Navbar: React.FC = () => {
         </span>
       </FNavbar.Brand>
 
-      <div className="flex md:order-2 gap-2 md:gap-0">
+      <div className="flex md:order-2 gap-2">
+        <button
+          onClick={handleChangeTheme}
+          className="rounded-full p-1 px-2 hover:text-blue-600 text-xl"
+        >
+          {true ? <MdLightMode /> : <MdDarkMode />}
+        </button>
         <NavLink to="/contact">
           <Button className="">Contact Me</Button>
         </NavLink>
@@ -55,12 +57,6 @@ const Navbar: React.FC = () => {
             {item.name}
           </FNavbar.Link>
         ))}
-        <FNavbar.Link
-          onClick={(e) => handleChangeTheme(e)}
-          className="flex justify-center items-center cursor-pointer"
-        >
-          <MdLightMode className="text-lg" />
-        </FNavbar.Link>
       </FNavbar.Collapse>
     </FNavbar>
   );
