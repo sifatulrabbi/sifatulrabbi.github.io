@@ -4,6 +4,7 @@ export * from "./FeaturedProjectCard";
 export * from "./Footer";
 export * from "./ProjectCard";
 export * from "./FeaturedProjectCard";
-export * from "./FormGroup";
+export * from "./FormInput";
 export * from "./WorkCard";
 export * from "./SkillsSection";
+export * from "./FormTextarea";
