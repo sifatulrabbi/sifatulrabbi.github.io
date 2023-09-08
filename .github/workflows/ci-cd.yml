@@ -1,0 +1,36 @@
+name: CI/CD
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy-on-hosting-server:
+        name: Deploy on hosting server
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Setup Node v18
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+            - name: Install dependencies
+              run: yarn install --frozen-lockfile
+
+            - name: Build and export Next.js app
+              run: yarn export
+
+            - name: Deploy on hosting server
+              uses: appleboy/scp-action@v0.1.4
+              with:
+                  host: ${{ secrets.HOST }}
+                  port: 22
+                  key: ${{ secrets.SSH_SECRET_KEY }}
+                  username: root
+                  source: out/*
+                  target: /var/www/portfolio
+                  overwrite: true

@@ -1,9 +1,9 @@
 {
     "name": "sifatulrabbi.github.io",
-    "description": "Md Sifatul Islam Rabbi | Full stack web developer",
-    "version": "3.0.0",
+    "description": "Sifatul Rabbi | Full stack web developer",
+    "version": "v3.2.0",
     "author": {
-        "name": "Md Sifatul Islam Rabbi",
+        "name": "Sifatul Rabbi",
         "email": "mdsiftulislam.rabbi@gmail.com",
         "url": "https://sifatulrabbi.github.io"
     },
@@ -15,6 +15,9 @@
         "node.js",
         "express.js"
     ],
+    "engines": {
+        "node": "18"
+    },
     "private": true,
     "scripts": {
         "dev": "next dev",
