@@ -4,7 +4,6 @@ import { v4 } from "uuid";
 import { links } from "./data";
 import { BiMoon, BiSun } from "react-icons/bi";
 import { useNavbar } from "../../hooks";
-import { default as LogoImg } from "../../assets/images/logo.png";
 import Image from "next/image";
 
 export const Navbar: React.FC = () => {
@@ -19,7 +18,7 @@ export const Navbar: React.FC = () => {
                 <Link href="/">
                     <a className="block">
                         <Image
-                            src={LogoImg}
+                            src="/logo.png"
                             alt="Sifatul islam rabbi"
                             height={40}
                             width={40}

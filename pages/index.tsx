@@ -4,7 +4,6 @@ import { BiMailSend, BiUser } from "react-icons/bi";
 import Link from "next/link";
 import { FeaturedProjectsView } from "../modules";
 import Image from "next/image";
-import { me } from "../assets/images";
 import CurrentPersonalProject from "../modules/CurrentPersonalProject";
 
 interface Props {
@@ -51,9 +50,10 @@ const Home: NextPage<Props> = ({ bio }) => {
                 <div className="w-full hidden justify-end lg:flex">
                     <div className="max-w-[200px] max-h-[200px] min-h-[100px] min-w-[100px] h-[30vw] w-[30vw] opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.5s_forwards] rounded-full overflow-hidden border border-slate-600 dark:border-slate-300 p-1">
                         <Image
-                            src={me}
+                            src="/me.png"
                             alt="Md Sifatul Islam Rabbi"
-                            layout="intrinsic"
+                            width={200}
+                            height={200}
                             className="object-cover rounded-full"
                         />
                     </div>

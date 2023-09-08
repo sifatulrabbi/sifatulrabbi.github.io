@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    // images: {
-    //     loader: "imgix",
-    // },
+    images: {
+        loader: "akamai",
+        path: "",
+    },
 };
 
 module.exports = nextConfig;

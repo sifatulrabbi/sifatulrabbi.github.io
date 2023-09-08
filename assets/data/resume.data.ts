@@ -1,47 +1,48 @@
-export const languagesData = ["TypeScript", "JavaScript", "Go", "Python"];
+export const skills = {
+    general: [
+        "Full Stack Development",
+        "Quick Technology Adaptability",
+        "Problem Solving",
+        "Effective communication",
+        "API Development",
+        "Microservices",
+    ],
 
-export const frameworksData = [
-    "Node.js",
-    "Express.js",
-    "Next.js",
-    "React.js",
-    "Vue.js",
-    "Gin",
-    "FastAPI",
-    "Flask",
-];
+    languages: ["TypeScript", "JavaScript", "Go", "Python"],
 
-export const databaseData = ["MongoDB", "PostgreSQL", "Redis"];
+    backend: [
+        "Node.js",
+        "Express.js",
+        "Gin",
+        "Flask",
+        "FastAPI",
+        "REST, gRPC, GraphQL",
+        "Web Sockets",
+    ],
 
-export const othersData = [
-    "Firebase",
-    "HTML",
-    "CSS",
-    "SCSS",
-    "TailwindCSS",
-    "Bootstrap",
-];
+    databases: ["MongoDB", "PostgreSQL", "Redis"],
 
-export const skills = [
-    "Full Stack Development",
-    "Quick Technological Adaptability",
-    "Problem Solving",
-    "Effective communication",
-    "Git & Github",
-    "Docker",
-    "Linux",
-    "GCP",
-    "REST",
-    "gRPC",
-    "Microservices",
-];
+    frontend: [
+        "React.js",
+        "Next.js",
+        "Vue.js",
+        "TailwindCSS",
+        "SCSS",
+        "CSS",
+        "HTML",
+        "Web Workers",
+        "Responsive Web Apps",
+    ],
+
+    tools: ["Git & Github", "Docker", "Linux", "GCP"],
+};
 
 export const workExperiences = [
     {
         title: "Full Stack Developer",
         company: "HelloScribe A.I",
         type: "Contract",
-        duration: { start: "11/2022", end: "" },
+        duration: { start: "November 2022", end: "" },
         description:
             "HelloScribe is a helpful AI for research, writing, and brainstorming. It utilizes the modern AI technologies and has many tools for PR marketers and writers to assist their professional workloads.",
         details: [
@@ -56,7 +57,7 @@ export const workExperiences = [
         title: "Full stack developer",
         company: "X-Booker",
         type: "Contract",
-        duration: { start: "04/2022", end: "" },
+        duration: { start: "May 2022", end: "" },
         description:
             "X-Booker is the ultimate tool for streamlining business operations. It manages site visits and data while implementing automation. It leverages Google services and other modern technologies to create custom automation, making business management smoother.",
         details: [
@@ -71,7 +72,10 @@ export const workExperiences = [
         title: "Full Stack Developer",
         company: "Freelance",
         type: "Freelance",
-        duration: { start: "3/2022", end: "" },
+        duration: { start: "February 2022", end: "" },
         details: [],
     },
 ];
+
+export const pdfResumeLink =
+    "https://drive.google.com/file/d/1qDVutyfAVCArOU5QAYwUm1W_F1Yj7Y1x/view?usp=sharing";

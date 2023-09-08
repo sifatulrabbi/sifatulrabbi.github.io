@@ -2,20 +2,13 @@ import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { me } from "../assets/images";
 import { Head, SkillsSection } from "../components";
-import { SiLinkedin, SiGmail, SiGithub, SiGoogledrive } from "react-icons/si";
+import { SiLinkedin, SiGmail, SiGithub } from "react-icons/si";
 import { FaGoogleDrive } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import { WorkSection } from "../modules";
-import {
-    databaseData,
-    frameworksData,
-    languagesData,
-    skills,
-    othersData,
-} from "../assets/data";
+import { pdfResumeLink, skills } from "../assets/data";
 
 const Resume: NextPage = () => {
     return (
@@ -26,7 +19,7 @@ const Resume: NextPage = () => {
                     {/* image with fixed height and width */}
                     <div className="flex border border-slate-600 dark:border-slate-300 rounded-lg opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.5s_forwards] p-1">
                         <Image
-                            src={me}
+                            src="/me.png"
                             alt="Md Sifatul Islam Rabbi"
                             height={140}
                             width={140}
@@ -93,9 +86,9 @@ const Resume: NextPage = () => {
                 <div className="w-full opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_2.1s_forwards]">
                     <h3 className="mb-2">Experiences</h3>
                     <WorkSection />
-                    <Link href="/projects">
+                    <Link href="/works">
                         <a className="w-max btn-secondary mt-4">
-                            My Projects
+                            My Works
                             <BiLinkExternal />
                         </a>
                     </Link>
@@ -105,31 +98,37 @@ const Resume: NextPage = () => {
                 <div className="flex flex-col gap-4">
                     <h3 className="mb-0">Skills</h3>
                     <div>
-                        <SkillsSection data={skills} />
+                        <SkillsSection data={skills.general} />
                     </div>
                     <div>
                         <span className="block mb-2 font-medium font-primary text-black dark:text-white">
                             Programming languages
                         </span>
-                        <SkillsSection data={languagesData} />
+                        <SkillsSection data={skills.languages} />
                     </div>
                     <div>
                         <span className="block mb-2 font-medium font-primary text-black dark:text-white">
-                            Frameworks
+                            Backend
                         </span>
-                        <SkillsSection data={frameworksData} />
+                        <SkillsSection data={skills.backend} />
                     </div>
                     <div>
                         <span className="block mb-2 font-medium font-primary text-black dark:text-white">
                             Databases
                         </span>
-                        <SkillsSection data={databaseData} />
+                        <SkillsSection data={skills.databases} />
                     </div>
                     <div>
                         <span className="block mb-2 font-medium font-primary text-black dark:text-white">
-                            Others
+                            Frontend
                         </span>
-                        <SkillsSection data={othersData} />
+                        <SkillsSection data={skills.frontend} />
+                    </div>
+                    <div>
+                        <span className="block mb-2 font-medium font-primary text-black dark:text-white">
+                            Tools
+                        </span>
+                        <SkillsSection data={skills.tools} />
                     </div>
                 </div>
 
@@ -144,8 +143,12 @@ const Resume: NextPage = () => {
                     </i>
                 </div>
                 <div className="flex items-center gap-4 mt-6">
-                    <Link href="https://drive.google.com/file/d/1qDVutyfAVCArOU5QAYwUm1W_F1Yj7Y1x/view?usp=sharing">
-                        <a className="btn-primary flex items-center gap-2">
+                    <Link href={pdfResumeLink}>
+                        <a
+                            className="btn-primary flex items-center gap-2"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             Get PDF <FaGoogleDrive />
                         </a>
                     </Link>

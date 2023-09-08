@@ -1,3 +1,4 @@
+import type { PersonalProject, FeaturedProject } from "../../interfaces";
 import {
     SiJavascript,
     SiTypescript,
@@ -16,55 +17,67 @@ import {
     SiExpress,
     SiSocketdotio,
     SiReactrouter,
-    SiMaterialui,
+    SiVuedotjs,
+    SiAuth0,
+    SiSass,
+    SiGooglecloud,
+    SiPython,
+    SiDocker,
+    SiKubernetes,
 } from "react-icons/si";
-import { b2bApplication, todoAppBanner, socialMediaBanner } from "../images";
-import { IProjectCard, IProjectCardFeatured } from "../../interfaces";
 
-export const featuredProjectsData: IProjectCardFeatured[] = [
+export const featuredProjectsData: FeaturedProject[] = [
     {
-        title: "Meta messenger like chat application",
+        title: "HelloScribe A.I",
         summary:
-            "This application is inspired from Meta Messenger. It has user authentication system with JWT, and live chatting with WebSockets. Users can find other users by searching and can add to friend list.",
-        img: socialMediaBanner,
+            "HelloScribe is a helpful AI for research, writing, and brainstorming. It utilizes the modern AI technologies and has many tools for PR marketers and writers to assist their professional workloads.",
+        img: {
+            src: "/helloscribe-ai-landing-page.png",
+            height: 500,
+            width: 979.5,
+        },
         links: {
-            live: "https://meta-messenger-clone.vercel.app",
-            github: "https://github.com/sifatulrabbi/meta-messenger-clone",
+            live: "https://helloscribe.ai",
         },
         icons: [
+            SiJavascript,
             SiNodedotjs,
             SiExpress,
-            SiPostgresql,
+            SiMongodb,
+            SiVuedotjs,
+            SiAuth0,
             SiSocketdotio,
-            SiNextdotjs,
             SiTailwindcss,
+            SiSass,
         ],
     },
     {
-        title: "Business to business management application",
+        title: "X-Booker",
         summary:
-            "A business management web application for managing a online store. It has a simple dashboard to show the latest updates. This application is multi-paged. I has a user authentication system with JWT.",
-        img: b2bApplication,
-        links: {
-            live: "https://healthos-test.vercel.app",
-            github: "https://github.com/sifatulrabbi/healtos-test",
+            "X-Booker is a tool for streamlining business operations. It manages site visits and data while implementing automation. It leverages Google services and other modern technologies to create custom automation, making business management smoother.",
+        img: {
+            src: "/x-booker-landing-page.png",
+            height: 500,
+            width: 979.5,
         },
-        icons: [SiReact, SiTailwindcss, SiReactrouter],
-    },
-    {
-        title: "To do application",
-        summary:
-            "Simple ToDo application for managing ToDos. It stores to dos in the localStorage. The UI is minimal and has dark and light mode.",
-        img: todoAppBanner,
         links: {
-            live: "https://todo-app-fm.vercel.app",
-            github: "https://github.com/sifatulrabbi/todo-app-fm",
+            live: "https://x-booker.co.uk",
         },
-        icons: [SiReact, SiStyledcomponents],
+        icons: [
+            SiTypescript,
+            SiPython,
+            SiNodedotjs,
+            SiExpress,
+            SiNextdotjs,
+            SiGooglecloud,
+            SiDocker,
+            SiKubernetes,
+            SiTailwindcss,
+        ],
     },
 ];
 
-export const projectsData: IProjectCard[] = [
+export const projectsData: PersonalProject[] = [
     {
         title: "API for ECommerce store",
         summary:
@@ -96,7 +109,7 @@ export const projectsData: IProjectCard[] = [
         summary:
             "A simple social media application Firebase as backend. Here users can create account, post updates, like and comment in other's posts",
         link: "https://github.com/sifatulrabbi/socila_media_app",
-        icons: [SiJavascript, SiFirebase, SiMaterialui],
+        icons: [SiJavascript, SiFirebase],
     },
     {
         title: "Chrome extension",
