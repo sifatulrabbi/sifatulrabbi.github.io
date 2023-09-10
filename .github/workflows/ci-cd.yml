@@ -34,14 +34,3 @@ jobs:
                   source: out
                   target: /var/www/portfolio
                   overwrite: true
-
-            - name: Clear up files
-              uses: appleboy/ssh-action@v1.0.0
-              with:
-                  host: ${{ secrets.HOST }}
-                  port: 22
-                  key: ${{ secrets.SSH_SECRET_KEY }}
-                  username: root
-                  script: |
-                      mv /var/www/portfolio/out/* /var/www/portfolio && \
-                      rm -rf /var/www/portfolio/out
