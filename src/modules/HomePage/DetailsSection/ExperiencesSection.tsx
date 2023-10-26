@@ -37,9 +37,9 @@ const experienceData = [
         jobType: "Remote",
         employmentType: "Contract",
         description: [
-            "Led the development process of the X-Booker SaaS platform by designing and developing multiple backend and frontend applications, ensuring security, and scalability.",
-            "Mentored and assisted junior developers in understanding the platform, developing new features, and ensuring a smooth onboarding process.",
-            "Built a reliable CI/CD pipeline using Github Actions, Docker, and Kubernetes, resulting in a faster and more dependable deployment process.",
+            "<strong>Led</strong> the development process of the X-Booker SaaS platform by designing and developing multiple backend and frontend applications, ensuring security, and scalability.",
+            "<strong>Mentored and assisted</strong> junior developers in understanding the platform, developing new features, and ensuring a smooth onboarding process.",
+            "Built a reliable <strong>CI/CD pipeline</strong> using Github Actions, Docker, and Kubernetes, resulting in a faster and more dependable deployment process.",
         ],
         techStack: [
             "TypeScript",
