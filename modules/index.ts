@@ -5,3 +5,4 @@ export * from "./FeaturedProjectsView";
 export * from "./ContactMeForm";
 export * from "./WorkSection";
 export * from "./FeaturedProjectsView";
+export * from "./SkillsSection";

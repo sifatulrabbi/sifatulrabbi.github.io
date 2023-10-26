@@ -8,7 +8,7 @@ class MyDocument extends Document {
                     <meta charSet="UTF-8" />
                     <meta
                         name="description"
-                        content="Solving problems and struggling to learn something new every day motivates me more than anything."
+                        content="I'm a Full-stack Developer with a passion for building seamless web and server applications. I am always motivated to reach the next level as a full-stack developer and keep learning more about the web and cloud computing."
                     />
                     <meta name="robots" content="index, follow" />
                     <link rel="icon" href="/favicon.png" />

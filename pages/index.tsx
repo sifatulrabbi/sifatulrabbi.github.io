@@ -2,9 +2,8 @@ import type { NextPage, NextPageContext } from "next";
 import { Head } from "../components";
 import { BiMailSend, BiUser } from "react-icons/bi";
 import Link from "next/link";
-import { FeaturedProjectsView } from "../modules";
+import { FeaturedProjectsView, SkillsSection } from "../modules";
 import Image from "next/image";
-import CurrentPersonalProject from "../modules/CurrentPersonalProject";
 
 interface Props {
     bio: string;
@@ -22,7 +21,7 @@ const Home: NextPage<Props> = ({ bio }) => {
                             Hi, I am
                         </h4>
                         <h1 className="font-primary opacity-0 translate-y-4 animate-[textSlideUp_0.55s_ease_forwards]">
-                            Md Sifatul Islam Rabbi
+                            Sifatul Rabbi
                         </h1>
                         <span
                             className="block mt-4 w-max font-monospace relative z-0 hero-text theme-styles"
@@ -59,9 +58,6 @@ const Home: NextPage<Props> = ({ bio }) => {
                     </div>
                 </div>
             </section>
-
-            <CurrentPersonalProject />
-
             {/* featured projects section */}
             <section className="flex flex-col gap-6 mt-[5vh] theme-styles theme-styles opacity-0 translate-y-4 animate-[textSlideUp_0.5s_ease_0.7s_forwards]">
                 <FeaturedProjectsView />
@@ -78,7 +74,8 @@ const Home: NextPage<Props> = ({ bio }) => {
 export async function getStaticProps(ctx: NextPageContext) {
     return {
         props: {
-            bio: "I am an experienced full-stack developer proficient in building robust web and server applications.",
+            name: "Sifatul Rabbi",
+            bio: "I'm a Full-stack Developer with a passion for building seamless web and server applications. I am always motivated to reach the next level as a full-stack developer and keep learning more about the web and cloud computing.",
         },
     };
 }
