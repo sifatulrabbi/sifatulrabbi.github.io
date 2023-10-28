@@ -21,8 +21,8 @@ jobs:
             - name: Install dependencies
               run: yarn install --frozen-lockfile
 
-            - name: Build and export Next.js app
-              run: yarn export
+            - name: Build and export React app
+              run: yarn build
 
             - name: Deploy on hosting server
               uses: appleboy/scp-action@v0.1.4
@@ -31,6 +31,6 @@ jobs:
                   port: 22
                   key: ${{ secrets.SSH_SECRET_KEY }}
                   username: root
-                  source: out
+                  source: dist
                   target: /var/www/portfolio
                   overwrite: true
