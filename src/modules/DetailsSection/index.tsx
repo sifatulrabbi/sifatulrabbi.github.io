@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { homePageTabs } from "@/constants";
+import { FaBars } from "react-icons/fa";
 
 import DetailsSidebar from "./DetailsSidebar";
 import ExperiencesSection from "./ExperiencesSection";
 import ProjectsSection from "./ProjectsSection";
 import SkillsSection from "./SkillsSection";
-import { FaBars } from "react-icons/fa";
+import ContactPage from "./ContactPage";
 
 const DetailsSection: React.FC = () => {
     const [tab, setTab] = useState(homePageTabs.experiences);
@@ -29,6 +30,7 @@ const DetailsSection: React.FC = () => {
             {tab === homePageTabs.experiences && <ExperiencesSection />}
             {tab === homePageTabs.projects && <ProjectsSection />}
             {tab === homePageTabs.skills && <SkillsSection />}
+            {tab === homePageTabs.contact && <ContactPage />}
         </div>
     );
 };

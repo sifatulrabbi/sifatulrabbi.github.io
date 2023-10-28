@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { HeroSection, DetailsSection } from "@/modules/HomePage";
+import { HeroSection } from "@/modules";
+import DetailsSection from "@/modules/DetailsSection";
 
 const App: React.FC = () => {
     const [showHero, setShowHero] = useState(true);
