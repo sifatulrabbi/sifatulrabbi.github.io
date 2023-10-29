@@ -44,13 +44,13 @@ const HeroSection: React.FC<{ setShowHero: (v: boolean) => void }> = ({
                     ))}
                 </h1>
                 <h4 className="text-primary-400 font-mono text-xl md:text-2xl">
-                    Full Stack Engineer
+                    Full Stack Developer
                 </h4>
                 <p className="text-slate-400">
-                    I'm a Full-stack Developer with a passion for building
-                    seamless web and server applications. I am always motivated
-                    to reach the next level and keep learning more about the web
-                    and cloud computing.
+                    I build web and server applications, write code to convert
+                    business logics into softwares. I like exploring the tech
+                    world. Currently focusing on building LLM based
+                    applications, and becoming better in designing softwares.
                 </p>
             </div>
 
