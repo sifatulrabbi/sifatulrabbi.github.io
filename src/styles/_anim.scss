@@ -1,0 +1,30 @@
+.beating-colors {
+    animation: beating-colors 1s ease infinite forwards;
+
+    @keyframes beating-colors {
+        0%,
+        100% {
+            color: $primary-400;
+            scale: 1.2;
+        }
+        50% {
+            @apply text-slate-300;
+            scale: 1;
+        }
+    }
+}
+
+.hero-enter-btn {
+    position: absolute;
+    left: -20px;
+    animation: indicator-anim 2s linear infinite;
+
+    @keyframes indicator-anim {
+        from {
+            transform: translateX(0px);
+        }
+        to {
+            transform: translateX(120px);
+        }
+    }
+}

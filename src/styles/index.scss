@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+$primary-200: #338dff;
+$primary-400: #0070ff;
+$primary-600: #0f00ff;
+
 html {
     height: -webkit-fill-available !important;
 }
@@ -18,3 +22,5 @@ h5,
 h6 {
     @apply font-display;
 }
+
+@import "./anim";
