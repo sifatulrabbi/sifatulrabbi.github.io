@@ -62,7 +62,7 @@ const ExperiencesSection: React.FC = () => {
                 <h1>
                     {"Experiences".split("").map((l, i) => (
                         <AnimatedText
-                            key={`experiences-${l}`}
+                            key={`experiences-${l}-${i}`}
                             str={l}
                             idx={i}
                         />
@@ -94,7 +94,7 @@ const ExperiencesSection: React.FC = () => {
                             <FaArrowRight className="text-xs -rotate-45" />
                         </h4>
                     </a>
-                    <span className="text-primary-400">{d.position}</span>
+                    <div className="text-primary-400">{d.position}</div>
                     <ul className="text-slate-400">
                         {d.description.map((desc) => (
                             <li

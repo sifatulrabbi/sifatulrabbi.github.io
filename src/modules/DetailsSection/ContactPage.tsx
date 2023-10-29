@@ -37,7 +37,7 @@ const ContactPage: React.FC = () => {
                 <h1>
                     {"Let's Connect".split("").map((l, i) => (
                         <AnimatedText
-                            key={`projects-header-${l}`}
+                            key={`projects-header-${l}-${i}`}
                             str={l}
                             idx={i}
                         />

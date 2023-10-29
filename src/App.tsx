@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HeroSection } from "@/modules";
 import DetailsSection from "@/modules/DetailsSection";
+import { Cursor } from "@/components";
 
 const App: React.FC = () => {
     const [showHero, setShowHero] = useState(true);
@@ -11,6 +12,7 @@ const App: React.FC = () => {
                 showHero ? "max-h-[100vh]" : ""
             }`}
         >
+            <Cursor />
             <DetailsSection />
             <div
                 className={`z-[100] w-full fixed top-0 right-0 left-0 bottom-0 flex flex-col justify-start items-start bg-gray-900 transition-transform duration-500 ${

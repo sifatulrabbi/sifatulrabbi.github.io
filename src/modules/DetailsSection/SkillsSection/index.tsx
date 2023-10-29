@@ -13,7 +13,7 @@ const SkillsSection: React.FC = () => {
                 <h1>
                     {"Skills & Interests".split("").map((l, i) => (
                         <AnimatedText
-                            key={`skills-n-interests-${l}`}
+                            key={`skills-n-interests-${l}-${i}`}
                             str={l}
                             idx={i}
                         />
