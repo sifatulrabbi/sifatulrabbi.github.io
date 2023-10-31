@@ -14,9 +14,10 @@ const experienceData = [
         jobType: "Remote",
         employmentType: "Contract",
         description: [
-            "<strong>Led</strong> the development process from <strong>version 1 to 2</strong> in two months, resulting in <strong>40%</strong> more monthly active users and <strong>120%</strong> more sign-ups.",
-            "Ensured <strong>100%</strong> login success rate and removed <strong>security issues</strong> by adding Auth0 and refactoring the authentication flow, which was also backward-compatible, ensuring a smooth transition for the existing users.",
-            "Enhanced <strong>team efficiency</strong> by reorganizing and optimizing the code base, maintaining clear and effective communication, and developing scripts for testing, identifying, and automating the debugging process.",
+            "Gained 120% more users and 40% more monthly active users within 2 months by leading the development process of HelloScribe AI v2.",
+            "Ensured 100% login success and resolved security issues by adding Auth0 and refactoring the authentication flow, which also ensured a smooth transition for the existing users.",
+            "Improved the app's performance by an average of 300% through careful refactoring, rewriting, and restructuring.",
+            "Enhanced team efficiency by reorganizing and optimizing the code base, maintaining clear and effective communication, and developing scripts for testing, identifying, and automating the debugging process.",
         ],
         techStack: [
             "JavaScript",
