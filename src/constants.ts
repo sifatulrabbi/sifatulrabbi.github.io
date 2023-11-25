@@ -3,4 +3,5 @@ export const homePageTabs = {
     projects: "projects",
     skills: "skills",
     contact: "contact",
+    chat: "chat",
 };

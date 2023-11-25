@@ -8,24 +8,12 @@ $primary-600: #0f00ff;
 
 html {
     height: -webkit-fill-available !important;
-
-    @media screen and (min-width: 1024px) {
-        cursor: none !important;
-    }
 }
 
 *,
 *::after,
 *::before {
-    @media screen and (min-width: 1024px) {
-        cursor: none;
-        &:hover {
-            cursor: none;
-        }
-        &:focus {
-            cursor: none;
-        }
-    }
+    box-sizing: border-box;
 }
 
 body {

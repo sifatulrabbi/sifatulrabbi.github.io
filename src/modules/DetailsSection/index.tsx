@@ -7,6 +7,7 @@ import ExperiencesSection from "./ExperiencesSection";
 import ProjectsSection from "./ProjectsSection";
 import SkillsSection from "./SkillsSection";
 import ContactPage from "./ContactPage";
+import ChatSection from "../ChatSection";
 
 const DetailsSection: React.FC = () => {
     const [tab, setTab] = useState(homePageTabs.experiences);
@@ -31,6 +32,7 @@ const DetailsSection: React.FC = () => {
             {tab === homePageTabs.projects && <ProjectsSection />}
             {tab === homePageTabs.skills && <SkillsSection />}
             {tab === homePageTabs.contact && <ContactPage />}
+            {tab === homePageTabs.chat && <ChatSection />}
         </div>
     );
 };

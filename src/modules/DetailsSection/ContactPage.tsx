@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaLinkedin, FaGithub, FaEnvelope, FaTwitter } from "react-icons/fa6";
 import { AnimatedText } from "@/components";
+import { EmailsService } from "@/services";
 
 const links = [
     {
@@ -26,9 +27,33 @@ const links = [
 ];
 
 const ContactPage: React.FC = () => {
+    const [replyTo, setReplyTo] = useState("");
+    const [name, setName] = useState("");
+    const [message, setMessage] = useState("");
+    const [subject, setSubject] = useState("");
+    const [loading, setLoading] = useState(false);
+
     const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // send an email to my inbox.
+        setLoading(true);
+        const emailService = new EmailsService();
+        try {
+            const res = await emailService.sendEmailTome({
+                replyTo: replyTo,
+                name: name,
+                message: message,
+                subject: subject,
+            });
+            console.log(res);
+            setReplyTo("");
+            setMessage("");
+            setSubject("");
+        }
+        catch (err) {
+            console.error(err);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -72,6 +97,8 @@ const ContactPage: React.FC = () => {
                                 </label>
                                 <input
                                     type="email"
+                                    value={replyTo}
+                                    onChange={(e) => setReplyTo(e.currentTarget.value)}
                                     required
                                     placeholder="e.g. john.doe@example.com"
                                     className="rounded-lg border-2 border-slate-700 px-4 py-2 outline-none focus:border-primary-400 placeholder:text-slate-600 text-slate-300 bg-slate-800/50"
@@ -80,6 +107,8 @@ const ContactPage: React.FC = () => {
                             <div className="flex flex-col gap-1">
                                 <label htmlFor="visitor_name">Name</label>
                                 <input
+                                    value={name}
+                                    onChange={(e) => setName(e.currentTarget.value)}
                                     required
                                     placeholder="e.g. John Doe"
                                     className="rounded-lg border-2 border-slate-700 px-4 py-2 outline-none focus:border-primary-400 placeholder:text-slate-600 text-slate-300 bg-slate-800/50"
@@ -89,6 +118,8 @@ const ContactPage: React.FC = () => {
                         <div className="flex flex-col gap-1">
                             <label htmlFor="visitor_subject">Subject</label>
                             <input
+                                value={subject}
+                                onChange={(e) => setSubject(e.currentTarget.value)}
                                 required
                                 placeholder="e.g. Discussing a cool new project..."
                                 className="rounded-lg border-2 border-slate-700 px-4 py-2 outline-none focus:border-primary-400 placeholder:text-slate-600 text-slate-300 bg-slate-800/50"
@@ -97,12 +128,20 @@ const ContactPage: React.FC = () => {
                         <div className="flex flex-col gap-1">
                             <label htmlFor="visitor_subject">Message</label>
                             <textarea
+                                value={message}
+                                onChange={(e) => setMessage(e.currentTarget.value)}
                                 required
                                 placeholder="Write your message here..."
                                 className="rounded-lg border-2 border-slate-700 px-4 py-2 outline-none focus:border-primary-400 placeholder:text-slate-600 text-slate-300 bg-slate-800/50"
                                 rows={6}
                             />
                         </div>
+                        <button
+                            disabled={loading}
+                            className="bg-primary-400 lg:hover:bg-primary-200 rounded-lg px-4 py-2 text-white w-full lg:max-w-[200px] flex items-center justify-center disabled:opacity-75"
+                        >
+                            {loading ? <div className="animate-spin w-6 h-6 rounded-full border-4 border-t-primary-400 border-white bg-transparent" /> : "Send"}
+                        </button>
                     </form>
                 </div>
             </div>
