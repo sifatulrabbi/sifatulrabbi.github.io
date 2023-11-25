@@ -15,6 +15,7 @@ const ChatSection: React.FC = () => {
             // make a API call here
             const url = "http://localhost:8000/api/send-email"
             const res = await axios.post(url, {})
+            console.log(res);
             setMsgInput("")
             e.preventDefault()
         } catch (err) {
