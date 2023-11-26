@@ -9,10 +9,10 @@ type Props = {
 
 const ChatInputBar: React.FC<Props> = ({ msgInput, setMsgInput, handleSubmit }) => {
     return (
-        <div className="fixed left-1/2 -translate-x-1/2 bottom-4 max-w-[500px] w-full min-h-[20px] flex px-6 flex-col justify-center items-center gap-2">
+        <div className="fixed left-1/2 -translate-x-1/2 bottom-0 max-w-[500px] w-full min-h-[20px] flex px-6 pb-2 pt-4 flex-col justify-center items-center gap-2 bg-gray-900">
             <form onSubmit={handleSubmit} className="w-full flex flex-row justify-start items-end bg-slate-700 rounded-lg">
                 <textarea
-                    className="resize-none w-full outline-none border-none rounded-lg p-4 bg-transparent pr-2"
+                    className="resize-none w-full outline-none border-none rounded-lg p-4 bg-transparent pr-2 text-slate-300"
                     required
                     placeholder="Enter your message..."
                     rows={2}

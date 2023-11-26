@@ -1,10 +1,74 @@
 import React, { useEffect, useState } from "react"
-import { AnimatedText } from "@/components"
-import ChatInputBar from "./ChatInputBar"
 import axios from "axios"
 
+import { AnimatedText } from "@/components"
+import ChatInputBar from "./ChatInputBar"
+import ChatMessagesContainer from "./ChatMessagesContainer"
+
+const mockMessages: any[] = [
+    {
+        id: "fksdj3yrpiejfkjsdaklfjnc",
+        sender: "user",
+        body: "what are the differences between c and c++?",
+        attachments: [],
+        created_at: Date.now(),
+        updated_at: Date.now(),
+    },
+    {
+        id: "prqeiruivcixvmenwrphfds",
+        sender: "bot",
+        body: `C and C++ are both powerful programming languages with significant historical and practical importance. Here are some key differences between them:
+
+1. **Language Paradigm**:
+   - **C**: Primarily a procedural language, focusing on the sequence of steps to solve a problem, using functions as the fundamental building blocks.
+   - **C++**: A multi-paradigm language, supporting both procedural and object-oriented programming (OOP). In OOP, data and functions are bundled into objects.
+
+2. **Object-Oriented Programming (OOP)**:
+   - **C**: Does not support OOP concepts like classes, inheritance, polymorphism, and encapsulation.
+   - **C++**: Designed with OOP in mind, offering extensive support for these concepts.
+
+3. **Standard Template Library (STL)**:
+   - **C**: Lacks a built-in template library.
+   - **C++**: Includes the Standard Template Library, which provides a rich set of methods for manipulating data structures and algorithms.
+
+4. **Data Abstraction**:
+   - **C**: Offers limited support for data abstraction, with more focus on procedure and function.
+   - **C++**: Provides more extensive data abstraction capabilities, allowing more complex data types and higher-level data manipulation.
+
+5. **Memory Management**:
+   - **C**: Provides manual memory management, using functions like 'malloc()' and 'free()'.
+   - **C++**: Supports both manual and automated memory management (with features like constructors, destructors, and smart pointers).
+
+6. **Function Overloading and Default Arguments**:
+   - **C**: Does not support function overloading or default arguments.
+   - **C++**: Allows function overloading and the use of default arguments, making it more flexible.
+
+7. **Reference Variables**:
+   - **C**: Does not support reference variables.
+   - **C++**: Supports reference variables, providing an alternative to pointers.
+
+8. **Exception Handling**:
+   - **C**: Lacks direct support for exception handling.
+   - **C++**: Offers robust exception handling using try, catch, and throw blocks.
+
+9. **Namespaces**:
+   - **C**: No support for namespaces, which can lead to name collisions in larger projects.
+   - **C++**: Supports namespaces, allowing better code organization and avoiding name collisions.
+
+10. **Use Cases**:
+    - **C**: Often used for system-level programming, embedded systems, and applications requiring direct manipulation of hardware.
+    - **C++**: Commonly used for application development, game development, real-time systems, and software that requires OOP.
+
+C++ can be viewed as an extension of C with additional features, especially for OOP, but each language has its unique strengths and is suited for different types of projects.`,
+        attachments: [],
+        created_at: Date.now(),
+        updated_at: Date.now(),
+    }
+]
+
 const ChatSection: React.FC = () => {
-    const [msgInput, setMsgInput] = useState<string>("")
+    const [msgInput, setMsgInput] = useState<string>("");
+    const [messages, setMessages] = useState<any[]>(mockMessages);
 
     useEffect(() => {
         console.log(msgInput)
@@ -40,8 +104,10 @@ const ChatSection: React.FC = () => {
                 </small>
             </div>
             <ChatInputBar msgInput={msgInput} setMsgInput={setMsgInput} handleSubmit={handleSubmit} />
+            <ChatMessagesContainer messages={messages} />
+            <div className="h-[120px]" />
         </section>
-    )
+    );
 }
 
 export default ChatSection
