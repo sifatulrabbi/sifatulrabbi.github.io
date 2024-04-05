@@ -4,7 +4,7 @@ export class HttpService {
     baseUrl: string;
 
     constructor() {
-        this.baseUrl = "https://api.sifatul.com"
+        this.baseUrl = "https://api.sifatul.com";
     }
 
     pathV1(path: string) {
@@ -17,7 +17,7 @@ export class HttpService {
             headers: {
                 "Authorization": "no auth",
             },
-        })
+        });
         return client;
     }
 }

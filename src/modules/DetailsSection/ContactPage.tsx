@@ -48,8 +48,7 @@ const ContactPage: React.FC = () => {
             setReplyTo("");
             setMessage("");
             setSubject("");
-        }
-        catch (err) {
+        } catch (err) {
             console.error(err);
         } finally {
             setLoading(false);
@@ -98,7 +97,9 @@ const ContactPage: React.FC = () => {
                                 <input
                                     type="email"
                                     value={replyTo}
-                                    onChange={(e) => setReplyTo(e.currentTarget.value)}
+                                    onChange={(e) =>
+                                        setReplyTo(e.currentTarget.value)
+                                    }
                                     required
                                     placeholder="e.g. john.doe@example.com"
                                     className="rounded-lg border-2 border-slate-700 px-4 py-2 outline-none focus:border-primary-400 placeholder:text-slate-600 text-slate-300 bg-slate-800/50"
@@ -108,7 +109,9 @@ const ContactPage: React.FC = () => {
                                 <label htmlFor="visitor_name">Name</label>
                                 <input
                                     value={name}
-                                    onChange={(e) => setName(e.currentTarget.value)}
+                                    onChange={(e) =>
+                                        setName(e.currentTarget.value)
+                                    }
                                     required
                                     placeholder="e.g. John Doe"
                                     className="rounded-lg border-2 border-slate-700 px-4 py-2 outline-none focus:border-primary-400 placeholder:text-slate-600 text-slate-300 bg-slate-800/50"
@@ -119,7 +122,9 @@ const ContactPage: React.FC = () => {
                             <label htmlFor="visitor_subject">Subject</label>
                             <input
                                 value={subject}
-                                onChange={(e) => setSubject(e.currentTarget.value)}
+                                onChange={(e) =>
+                                    setSubject(e.currentTarget.value)
+                                }
                                 required
                                 placeholder="e.g. Discussing a cool new project..."
                                 className="rounded-lg border-2 border-slate-700 px-4 py-2 outline-none focus:border-primary-400 placeholder:text-slate-600 text-slate-300 bg-slate-800/50"
@@ -129,7 +134,9 @@ const ContactPage: React.FC = () => {
                             <label htmlFor="visitor_subject">Message</label>
                             <textarea
                                 value={message}
-                                onChange={(e) => setMessage(e.currentTarget.value)}
+                                onChange={(e) =>
+                                    setMessage(e.currentTarget.value)
+                                }
                                 required
                                 placeholder="Write your message here..."
                                 className="rounded-lg border-2 border-slate-700 px-4 py-2 outline-none focus:border-primary-400 placeholder:text-slate-600 text-slate-300 bg-slate-800/50"
@@ -140,7 +147,11 @@ const ContactPage: React.FC = () => {
                             disabled={loading}
                             className="bg-primary-400 lg:hover:bg-primary-200 rounded-lg px-4 py-2 text-white w-full lg:max-w-[200px] flex items-center justify-center disabled:opacity-75"
                         >
-                            {loading ? <div className="animate-spin w-6 h-6 rounded-full border-4 border-t-primary-400 border-white bg-transparent" /> : "Send"}
+                            {loading ? (
+                                <div className="animate-spin w-6 h-6 rounded-full border-4 border-t-primary-400 border-white bg-transparent" />
+                            ) : (
+                                "Send"
+                            )}
                         </button>
                     </form>
                 </div>
