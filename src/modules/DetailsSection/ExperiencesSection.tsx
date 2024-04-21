@@ -101,7 +101,8 @@ const ExperiencesSection: React.FC = () => {
                     ))}
                 </h1>
                 <small className="text-slate-400 text-sm">
-                    Started my professional journey from February 2022
+                    I'm a versatile engineer with expertise in developing APIs,
+                    WebApps, and Microservices.
                 </small>
             </div>
 

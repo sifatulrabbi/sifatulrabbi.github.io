@@ -72,7 +72,7 @@ const ChatSection: React.FC = () => {
     const [messages, setMessages] = useState<any[]>(mockMessages);
 
     useEffect(() => {
-        console.log(msgInput, setMessages);
+        setMessages;
     }, [msgInput]);
 
     const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {

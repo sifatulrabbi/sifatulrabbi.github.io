@@ -12,7 +12,7 @@ module.exports = {
             },
             fontFamily: {
                 display: ["Montserrat", "sans-serif"],
-                body: ["Nunito", "sans-serif"],
+                body: ["Karla", "sans-serif"],
                 mono: ["Fira Code", "monospace"],
             },
         },

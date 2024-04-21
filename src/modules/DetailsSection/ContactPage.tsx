@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaLinkedin, FaGithub, FaEnvelope, FaTwitter } from "react-icons/fa6";
+import { FaExclamationTriangle } from "react-icons/fa";
 import { AnimatedText } from "@/components";
 import { EmailsService } from "@/services";
 
@@ -35,16 +36,18 @@ const ContactPage: React.FC = () => {
 
     const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (window.origin.includes("https://sifatulrabbi.com")) {
+            throw new Error("Contact form is temporarily disabled.");
+        }
         setLoading(true);
         const emailService = new EmailsService();
         try {
-            const res = await emailService.sendEmailTome({
+            await emailService.sendEmailTome({
                 replyTo: replyTo,
                 name: name,
                 message: message,
                 subject: subject,
             });
-            console.log(res);
             setReplyTo("");
             setMessage("");
             setSubject("");
@@ -57,6 +60,14 @@ const ContactPage: React.FC = () => {
 
     return (
         <section className="w-full min-h-max flex flex-col justify-start items-start py-6 px-8 md:ml-[200px] lg:ml-[250px] mt-[50px]">
+            <div className="z-[1] fixed top-6 left-1/2 -translate-x-1/2 max-w-full py-2 px-4 bg-gray-800 text-slate-300 font-thin text-sm flex flex-row items-center gap-2 rounded-lg">
+                <FaExclamationTriangle className="text-orange-400" />
+                <p className="min-w-max">
+                    <span className="font-bold text-blue-300">Contact</span> is
+                    being developed!
+                </p>
+            </div>
+
             <div className="w-full prose max-w-full prose-h1:text-slate-300 prose-h1:font-bold prose-a:text-slate-400 prose-a:no-underline lg:hover:prose-a:text-primary-400 prose-h4:text-slate-300 prose-h4:font-medium">
                 <h1>
                     {"Let's Connect".split("").map((l, i) => (

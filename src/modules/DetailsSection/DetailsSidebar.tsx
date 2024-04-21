@@ -16,7 +16,7 @@ const DetailsSidebar: React.FC<{
 
     return (
         <aside
-            className={`z-[100] fixed top-0 left-0 bottom-0 bg-gray-900 min-w-max w-full md:max-w-[200px] lg:max-w-[250px] flex flex-col p-4 gap-2 transition-transform duration-300
+            className={`z-[100] fixed top-0 left-0 bottom-0 bg-gray-900 min-w-max w-full md:max-w-[200px] lg:max-w-[250px] flex flex-col p-4 gap-2 transition-transform duration-300 overflow-y-auto
             ${showSidebar ? "" : "-translate-x-full md:translate-x-0"}`}
         >
             <div className="w-full flex items-center justify-between mb-4">
@@ -49,9 +49,15 @@ const DetailsSidebar: React.FC<{
                     {startCase(t)}
                 </button>
             ))}
-            <div className="mt-auto">
+            <hr className="w-full border-slate-700" />
+            <button className="min-w-max w-full px-4 py-2 text-slate-400 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50">
+                Blogs
+            </button>
+            <div className="mt-auto pt-6">
                 <small className="text-slate-400">
-                    Built with TypeScript and React
+                    Built with{" "}
+                    <span className="text-primary-400">TypeScript</span> &{" "}
+                    <span className="text-primary-400">Go</span>
                 </small>
             </div>
         </aside>
