@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { blogsContext } from "./blogsContext";
 
 const BlogsProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -8,6 +8,15 @@ const BlogsProvider: React.FC<{ children: React.ReactNode }> = ({
     const [allTags, setAllTags] = useState([]);
     const [allCategories, setAllCategories] = useState([]);
     const [busy, setBusy] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
+
+    useEffect(() => {
+        setAllBlogs;
+        setAllTags;
+        setAllCategories;
+        setBusy;
+        setSearchQuery;
+    }, []);
 
     return (
         <blogsContext.Provider
@@ -16,6 +25,7 @@ const BlogsProvider: React.FC<{ children: React.ReactNode }> = ({
                 allTags,
                 allCategories,
                 busy,
+                searchQuery,
             }}
         >
             {children}
