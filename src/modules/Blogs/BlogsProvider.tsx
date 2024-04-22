@@ -10,6 +10,7 @@ const BlogsProvider: React.FC<{ children: React.ReactNode }> = ({
     const [busy, setBusy] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [showSidebar, setShowSidebar] = useState(window.innerWidth > 768);
+    const [busySidebar, setBusySidebar] = useState(false);
 
     useEffect(() => {
         setAllBlogs;
@@ -29,6 +30,8 @@ const BlogsProvider: React.FC<{ children: React.ReactNode }> = ({
                 showSidebar,
                 setShowSidebar,
                 searchQuery,
+                busySidebar,
+                setBusySidebar,
             }}
         >
             <main className="w-full flex flex-col pl-0 md:pl-[35vw]">

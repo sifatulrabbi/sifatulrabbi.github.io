@@ -7,14 +7,21 @@ export enum BlogContentType {
     iframe = "iframe",
 }
 
-export type BlogContent = {
+export type ArticleContent = {
     contentType: BlogContentType;
     content: string;
+    index: number;
 };
 
-export type Blog = {
+export type ArticleEntry = {
     id: string;
-    title: string;
+    category: string;
+    tags: string[];
     summary: string;
-    body: BlogContent[];
+    created_at: string;
+    updated_at: string;
+};
+
+export type ArticleItem = ArticleEntry & {
+    body: ArticleContent[];
 };

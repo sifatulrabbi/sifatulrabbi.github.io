@@ -7,7 +7,9 @@ export type BlogsContext = {
     allCategories: any[];
     busy: boolean;
     showSidebar: boolean;
+    busySidebar: boolean;
     setShowSidebar: (v: boolean | ((p: boolean) => boolean)) => void;
+    setBusySidebar: (v: boolean | ((p: boolean) => boolean)) => void;
 };
 
 export const blogsContext = createContext<BlogsContext>({
@@ -18,6 +20,8 @@ export const blogsContext = createContext<BlogsContext>({
     busy: false,
     showSidebar: true,
     setShowSidebar() {},
+    busySidebar: false,
+    setBusySidebar() {},
 });
 
 export const useBlogs = () => useContext(blogsContext);
