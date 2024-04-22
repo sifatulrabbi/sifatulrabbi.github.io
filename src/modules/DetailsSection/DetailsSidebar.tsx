@@ -2,6 +2,7 @@ import React from "react";
 import { homePageTabs } from "@/constants";
 import { startCase } from "lodash";
 import { FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const DetailsSidebar: React.FC<{
     activeTab: string;
@@ -50,9 +51,12 @@ const DetailsSidebar: React.FC<{
                 </button>
             ))}
             <hr className="w-full border-slate-700" />
-            <button className="min-w-max w-full px-4 py-2 text-slate-400 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50">
+            <Link
+                to="/blogs"
+                className="flex min-w-max w-full px-4 py-2 text-slate-400 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50"
+            >
                 Blogs
-            </button>
+            </Link>
             <div className="mt-auto pt-6">
                 <small className="text-slate-400">
                     Built with{" "}

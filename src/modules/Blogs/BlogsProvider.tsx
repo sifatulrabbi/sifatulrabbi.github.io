@@ -9,6 +9,7 @@ const BlogsProvider: React.FC<{ children: React.ReactNode }> = ({
     const [allCategories, setAllCategories] = useState([]);
     const [busy, setBusy] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const [showSidebar, setShowSidebar] = useState(window.innerWidth > 768);
 
     useEffect(() => {
         setAllBlogs;
@@ -25,10 +26,14 @@ const BlogsProvider: React.FC<{ children: React.ReactNode }> = ({
                 allTags,
                 allCategories,
                 busy,
+                showSidebar,
+                setShowSidebar,
                 searchQuery,
             }}
         >
-            {children}
+            <main className="w-full flex flex-col pl-0 md:pl-[35vw]">
+                {children}
+            </main>
         </blogsContext.Provider>
     );
 };
