@@ -51,4 +51,10 @@ h6 {
 
 .display-content {
     @apply prose prose-invert max-w-full prose-slate prose-p:text-slate-200 prose-ul:text-slate-200 prose-strong:text-slate-200 prose-pre:bg-slate-800 prose-h2:text-slate-200;
+
+    img {
+        width: 100%;
+        height: auto;
+        background-size: cover;
+    }
 }
