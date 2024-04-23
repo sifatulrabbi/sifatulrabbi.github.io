@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 import { FaTimes, FaBars, FaChevronDown } from "react-icons/fa";
 
 const BlogsSidebar: React.FC = () => {
-    const { showSidebar, setShowSidebar } = useBlogs();
     const [expandCategories, setExpandCategories] = useState(false);
     const [expandTags, setExpandTags] = useState(false);
+    const { showSidebar, setShowSidebar, allCategories, allTags } = useBlogs();
 
     return (
         <>
             <button
                 onClick={() => setShowSidebar(true)}
-                className="fixed top-6 left-6 max-h-max p-2 text-lg rounded-lg text-slate-400 bg-slate-800 md:hidden z-[100]"
+                className="fixed top-6 left-6 max-h-max p-2 text-lg rounded-lg text-slate-300 bg-slate-800 md:hidden z-[100]"
             >
                 <FaBars />
             </button>
@@ -31,7 +31,7 @@ const BlogsSidebar: React.FC = () => {
                     </button>
                     <button
                         onClick={() => setShowSidebar(false)}
-                        className="p-2 rounded-lg text-slate-400 bg-slate-800/50 md:hidden"
+                        className="p-2 rounded-lg text-slate-300 bg-slate-800/50 md:hidden"
                     >
                         <FaTimes />
                     </button>
@@ -40,7 +40,7 @@ const BlogsSidebar: React.FC = () => {
                 <div className="w-full flex flex-col gap-2 min-h-max">
                     <button
                         onClick={() => setExpandCategories((p) => !p)}
-                        className="flex min-w-max w-full px-4 py-2 text-slate-400 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50 justify-between items-center outline-none"
+                        className="flex min-w-max w-full px-4 py-2 text-slate-300 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50 justify-between items-center outline-none"
                     >
                         Categories
                         <FaChevronDown
@@ -51,10 +51,10 @@ const BlogsSidebar: React.FC = () => {
                     </button>
                     {expandCategories && (
                         <div className="flex flex-col pl-4 gap-2">
-                            {["Back End", "Full Stack"].map((item) => (
+                            {allCategories.map((item) => (
                                 <button
                                     key={item}
-                                    className="flex min-w-max w-full px-4 py-2 text-slate-400 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50 justify-between items-center outline-none"
+                                    className="flex min-w-max w-full px-4 py-2 text-slate-300 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50 justify-between items-center outline-none text-sm"
                                 >
                                     {item}
                                 </button>
@@ -66,7 +66,7 @@ const BlogsSidebar: React.FC = () => {
                 <div className="w-full flex flex-col gap-2 min-h-max">
                     <button
                         onClick={() => setExpandTags((p) => !p)}
-                        className="flex min-w-max w-full px-4 py-2 text-slate-400 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50 justify-between items-center outline-none"
+                        className="flex min-w-max w-full px-4 py-2 text-slate-300 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50 justify-between items-center outline-none"
                     >
                         Tags
                         <FaChevronDown
@@ -77,16 +77,14 @@ const BlogsSidebar: React.FC = () => {
                     </button>
                     {expandTags && (
                         <div className="flex flex-col pl-4 gap-2">
-                            {["Go/Golang", "React", "TypeScript", "Github"].map(
-                                (item) => (
-                                    <button
-                                        key={item}
-                                        className="flex min-w-max w-full px-4 py-2 text-slate-400 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50 justify-between items-center outline-none"
-                                    >
-                                        {item}
-                                    </button>
-                                ),
-                            )}
+                            {allTags.map((item) => (
+                                <button
+                                    key={item}
+                                    className="flex min-w-max w-full px-4 py-2 text-slate-300 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50 justify-between items-center outline-none text-sm"
+                                >
+                                    {item}
+                                </button>
+                            ))}
                         </div>
                     )}
                 </div>
@@ -94,12 +92,12 @@ const BlogsSidebar: React.FC = () => {
                 <hr className="w-full border-slate-700" />
                 <Link
                     to="/"
-                    className="flex min-w-max w-full px-4 py-2 text-slate-400 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50"
+                    className="flex min-w-max w-full px-4 py-2 text-slate-300 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50"
                 >
                     Portfolio
                 </Link>
                 <div className="mt-auto pt-6">
-                    <small className="text-slate-400">
+                    <small className="text-slate-300">
                         Built with{" "}
                         <span className="text-primary-400">TypeScript</span> &{" "}
                         <span className="text-primary-400">Go</span>
