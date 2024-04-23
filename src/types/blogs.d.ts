@@ -1,5 +1,5 @@
 export enum BlogContentType {
-    text = "text",
+    markdown = "markdown",
     image = "image",
     code = "code",
     video = "video",
@@ -15,9 +15,10 @@ export type ArticleContent = {
 
 export type ArticleEntry = {
     id: string;
+    title: string;
+    summary: string;
     category: string;
     tags: string[];
-    summary: string;
     created_at: string;
     updated_at: string;
 };

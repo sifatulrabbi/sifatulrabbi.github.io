@@ -6,7 +6,7 @@ export function http() {
         console.error("No server url found. App is not functional any more.");
     }
     const c = axios.create({
-        baseURL: serverUrl,
+        baseURL: (serverUrl || window.origin) + "/api/v1",
     });
     return c;
 }

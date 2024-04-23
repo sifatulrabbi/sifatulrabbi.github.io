@@ -3,6 +3,7 @@ import App from "./App";
 import PortfolioLayout from "@/layouts/PortfolioLayout";
 import BlogsLayout from "@/layouts/BlogsLayout";
 import BorwseBlogsPage from "@/modules/Blogs/BrowseBlogsPage";
+import ReadBlogPage from "./modules/Blogs/ReadBlogsPage";
 
 const router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: "/blogs/read/:articleid",
-                        element: <div></div>,
+                        element: <ReadBlogPage />,
                     },
                 ],
             },

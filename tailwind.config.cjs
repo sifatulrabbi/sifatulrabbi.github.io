@@ -11,8 +11,10 @@ module.exports = {
                 },
             },
             fontFamily: {
-                display: ["Montserrat", "sans-serif"],
-                body: ["Karla", "sans-serif"],
+                // display: ["Montserrat", "sans-serif"],
+                display: ["Roboto", "sans-serif"],
+                // body: ["Karla", "sans-serif"],
+                body: ["Montserrat", "sans-serif"],
                 mono: ["Fira Code", "monospace"],
             },
         },
