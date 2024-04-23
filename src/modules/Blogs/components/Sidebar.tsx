@@ -21,14 +21,14 @@ const BlogsSidebar: React.FC = () => {
                 ${showSidebar ? "" : "-translate-x-full lg:translate-x-0"}`}
             >
                 <div className="w-full flex items-center justify-between mb-4">
-                    <button onClick={() => window.location.reload()}>
+                    <Link to="/blogs">
                         <img
                             src="/logo.png"
                             alt="Sifatul Rabbi"
                             height={50}
                             width={50}
                         />
-                    </button>
+                    </Link>
                     <button
                         onClick={() => setShowSidebar(false)}
                         className="p-2 rounded-lg text-slate-300 bg-slate-800/50 lg:hidden"
