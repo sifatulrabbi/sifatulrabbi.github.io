@@ -50,7 +50,7 @@ const projectsData = [
 const ProjectsSection: React.FC = () => {
     return (
         <section className="w-full min-h-max flex flex-col justify-start items-start py-6 px-8 md:ml-[200px] lg:ml-[250px] mt-[50px]">
-            <div className="w-full prose max-w-full prose-h1:text-slate-300 prose-h1:font-bold">
+            <div className="w-full prose prose-invert prose-slate max-w-full prose-h1:text-slate-300 prose-h1:font-bold">
                 <h1>
                     {"Projects".split("").map((l, i) => (
                         <AnimatedText
@@ -60,7 +60,7 @@ const ProjectsSection: React.FC = () => {
                         />
                     ))}
                 </h1>
-                <small className="text-slate-400 text-sm">
+                <small className="text-sm">
                     I like exploring and learning new. I always build projects
                     try out new tools and concepts.
                 </small>
@@ -72,15 +72,15 @@ const ProjectsSection: React.FC = () => {
             {projectsData.map((d) => (
                 <div
                     key={d.title}
-                    className="w-full prose max-w-full prose-h4:text-slate-300 prose-h4:font-medium prose-h4:my-1 text-slate-400 prose-strong:text-slate-400"
+                    className="w-full prose prose-invert prose-slate max-w-full prose-h3:text-slate-300 prose-h3:my-1 prose-strong:text-slate-300"
                 >
-                    <small className="flex flex-row items-center gap-1 text-slate-500 font-mono">
+                    <small className="flex flex-row items-center gap-1 text-slate-400 font-mono">
                         {d.projectType}
                     </small>
-                    <h4 className="flex items-center gap-1">{d.title}</h4>
+                    <h3 className="flex items-center gap-1">{d.title}</h3>
                     <p
                         dangerouslySetInnerHTML={{ __html: d.summary }}
-                        className="my-2"
+                        className="my-4"
                     />
                     <div className="w-full flex flex-row items-start justify-start flex-wrap gap-2">
                         {d.techStack.map((t) => (
@@ -92,7 +92,7 @@ const ProjectsSection: React.FC = () => {
                             </span>
                         ))}
                     </div>
-                    <div className="w-full flex flex-row items-center gap-2 mt-4">
+                    <div className="w-full flex flex-row items-center gap-2 mt-6">
                         {d.githubLink && (
                             <a
                                 href={d.githubLink}

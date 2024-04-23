@@ -10,6 +10,7 @@ const ReadBlogPage: React.FC = () => {
     const params = useParams();
 
     useEffect(() => {
+        window.scrollTo({ top: 0 });
         if (params.articleid) {
             getArticleById(params.articleid);
         }
@@ -18,18 +19,22 @@ const ReadBlogPage: React.FC = () => {
 
     if (!params.articleid) {
         return (
-            <div className="w-full min-h-max py-6 px-8 xl:pl-[90px] 2xl:pl-[160px] mt-[50px] gap-12 flex flex-col justify-start items-start">
-                <h5>
-                    No article id found please make sure you are have clicked
-                    the right link!
-                </h5>
+            <div className="w-full flex flex-col justify-center items-center min-h-[60vh] gap-6">
+                <h4 className="text-xl text-slate-300">No article found!</h4>
+                Make sure your URL is correct.
+                <Link
+                    to="/blogs"
+                    className="text-sm text-slate-100 flex items-center gap-1 px-4 py-2 rounded-lg bg-primary-400 lg:hover:bg-primary-600 no-underline transition-colors duration-300"
+                >
+                    Go Back
+                </Link>
             </div>
         );
     }
 
     if (busy) {
         return (
-            <div className="w-full flex flex-col justify-center items-center min-h-[60vh] gap-6 lg:pr-[250px]">
+            <div className="w-full flex flex-col justify-center items-center min-h-[60vh] gap-6">
                 <div className="w-10 h-10 rounded-full border-4 border-slate-200 border-t-primary-400 animate-spin"></div>
                 Getting the blog...
             </div>
@@ -38,7 +43,7 @@ const ReadBlogPage: React.FC = () => {
 
     if (!selectedArticle) {
         return (
-            <div className="w-full flex flex-col justify-center items-center min-h-[60vh] gap-6 lg:pr-[250px]">
+            <div className="w-full flex flex-col justify-center items-center min-h-[60vh] gap-6">
                 <h4 className="text-xl text-slate-300">No article found!</h4>
                 Make sure your URL is correct.
                 <Link
@@ -52,8 +57,8 @@ const ReadBlogPage: React.FC = () => {
     }
 
     return (
-        <div className="w-full min-h-max py-6 px-8 xl:pl-[90px] 2xl:pl-[160px] mt-[50px] gap-12 flex flex-col justify-start items-start">
-            <div className="w-full flex flex-row text-sm gap-1 items-center">
+        <div className="w-full min-h-max py-6 px-8 lg:pl-[332px] 2xl:pl-8 mt-[50px] gap-12 flex flex-col justify-start items-start 2xl:items-center">
+            <div className="w-full max-w-4xl flex flex-row text-xs gap-1 items-center font-mono">
                 <Link to="/blogs" className="min-w-max">
                     All blogs
                 </Link>

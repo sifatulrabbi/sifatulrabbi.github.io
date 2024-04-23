@@ -66,8 +66,8 @@ const ProgrammingLanguages: React.FC = () => {
 
     return (
         <>
-            <div className="w-full prose max-w-full prose-h4:text-slate-300 prose-h4:font-medium prose-h4:my-2 text-slate-400 prose-strong:text-slate-400">
-                <h4>Programming Languages</h4>
+            <div className="w-full prose prose-invert prose-slate max-w-full prose-h3:text-slate-300 prose-h3:my-2 prose-strong:text-slate-300">
+                <h3>Programming Languages</h3>
                 <div className="w-full flex flex-row flex-wrap items-center justify-stretch gap-2">
                     {languages.map((l) => (
                         <div
@@ -92,15 +92,12 @@ const ProgrammingLanguages: React.FC = () => {
                 />
             )}
             {selectedLang && (
-                <div
-                    className="fixed z-[100] top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 prose max-w-[90vw] w-full md:max-w-[500px] max-h-[80vh] overflow-y-auto bg-slate-800/80 prose-h3:text-slate-300 prose-p:text-slate-400 p-4 rounded-lg prose-h4:text-slate-300"
-                    style={{ backdropFilter: "blur(10px)" }}
-                >
+                <div className="fixed z-[100] top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 prose prose-slate prose-invert max-w-[90vw] w-full md:max-w-xl max-h-[80vh] overflow-y-auto bg-slate-800 prose-h3:text-slate-300 p-4 rounded-lg prose-h4:text-slate-300">
                     <h3 className="flex flex-row justify-between items-center">
                         {selectedLang.name}
                         <button
                             onClick={() => setSelectedLang(null)}
-                            className="rounded-lg text-slate-400"
+                            className="rounded-lg text-slate-300"
                         >
                             <FaTimes />
                         </button>
@@ -111,7 +108,7 @@ const ProgrammingLanguages: React.FC = () => {
                         }}
                     />
                     <h4>Related Projects</h4>
-                    <div className="flex flex-col gap-4 prose prose-h5:my-0 prose-p:my-0 prose-p:text-slate-400 prose-h5:text-slate-300 prose-a:text-primary-400 lg:hover:prose-a:text-primary-200 prose-a:no-underline">
+                    <div className="flex flex-col gap-4 prose prose-slate prose-invert prose-p:my-0 prose-a:text-primary-400 lg:hover:prose-a:text-primary-200 prose-a:no-underline">
                         {selectedLang.projects.map((p) => (
                             <div
                                 key={`lang-projects-${p.title}`}

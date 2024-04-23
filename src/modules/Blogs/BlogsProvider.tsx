@@ -103,9 +103,11 @@ const BlogsProvider: React.FC<{ children: React.ReactNode }> = ({
                 getArticleById,
             }}
         >
+            {/*
             <main className="w-full flex flex-col pl-0 md:pl-[200px] lg:pl-[250px]">
-                {children}
             </main>
+            */}
+            {children}
         </blogsContext.Provider>
     );
 };

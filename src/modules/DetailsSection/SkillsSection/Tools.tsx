@@ -1,11 +1,11 @@
 import React from "react";
 
-type Tools = {
+type Props = {
     name: string;
     description: string;
 };
 
-const tools: Tools[] = [
+const tools: Props[] = [
     { name: "Git", description: "" },
     { name: "GitHub", description: "" },
     { name: "Docker", description: "" },
@@ -16,8 +16,8 @@ const tools: Tools[] = [
 
 const Tools: React.FC = () => {
     return (
-        <div className="w-full prose max-w-full prose-h4:text-slate-300 prose-h4:font-medium prose-h4:my-2 text-slate-400 prose-strong:text-slate-400">
-            <h4>Tools</h4>
+        <div className="w-full prose prose-slate prose-invert max-w-full prose-h3:text-slate-300 prose-h4:my-2 prose-strong:text-slate-400">
+            <h3>Tools</h3>
             <div className="w-full grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
                 {tools.map((t) => (
                     <div

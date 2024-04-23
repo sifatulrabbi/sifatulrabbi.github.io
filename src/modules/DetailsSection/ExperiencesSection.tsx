@@ -90,7 +90,7 @@ const experienceData = [
 const ExperiencesSection: React.FC = () => {
     return (
         <section className="w-full min-h-max flex flex-col justify-start items-start py-6 px-8 md:ml-[200px] lg:ml-[250px] mt-[50px]">
-            <div className="w-full prose max-w-full prose-h1:text-slate-300 prose-h1:font-bold">
+            <div className="w-full prose prose-invert prose-slate max-w-full prose-h1:font-bold">
                 <h1>
                     {"Experiences".split("").map((l, i) => (
                         <AnimatedText
@@ -100,7 +100,7 @@ const ExperiencesSection: React.FC = () => {
                         />
                     ))}
                 </h1>
-                <small className="text-slate-400 text-sm">
+                <small className="text-sm">
                     I'm a versatile engineer with expertise in developing APIs,
                     WebApps, and Microservices.
                 </small>
@@ -112,7 +112,7 @@ const ExperiencesSection: React.FC = () => {
             {experienceData.map((d) => (
                 <div
                     key={d.companyName}
-                    className="w-full prose max-w-full prose-h4:text-slate-300 prose-h4:font-medium prose-h4:my-2 text-slate-400 prose-strong:text-slate-400 flex flex-col border-b-2 border-slate-700 last:border-transparent mb-8"
+                    className="w-full prose prose-slate prose-invert max-w-full prose-h4:font-medium prose-h4:my-2 flex flex-col border-b-2 border-slate-700 last:border-transparent mb-8 prose-a:no-underline"
                 >
                     <a
                         href={d.companyUrl}
@@ -120,7 +120,7 @@ const ExperiencesSection: React.FC = () => {
                         rel="noreferrer"
                         className="hover:underline"
                     >
-                        <h4 className="flex items-center gap-1 hover:underline">
+                        <h4 className="flex items-center gap-1 hover:underline text-slate-300">
                             {d.companyName}
                             <div className="rounded-full bg-slate-300 w-1 h-1" />
                             <span className="font-normal text-sm">
@@ -134,21 +134,20 @@ const ExperiencesSection: React.FC = () => {
                             key={p.position + p.from + p.till}
                             className="flex flex-col"
                         >
-                            <small className="flex flex-row items-center gap-1 text-slate-500 font-mono">
+                            <small className="flex flex-row items-center gap-1 font-mono">
                                 {p.from} <FaMinus className="text-xs" />{" "}
                                 {p.till}
                             </small>
-                            <div
-                                className={`text-primary-400
-                                ${
+                            <h3
+                                className={`my-2 ${
                                     p.current
                                         ? "text-primary-200 font-bold"
-                                        : ""
+                                        : "font-normal text-primary-400"
                                 }`}
                             >
                                 {p.position}
-                            </div>
-                            <ul className="text-slate-400 mt-0">
+                            </h3>
+                            <ul>
                                 {p.description.map((desc) => (
                                     <li
                                         key={desc}

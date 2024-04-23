@@ -8,7 +8,7 @@ const BorwseBlogsPage: React.FC = () => {
 
     if (busy) {
         return (
-            <div className="w-full flex flex-col justify-center items-center min-h-[60vh] gap-6 lg:pr-[250px]">
+            <div className="w-full flex flex-col justify-center items-center min-h-[60vh] gap-6">
                 <div className="w-10 h-10 rounded-full border-4 border-slate-200 border-t-primary-400 animate-spin"></div>
                 Getting blogs...
             </div>
@@ -16,11 +16,11 @@ const BorwseBlogsPage: React.FC = () => {
     }
 
     return (
-        <div className="w-full min-h-max py-6 px-8 xl:pl-[90px] 2xl:pl-[160px] mt-[50px] gap-12 flex flex-col justify-start items-start">
+        <div className="w-full min-h-max py-6 px-8 lg:pl-[332px] 2xl:pl-8 mt-[50px] gap-12 flex flex-col justify-start items-start 2xl:items-center">
             {allArticles.map((a) => (
                 <div
                     key={a.id}
-                    className="w-full prose prose-invert max-w-full lg:max-w-3xl prose-slate prose-p:text-slate-200 prose-p:my-4"
+                    className="w-full prose prose-invert max-w-full lg:max-w-4xl prose-slate prose-p:text-slate-200 prose-p:my-4"
                 >
                     <h3>{a.title}</h3>
                     <span className="font-mono text-primary-400">
