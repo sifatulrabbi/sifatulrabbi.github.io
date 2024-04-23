@@ -2,6 +2,7 @@ import React from "react";
 import { useBlogs } from "@/modules/Blogs/blogsContext";
 import { Link } from "react-router-dom";
 import { FaReadme } from "react-icons/fa6";
+import dayjs from "dayjs";
 
 const BorwseBlogsPage: React.FC = () => {
     const { allArticles, busy } = useBlogs();
@@ -23,9 +24,13 @@ const BorwseBlogsPage: React.FC = () => {
                     className="w-full prose prose-invert max-w-full lg:max-w-4xl prose-slate prose-p:text-slate-200 prose-p:my-4"
                 >
                     <h3>{a.title}</h3>
-                    <span className="font-mono text-primary-400">
-                        {a.category}
-                    </span>
+                    <div className="flex gap-2 text-sm font-display text-slate-400">
+                        <span className="text-primary-400">{a.category}</span> |
+                        <span>
+                            Published At:{" "}
+                            {dayjs(a.created_at).format("MMM DD, YYYY")}
+                        </span>
+                    </div>
                     <p dangerouslySetInnerHTML={{ __html: a.summary }} />
                     <div className="w-full flex flex-row items-start justify-start flex-wrap gap-2 mt-4">
                         {a.tags.map((t) => (

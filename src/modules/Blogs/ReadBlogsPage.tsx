@@ -58,14 +58,14 @@ const ReadBlogPage: React.FC = () => {
 
     return (
         <div className="w-full min-h-max py-6 px-8 lg:pl-[332px] 2xl:pl-8 mt-[50px] gap-12 flex flex-col justify-start items-start 2xl:items-center">
-            <div className="w-full max-w-4xl flex flex-row text-xs gap-1 items-center font-mono">
+            <div className="w-full max-w-4xl flex flex-row text-sm gap-1 items-center text-slate-300">
                 <Link to="/blogs" className="min-w-max">
                     All blogs
                 </Link>
                 /
                 <Link
                     to={"/blogs/read/" + params.articleid}
-                    className="text-slate-300 truncate"
+                    className="text-primary-400 truncate"
                 >
                     {selectedArticle.title}
                 </Link>
@@ -76,8 +76,8 @@ const ReadBlogPage: React.FC = () => {
                     <h2 style={{ marginTop: 0, marginBottom: "1rem" }}>
                         {selectedArticle.title}
                     </h2>
-                    <p style={{ marginTop: 0 }}>
-                        Sifatul Rabbi,{" "}
+                    <p style={{ marginTop: 0 }} className="font-display">
+                        Sifatul Rabbi |{" "}
                         {dayjs(selectedArticle.created_at).format(
                             "MMM DD, YYYY",
                         )}
