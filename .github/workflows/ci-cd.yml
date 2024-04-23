@@ -1,36 +1,40 @@
 name: CI/CD
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
+
+env:
+  VERSION: 1.1.0
+  VITE_SERVER_URL: https://sifatulrabbi.com
 
 jobs:
-    deploy-on-hosting-server:
-        name: Deploy on hosting server
-        runs-on: ubuntu-latest
+  deploy-on-hosting-server:
+    name: Deploy on hosting server
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-            - name: Setup Node v20
-              uses: actions/setup-node@v3
-              with:
-                  node-version: 20
-            - name: Install dependencies
-              run: yarn install --frozen-lockfile
+      - name: Setup Node v20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
-            - name: Build React app
-              run: yarn build
+      - name: Build React app
+        run: yarn build
 
-            - name: Deploy on hosting server
-              uses: appleboy/scp-action@v0.1.4
-              with:
-                  host: ${{ secrets.HOST }}
-                  port: 22
-                  key: ${{ secrets.SSH_SECRET_KEY }}
-                  username: root
-                  source: dist
-                  target: /var/www/portfolio
-                  overwrite: true
+      - name: Deploy on hosting server
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST }}
+          port: 22
+          key: ${{ secrets.SSH_SECRET_KEY }}
+          username: root
+          source: dist
+          target: /var/www/portfolio
+          overwrite: true
