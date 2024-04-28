@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useBlogs } from "@/modules/Blogs/blogsContext";
 import { v4 } from "uuid";
@@ -8,6 +8,7 @@ import dayjs from "dayjs";
 const ReadBlogPage: React.FC = () => {
     const { busy, selectedArticle, getArticleById } = useBlogs();
     const params = useParams();
+    const articleElement = useRef<HTMLElement>(null);
 
     useEffect(() => {
         window.scrollTo({ top: 0 });
@@ -16,6 +17,28 @@ const ReadBlogPage: React.FC = () => {
         }
         // eslint-disable-next-line
     }, [params]);
+
+    useEffect(() => {
+        if (!selectedArticle || !articleElement.current) return;
+        setTimeout(() => {
+            if (!selectedArticle || !articleElement.current) return;
+            addIdToElement(articleElement.current, "h1");
+            addIdToElement(articleElement.current, "h2");
+            addIdToElement(articleElement.current, "h3");
+            addIdToElement(articleElement.current, "h4");
+            addIdToElement(articleElement.current, "h5");
+        }, 2000);
+    }, [selectedArticle, articleElement]);
+
+    function addIdToElement(
+        parent: HTMLElement,
+        elementTag: keyof HTMLElementTagNameMap,
+    ) {
+        const elements = parent.getElementsByTagName(elementTag);
+        for (const el of elements) {
+            el.id = el.innerText.toLowerCase().replace(/ /gi, "-");
+        }
+    }
 
     if (!params.articleid) {
         return (
@@ -71,7 +94,10 @@ const ReadBlogPage: React.FC = () => {
                 </Link>
             </div>
 
-            <article className="max-w-full lg:max-w-4xl text-slate-400 prose-h3:text-slate-300">
+            <article
+                ref={articleElement}
+                className="max-w-full lg:max-w-4xl text-slate-400 prose-h3:text-slate-300"
+            >
                 <div className="display-content prose-a:text-slate-300 prose-a:no-underline">
                     <h2 style={{ marginTop: 0, marginBottom: "1rem" }}>
                         {selectedArticle.title}
