@@ -17,13 +17,12 @@ const experienceData = [
                 employmentType: "Contract",
                 description: [
                     "Focused on building and designing innovative features by leveraging AI technologies to simplify and enhance everyday life.",
-                    "Leading the development process and the team to implement new features, architect the system, and improve the quality of the services.",
+                    "Leading the development process to implement new features, architect the system, and improve the quality of the services.",
                 ],
                 techStack: [
                     "Python",
                     "JavaScript",
                     "Node.js",
-                    "Go",
                     "Express.js",
                     "Vue.js",
                     "MongoDB",
@@ -37,16 +36,13 @@ const experienceData = [
                 jobType: "Remote",
                 employmentType: "Contract",
                 description: [
-                    "Leading the development process and the team to implement new features, architect the system, and improve the quality of the services.",
                     "3x the system performance by restructuring the apps to utilize Async and concurrency, refactoring the frontend app to render effectively, and implementing various principles and best practices across the system.",
-                    "Streamlined the development process of HelloScribe AI v2 and ensured a 100% login success rate which gained 120% more users and 40% more monthly active users.",
-                    "Playing a key role in building and designing a scalable and robust system.",
+                    "Streamlined the development process of HelloScribe AI v2 and ensured a 100% login/registration success rate.",
                 ],
                 techStack: [
                     "Python",
                     "JavaScript",
                     "Node.js",
-                    "Go",
                     "Express.js",
                     "Vue.js",
                     "MongoDB",
@@ -101,7 +97,7 @@ const ExperiencesSection: React.FC = () => {
                     ))}
                 </h1>
                 <small className="text-sm">
-                    I'm a versatile engineer with expertise in developing APIs,
+                    I'm an versatile engineer with expertise in developing APIs,
                     WebApps, and Microservices.
                 </small>
             </div>
