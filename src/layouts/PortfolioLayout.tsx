@@ -11,7 +11,7 @@ const PortfolioLayout: React.FC = () => {
     return (
         <main
             className={`w-full max-w-full bg-gray-900 min-h-[100vh] overflow-hidden ${
-                showHero ? "max-h-[100vh]" : ""
+                !terminalMode && showHero ? "max-h-[100vh]" : ""
             }`}
         >
             {!terminalMode && (
@@ -31,7 +31,9 @@ const PortfolioLayout: React.FC = () => {
                     />
                 </div>
             )}
-            <TerminalModeProvider>
+            <TerminalModeProvider
+                exitTerminalMode={() => setTerminalMode(false)}
+            >
                 {terminalMode && (
                     <TerminalModePage
                         closeTerminal={() => setTerminalMode(false)}

@@ -4,27 +4,33 @@ import { FileEntry, TerminalHistory } from "@/types";
 import { rootDirectory } from "./directories";
 import {
     InvalidCommand,
-    ls,
-    cd,
-    cat,
     IgnoreCommand,
-    introHistory,
     Help,
     Time,
     Echo,
+    ListExp,
+    ListProjects,
+    ls,
+    cd,
+    cat,
+    introHistory,
+    Exit,
+    Empty,
 } from "./terminalService";
 
 type Props = {
     children?: React.ReactNode;
+    exitTerminalMode: () => void;
 };
 
-const TerminalModePage: React.FC<Props> = ({ children }) => {
+const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
     const [history, setHistory] = useState<TerminalHistory[]>([introHistory]);
     const [executing, setExecuting] = useState(false);
     const [currentDir, setCurrentDir] = useState<FileEntry>(rootDirectory);
 
     async function runCommand(cmdStr: string) {
         setExecuting(true);
+        await new Promise((r) => setTimeout(r, 100));
         const cmd = identifyCmd(cmdStr);
         if (cmd.exec()) {
             console.error(cmd.output);
@@ -68,6 +74,19 @@ const TerminalModePage: React.FC<Props> = ({ children }) => {
                 break;
             case "echo":
                 result = new Echo(cmdStr, currentDir.pwd);
+                break;
+            case "list_proj":
+                result = new ListProjects(cmdStr, currentDir.pwd);
+                break;
+            case "list_exp":
+                result = new ListExp(cmdStr, currentDir.pwd);
+                break;
+            case "exit":
+                result = new Exit(currentDir.pwd);
+                exitTerminalMode();
+                break;
+            case "":
+                result = new Empty(currentDir.pwd);
                 break;
             default:
                 result = new InvalidCommand(cmdStr, currentDir.pwd);

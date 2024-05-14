@@ -10,12 +10,17 @@ const TerminalBody: React.FC = () => {
         e.preventDefault();
         await runCommand(command);
         setCommand("");
+        await new Promise((r) => setTimeout(r, 100));
+        window.scrollTo({
+            top: document.body.clientHeight,
+            behavior: "smooth",
+        });
     }
 
     return (
         <>
             {history.length > 0 && (
-                <div className="w-full flex flex-col gap-6 mb-6">
+                <div className="w-full flex flex-col gap-6 mb-6 min-h-max">
                     {history.map((h) => (
                         <div
                             key={h.cmd + v4()}
@@ -33,7 +38,9 @@ const TerminalBody: React.FC = () => {
                                 </div>
                             </div>
                             <div
-                                className="display-content-muted"
+                                className={`display-content-muted ${
+                                    h.exitCode === 1 ? "error" : ""
+                                }`}
                                 dangerouslySetInnerHTML={{ __html: h.output }}
                             ></div>
                         </div>
@@ -56,8 +63,9 @@ const TerminalBody: React.FC = () => {
                         id="terminal-command-input"
                         type="text"
                         value={command}
-                        onChange={(e) => setCommand(e.currentTarget.value)}
-                        disabled={executing}
+                        onChange={(e) =>
+                            executing ? null : setCommand(e.currentTarget.value)
+                        }
                         maxLength={200}
                         autoFocus
                         className="w-full border-transparent outline-none focus:bg-transparent bg-slate-950"

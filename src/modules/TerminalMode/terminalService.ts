@@ -2,6 +2,98 @@ import type { TerminalHistory, TerminalExitCode, FileEntry } from "@/types";
 import { rootDirectory } from "./directories";
 import { marked } from "marked";
 import dayjs from "dayjs";
+import { experiencesData } from "./experienceData";
+import { projectsData } from "./projectsData";
+
+export class ListExp implements TerminalHistory {
+    private readonly args: string[] = [];
+    private _output: string = "";
+    private _exitCode: TerminalExitCode = 0;
+
+    constructor(
+        public readonly cmd: string,
+        public readonly pwd: string,
+    ) {
+        this.args = cmd.split(" ");
+    }
+
+    exec(): TerminalExitCode {
+        if (this.args.length < 2) {
+            this._output += "My experiences\n\n";
+            for (const e of experiencesData) {
+                this._output += `- ${e.id}. ${e.title}\n`;
+            }
+            return 0;
+        }
+        if (this.args[1] === "all") {
+            this._output += "All experiences expanded.\n\n";
+            for (const e of experiencesData) {
+                this._output += e.text;
+            }
+            return 0;
+        }
+        const selectedExp = experiencesData.find((p) => p.id === this.args[1]);
+        if (!selectedExp) {
+            this._exitCode = 1;
+            this._output = `No experiences found with id: '${this.args[1]}'`;
+            return 1;
+        }
+        this._output = selectedExp.text;
+        return 0;
+    }
+
+    get output() {
+        return marked(this._output) as string;
+    }
+    get exitCode() {
+        return this._exitCode;
+    }
+}
+
+export class ListProjects implements TerminalHistory {
+    private readonly args: string[] = [];
+    private _output: string = "";
+    private _exitCode: TerminalExitCode = 0;
+
+    constructor(
+        public readonly cmd: string,
+        public readonly pwd: string,
+    ) {
+        this.args = cmd.split(" ");
+    }
+
+    exec(): TerminalExitCode {
+        if (this.args.length < 2) {
+            this._output += "List of projects I did\n\n";
+            for (const p of projectsData) {
+                this._output += `- ${p.id}. ${p.title}\n`;
+            }
+            return 0;
+        }
+        if (this.args[1] === "all") {
+            this._output += "Expanded descriptions of all projects.\n\n";
+            for (const p of projectsData) {
+                this._output += p.text;
+            }
+            return 0;
+        }
+        const selectedProj = projectsData.find((p) => p.id === this.args[1]);
+        if (!selectedProj) {
+            this._exitCode = 1;
+            this._output = `No project found with id: '${this.args[1]}'`;
+            return 1;
+        }
+        this._output = selectedProj.text;
+        return 0;
+    }
+
+    get output() {
+        return marked(this._output) as string;
+    }
+    get exitCode() {
+        return this._exitCode;
+    }
+}
 
 export class IgnoreCommand implements TerminalHistory {
     cmd = "";
@@ -16,8 +108,8 @@ export class IgnoreCommand implements TerminalHistory {
 }
 
 export class InvalidCommand implements TerminalHistory {
-    private _output: string = "";
-    private _exitCode: TerminalExitCode = 0;
+    public readonly output: string = "Command not available!";
+    public readonly exitCode: TerminalExitCode = 1;
 
     constructor(
         public readonly cmd: string,
@@ -25,16 +117,7 @@ export class InvalidCommand implements TerminalHistory {
     ) {}
 
     exec(): TerminalExitCode {
-        this._exitCode = 1;
-        this._output = "No identified command!";
         return 1;
-    }
-
-    get output() {
-        return this._output;
-    }
-    get exitCode() {
-        return this._exitCode;
     }
 }
 
@@ -149,7 +232,7 @@ export class cat implements TerminalHistory {
     }
 
     get output() {
-        return this._output;
+        return marked(this._output) as string;
     }
     get exitCode() {
         return this._exitCode;
@@ -200,6 +283,30 @@ export class Echo implements TerminalHistory {
     }
     get exitCode() {
         return this._exitCode;
+    }
+}
+
+export class Exit implements TerminalHistory {
+    cmd = "exit";
+    output = "Quitting terminal mode.";
+    exitCode: TerminalExitCode = 0;
+
+    constructor(public readonly pwd: string) {}
+
+    exec(): TerminalExitCode {
+        return 0;
+    }
+}
+
+export class Empty implements TerminalHistory {
+    cmd = " ";
+    output = " ";
+    exitCode: TerminalExitCode = 0;
+
+    constructor(public readonly pwd: string) {}
+
+    exec(): TerminalExitCode {
+        return 0;
     }
 }
 
