@@ -17,14 +17,27 @@
 .hero-enter-btn {
     position: absolute;
     left: -20px;
-    animation: indicator-anim 2s linear infinite;
+    animation: indicator-anim 10s linear infinite;
 
     @keyframes indicator-anim {
         from {
-            transform: translateX(0px);
+            left: -20px;
         }
         to {
-            transform: translateX(120px);
+            left: 120%;
+        }
+    }
+}
+
+.cursor-blink {
+    animation: cursor-blink 1s infinite;
+
+    @keyframes cursor-blink {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
         }
     }
 }

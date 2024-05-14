@@ -11,10 +11,10 @@ module.exports = {
                 },
             },
             fontFamily: {
-                // display: ["Montserrat", "sans-serif"],
-                display: ["Roboto", "sans-serif"],
+                display: ["Montserrat", "sans-serif"],
+                // display: ["Roboto", "sans-serif"],
                 // body: ["Karla", "sans-serif"],
-                body: ["Montserrat", "sans-serif"],
+                body: ["Roboto", "sans-serif"],
                 mono: ["Fira Code", "monospace"],
             },
         },
