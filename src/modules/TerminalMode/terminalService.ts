@@ -23,6 +23,7 @@ export class ListExp implements TerminalHistory {
             for (const e of experiencesData) {
                 this._output += `- ${e.id}. ${e.title}\n`;
             }
+            this._output += `\nUse **list_exp all** to view all the experiences or **list_exp [exp id]** for any specific one.`;
             return 0;
         }
         if (this.args[1] === "all") {
@@ -68,10 +69,10 @@ export class ListProjects implements TerminalHistory {
             for (const p of projectsData) {
                 this._output += `- ${p.id}. ${p.title}\n`;
             }
+            this._output += `\nUse **list_proj all** to view all the projects or **list_proj [project id]** for any specific one.`;
             return 0;
         }
         if (this.args[1] === "all") {
-            this._output += "Expanded descriptions of all projects.\n\n";
             for (const p of projectsData) {
                 this._output += p.text;
             }

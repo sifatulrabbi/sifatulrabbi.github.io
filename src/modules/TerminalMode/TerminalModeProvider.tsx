@@ -48,6 +48,12 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
             case "ls":
                 result = new ls(cmdStr, currentDir.pwd, currentDir);
                 break;
+            case "la":
+                result = new ls(cmdStr, currentDir.pwd, currentDir);
+                break;
+            case "l":
+                result = new ls(cmdStr, currentDir.pwd, currentDir);
+                break;
             case "cd":
                 result = new cd(
                     cmdStr,
