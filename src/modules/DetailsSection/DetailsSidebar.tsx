@@ -9,8 +9,19 @@ const DetailsSidebar: React.FC<{
     showSidebar: boolean;
     setActiveTab: (v: string) => void;
     setShowSidebar: (v: boolean) => void;
-}> = ({ activeTab, showSidebar, setActiveTab, setShowSidebar }) => {
+    enterTerminalMode: () => void;
+}> = ({
+    activeTab,
+    showSidebar,
+    setActiveTab,
+    setShowSidebar,
+    enterTerminalMode,
+}) => {
     const handleActiveTabUpdate = (tab: string) => {
+        if (tab.includes("terminal")) {
+            enterTerminalMode();
+            return;
+        }
         setActiveTab(tab);
         setShowSidebar(false);
     };

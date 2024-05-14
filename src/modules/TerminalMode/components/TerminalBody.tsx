@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useTerminalMode } from "../terminalModeContext";
+import { v4 } from "uuid";
 
 const TerminalBody: React.FC = () => {
     const [command, setCommand] = useState("");
-    const { runCommand, executing } = useTerminalMode();
+    const { runCommand, executing, history, currentDir } = useTerminalMode();
 
     async function run(e: React.SyntheticEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -11,22 +12,45 @@ const TerminalBody: React.FC = () => {
         setCommand("");
     }
 
-    function changeFocus() {
-        document.getElementById("terminal-command-input")?.focus();
-    }
-
     return (
-        <div onClick={changeFocus} className="flex flex-col gap-4">
-            <form
-                onSubmit={run}
-                className="w-full flex flex-col items-start justify-start text-sm"
-            >
+        <>
+            {history.length > 0 && (
+                <div className="w-full flex flex-col gap-6 mb-6">
+                    {history.map((h) => (
+                        <div
+                            key={h.cmd + v4()}
+                            className="w-full flex flex-col"
+                        >
+                            <div className="flex w-full flex-col">
+                                <span className="text-primary-400 inline-block min-w-max">
+                                    {h.pwd}
+                                </span>
+                                <div className="flex items-center justify-start w-full relative gap-2">
+                                    <span className="text-primary-400 inline-block min-w-max">
+                                        {"$"}
+                                    </span>
+                                    <span>{h.cmd}</span>
+                                </div>
+                            </div>
+                            <div
+                                className="display-content-muted"
+                                dangerouslySetInnerHTML={{ __html: h.output }}
+                            ></div>
+                        </div>
+                    ))}
+                </div>
+            )}
+
+            <div className="w-full h-full flex flex-col items-start justify-start">
                 <span className="text-primary-400 inline-block min-w-max">
-                    ~/
+                    {currentDir.pwd}
                 </span>
-                <div className="flex items-center justify-start w-full relative gap-2">
+                <form
+                    onSubmit={run}
+                    className="flex items-center justify-start w-full relative gap-2 h-full"
+                >
                     <span className="text-primary-400 inline-block min-w-max">
-                        {" $"}
+                        {"$"}
                     </span>
                     <input
                         id="terminal-command-input"
@@ -36,12 +60,12 @@ const TerminalBody: React.FC = () => {
                         disabled={executing}
                         maxLength={200}
                         autoFocus
-                        className="w-full bg-transparent border-transparent outline-none text-sm"
+                        className="w-full border-transparent outline-none focus:bg-transparent bg-slate-950"
                         autoComplete="off"
                     />
-                </div>
-            </form>
-        </div>
+                </form>
+            </div>
+        </>
     );
 };
 

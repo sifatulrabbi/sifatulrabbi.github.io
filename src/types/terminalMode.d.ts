@@ -4,6 +4,7 @@ export interface TerminalHistory {
     cmd: TerminalCmd;
     output: string;
     exitCode: TerminalExitCode;
+    pwd: string;
     exec: () => TerminalExitCode;
 }
 
@@ -15,6 +16,7 @@ export interface StaticTerminalHistory {
 export type TerminalModeContext = {
     history: TerminalHistory[];
     executing: boolean;
+    currentDir: FileEntry;
     runCommand: (cmd: string) => Promise<void>;
 };
 

@@ -40,11 +40,11 @@ export class Entry implements FileEntry {
             fullpath = p.name + "/" + fullpath;
             p = p.parent;
         }
-        return "/" + fullpath;
+        return "Sifatul's Portfolio: ~" + fullpath;
     }
 }
 
-export const rootDirectory = new Entry("sifatul");
+export const rootDirectory = new Entry("");
 
 rootDirectory.insertNewEntry(
     new Entry("example.md", "# Example file\n\nwith markdown content in it."),

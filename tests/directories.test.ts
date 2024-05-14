@@ -1,4 +1,4 @@
-import { rootDirectory } from "../src/modules/TerminalMode/data";
+import { rootDirectory } from "../src/modules/TerminalMode/directories";
 
 describe("Testing the directories", () => {
     let selectedDir = rootDirectory;

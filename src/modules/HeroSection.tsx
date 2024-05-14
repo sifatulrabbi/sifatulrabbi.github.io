@@ -28,9 +28,7 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
                 await new Promise((r) => setTimeout(r, 5));
                 setAboutme(buf);
             }
-            if (window.origin.startsWith("http://localhost")) {
-                setEngModeReady(true);
-            }
+            setEngModeReady(true);
         })();
     }, []);
 

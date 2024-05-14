@@ -62,3 +62,7 @@ p {
         background-size: cover;
     }
 }
+
+.display-content-muted {
+    @apply prose prose-sm prose-invert max-w-full prose-slate prose-p:text-slate-300 prose-ul:text-slate-300 prose-strong:text-slate-300 prose-pre:bg-slate-800 prose-h2:text-slate-300;
+}

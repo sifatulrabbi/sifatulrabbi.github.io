@@ -9,7 +9,11 @@ import SkillsSection from "./SkillsSection";
 import ContactPage from "./ContactPage";
 import ChatSection from "../ChatSection";
 
-const DetailsSection: React.FC = () => {
+type Props = {
+    enterTerminalMode: () => void;
+};
+
+const DetailsSection: React.FC<Props> = ({ enterTerminalMode }) => {
     const [tab, setTab] = useState(homePageTabs.experiences);
     const [showSidebar, setShowSidebar] = useState(false);
 
@@ -26,6 +30,7 @@ const DetailsSection: React.FC = () => {
                 setActiveTab={setTab}
                 showSidebar={showSidebar}
                 setShowSidebar={setShowSidebar}
+                enterTerminalMode={enterTerminalMode}
             />
 
             {tab === homePageTabs.experiences && <ExperiencesSection />}

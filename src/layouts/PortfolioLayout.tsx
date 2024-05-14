@@ -14,7 +14,11 @@ const PortfolioLayout: React.FC = () => {
                 showHero ? "max-h-[100vh]" : ""
             }`}
         >
-            {!terminalMode && <DetailsSection />}
+            {!terminalMode && (
+                <DetailsSection
+                    enterTerminalMode={() => setTerminalMode(true)}
+                />
+            )}
             {!terminalMode && (
                 <div
                     className={`z-[100] w-full fixed top-0 right-0 left-0 bottom-0 flex flex-col justify-start items-start bg-gray-900 transition-transform duration-500 ${
@@ -28,7 +32,11 @@ const PortfolioLayout: React.FC = () => {
                 </div>
             )}
             <TerminalModeProvider>
-                {terminalMode && <TerminalModePage />}
+                {terminalMode && (
+                    <TerminalModePage
+                        closeTerminal={() => setTerminalMode(false)}
+                    />
+                )}
             </TerminalModeProvider>
         </main>
     );
