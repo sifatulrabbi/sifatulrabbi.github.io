@@ -137,13 +137,14 @@ export class cd implements TerminalHistory {
 
     exec(): TerminalExitCode {
         try {
-            if (this.args.length !== 2) {
+            const cdPath = this.args.slice(1).join("");
+            if (this.args.length < 2 || !cdPath) {
                 this.callback(rootDirectory);
                 this._output = "Moved to ~";
                 this._exitCode = 0;
                 return 0;
             }
-            const newLocation = this.currentDir.cd(this.args[1]);
+            const newLocation = this.currentDir.cd(cdPath);
             this.callback(newLocation);
             this._output = "Moved to " + newLocation.name;
             this._exitCode = 0;
@@ -177,7 +178,12 @@ export class ls implements TerminalHistory {
     exec(): TerminalExitCode {
         this._output = `<div class="flex flex-row flex-wrap gap-1">`;
         for (const child of this.currentDir.children.values()) {
-            this._output += `<span class="inline-block mr-6">${child.name}`;
+            this._output += '<span class="inline-block mr-6">';
+            if (child.name.trim().includes(" ")) {
+                this._output += "'" + child.name + "'";
+            } else {
+                this._output += child.name;
+            }
             if (!child.fileContent) {
                 this._output += "/";
             }
@@ -210,17 +216,29 @@ export class cat implements TerminalHistory {
     }
 
     exec(): TerminalExitCode {
-        if (this.args.length != 2) {
+        if (this.args.length < 2) {
             this._output = "Please specify a file name.\n'cat [filename]'";
             this._exitCode = 1;
             return 1;
         }
-        const file = this.currentDir.children.get(this.args[1]);
-        if (!file) {
-            this._output = `No file found with name: "${file}"`;
+        const filename = this.args.slice(1).join("").toLowerCase();
+        let selectedFilename: string | undefined = undefined;
+        for (const f of this.currentDir.children.keys()) {
+            if (f.includes(filename)) {
+                selectedFilename = f;
+                break;
+            }
+        }
+        if (!selectedFilename) {
+            this._output = `No file found with name: "${this.args
+                .slice(1)
+                .join(" ")}"`;
             this._exitCode = 1;
             return 1;
         }
+        const file = this.currentDir.children.get(
+            selectedFilename,
+        ) as FileEntry;
         if (!file.fileContent) {
             this._output = `"${file}" is a directory.`;
             this._exitCode = 1;
@@ -316,7 +334,9 @@ const helpText = marked(`Available commands:
 - <span class="text-primary-400">list_proj</span> -> All my Projects
 - <span class="text-primary-400">ls</span> -> List all the directories/files of the current path
 - <span class="text-primary-400">cd [dir name]</span> -> Move between directories
-- <span class="text-primary-400">cat [file name]</span> -> Print the contents of a file. Use this to see my experiences and project descriptions`) as string;
+- <span class="text-primary-400">cat [file name]</span> -> Print the contents of a file. Use this to see my experiences and project descriptions
+
+Tip: Using only the first few words of a file/directory name will also work. i.e. 'cd ex' will work.`) as string;
 
 export class Help implements TerminalHistory {
     cmd = "Hi there, welcome to my portfolio.";

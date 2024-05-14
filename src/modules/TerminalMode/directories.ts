@@ -1,4 +1,6 @@
 import type { FileEntry } from "@/types";
+import { projectsData } from "./projectsData";
+import { experiencesData } from "./experienceData";
 
 export class Entry implements FileEntry {
     parent: FileEntry | null = null;
@@ -17,7 +19,19 @@ export class Entry implements FileEntry {
             }
             return this;
         }
-        const child = this.children.get(p);
+
+        let selectedChildName: string | undefined = undefined;
+        for (const c of this.children.keys()) {
+            console.log(c);
+            if (c.includes(p)) {
+                selectedChildName = c;
+                break;
+            }
+        }
+        if (!selectedChildName) {
+            throw new Error(`"${path}" directory not found!`);
+        }
+        const child = this.children.get(selectedChildName);
         if (child && child.fileContent) {
             throw new Error(`"${path}" is a file not a directory!`);
         }
@@ -46,38 +60,14 @@ export class Entry implements FileEntry {
 
 export const rootDirectory = new Entry("");
 
-rootDirectory.insertNewEntry(
-    new Entry("example.md", "# Example file\n\nwith markdown content in it."),
-);
-rootDirectory.insertNewEntry(
-    new Entry(
-        "Resume link",
-        "[https://sifatulrabbi.com](https://sifatulrabbi.com)",
-    ),
-);
-
-const expDir = new Entry("experiences");
-expDir.insertNewEntry(
-    new Entry(
-        "HelloScribe AI",
-        "This is the work experience for HelloScribe AI",
-    ),
-);
-expDir.insertNewEntry(
-    new Entry("X-Booker", "This is the work experience for X-Booker"),
-);
+const expDir = new Entry("Experiences");
+experiencesData.forEach((expData) => {
+    expDir.insertNewEntry(new Entry(expData.title, expData.text));
+});
 rootDirectory.insertNewEntry(expDir);
 
-const projectsDir = new Entry("projects");
-projectsDir.insertNewEntry(
-    new Entry(
-        "Static file server",
-        "This is the static file server CLI tool I've built using Go.",
-    ),
-);
-projectsDir.insertNewEntry(
-    new Entry(
-        "My portfolio",
-        "This is the description of my portfolio project.",
-    ),
-);
+const projDir = new Entry("Projects");
+projectsData.forEach((proj) => {
+    projDir.insertNewEntry(new Entry(proj.title, proj.text));
+});
+rootDirectory.insertNewEntry(projDir);

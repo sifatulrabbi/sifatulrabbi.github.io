@@ -16,11 +16,9 @@ const aboutmeWords =
 const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
     const [hoveringEnter, setHoveringEnter] = useState(false);
     const [aboutme, setAboutme] = useState("");
-    const [engModeReady, setEngModeReady] = useState(false);
 
     useEffect(() => {
         (async () => {
-            setEngModeReady(false);
             let buf = "";
             await new Promise((r) => setTimeout(r, 1000));
             for (let i = 0; i < aboutmeWords.length; i++) {
@@ -28,7 +26,6 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
                 await new Promise((r) => setTimeout(r, 5));
                 setAboutme(buf);
             }
-            setEngModeReady(true);
         })();
     }, []);
 
@@ -100,13 +97,9 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
 
                 <button
                     onClick={() => setTerminalMode(true)}
-                    className={`text-slate-400 rounded-lg p-2 lg:hover:text-primary-400 lg:hover:border-primary-400 transition-transform duration-500 flex flex-row items-center justify-start overflow-hidden relative font-mono text-sm border border-dashed border-slate-400 ${
-                        engModeReady
-                            ? "opacity-100 scale-100"
-                            : "opacity-0 scale-0"
-                    }`}
+                    className="text-slate-400 rounded-lg p-2 lg:hover:text-primary-400 lg:hover:border-primary-400 transition-transform duration-500 flex flex-row items-center justify-start overflow-hidden relative font-mono text-sm border border-dashed border-slate-400"
                 >
-                    <span className="text-slate-500">self</span>.terminal_mode()
+                    enter_terminal_mode()
                 </button>
             </div>
         </div>

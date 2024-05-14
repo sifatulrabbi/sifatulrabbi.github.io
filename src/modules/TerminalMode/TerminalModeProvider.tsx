@@ -85,6 +85,10 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
                 result = new Exit(currentDir.pwd);
                 exitTerminalMode();
                 break;
+            case "reload":
+                result = new Exit(currentDir.pwd);
+                window.location.reload();
+                break;
             case "":
                 result = new Empty(currentDir.pwd);
                 break;

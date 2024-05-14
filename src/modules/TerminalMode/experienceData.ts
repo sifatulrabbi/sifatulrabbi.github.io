@@ -1,7 +1,7 @@
 export const experiencesData = [
     {
         id: "1",
-        title: "Co-Founder & Lead Software Engineer",
+        title: "Co-Founder & Lead Software Engineer @ HelloScribe AI",
         text: `**Co-Founder & Lead Software Engineer**  
 HelloScribe AI, Florida, USA -- Full time, Remote -- Nov, 2022 - Present
 
@@ -15,7 +15,7 @@ HelloScribe AI, Florida, USA -- Full time, Remote -- Nov, 2022 - Present
     },
     {
         id: "2",
-        title: "Lead Full-stack Engineer",
+        title: "Lead Full-stack Engineer @ X-Booker",
         text: `**Lead Full-stack Engineer**  
 X-Booker, Chessington, UK -- Contract, Remote -- Apr, 2022 - Dec, 2023
 
