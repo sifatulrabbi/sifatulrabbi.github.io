@@ -14,4 +14,15 @@ export interface StaticTerminalHistory {
 
 export type TerminalModeContext = {
     history: TerminalHistory[];
+    executing: boolean;
+    runCommand: (cmd: string) => Promise<void>;
+};
+
+export type FileEntry = {
+    name: string;
+    parent: FileEntry | null;
+    children: Map<string, FileEntry>;
+    pwd: string;
+    fileContent?: string;
+    cd(path: string): FileEntry;
 };
