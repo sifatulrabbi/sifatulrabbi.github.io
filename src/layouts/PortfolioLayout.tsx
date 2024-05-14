@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { HeroSection } from "@/modules";
 import DetailsSection from "@/modules/DetailsSection";
+import TerminalModePage from "@/modules/TerminalMode";
+import TerminalModeProvider from "@/modules/TerminalMode/TerminalModeProvider";
 
 const PortfolioLayout: React.FC = () => {
     const [showHero, setShowHero] = useState(true);
+    const [terminalMode, setTerminalMode] = useState(false);
 
     return (
         <main
@@ -11,14 +14,22 @@ const PortfolioLayout: React.FC = () => {
                 showHero ? "max-h-[100vh]" : ""
             }`}
         >
-            <DetailsSection />
-            <div
-                className={`z-[100] w-full fixed top-0 right-0 left-0 bottom-0 flex flex-col justify-start items-start bg-gray-900 transition-transform duration-500 ${
-                    showHero ? "" : "translate-x-full"
-                }`}
-            >
-                <HeroSection setShowHero={setShowHero} />
-            </div>
+            {!terminalMode && <DetailsSection />}
+            {!terminalMode && (
+                <div
+                    className={`z-[100] w-full fixed top-0 right-0 left-0 bottom-0 flex flex-col justify-start items-start bg-gray-900 transition-transform duration-500 ${
+                        showHero ? "" : "translate-x-full"
+                    }`}
+                >
+                    <HeroSection
+                        setShowHero={setShowHero}
+                        setTerminalMode={setTerminalMode}
+                    />
+                </div>
+            )}
+            <TerminalModeProvider>
+                {terminalMode && <TerminalModePage />}
+            </TerminalModeProvider>
         </main>
     );
 };

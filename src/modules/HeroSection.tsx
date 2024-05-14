@@ -3,14 +3,17 @@ import { GiClick } from "react-icons/gi";
 import { TbClick } from "react-icons/tb";
 import { AnimatedText } from "@/components";
 
+type Props = {
+    setShowHero: (v: boolean) => void;
+    setTerminalMode: (v: boolean) => void;
+};
+
 const aboutmeWords =
     "I am a software engineer with 3 years of experience in successfully building production applications and leading 2 SaaS teams remotely. I am a versatile engineer with the ability to adapt to new environments and learn technologies quickly. Currently, focused on backend engineering to pursue my interest in APIs, Software architectures, and distributed systems.".split(
         "",
     );
 
-const HeroSection: React.FC<{ setShowHero: (v: boolean) => void }> = ({
-    setShowHero,
-}) => {
+const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
     const [hoveringEnter, setHoveringEnter] = useState(false);
     const [aboutme, setAboutme] = useState("");
     const [engModeReady, setEngModeReady] = useState(false);
@@ -22,7 +25,7 @@ const HeroSection: React.FC<{ setShowHero: (v: boolean) => void }> = ({
             await new Promise((r) => setTimeout(r, 1000));
             for (let i = 0; i < aboutmeWords.length; i++) {
                 buf += aboutmeWords[i];
-                await new Promise((r) => setTimeout(r, 20));
+                await new Promise((r) => setTimeout(r, 5));
                 setAboutme(buf);
             }
             if (window.origin.startsWith("http://localhost")) {
@@ -54,9 +57,14 @@ const HeroSection: React.FC<{ setShowHero: (v: boolean) => void }> = ({
                 <h4 className="text-primary-400 font-mono text-xl md:text-2xl">
                     Software Engineer
                 </h4>
-                <p className="prose prose-invert prose-slate max-w-full">
-                    {aboutme}
-                    <span className="inline-block mb-[-5px] h-5 w-2 bg-primary-400 cursor-blink"></span>
+                <p className="prose prose-invert prose-slate max-w-full relative">
+                    <span className="absolute">
+                        {aboutme}
+                        <span className="inline-block mb-[-5px] h-5 w-2 bg-primary-400 cursor-blink"></span>
+                    </span>
+                    <span className="opacity-0 pointer-events-none invisible">
+                        {aboutmeWords.join("")}
+                    </span>
                 </p>
             </div>
 
@@ -93,7 +101,7 @@ const HeroSection: React.FC<{ setShowHero: (v: boolean) => void }> = ({
                 </button>
 
                 <button
-                    onClick={handleShowDetails}
+                    onClick={() => setTerminalMode(true)}
                     className={`text-slate-400 rounded-lg p-2 lg:hover:text-primary-400 lg:hover:border-primary-400 transition-transform duration-500 flex flex-row items-center justify-start overflow-hidden relative font-mono text-sm border border-dashed border-slate-400 ${
                         engModeReady
                             ? "opacity-100 scale-100"
