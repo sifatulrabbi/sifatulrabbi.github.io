@@ -44,7 +44,7 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
     function identifyCmd(cmdStr: string): TerminalHistory {
         const args = cmdStr.split(" ");
         let result: TerminalHistory;
-        switch (args[0]) {
+        switch (args[0].toLowerCase()) {
             case "ls":
                 result = new ls(cmdStr, currentDir.pwd, currentDir);
                 break;
