@@ -5,10 +5,10 @@ export const experiencesData = [
         text: `**Co-Founder & Lead Software Engineer**  
 HelloScribe AI, Florida, USA -- Full time, Remote -- Nov, 2022 - Present
 
-- Led the newly formed remote team as the company transitioned from MVP to the production phase and acquired 4000 new users
+- Led the newly formed remote team as the company transitioned from MVP to the production phase and acquired 3000+ new users
 - Built a metered billing system in 7 weeks that made subscriptions more flexible and 50% cheaper
 - Reduced the login/registration defect rate to 0% and improved the security by rewriting all the Auth modules in 2 weeks
-- Architected a performant and flexible data processing pipelines that can handle up to 5,000 concurrent requests by utilizing Python’s async and concurrency
+- Architected a performant and flexible data processing pipelines that can handle up to 1,000 concurrent requests by utilizing Python’s async and concurrency
 - Improved debugging velocity by implementing detailed logging in the production apps
 
 `,

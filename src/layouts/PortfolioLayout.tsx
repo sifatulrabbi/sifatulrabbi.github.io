@@ -8,9 +8,14 @@ const PortfolioLayout: React.FC = () => {
     const [showHero, setShowHero] = useState(true);
     const [terminalMode, setTerminalMode] = useState(false);
 
+    // <main
+    //     className={`w-full max-w-full bg-gray-900 min-h-[100vh] overflow-hidden ${
+    //         !terminalMode && showHero ? "max-h-[100vh]" : ""
+    //     }`}
+    // >
     return (
         <main
-            className={`w-full max-w-full bg-gray-900 min-h-[100vh] overflow-hidden ${
+            className={`w-full min-h-max py-6 px-8 lg:pl-[332px] 2xl:pl-8 mt-[50px] gap-12 flex flex-col justify-start items-start 2xl:items-center ${
                 !terminalMode && showHero ? "max-h-[100vh]" : ""
             }`}
         >

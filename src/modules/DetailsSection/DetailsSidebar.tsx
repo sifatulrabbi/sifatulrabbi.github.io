@@ -28,8 +28,8 @@ const DetailsSidebar: React.FC<{
 
     return (
         <aside
-            className={`z-[100] fixed top-0 left-0 bottom-0 bg-gray-900 min-w-max w-full md:max-w-[200px] lg:max-w-[250px] flex flex-col p-4 gap-2 transition-transform duration-300 overflow-y-auto font-display
-            ${showSidebar ? "" : "-translate-x-full md:translate-x-0"}`}
+            className={`z-[100] fixed top-0 left-0 bottom-0 bg-gray-900 min-w-max w-full md:max-w-[250px] flex flex-col p-4 gap-2 transition-transform duration-300 overflow-y-auto font-display
+            ${showSidebar ? "" : "-translate-x-full lg:translate-x-0"}`}
         >
             <div className="w-full flex items-center justify-between mb-4">
                 <button onClick={() => window.location.reload()}>
@@ -42,7 +42,7 @@ const DetailsSidebar: React.FC<{
                 </button>
                 <button
                     onClick={() => setShowSidebar(false)}
-                    className="p-2 rounded-lg text-slate-300 bg-slate-800/50 md:hidden"
+                    className="p-2 rounded-lg text-slate-300 bg-slate-800/50 lg:hidden"
                 >
                     <FaTimes />
                 </button>
