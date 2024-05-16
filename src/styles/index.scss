@@ -19,7 +19,7 @@ html {
 body {
     font-size: 16px;
     line-height: 1.6;
-    @apply font-body bg-gray-900 text-slate-400 max-w-full overflow-x-hidden;
+    @apply font-body bg-gray-950 text-slate-400 max-w-full overflow-x-hidden;
 }
 
 h1,
@@ -50,7 +50,7 @@ h6 {
 }
 
 .display-content {
-    @apply prose prose-invert max-w-full prose-slate prose-p:text-slate-200 prose-ul:text-slate-200 prose-strong:text-slate-200 prose-pre:bg-slate-800 prose-h2:text-slate-200;
+    @apply prose prose-invert max-w-full prose-slate prose-p:text-slate-200 prose-ul:text-slate-200 prose-strong:text-slate-200 prose-pre:bg-slate-900 prose-h2:text-slate-200;
 
     img {
         width: 100%;
@@ -60,7 +60,7 @@ h6 {
 }
 
 .display-content-muted {
-    @apply prose prose-sm prose-invert max-w-full prose-slate prose-p:text-slate-300 prose-ul:text-slate-300 prose-strong:text-slate-300 prose-pre:bg-slate-800 prose-h2:text-slate-300;
+    @apply prose prose-sm prose-invert max-w-full prose-slate prose-p:text-slate-300 prose-ul:text-slate-300 prose-strong:text-slate-300 prose-pre:bg-slate-900 prose-h2:text-slate-300;
 
     &.error {
         color: #b91c1c !important;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { homePageTabs } from "@/constants";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import DetailsSidebar from "./DetailsSidebar";
 import ExperiencesSection from "./ExperiencesSection";
 import ProjectsSection from "./ProjectsSection";
@@ -19,10 +19,10 @@ const DetailsSection: React.FC<Props> = ({ enterTerminalMode }) => {
     return (
         <div className="w-full h-full max-w-full flex flex-row justify-start items-start gap-6">
             <button
-                onClick={() => setShowSidebar(true)}
-                className="fixed top-6 left-6 max-h-max p-2 text-lg rounded-lg text-slate-400 bg-slate-800 lg:hidden z-[100]"
+                onClick={() => setShowSidebar((p) => !p)}
+                className="fixed top-6 right-6 max-h-max p-2 text-lg rounded-lg text-slate-400 bg-slate-800 lg:hidden z-[100]"
             >
-                <FaBars />
+                {showSidebar ? <FaTimes /> : <FaBars />}
             </button>
             <DetailsSidebar
                 activeTab={tab}

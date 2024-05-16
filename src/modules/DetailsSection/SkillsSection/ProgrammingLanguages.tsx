@@ -66,7 +66,7 @@ const ProgrammingLanguages: React.FC = () => {
 
     return (
         <>
-            <div className="w-full prose prose-invert prose-slate max-w-full prose-h3:text-slate-300 prose-h3:my-2 prose-strong:text-slate-300">
+            <div className="w-full prose prose-invert prose-slate max-w-4xl prose-h3:text-slate-300 prose-h3:my-2 prose-strong:text-slate-300">
                 <h3>Programming Languages</h3>
                 <div className="w-full flex flex-row flex-wrap items-center justify-stretch gap-2">
                     {languages.map((l) => (

@@ -1,74 +1,66 @@
-import React, { useState } from "react";
-import { FaLinkedin, FaGithub, FaEnvelope, FaTwitter } from "react-icons/fa6";
-import { FaExclamationTriangle } from "react-icons/fa";
+import React from "react";
+import { FaLinkedin, FaGithub, FaEnvelope, FaXTwitter } from "react-icons/fa6";
 import { AnimatedText } from "@/components";
-import { EmailsService } from "@/services";
+// import { FaExclamationTriangle } from "react-icons/fa";
+// import { EmailsService } from "@/services";
 
 const links = [
     {
-        name: "LinkedIn",
-        icon: <FaLinkedin />,
-        href: "https://linkedin.com/in/sifatulrabbi",
+        name: "sifatulrabbii@gmail.com",
+        icon: <FaEnvelope />,
+        href: "mailto:sifatul@sifatul.com",
     },
     {
-        name: "X (Twitter)",
-        icon: <FaTwitter />,
-        href: "https://twitter.com/sifatul_rabbi",
-    },
-    {
-        name: "GitHub",
+        name: "github.com/sifatulrabbi",
         icon: <FaGithub />,
         href: "https://github.com/sifatulrabbi",
     },
     {
-        name: "Email",
-        icon: <FaEnvelope />,
-        href: "mailto:sifatul@sifatul.com",
+        name: "linkedin.com/in/sifatulrabbi",
+        icon: <FaLinkedin />,
+        href: "https://linkedin.com/in/sifatulrabbi",
+    },
+    {
+        name: "twitter.com/sifatul_rabbi",
+        icon: <FaXTwitter />,
+        href: "https://twitter.com/sifatul_rabbi",
     },
 ];
 
 const ContactPage: React.FC = () => {
-    const [replyTo, setReplyTo] = useState("");
-    const [name, setName] = useState("");
-    const [message, setMessage] = useState("");
-    const [subject, setSubject] = useState("");
-    const [loading, setLoading] = useState(false);
+    // const [replyTo, setReplyTo] = useState("");
+    // const [name, setName] = useState("");
+    // const [message, setMessage] = useState("");
+    // const [subject, setSubject] = useState("");
+    // const [loading, setLoading] = useState(false);
 
-    const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        if (window.origin.includes("https://sifatulrabbi.com")) {
-            throw new Error("Contact form is temporarily disabled.");
-        }
-        setLoading(true);
-        const emailService = new EmailsService();
-        try {
-            await emailService.sendEmailTome({
-                replyTo: replyTo,
-                name: name,
-                message: message,
-                subject: subject,
-            });
-            setReplyTo("");
-            setMessage("");
-            setSubject("");
-        } catch (err) {
-            console.error(err);
-        } finally {
-            setLoading(false);
-        }
-    };
+    // const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
+    //     e.preventDefault();
+    //     if (window.origin.includes("https://sifatulrabbi.com")) {
+    //         throw new Error("Contact form is temporarily disabled.");
+    //     }
+    //     setLoading(true);
+    //     const emailService = new EmailsService();
+    //     try {
+    //         await emailService.sendEmailTome({
+    //             replyTo: replyTo,
+    //             name: name,
+    //             message: message,
+    //             subject: subject,
+    //         });
+    //         setReplyTo("");
+    //         setMessage("");
+    //         setSubject("");
+    //     } catch (err) {
+    //         console.error(err);
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
 
     return (
-        <section className="w-full min-h-max flex flex-col justify-start items-start py-6 px-8 md:ml-[200px] lg:ml-[250px] mt-[50px]">
-            <div className="z-[1] fixed top-6 left-1/2 -translate-x-1/2 max-w-full py-2 px-4 bg-gray-800 text-slate-300 font-thin text-sm flex flex-row items-center gap-2 rounded-lg">
-                <FaExclamationTriangle className="text-orange-400" />
-                <p className="min-w-max">
-                    <span className="font-bold text-blue-300">Contact</span> is
-                    being developed!
-                </p>
-            </div>
-
-            <div className="w-full prose max-w-full prose-h1:text-slate-300 prose-h1:font-bold prose-a:text-slate-400 prose-a:no-underline lg:hover:prose-a:text-primary-400 prose-h4:text-slate-300 prose-h4:font-medium">
+        <section className="w-full gap-12 flex flex-col justify-start items-start 2xl:items-center">
+            <div className="w-full prose max-w-4xl prose-h1:text-slate-300 prose-h1:font-bold prose-a:text-slate-400 prose-a:no-underline lg:hover:prose-a:text-primary-400 prose-h4:text-slate-300 prose-h4:font-medium">
                 <h1>
                     {"Let's Connect".split("").map((l, i) => (
                         <AnimatedText
@@ -78,7 +70,8 @@ const ContactPage: React.FC = () => {
                         />
                     ))}
                 </h1>
-                <div className="w-full flex flex-col gap-8 justify-start items-start lg:flex-row-reverse">
+                <p className="text-slate-300">You can find me here</p>
+                <div className="w-full flex flex-col gap-8 justify-start items-start">
                     <div className="flex flex-col gap-2 min-w-max lg:min-w-[250px]">
                         {links.map((l) => (
                             <a
@@ -94,7 +87,7 @@ const ContactPage: React.FC = () => {
                         ))}
                     </div>
 
-                    <form
+                    {/*<form
                         action="submit"
                         onSubmit={handleSubmit}
                         className="w-full flex flex-col gap-4 text-slate-400"
@@ -164,7 +157,7 @@ const ContactPage: React.FC = () => {
                                 "Send"
                             )}
                         </button>
-                    </form>
+                    </form>*/}
                 </div>
             </div>
         </section>

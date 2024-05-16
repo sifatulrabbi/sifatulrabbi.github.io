@@ -4,5 +4,4 @@ export const homePageTabs = {
     skills: "skills",
     contact: "contact",
     // chat: "chat",
-    terminalMode: "terminalMode",
 };

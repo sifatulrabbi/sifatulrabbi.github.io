@@ -49,8 +49,8 @@ const projectsData = [
 
 const ProjectsSection: React.FC = () => {
     return (
-        <section className="w-full min-h-max flex flex-col justify-start items-start py-6 px-8 md:ml-[200px] lg:ml-[250px] mt-[50px]">
-            <div className="w-full prose prose-invert prose-slate max-w-full prose-h1:text-slate-300 prose-h1:font-bold">
+        <section className="w-full gap-12 flex flex-col justify-start items-start 2xl:items-center">
+            <div className="w-full prose prose-invert prose-slate max-w-4xl prose-h1:text-slate-300 prose-h1:font-bold">
                 <h1>
                     {"Projects".split("").map((l, i) => (
                         <AnimatedText
@@ -66,13 +66,10 @@ const ProjectsSection: React.FC = () => {
                 </small>
             </div>
 
-            <br />
-            <br />
-
             {projectsData.map((d) => (
                 <div
                     key={d.title}
-                    className="w-full prose prose-invert prose-slate max-w-full prose-h3:text-slate-300 prose-h3:my-1 prose-strong:text-slate-300"
+                    className="w-full prose prose-invert prose-slate max-w-4xl prose-h3:text-slate-300 prose-h3:my-1 prose-strong:text-slate-300"
                 >
                     <small className="flex flex-row items-center gap-1 text-slate-400 font-mono">
                         {d.projectType}

@@ -13,7 +13,7 @@ const Navbar: React.FC<Props> = ({ closeTerminal }) => {
             </button>
             <button
                 onClick={closeTerminal}
-                className="flex p-2 text-sm rounded bg-slate-600 hover:rounded-full transition-all duration-300"
+                className="flex p-2 text-sm rounded bg-slate-700 hover:rounded-full"
             >
                 <FaX className="text-white" />
             </button>

@@ -18,7 +18,7 @@ const concepts: Concept[] = [
 
 const Concepts: React.FC = () => {
     return (
-        <div className="w-full prose prose-slate prose-invert max-w-full prose-h3:text-slate-300 prose-h4:my-2prose-strong:text-slate-300">
+        <div className="w-full prose prose-slate prose-invert max-w-4xl prose-h3:text-slate-300 prose-h4:my-2prose-strong:text-slate-300">
             <h3>Concepts and Interests</h3>
             <div className="w-full flex flex-row flex-wrap items-center justify-stretch gap-2">
                 {concepts.map((c) => (

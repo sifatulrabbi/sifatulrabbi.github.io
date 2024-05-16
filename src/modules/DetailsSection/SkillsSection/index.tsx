@@ -8,8 +8,8 @@ import Concepts from "./Concepts";
 
 const SkillsSection: React.FC = () => {
     return (
-        <section className="w-full min-h-max flex flex-col justify-start items-start py-6 px-8 md:ml-[200px] lg:ml-[250px] mt-[50px]">
-            <div className="w-full prose prose-invert prose-slate max-w-full prose-h1:text-slate-300 prose-h1:font-bold">
+        <section className="w-full gap-12 flex flex-col justify-start items-start 2xl:items-center">
+            <div className="w-full prose prose-invert prose-slate max-w-4xl prose-h1:text-slate-300 prose-h1:font-bold">
                 <h1>
                     {"Skills & Interests".split("").map((l, i) => (
                         <AnimatedText
@@ -24,20 +24,10 @@ const SkillsSection: React.FC = () => {
                     development.
                 </small>
             </div>
-            <br />
-            <br />
             <ProgrammingLanguages />
-            <br />
-            <br />
             <Concepts />
-            <br />
-            <br />
             <Databases />
-            <br />
-            <br />
             <Frameworks />
-            <br />
-            <br />
             <Tools />
         </section>
     );

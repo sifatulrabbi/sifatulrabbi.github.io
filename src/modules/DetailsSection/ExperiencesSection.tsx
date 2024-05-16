@@ -25,7 +25,7 @@ const ExperiencesSection: React.FC = () => {
             {experienceSectionData.map((d) => (
                 <div
                     key={d.companyName}
-                    className="w-full prose prose-slate prose-invert prose-h4:font-medium prose-h4:mt-0 flex flex-col border-b-2 border-slate-700 last:border-transparent mb-8 prose-a:no-underline max-w-4xl"
+                    className="w-full prose prose-slate prose-invert prose-h4:font-medium prose-h4:mt-0 flex flex-col border-b-2 border-slate-800 last:border-transparent mb-8 prose-a:no-underline max-w-4xl"
                 >
                     <span className="flex flex-row items-center gap-2 text-slate-400 text-sm">
                         <span className="inline-block min-w-max">
@@ -45,7 +45,7 @@ const ExperiencesSection: React.FC = () => {
                     >
                         {d.position}
                     </h3>
-                    <div className="flex flex-col p-4 rounded-lg bg-slate-800">
+                    <div className="flex flex-col p-4 rounded-lg bg-slate-900">
                         <a
                             href={d.companyUrl}
                             target="_blank"
@@ -79,7 +79,7 @@ const ExperiencesSection: React.FC = () => {
                         {d.techStack.map((t) => (
                             <span
                                 key={`tech-stack-${t}`}
-                                className="inline-block text-xs px-3 py-1 rounded-full bg-slate-800"
+                                className="inline-block text-xs px-3 py-1 rounded-full bg-slate-900"
                             >
                                 {t}
                             </span>

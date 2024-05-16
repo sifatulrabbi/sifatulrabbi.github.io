@@ -13,7 +13,7 @@ const dbs: DB[] = [
 
 const Databases: React.FC = () => {
     return (
-        <div className="w-full prose prose-slate prose-invert max-w-full prose-h3:text-slate-300 prose-h4:my-2 prose-strong:text-slate-400">
+        <div className="w-full prose prose-slate prose-invert max-w-4xl prose-h3:text-slate-300 prose-h4:my-2 prose-strong:text-slate-400">
             <h3>Databases</h3>
             <div className="w-full grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
                 {dbs.map((db) => (

@@ -27,11 +27,11 @@ const TerminalBody: React.FC = () => {
                             className="w-full flex flex-col"
                         >
                             <div className="flex w-full flex-col">
-                                <span className="text-primary-400 inline-block min-w-max">
+                                <span className="text-primary-200 inline-block min-w-max">
                                     {h.pwd}
                                 </span>
                                 <div className="flex items-center justify-start w-full relative gap-2">
-                                    <span className="text-primary-400 inline-block min-w-max">
+                                    <span className="text-primary-200 inline-block min-w-max">
                                         {"$"}
                                     </span>
                                     <span>{h.cmd}</span>
@@ -49,14 +49,14 @@ const TerminalBody: React.FC = () => {
             )}
 
             <div className="w-full h-full flex flex-col items-start justify-start">
-                <span className="text-primary-400 inline-block min-w-max">
+                <span className="text-primary-200 inline-block min-w-max">
                     {currentDir.pwd}
                 </span>
                 <form
                     onSubmit={run}
                     className="flex items-center justify-start w-full relative gap-2 h-full"
                 >
-                    <span className="text-primary-400 inline-block min-w-max">
+                    <span className="text-primary-200 inline-block min-w-max">
                         {"$"}
                     </span>
                     <input
@@ -68,7 +68,7 @@ const TerminalBody: React.FC = () => {
                         }
                         maxLength={200}
                         autoFocus
-                        className="w-full border-transparent outline-none focus:bg-transparent bg-slate-950"
+                        className="w-full border-transparent outline-none focus:bg-transparent bg-slate-900"
                         autoComplete="off"
                     />
                 </form>

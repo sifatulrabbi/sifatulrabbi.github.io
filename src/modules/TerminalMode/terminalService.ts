@@ -330,12 +330,12 @@ export class Empty implements TerminalHistory {
 }
 
 const helpText = marked(`Available commands:
-- <span class="text-primary-400">help, h</span> -> See all the available command list
-- <span class="text-primary-400">list_exp</span> -> All my experiences
-- <span class="text-primary-400">list_proj</span> -> All my Projects
-- <span class="text-primary-400">ls</span> -> List all the directories/files of the current path
-- <span class="text-primary-400">cd [dir name]</span> -> Move between directories
-- <span class="text-primary-400">cat [file name]</span> -> Print the contents of a file. Use this to see my experiences and project descriptions
+- <span class="text-primary-200">help, h</span> -> See all the available command list
+- <span class="text-primary-200">list_exp</span> -> All my experiences
+- <span class="text-primary-200">list_proj</span> -> All my Projects
+- <span class="text-primary-200">ls</span> -> List all the directories/files of the current path
+- <span class="text-primary-200">cd [dir name]</span> -> Move between directories
+- <span class="text-primary-200">cat [file name]</span> -> Print the contents of a file. Use this to see my experiences and project descriptions
 
 Tip: Using only the first few words of a file/directory name will also work. i.e. 'cd ex' will work.`) as string;
 

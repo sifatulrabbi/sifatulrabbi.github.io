@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useBlogs } from "@/modules/Blogs/blogsContext";
 import { Link } from "react-router-dom";
-import { FaTimes, FaBars, FaChevronDown } from "react-icons/fa";
+import { FaTimes, FaBars, FaChevronDown, FaGithub } from "react-icons/fa";
 
 const BlogsSidebar: React.FC = () => {
     const [expandCategories, setExpandCategories] = useState(false);
@@ -11,16 +11,16 @@ const BlogsSidebar: React.FC = () => {
     return (
         <>
             <button
-                onClick={() => setShowSidebar(true)}
-                className="fixed top-6 left-6 max-h-max p-2 text-lg rounded-lg text-slate-300 bg-slate-800 lg:hidden z-[100]"
+                onClick={() => setShowSidebar((p) => !p)}
+                className="fixed top-6 right-6 max-h-max p-2 text-lg rounded-lg text-slate-300 bg-slate-800 lg:hidden z-[100]"
             >
-                <FaBars />
+                {showSidebar ? <FaTimes /> : <FaBars />}
             </button>
             <aside
-                className={`z-[100] fixed top-0 left-0 bottom-0 bg-gray-900 min-w-max w-full lg:max-w-[300px] flex flex-col p-4 gap-2 transition-transform duration-300 overflow-y-auto font-display
+                className={`z-[100] fixed top-0 left-0 bottom-0 bg-gray-900 min-w-max w-full lg:max-w-[300px] flex flex-col p-6 gap-2 transition-transform duration-300 overflow-y-auto font-display text-sm
                 ${showSidebar ? "" : "-translate-x-full lg:translate-x-0"}`}
             >
-                <div className="w-full flex items-center justify-between mb-4">
+                <div className="w-full flex items-start justify-between mb-4">
                     <Link to="/blogs">
                         <img
                             src="/logo.png"
@@ -31,7 +31,7 @@ const BlogsSidebar: React.FC = () => {
                     </Link>
                     <button
                         onClick={() => setShowSidebar(false)}
-                        className="p-2 rounded-lg text-slate-300 bg-slate-800/50 lg:hidden"
+                        className="p-2 rounded-lg text-slate-300 bg-slate-800 lg:hidden text-lg"
                     >
                         <FaTimes />
                     </button>
@@ -96,12 +96,20 @@ const BlogsSidebar: React.FC = () => {
                 >
                     Portfolio
                 </Link>
-                <div className="mt-auto pt-6">
+                <div className="mt-auto pt-6 flex items-center justify-between font-body text-base">
                     <small className="text-slate-300">
                         Built with{" "}
-                        <span className="text-primary-400">TypeScript</span> &{" "}
-                        <span className="text-primary-400">Go</span>
+                        <span className="font-medium">TypeScript</span> &{" "}
+                        <span className="font-medium">Go</span>
                     </small>
+                    <a
+                        href="https://github.com/sifatulrabbi/sifatulrabbi.github.io"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-slate-200 text-xl"
+                    >
+                        <FaGithub />
+                    </a>
                 </div>
             </aside>
         </>
