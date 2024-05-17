@@ -9,9 +9,11 @@ type Props = {
 };
 
 const aboutmeWords =
-    "I am a software engineer with 3 years of experience in successfully building production applications and leading 2 SaaS teams remotely. I am a versatile engineer with the ability to adapt to new environments and learn technologies quickly. Currently, focused on backend engineering to pursue my interest in APIs, Software architectures, and distributed systems.".split(
+    "I discovered my love for coding and building things while modding GTA 5 with Lua and XML to add new 'Cars' and 'Peds'. Coding and crafting softwares felt like having superpowers so started diving deep. As a Full-stack Engineer, I've led 2 SaaS startups in the past 3 years, focusing on translating business requirements in to applications. Building and designing backend systems excites me the most. ".split(
         "",
     );
+const aboutMeExt =
+    "And I use <strong class='text-slate-400'>Neovim</strong> by the way.";
 
 const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
     const [hoveringEnter, setHoveringEnter] = useState(false);
@@ -26,13 +28,14 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
                 await new Promise((r) => setTimeout(r, 5));
                 setAboutme(buf);
             }
+            setAboutme(buf + aboutMeExt);
         })();
     }, []);
 
     const handleShowDetails = () => setShowHero(false);
 
     return (
-        <div className="w-full h-full p-6 flex flex-col justify-center lg:max-w-[60%] mx-auto gap-10">
+        <div className="w-full h-full p-6 flex flex-col justify-center max-w-4xl mx-auto gap-10">
             <div className="w-full flex flex-col mx-auto gap-6 relative">
                 <img
                     src="/me.png"
@@ -54,12 +57,17 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
                 </h4>
                 <p className="prose prose-invert prose-slate max-w-full relative">
                     <span className="absolute">
-                        {aboutme}
+                        <span
+                            dangerouslySetInnerHTML={{ __html: aboutme }}
+                        ></span>
                         <span className="inline-block mb-[-5px] h-5 w-2 bg-primary-400 cursor-blink"></span>
                     </span>
-                    <span className="opacity-0 pointer-events-none invisible">
-                        {aboutmeWords.join("")}
-                    </span>
+                    <span
+                        className="opacity-0 pointer-events-none invisible"
+                        dangerouslySetInnerHTML={{
+                            __html: aboutmeWords.join("") + aboutMeExt,
+                        }}
+                    ></span>
                 </p>
             </div>
 

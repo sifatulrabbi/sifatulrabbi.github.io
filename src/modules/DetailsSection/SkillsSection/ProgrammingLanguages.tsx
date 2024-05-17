@@ -14,9 +14,13 @@ type Language = {
 
 const languages: Language[] = [
     {
+        name: "TypeScript",
+        description: "",
+        projects: [],
+    },
+    {
         name: "JavaScript",
-        description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut tempore molestias odio aspernatur fugiat, doloremque blanditiis laborum sunt totam quidem ratione, beatae et praesentium, soluta non dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut tempore molestias odio aspernatur fugiat, doloremque blanditiis laborum sunt totam quidem ratione, beatae et praesentium, soluta non dicta.",
+        description: "",
         projects: [
             {
                 title: "Social Media app",
@@ -42,21 +46,13 @@ const languages: Language[] = [
         ],
     },
     {
-        name: "Python",
-        description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut tempore molestias odio aspernatur fugiat, doloremque blanditiis laborum sunt totam quidem ratione, beatae et praesentium, soluta non dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut tempore molestias odio aspernatur fugiat, doloremque blanditiis laborum sunt totam quidem ratione, beatae et praesentium, soluta non dicta.",
-        projects: [],
-    },
-    {
-        name: "TypeScript",
-        description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut tempore molestias odio aspernatur fugiat, doloremque blanditiis laborum sunt totam quidem ratione, beatae et praesentium, soluta non dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut tempore molestias odio aspernatur fugiat, doloremque blanditiis laborum sunt totam quidem ratione, beatae et praesentium, soluta non dicta.",
-        projects: [],
-    },
-    {
         name: "Go",
-        description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut tempore molestias odio aspernatur fugiat, doloremque blanditiis laborum sunt totam quidem ratione, beatae et praesentium, soluta non dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut tempore molestias odio aspernatur fugiat, doloremque blanditiis laborum sunt totam quidem ratione, beatae et praesentium, soluta non dicta.",
+        description: "",
+        projects: [],
+    },
+    {
+        name: "Python",
+        description: "",
         projects: [],
     },
 ];

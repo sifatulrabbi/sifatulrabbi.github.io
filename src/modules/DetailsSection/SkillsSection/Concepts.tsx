@@ -6,14 +6,13 @@ type Concept = {
 };
 
 const concepts: Concept[] = [
-    { name: "Full Stack Development", description: "" },
-    { name: "SPA (Single Page Applications)", description: "" },
-    { name: "Microservices", description: "" },
-    { name: "Problem Solving", description: "" },
-    { name: "API development", description: "" },
+    { name: "REST APIs", description: "" },
+    { name: "SPA", description: "" },
     { name: "Async and Concurrency", description: "" },
+    { name: "Microservices", description: "" },
     { name: "Design Patterns", description: "" },
-    { name: "Distributed Systems", description: "" },
+    { name: "System Design", description: "" },
+    { name: "TDD & BDD", description: "" },
 ];
 
 const Concepts: React.FC = () => {

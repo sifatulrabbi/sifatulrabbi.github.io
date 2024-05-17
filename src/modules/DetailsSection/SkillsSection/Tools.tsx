@@ -7,11 +7,9 @@ type Props = {
 
 const tools: Props[] = [
     { name: "Git", description: "" },
-    { name: "GitHub", description: "" },
+    { name: "Neovim", description: "" },
     { name: "Docker", description: "" },
-    { name: "Linux", description: "" },
-    { name: "GCP", description: "" },
-    { name: "VSCode", description: "" },
+    { name: "Tmux", description: "" },
 ];
 
 const Tools: React.FC = () => {

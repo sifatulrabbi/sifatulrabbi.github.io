@@ -7,8 +7,9 @@ type DB = {
 
 const dbs: DB[] = [
     { name: "PostgreSQL", description: "" },
-    { name: "MongoDB", description: "" },
     { name: "Redis", description: "" },
+    { name: "Cassandra", description: "" },
+    { name: "MongoDB", description: "" },
 ];
 
 const Databases: React.FC = () => {
