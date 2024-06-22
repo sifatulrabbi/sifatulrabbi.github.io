@@ -17,6 +17,7 @@ HelloScribe AI, Florida, USA -- Full time, Remote -- Nov 2022 - Jun 2024
 
 `,
     },
+
     {
         id: "2",
         title: "Lead Full-stack Engineer @ X-Booker",
@@ -34,6 +35,14 @@ X-Booker, Chessington, UK -- Contract, Remote -- Apr 2022 - Feb 2024
 - Architected a role-based auth system as well as an API integration so that the organizations can have direct external connections with other lead generation platforms
 - Onboarded and mentored junior developers, in understanding the platform, and developing new features
 - Developed an automated deployment pipeline to auto-deploy two different versions of the system on GCP’s Kubernetes cluster
+`,
+    },
+
+    {
+        id: "3",
+        title: "Freelance Full-stack Developer",
+        text: `**Freelance Full-stack Developer**  
+Self Employed -- June 2021 - Present
 `,
     },
 ];
