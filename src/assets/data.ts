@@ -6,8 +6,8 @@ export const experienceSectionData = [
         companySummary:
             "HelloScribe AI is an AI productivity tool that speeds up various planning and content-writing tasks. It provides an intuitive web app and utilizes LLM engines to aid in plan-making and content writing.",
         position: "Co-Founder & Lead Software Engineer",
-        from: "Feb 2024",
-        till: "Present",
+        from: "Nov 2022",
+        till: "Jun 2024",
         current: true,
         jobType: "Remote",
         employmentType: "Full-time",

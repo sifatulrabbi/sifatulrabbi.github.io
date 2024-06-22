@@ -3,7 +3,7 @@ export const experiencesData = [
         id: "1",
         title: "Co-Founder & Lead Software Engineer @ HelloScribe AI",
         text: `**Co-Founder & Lead Software Engineer**  
-HelloScribe AI, Florida, USA -- Full time, Remote -- Nov, 2022 - Present
+HelloScribe AI, Florida, USA -- Full time, Remote -- Nov 2022 - Jun 2024
 
 *HelloScribe AI is an AI productivity tool that speeds up various planning and content-writing tasks. It provides an intuitive web app and utilizes LLM engines to aid in plan-making and content writing.*
 
@@ -21,7 +21,7 @@ HelloScribe AI, Florida, USA -- Full time, Remote -- Nov, 2022 - Present
         id: "2",
         title: "Lead Full-stack Engineer @ X-Booker",
         text: `**Lead Full-stack Engineer**  
-X-Booker, Chessington, UK -- Contract, Remote -- Apr, 2022 - Dec, 2023
+X-Booker, Chessington, UK -- Contract, Remote -- Apr 2022 - Feb 2024
 
 *X-Booker aims to streamline project management by combining most of the project management solutions into one single system with intelligent automation as well as providing an intuitive UI for easier navigation and business management.*
 
