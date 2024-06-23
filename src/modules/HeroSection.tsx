@@ -41,7 +41,7 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
         <div className="w-full h-full p-6 flex flex-col justify-center max-w-4xl mx-auto gap-10">
             <div className="w-full flex flex-col mx-auto gap-6 relative">
                 <img
-                    src="/me.png"
+                    src="/me.jpg"
                     height="100px"
                     width="100px"
                     className="rounded-full"
@@ -58,7 +58,7 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
                 <h4 className="text-primary-400 font-mono text-xl md:text-2xl">
                     Software Engineer
                 </h4>
-                <p className="prose prose-invert prose-slate max-w-full relative">
+                <p className="prose prose-invert prose-slate max-w-full relative text-lg">
                     <span className="absolute">
                         <span
                             dangerouslySetInnerHTML={{ __html: aboutme }}
