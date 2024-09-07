@@ -1,5 +1,24 @@
 export const experienceSectionData = [
     {
+        companyName: "tambi AI",
+        companyLocation: "USA",
+        companyUrl: "https://tambi.ai",
+        companySummary:
+            "Tambi is a customer support automation company that combines lightweight tools, human service, and AI to provide end-to-end automation, offering simplified support with easy integrations and modern messaging dashboards.",
+        position: "Full-stack Developer",
+        from: "Aug 2024",
+        till: "Present",
+        current: true,
+        jobType: "Remote",
+        employmentType: "Contract",
+        description: [
+            "Collaborated with the founder and team to resolve technical complexities",
+            "Implemented features such as insights generation and custom agent rules seamlessly without interrupting the existing system",
+            "Improved the tambi widget to integrate with any website and be mobile responsive",
+        ],
+        techStack: ["Python", "TypeScript", "PostgreSQL", "Next.js", "FastAPI"],
+    },
+    {
         companyName: "HelloScribe A.I",
         companyLocation: "Florida, USA",
         companyUrl: "https://helloscribe.ai",
@@ -23,6 +42,8 @@ export const experienceSectionData = [
         techStack: [
             "Python",
             "JavaScript",
+            "FasAPI",
+            "Vue.js",
             "Node.js",
             "MongoDB",
             "Redis",
@@ -56,6 +77,7 @@ export const experienceSectionData = [
             "TypeScript",
             "Node.js",
             "Python",
+            "Next.js",
             "GCP",
             "Redis",
             "Docker",

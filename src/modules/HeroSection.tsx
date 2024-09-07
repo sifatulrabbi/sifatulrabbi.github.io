@@ -12,8 +12,9 @@ type Props = {
 //     "I discovered my love for coding and building things while modding GTA 5 with Lua and XML to add new 'Cars' and 'Peds'. Coding and crafting softwares felt like having superpowers so started diving deep. As a Full-stack Engineer, I've led 2 SaaS startups in the past 3 years, focusing on translating business requirements in to applications. Building and designing backend systems excites me the most. ".split(
 //         "",
 //     );
+// I've helped rebuild HelloScribe AI's entire system in a more secure and scalable way.
 const aboutmeWords =
-    "I love building software and collaborating with awesome people. I often use Go, Python, or TypeScript to hack out most of my curiosities on Neovim. I enjoy exploring the tech world and practicing system design concepts, which makes me more focused on the overall system. I've helped rebuild HelloScribe AI's entire system in a more secure and scalable way.".split(
+    "I love building software and collaborating with awesome people. I often use Go, Python, or TypeScript to hack out most of my curiosities on Neovim. I enjoy exploring the tech world and practicing system design concepts, which makes me more focused on the overall system.".split(
         "",
     );
 const aboutMeExt = "";
@@ -41,7 +42,7 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
         <div className="w-full h-full p-6 flex flex-col justify-center max-w-4xl mx-auto gap-10">
             <div className="w-full flex flex-col mx-auto gap-6 relative">
                 <img
-                    src="/me.jpg"
+                    src="/me2.png"
                     height="100px"
                     width="100px"
                     className="rounded-full"
