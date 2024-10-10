@@ -1,6 +1,34 @@
 export const experiencesData = [
     {
         id: "1",
+        title: "Full-stack & AI Developer @ SEQUESTO",
+        text: `**Full-stack & AI Developer**  
+SEQUESTO, Belgium -- Full-time, Remote -- Oct 2024 - Present
+
+*RFX Response Platform powered by AI*
+- Building the next level RFX platform for the elits
+
+`,
+    },
+    {
+        id: "2",
+        title: "Full-stack Developer @ tambi.ai",
+        text: `**Full-stack Developer**  
+tambi.ai, USA -- Contarct, Remote -- Aug 2024 - Sep 2024
+
+*Tambi is a customer support automation company that combines lightweight tools, human service, and AI to provide end-to-end automation, offering simplified support with easy integrations and modern messaging dashboards.*
+
+- Collaborated with the founder and team to resolve technical complexities
+- Built a high throughput logging service to post detailed error logs in slack
+- Implemented features such as insights generation and custom tambi AI bot rules seamlessly without interrupting the existing system
+- Improved the tambi web widget to integrate with any website and be fully mobile-responsive
+- Maintained the backend Python application as well as fixed bugs and performed code reviews
+- Partially built Tambi's react-native SDK
+
+`,
+    },
+    {
+        id: "3",
         title: "Co-Founder & Lead Software Engineer @ HelloScribe AI",
         text: `**Co-Founder & Lead Software Engineer**  
 HelloScribe AI, Florida, USA -- Full time, Remote -- Nov 2022 - Jun 2024
@@ -19,7 +47,7 @@ HelloScribe AI, Florida, USA -- Full time, Remote -- Nov 2022 - Jun 2024
     },
 
     {
-        id: "2",
+        id: "4",
         title: "Lead Full-stack Engineer @ X-Booker",
         text: `**Lead Full-stack Engineer**  
 X-Booker, Chessington, UK -- Contract, Remote -- Apr 2022 - Feb 2024
@@ -39,7 +67,7 @@ X-Booker, Chessington, UK -- Contract, Remote -- Apr 2022 - Feb 2024
     },
 
     {
-        id: "3",
+        id: "5",
         title: "Freelance Full-stack Developer",
         text: `**Freelance Full-stack Developer**  
 Self Employed -- June 2021 - Present
