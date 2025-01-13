@@ -42,7 +42,7 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
         <div className="w-full h-full p-6 flex flex-col justify-center max-w-4xl mx-auto gap-10">
             <div className="w-full flex flex-col mx-auto gap-6 relative">
                 <img
-                    src="/me2.png"
+                    src="/me.jpg"
                     height="100px"
                     width="100px"
                     className="rounded-full"
