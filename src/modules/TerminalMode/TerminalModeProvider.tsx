@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { terminalModeContext } from "./terminalModeContext";
 import { FileEntry, TerminalHistory } from "@/types";
 import { rootDirectory } from "./directories";
@@ -27,6 +27,11 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
     const [history, setHistory] = useState<TerminalHistory[]>([introHistory]);
     const [executing, setExecuting] = useState(false);
     const [currentDir, setCurrentDir] = useState<FileEntry>(rootDirectory);
+
+    useEffect(() => {
+        document.addEventListener("keydown", handleKeydown);
+        return () => document.removeEventListener("keydown", handleKeydown);
+    }, []);
 
     async function runCommand(cmdStr: string) {
         setExecuting(true);
@@ -103,6 +108,10 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
                 break;
         }
         return result;
+    }
+
+    function handleKeydown(e: KeyboardEvent) {
+        console.log(e.keyCode);
     }
 
     return (

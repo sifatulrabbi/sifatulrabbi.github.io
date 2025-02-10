@@ -41,12 +41,14 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
     return (
         <div className="w-full h-full p-6 flex flex-col justify-center max-w-4xl mx-auto gap-10">
             <div className="w-full flex flex-col mx-auto gap-6 relative">
-                <img
-                    src="/me.jpg"
-                    height="100px"
-                    width="100px"
-                    className="rounded-full"
-                />
+                <div className="w-[200px] h-[200px] overflow-hidden flex items-center justify-center rounded-full">
+                    <img
+                        src="/me-sitting-on-chair-tshirt.jpg"
+                        height="300px"
+                        width="300px"
+                        className="bg-cover"
+                    />
+                </div>
                 <h1 className="text-slate-300 font-bold text-3xl sm:text-4xl md:text-5xl selection:bg-transparent selection:text-primary-400">
                     {"Sifatul Rabbi".split("").map((str, i) => (
                         <AnimatedText
@@ -57,7 +59,7 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
                     ))}
                 </h1>
                 <h4 className="text-primary-400 font-mono text-xl md:text-2xl">
-                    Software Engineer
+                    Full Stack {"&"} AI Developer
                 </h4>
                 <p className="prose prose-invert prose-slate max-w-full relative text-lg">
                     <span className="absolute">
