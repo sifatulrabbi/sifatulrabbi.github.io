@@ -10,7 +10,9 @@ export const experienceSectionData = [
         current: true,
         jobType: "Remote",
         employmentType: "Full-time",
-        description: ["Building the next level RFX platform for the elits"],
+        description: [
+            "Collaborating with an awesome team to build industry leading AI powered RFX Response solution.",
+        ],
         techStack: ["TypeScript", "Python", "React", "Langchain"],
     },
     {

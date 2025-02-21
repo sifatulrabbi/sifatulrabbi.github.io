@@ -6,20 +6,20 @@ import { AnimatedText } from "@/components";
 type Props = {
     setShowHero: (v: boolean) => void;
     setTerminalMode: (v: boolean) => void;
+    setRevealUnderneath?: (v: boolean) => void;
 };
 
-// const aboutmeWords =
-//     "I discovered my love for coding and building things while modding GTA 5 with Lua and XML to add new 'Cars' and 'Peds'. Coding and crafting softwares felt like having superpowers so started diving deep. As a Full-stack Engineer, I've led 2 SaaS startups in the past 3 years, focusing on translating business requirements in to applications. Building and designing backend systems excites me the most. ".split(
-//         "",
-//     );
-// I've helped rebuild HelloScribe AI's entire system in a more secure and scalable way.
 const aboutmeWords =
-    "I love building software and collaborating with awesome people. I often use Go, Python, or TypeScript to hack out most of my curiosities on Neovim. I enjoy exploring the tech world and practicing system design concepts, which makes me more focused on the overall system.".split(
+    "I love building software and collaborating with awesome people. I often use Python, TypeScript, or Go to hack out most of my curiosities on Neovim. I enjoy exploring the tech and generative AI world. My intuitions and experience in full-stack development makes me more product oriented and enables me to plan and deploy features from scratch.".split(
         "",
     );
 const aboutMeExt = "";
 
-const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
+const HeroSection: React.FC<Props> = ({
+    setShowHero,
+    setTerminalMode,
+    setRevealUnderneath,
+}) => {
     const [hoveringEnter, setHoveringEnter] = useState(false);
     const [aboutme, setAboutme] = useState("");
 
@@ -41,13 +41,8 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
     return (
         <div className="w-full h-full p-6 flex flex-col justify-center max-w-4xl mx-auto gap-10">
             <div className="w-full flex flex-col mx-auto gap-6 relative">
-                <div className="w-[200px] h-[200px] overflow-hidden flex items-center justify-center rounded-full">
-                    <img
-                        src="/me-sitting-on-chair-tshirt.jpg"
-                        height="300px"
-                        width="300px"
-                        className="bg-cover"
-                    />
+                <div className="w-[100px] h-[100px] md:w-[150px] md:h-[150px] overflow-hidden flex items-center justify-center rounded-full transition-all duration-100">
+                    <img src="/me.jpg" className="object-cover object-top" />
                 </div>
                 <h1 className="text-slate-300 font-bold text-3xl sm:text-4xl md:text-5xl selection:bg-transparent selection:text-primary-400">
                     {"Sifatul Rabbi".split("").map((str, i) => (
@@ -61,7 +56,7 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
                 <h4 className="text-primary-400 font-mono text-xl md:text-2xl">
                     Full Stack {"&"} AI Developer
                 </h4>
-                <p className="prose prose-invert prose-slate max-w-full relative text-lg">
+                <p className="prose prose-invert prose-slate max-w-full relative text-base md:text-lg">
                     <span className="absolute">
                         <span
                             dangerouslySetInnerHTML={{ __html: aboutme }}
@@ -80,13 +75,19 @@ const HeroSection: React.FC<Props> = ({ setShowHero, setTerminalMode }) => {
             <div className="flex flex-col items-center gap-4">
                 <button
                     onClick={handleShowDetails}
-                    className="text-slate-300 rounded-full py-4 h-[50px] w-full lg:hover:text-primary-400 lg:hover:border-primary-400 transition-colors duration-300 flex flex-row items-center justify-start overflow-hidden relative"
+                    className="z-[10] text-slate-300 rounded-full py-4 h-[50px] w-full lg:hover:text-primary-400 lg:hover:border-primary-400 transition-colors duration-300 flex flex-row items-center justify-start overflow-hidden relative"
                 >
-                    {/*<FaChevronRight className="hero-enter-btn" />*/}
+                    {/* <FaChevronRight className="hero-enter-btn delay-[0.5s]" /> */}
                     <div className="absolute left-0 right-0 h-0 border-t border-dashed border-slate-600"></div>
                     <p
-                        onMouseEnter={() => setHoveringEnter(true)}
-                        onMouseLeave={() => setHoveringEnter(false)}
+                        onMouseEnter={() => {
+                            setHoveringEnter(true);
+                            setRevealUnderneath?.(true);
+                        }}
+                        onMouseLeave={() => {
+                            setHoveringEnter(false);
+                            setRevealUnderneath?.(false);
+                        }}
                         className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-gray-900 flex gap-2 items-center min-w-max px-4 py-2 rounded-lg font-mono"
                     >
                         <span

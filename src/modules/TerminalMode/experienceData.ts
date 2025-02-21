@@ -6,7 +6,7 @@ export const experiencesData = [
 SEQUESTO, Belgium -- Full-time, Remote -- Oct 2024 - Present
 
 *RFX Response Platform powered by AI*
-- Building the next level RFX platform for the elits
+- Collaborating with an awesome team to build industry leading AI powered RFX Response solution.
 
 `,
     },

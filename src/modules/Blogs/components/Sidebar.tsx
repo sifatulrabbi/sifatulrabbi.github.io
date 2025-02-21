@@ -23,10 +23,11 @@ const BlogsSidebar: React.FC = () => {
                 <div className="w-full flex items-start justify-between mb-4">
                     <Link to="/blogs">
                         <img
-                            src="/logo.png"
+                            src="/me.jpg"
                             alt="Sifatul Rabbi"
                             height={50}
                             width={50}
+                            className="rounded-full"
                         />
                     </Link>
                     <button

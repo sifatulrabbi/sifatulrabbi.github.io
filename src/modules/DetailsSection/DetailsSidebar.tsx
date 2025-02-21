@@ -30,10 +30,11 @@ const DetailsSidebar: React.FC<{
             <div className="w-full flex items-start justify-between mb-4">
                 <button onClick={() => window.location.reload()}>
                     <img
-                        src="/logo.png"
+                        src="/me.jpg"
                         alt="Sifatul Rabbi"
                         height={50}
                         width={50}
+                        className="rounded-full"
                     />
                 </button>
                 <button

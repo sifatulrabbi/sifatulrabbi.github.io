@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HeroSection } from "@/modules";
 import DetailsSection from "@/modules/DetailsSection";
 import TerminalModePage from "@/modules/TerminalMode";
@@ -7,12 +7,12 @@ import TerminalModeProvider from "@/modules/TerminalMode/TerminalModeProvider";
 const PortfolioLayout: React.FC = () => {
     const [showHero, setShowHero] = useState(true);
     const [terminalMode, setTerminalMode] = useState(false);
+    const [revealUnderneath, setRevealUnderneath] = useState(false);
 
-    // <main
-    //     className={`w-full max-w-full bg-gray-900 min-h-[100vh] overflow-hidden ${
-    //         !terminalMode && showHero ? "max-h-[100vh]" : ""
-    //     }`}
-    // >
+    useEffect(() => {
+        document.body.style.overflow = showHero ? "hidden" : "auto";
+    }, [showHero]);
+
     return (
         <main
             className={`w-full min-h-max flex flex-col justify-start items-start 2xl:items-center 
@@ -30,13 +30,14 @@ const PortfolioLayout: React.FC = () => {
             )}
             {!terminalMode && (
                 <div
-                    className={`z-[100] w-full fixed top-0 right-0 left-0 bottom-0 flex flex-col justify-start items-start bg-gray-950 transition-transform duration-500 ${
-                        showHero ? "" : "translate-x-full"
-                    }`}
+                    className={`z-[100] w-full fixed top-0 right-0 left-0 bottom-0 flex flex-col justify-start items-start transition-[transform,background-color] duration-500 ease-in-out bg-gray-950 
+                        ${revealUnderneath ? "md:bg-gray-950/60" : ""} 
+                        ${showHero ? "backdrop-blur-sm" : "translate-x-full"}`}
                 >
                     <HeroSection
                         setShowHero={setShowHero}
                         setTerminalMode={setTerminalMode}
+                        setRevealUnderneath={setRevealUnderneath}
                     />
                 </div>
             )}
