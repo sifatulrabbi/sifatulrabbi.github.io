@@ -19,7 +19,15 @@ html {
 body {
     font-size: 16px;
     line-height: 1.6;
-    @apply font-body bg-gray-950 text-slate-400 max-w-full overflow-x-hidden;
+    @apply max-w-full overflow-x-hidden;
+
+    &[data-theme="light"] {
+        @apply font-body bg-slate-100 text-slate-700 max-w-full overflow-x-hidden;
+    }
+
+    &[data-theme="dark"] {
+        @apply font-body bg-gray-950 text-slate-400;
+    }
 }
 
 h1,
@@ -50,12 +58,20 @@ h6 {
 }
 
 .display-content {
-    @apply prose prose-invert max-w-full prose-slate prose-p:text-slate-200 prose-ul:text-slate-200 prose-strong:text-slate-200 prose-pre:bg-slate-900 prose-h2:text-slate-200;
+    @apply prose max-w-full prose-slate;
 
     img {
         width: 100%;
         height: auto;
         background-size: cover;
+    }
+
+    &.display-content-large {
+        @apply prose-lg;
+    }
+
+    &.display-content-dark {
+        @apply prose-invert prose-p:text-slate-200 prose-ul:text-slate-200 prose-strong:text-slate-200 prose-pre:bg-slate-900 prose-h2:text-slate-200;
     }
 }
 

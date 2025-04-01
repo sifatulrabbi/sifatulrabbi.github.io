@@ -5,3 +5,7 @@ export const homePageTabs = {
     contact: "contact",
     // chat: "chat",
 };
+
+export const liveAppUrls: Record<string, string> = {
+    "HTML Viewer": "/live-apps/html-viewer",
+};

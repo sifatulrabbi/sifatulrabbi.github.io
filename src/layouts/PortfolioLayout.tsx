@@ -10,6 +10,7 @@ const PortfolioLayout: React.FC = () => {
     const [revealUnderneath, setRevealUnderneath] = useState(false);
 
     useEffect(() => {
+        document.body.setAttribute("data-theme", "dark");
         document.body.style.overflow = showHero ? "hidden" : "auto";
     }, [showHero]);
 

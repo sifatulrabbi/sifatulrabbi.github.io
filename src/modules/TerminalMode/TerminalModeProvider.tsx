@@ -111,7 +111,7 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
     }
 
     function handleKeydown(e: KeyboardEvent) {
-        console.log(e.keyCode);
+        e.key;
     }
 
     return (

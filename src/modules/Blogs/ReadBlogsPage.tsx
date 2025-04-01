@@ -98,7 +98,7 @@ const ReadBlogPage: React.FC = () => {
                 ref={articleElement}
                 className="max-w-full lg:max-w-4xl text-slate-400 prose-h3:text-slate-300"
             >
-                <div className="display-content prose-a:text-slate-300 prose-a:no-underline">
+                <div className="display-content display-content-dark prose-a:text-slate-300 prose-a:no-underline">
                     <h2 style={{ marginTop: 0, marginBottom: "1rem" }}>
                         {selectedArticle.title}
                     </h2>
@@ -123,7 +123,7 @@ const ReadBlogPage: React.FC = () => {
                 {selectedArticle.body.map((c) => (
                     <div
                         key={v4()}
-                        className="display-content"
+                        className="display-content display-content-dark"
                         dangerouslySetInnerHTML={{
                             __html: marked(c.content, {}),
                         }}
