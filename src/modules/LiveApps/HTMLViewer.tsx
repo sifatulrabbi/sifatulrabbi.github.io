@@ -16,7 +16,7 @@ const HTMLViewer: React.FC = () => {
 
     return (
         <>
-            <nav className="fixed top-0 left-0 right-0 flex items-center justify-between bg-white border-b border-gray-200 py-2 px-4">
+            <nav className="z-[10] fixed top-0 left-0 right-0 flex items-center justify-between bg-white border-b border-gray-200 py-2 px-4">
                 <LogoBtn size={40} />
             </nav>
 

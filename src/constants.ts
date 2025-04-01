@@ -8,4 +8,5 @@ export const homePageTabs = {
 
 export const liveAppUrls: Record<string, string> = {
     "HTML Viewer": "/live-apps/html-viewer",
+    "HTML to Markdown": "/live-apps/html-to-markdown",
 };
