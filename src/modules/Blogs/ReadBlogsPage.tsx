@@ -125,7 +125,9 @@ const ReadBlogPage: React.FC = () => {
                         key={v4()}
                         className="display-content display-content-dark"
                         dangerouslySetInnerHTML={{
-                            __html: marked(c.content, {}),
+                            __html: marked(c.content, {
+                                async: false,
+                            }) as string,
                         }}
                     ></div>
                 ))}
