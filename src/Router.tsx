@@ -16,6 +16,23 @@ const router = createBrowserRouter([
                 path: "",
                 element: <PortfolioLayout />,
             },
+            // Home tabs as routes for proper navigation
+            {
+                path: "/experiences",
+                element: <PortfolioLayout />,
+            },
+            {
+                path: "/projects",
+                element: <PortfolioLayout />,
+            },
+            {
+                path: "/skills",
+                element: <PortfolioLayout />,
+            },
+            {
+                path: "/contact",
+                element: <PortfolioLayout />,
+            },
             {
                 path: "/blogs",
                 element: <BlogsLayout />,

@@ -8,22 +8,10 @@ import LogoBtn from "@/components/LogoBtn";
 const DetailsSidebar: React.FC<{
     activeTab: string;
     showSidebar: boolean;
-    setActiveTab: (v: string) => void;
     setShowSidebar: (v: boolean) => void;
     enterTerminalMode: () => void;
-}> = ({
-    activeTab,
-    showSidebar,
-    setActiveTab,
-    setShowSidebar,
-    enterTerminalMode,
-}) => {
+}> = ({ activeTab, showSidebar, setShowSidebar, enterTerminalMode }) => {
     const [expandLiveApps, setExpandLiveApps] = useState(false);
-
-    const handleActiveTabUpdate = (tab: string) => {
-        setActiveTab(tab);
-        setShowSidebar(false);
-    };
 
     return (
         <aside
@@ -49,20 +37,20 @@ const DetailsSidebar: React.FC<{
             </button>
             <hr className="w-full border-slate-700 my-4" />
 
-            {Object.values(homePageTabs).map((t) => (
-                <button
-                    key={"homepage-sidebar-" + t}
-                    onClick={() => handleActiveTabUpdate(t)}
-                    className={`min-w-max w-full px-4 py-2 text-slate-300 text-left rounded-lg transition-colors duration-300 text-sm
-                    ${
-                        activeTab === t
-                            ? "bg-slate-800"
-                            : " hover:bg-slate-800/50"
-                    }`}
-                >
-                    {startCase(t)}
-                </button>
-            ))}
+            {Object.values(homePageTabs).map((t) => {
+                const to = `/${t}`;
+                return (
+                    <Link
+                        key={"homepage-sidebar-" + t}
+                        to={to}
+                        onClick={() => setShowSidebar(false)}
+                        className={`min-w-max w-full px-4 py-2 text-slate-300 text-left rounded-lg transition-colors duration-300 text-sm
+                    ${activeTab === t ? "bg-slate-800" : " hover:bg-slate-800/50"}`}
+                    >
+                        {startCase(t)}
+                    </Link>
+                );
+            })}
 
             <hr className="w-full border-slate-700" />
 
@@ -73,9 +61,7 @@ const DetailsSidebar: React.FC<{
                 >
                     Live Apps
                     <FaChevronDown
-                        className={`transition-transform ${
-                            expandLiveApps ? "rotate-180" : ""
-                        }`}
+                        className={`transition-transform ${expandLiveApps ? "rotate-180" : ""}`}
                     />
                 </button>
                 {expandLiveApps && (
@@ -85,6 +71,7 @@ const DetailsSidebar: React.FC<{
                                 key={item}
                                 className="flex min-w-max w-full px-4 py-2 text-slate-300 text-left rounded-lg transition-colors duration-300 hover:bg-slate-800/50 justify-between items-center outline-none text-sm"
                                 to={liveAppUrls[item]}
+                                onClick={() => setShowSidebar(false)}
                             >
                                 {item}
                             </Link>

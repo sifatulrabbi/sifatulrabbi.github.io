@@ -1,16 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LogoBtn: React.FC<{ size?: number }> = ({ size = 50 }) => {
-    const onCLick = () => {
-        if (window.location.pathname === "/") {
-            window.location.reload();
-        } else {
-            window.location.href = "/";
-        }
-    };
-
     return (
-        <button onClick={onCLick}>
+        <Link to="/">
             <img
                 src="/me.jpg"
                 alt="Sifatul Rabbi"
@@ -18,7 +11,7 @@ const LogoBtn: React.FC<{ size?: number }> = ({ size = 50 }) => {
                 width={size}
                 className="rounded-full"
             />
-        </button>
+        </Link>
     );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { homePageTabs } from "@/constants";
 import { FaBars, FaTimes } from "react-icons/fa";
 import DetailsSidebar from "./DetailsSidebar";
@@ -6,6 +6,8 @@ import ExperiencesSection from "./ExperiencesSection";
 import ProjectsSection from "./ProjectsSection";
 import SkillsSection from "./SkillsSection";
 import ContactPage from "./ContactPage";
+import { useLocation } from "react-router-dom";
+
 // import ChatSection from "../ChatSection";
 
 type Props = {
@@ -13,8 +15,17 @@ type Props = {
 };
 
 const DetailsSection: React.FC<Props> = ({ enterTerminalMode }) => {
-    const [tab, setTab] = useState(homePageTabs.experiences);
-    const [showSidebar, setShowSidebar] = useState(false);
+    const location = useLocation();
+    const [showSidebar, setShowSidebar] = React.useState(false);
+
+    const getActiveTabFromPath = (pathname: string) => {
+        if (pathname.startsWith("/projects")) return homePageTabs.projects;
+        if (pathname.startsWith("/skills")) return homePageTabs.skills;
+        if (pathname.startsWith("/contact")) return homePageTabs.contact;
+        return homePageTabs.experiences;
+    };
+
+    const activeTab = getActiveTabFromPath(location.pathname);
 
     return (
         <div className="w-full h-full max-w-full flex flex-row justify-start items-start gap-6">
@@ -25,18 +36,17 @@ const DetailsSection: React.FC<Props> = ({ enterTerminalMode }) => {
                 {showSidebar ? <FaTimes /> : <FaBars />}
             </button>
             <DetailsSidebar
-                activeTab={tab}
-                setActiveTab={setTab}
+                activeTab={activeTab}
                 showSidebar={showSidebar}
                 setShowSidebar={setShowSidebar}
                 enterTerminalMode={enterTerminalMode}
             />
 
-            {tab === homePageTabs.experiences && <ExperiencesSection />}
-            {tab === homePageTabs.projects && <ProjectsSection />}
-            {tab === homePageTabs.skills && <SkillsSection />}
-            {tab === homePageTabs.contact && <ContactPage />}
-            {/* tab === homePageTabs.chat && <ChatSection /> */}
+            {activeTab === homePageTabs.experiences && <ExperiencesSection />}
+            {activeTab === homePageTabs.projects && <ProjectsSection />}
+            {activeTab === homePageTabs.skills && <SkillsSection />}
+            {activeTab === homePageTabs.contact && <ContactPage />}
+            {/* activeTab === homePageTabs.chat && <ChatSection /> */}
         </div>
     );
 };
