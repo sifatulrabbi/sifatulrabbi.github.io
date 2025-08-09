@@ -45,7 +45,11 @@ const DetailsSidebar: React.FC<{
                         to={to}
                         onClick={() => setShowSidebar(false)}
                         className={`min-w-max w-full px-4 py-2 text-slate-300 text-left rounded-lg transition-colors duration-300 text-sm
-                    ${activeTab === t ? "bg-slate-800" : " hover:bg-slate-800/50"}`}
+                    ${
+                        activeTab === t
+                            ? "bg-slate-800"
+                            : " hover:bg-slate-800/50"
+                    }`}
                     >
                         {startCase(t)}
                     </Link>
@@ -61,7 +65,9 @@ const DetailsSidebar: React.FC<{
                 >
                     Live Apps
                     <FaChevronDown
-                        className={`transition-transform ${expandLiveApps ? "rotate-180" : ""}`}
+                        className={`transition-transform ${
+                            expandLiveApps ? "rotate-180" : ""
+                        }`}
                     />
                 </button>
                 {expandLiveApps && (

@@ -7,6 +7,7 @@ type Props = {
     setShowHero: (v: boolean) => void;
     setTerminalMode: (v: boolean) => void;
     setRevealUnderneath?: (v: boolean) => void;
+    onEnter?: () => void;
 };
 
 const aboutmeWords =
@@ -19,6 +20,7 @@ const HeroSection: React.FC<Props> = ({
     setShowHero,
     setTerminalMode,
     setRevealUnderneath,
+    onEnter,
 }) => {
     const [hoveringEnter, setHoveringEnter] = useState(false);
     const [aboutme, setAboutme] = useState("");
@@ -36,7 +38,10 @@ const HeroSection: React.FC<Props> = ({
         })();
     }, []);
 
-    const handleShowDetails = () => setShowHero(false);
+    const handleShowDetails = () => {
+        if (onEnter) return onEnter();
+        setShowHero(false);
+    };
 
     return (
         <div className="w-full h-full p-6 flex flex-col justify-center max-w-4xl mx-auto gap-10">
