@@ -28,13 +28,14 @@ const DetailsSidebar: React.FC<{
                 </button>
             </div>
 
-            <button
-                onClick={enterTerminalMode}
+            <Link
+                to="/terminal"
+                onClick={() => setShowSidebar(false)}
                 className="flex items-center justify-between min-w-max w-full px-4 py-2 text-slate-300 text-left text-sm rounded-lg transition-colors duration-300 hover:bg-slate-800/50 bg-primary-400/10"
             >
                 Terminal Mode
                 <FaTerminal />
-            </button>
+            </Link>
             <hr className="w-full border-slate-700 my-4" />
 
             {Object.values(homePageTabs).map((t) => {

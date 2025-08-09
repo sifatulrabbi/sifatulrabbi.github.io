@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import DetailsSection from "@/modules/DetailsSection";
-import TerminalModePage from "@/modules/TerminalMode";
-import TerminalModeProvider from "@/modules/TerminalMode/TerminalModeProvider";
+import { useNavigate } from "react-router-dom";
 
 const PortfolioLayout: React.FC = () => {
-    const [terminalMode, setTerminalMode] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.body.setAttribute("data-theme", "dark");
@@ -12,28 +11,8 @@ const PortfolioLayout: React.FC = () => {
     }, []);
 
     return (
-        <main
-            className={`w-full min-h-max flex flex-col justify-start items-start 2xl:items-center 
-            ${
-                !terminalMode
-                    ? "py-6 px-8 lg:pl-[332px] 2xl:pl-8 mt-[50px] gap-12"
-                    : ""
-            }`}
-        >
-            {!terminalMode && (
-                <DetailsSection
-                    enterTerminalMode={() => setTerminalMode(true)}
-                />
-            )}
-            <TerminalModeProvider
-                exitTerminalMode={() => setTerminalMode(false)}
-            >
-                {terminalMode && (
-                    <TerminalModePage
-                        closeTerminal={() => setTerminalMode(false)}
-                    />
-                )}
-            </TerminalModeProvider>
+        <main className="w-full min-h-max flex flex-col justify-start items-start 2xl:items-center py-6 px-8 lg:pl-[332px] 2xl:pl-8 mt-[50px] gap-12">
+            <DetailsSection enterTerminalMode={() => navigate("/terminal")} />
         </main>
     );
 };

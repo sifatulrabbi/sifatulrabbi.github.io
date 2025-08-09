@@ -7,6 +7,7 @@ import BorwseBlogsPage from "@/modules/Blogs/BrowseBlogsPage";
 import ReadBlogPage from "./modules/Blogs/ReadBlogsPage";
 import personalFinanceRoutes from "./modules/PersonalFinance/router";
 import liveAppsRoutes from "./modules/LiveApps/router";
+import TerminalRoute from "./modules/TerminalMode/route";
 
 const router = createBrowserRouter([
     {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
             {
                 path: "/live-apps",
                 children: liveAppsRoutes,
+            },
+            {
+                path: "/terminal",
+                element: <TerminalRoute />,
             },
         ],
     },

@@ -115,12 +115,12 @@ const HeroSection: React.FC<Props> = ({
                     </p>
                 </button>
 
-                <button
-                    onClick={() => setTerminalMode(true)}
+                <a
+                    href="/terminal"
                     className="mt-4 text-slate-400 rounded-lg p-2 lg:hover:text-primary-400 lg:hover:border-primary-400 transition-transform duration-500 flex flex-row items-center justify-start overflow-hidden relative font-mono text-sm border border-dashed border-slate-400"
                 >
                     enter_terminal_mode()
-                </button>
+                </a>
             </div>
         </div>
     );
