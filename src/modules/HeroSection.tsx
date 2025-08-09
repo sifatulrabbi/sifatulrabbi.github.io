@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { GiClick } from "react-icons/gi";
 import { TbClick } from "react-icons/tb";
 import { AnimatedText } from "@/components";
 
 type Props = {
-    setShowHero: (v: boolean) => void;
-    setTerminalMode: (v: boolean) => void;
     setRevealUnderneath?: (v: boolean) => void;
     onEnter?: () => void;
 };
@@ -16,12 +15,7 @@ const aboutmeWords =
     );
 const aboutMeExt = "";
 
-const HeroSection: React.FC<Props> = ({
-    setShowHero,
-    setTerminalMode,
-    setRevealUnderneath,
-    onEnter,
-}) => {
+const HeroSection: React.FC<Props> = ({ setRevealUnderneath, onEnter }) => {
     const [hoveringEnter, setHoveringEnter] = useState(false);
     const [aboutme, setAboutme] = useState("");
 
@@ -40,7 +34,6 @@ const HeroSection: React.FC<Props> = ({
 
     const handleShowDetails = () => {
         if (onEnter) return onEnter();
-        setShowHero(false);
     };
 
     return (
@@ -115,12 +108,12 @@ const HeroSection: React.FC<Props> = ({
                     </p>
                 </button>
 
-                <a
-                    href="/terminal"
+                <Link
+                    to="/terminal"
                     className="mt-4 text-slate-400 rounded-lg p-2 lg:hover:text-primary-400 lg:hover:border-primary-400 transition-transform duration-500 flex flex-row items-center justify-start overflow-hidden relative font-mono text-sm border border-dashed border-slate-400"
                 >
                     enter_terminal_mode()
-                </a>
+                </Link>
             </div>
         </div>
     );

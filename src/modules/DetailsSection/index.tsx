@@ -10,11 +10,7 @@ import { useLocation } from "react-router-dom";
 
 // import ChatSection from "../ChatSection";
 
-type Props = {
-    enterTerminalMode: () => void;
-};
-
-const DetailsSection: React.FC<Props> = ({ enterTerminalMode }) => {
+const DetailsSection: React.FC = () => {
     const location = useLocation();
     const [showSidebar, setShowSidebar] = React.useState(false);
 
@@ -39,7 +35,6 @@ const DetailsSection: React.FC<Props> = ({ enterTerminalMode }) => {
                 activeTab={activeTab}
                 showSidebar={showSidebar}
                 setShowSidebar={setShowSidebar}
-                enterTerminalMode={enterTerminalMode}
             />
 
             {activeTab === homePageTabs.experiences && <ExperiencesSection />}

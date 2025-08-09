@@ -22,8 +22,6 @@ const HomeLayout: React.FC = () => {
                 } backdrop-blur-sm`}
             >
                 <HeroSection
-                    setShowHero={() => {}}
-                    setTerminalMode={() => {}}
                     setRevealUnderneath={setRevealUnderneath}
                     onEnter={() => navigate("/experiences")}
                 />

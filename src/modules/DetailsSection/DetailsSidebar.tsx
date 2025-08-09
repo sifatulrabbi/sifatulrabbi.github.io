@@ -9,8 +9,7 @@ const DetailsSidebar: React.FC<{
     activeTab: string;
     showSidebar: boolean;
     setShowSidebar: (v: boolean) => void;
-    enterTerminalMode: () => void;
-}> = ({ activeTab, showSidebar, setShowSidebar, enterTerminalMode }) => {
+}> = ({ activeTab, showSidebar, setShowSidebar }) => {
     const [expandLiveApps, setExpandLiveApps] = useState(false);
 
     return (
