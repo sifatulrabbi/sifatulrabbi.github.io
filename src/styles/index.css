@@ -60,12 +60,6 @@ h6 {
 .display-content {
     @apply prose max-w-full prose-slate;
 
-    img {
-        width: 100%;
-        height: auto;
-        background-size: cover;
-    }
-
     &.display-content-large {
         @apply prose-lg;
     }
@@ -73,6 +67,12 @@ h6 {
     &.display-content-dark {
         @apply prose-invert prose-p:text-slate-200 prose-ul:text-slate-200 prose-strong:text-slate-200 prose-pre:bg-slate-900 prose-h2:text-slate-200;
     }
+}
+
+.display-content > img {
+    width: 100%;
+    height: auto;
+    background-size: cover;
 }
 
 .display-content-muted {
