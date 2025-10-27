@@ -39,8 +39,6 @@ h6 {
     @apply font-display;
 }
 
-@import "./anim";
-
 .truncate {
     width: 100%;
     max-width: 100% !important;
@@ -81,4 +79,45 @@ h6 {
     &.error {
         color: #b91c1c !important;
     }
+}
+
+@keyframes beating-colors {
+    0%,
+    100% {
+        color: $primary-400;
+        scale: 1.2;
+    }
+    50% {
+        @apply text-slate-300;
+        scale: 1;
+    }
+}
+.beating-colors {
+    animation: beating-colors 1s ease infinite forwards;
+}
+
+@keyframes indicator-anim {
+    from {
+        left: -20px;
+    }
+    to {
+        left: 120%;
+    }
+}
+.hero-enter-btn {
+    position: absolute;
+    left: -20px;
+    animation: indicator-anim 10s linear infinite;
+}
+
+@keyframes cursor-blink {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.cursor-blink {
+    animation: cursor-blink 1s infinite;
 }
