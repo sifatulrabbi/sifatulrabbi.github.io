@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-$primary-200: #338dff;
-$primary-400: #0070ff;
-$primary-600: #0f00ff;
+:root {
+    --primary-200: #338dff;
+    --primary-400: #0070ff;
+    --primary-600: #0f00ff;
+}
 
 html {
     height: -webkit-fill-available !important;
@@ -84,7 +86,7 @@ h6 {
 @keyframes beating-colors {
     0%,
     100% {
-        color: $primary-400;
+        color: var(--primary-400);
         scale: 1.2;
     }
     50% {
