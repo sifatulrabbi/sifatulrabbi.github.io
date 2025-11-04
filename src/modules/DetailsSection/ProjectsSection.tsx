@@ -5,8 +5,8 @@ import { projectsData } from "@/assets/data";
 
 const ProjectsSection: React.FC = () => {
     return (
-        <section className="w-full gap-12 flex flex-col justify-start items-start 2xl:items-center">
-            <div className="w-full prose prose-invert prose-slate max-w-4xl prose-h1:text-slate-300 prose-h1:font-bold">
+        <section className="w-full gap-16 flex flex-col justify-start items-start 2xl:items-center animate-fade-in">
+            <div className="w-full prose prose-invert prose-slate max-w-5xl prose-h1:text-slate-100 prose-h1:font-bold prose-p:text-slate-400 prose-p:text-lg">
                 <h1>
                     {"Projects".split("").map((l, i) => (
                         <AnimatedText
@@ -23,52 +23,56 @@ const ProjectsSection: React.FC = () => {
                 </p>
             </div>
 
-            {projectsData.map((d) => (
+            {projectsData.map((d, index) => (
                 <div
                     key={d.title}
-                    className="w-full prose prose-invert prose-slate max-w-4xl prose-h3:text-slate-300 prose-h3:my-1 prose-strong:text-slate-300"
+                    className="w-full prose prose-invert prose-slate max-w-5xl prose-h3:text-slate-100 prose-h3:my-1 prose-strong:text-slate-200 animate-slide-up"
+                    style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                    <small className="flex flex-row items-center gap-1 text-slate-400 font-mono">
-                        {d.projectType}
-                    </small>
-                    <h3 className="flex items-center gap-1">{d.title}</h3>
-                    <p
-                        dangerouslySetInnerHTML={{ __html: d.summary }}
-                        className="my-4"
-                    />
-                    <div className="w-full flex flex-row items-start justify-start flex-wrap gap-2">
-                        {d.techStack.map((t) => (
-                            <span
-                                key={`tech-stack-${t}`}
-                                className="inline-block text-xs px-3 py-1 rounded-full bg-slate-800"
-                            >
-                                {t}
-                            </span>
-                        ))}
-                    </div>
-                    <div className="w-full flex flex-row items-center gap-2 mt-6">
-                        {d.githubLink && (
-                            <a
-                                href={d.githubLink}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-sm text-slate-100 flex items-center gap-1 px-4 py-2 rounded-lg bg-primary-400 lg:hover:bg-primary-600 no-underline transition-colors duration-300"
-                            >
-                                GitHub
-                                <FaGithub className="text-base" />
-                            </a>
-                        )}
-                        {d.liveLink && (
-                            <a
-                                href={d.liveLink}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-sm text-primary-400 lg:hover:text-primary-200 flex items-center gap-1 px-4 py-2 rounded-lg border border-primary-400 lg:hover:border-primary-200 no-underline transition-colors duration-300"
-                            >
-                                Live link
-                                <FaArrowRight className="text-sm -rotate-45" />
-                            </a>
-                        )}
+                    <div className="glass-card p-6 md:p-8 glass-hover">
+                        <small className="flex flex-row items-center gap-2 text-primary-400 font-mono font-medium mb-2">
+                            <span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span>
+                            {d.projectType}
+                        </small>
+                        <h3 className="flex items-center gap-1 text-2xl font-bold text-slate-100">{d.title}</h3>
+                        <p
+                            dangerouslySetInnerHTML={{ __html: d.summary }}
+                            className="my-4 text-slate-300 leading-relaxed"
+                        />
+                        <div className="w-full flex flex-row items-start justify-start flex-wrap gap-2 mb-6">
+                            {d.techStack.map((t) => (
+                                <span
+                                    key={`tech-stack-${t}`}
+                                    className="tag-modern"
+                                >
+                                    {t}
+                                </span>
+                            ))}
+                        </div>
+                        <div className="w-full flex flex-row items-center gap-3 mt-6">
+                            {d.githubLink && (
+                                <a
+                                    href={d.githubLink}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="btn-modern text-sm text-white flex items-center gap-2 no-underline shadow-glow"
+                                >
+                                    GitHub
+                                    <FaGithub className="text-base" />
+                                </a>
+                            )}
+                            {d.liveLink && (
+                                <a
+                                    href={d.liveLink}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="btn-outline-modern text-sm flex items-center gap-2 no-underline"
+                                >
+                                    Live link
+                                    <FaArrowRight className="text-sm -rotate-45" />
+                                </a>
+                            )}
+                        </div>
                     </div>
                 </div>
             ))}

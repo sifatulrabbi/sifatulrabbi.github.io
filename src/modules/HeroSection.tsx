@@ -37,12 +37,12 @@ const HeroSection: React.FC<Props> = ({ setRevealUnderneath, onEnter }) => {
     };
 
     return (
-        <div className="w-full h-full p-6 flex flex-col justify-center max-w-4xl mx-auto gap-10">
-            <div className="w-full flex flex-col mx-auto gap-6 relative">
-                <div className="w-[100px] h-[100px] md:w-[150px] md:h-[150px] overflow-hidden flex items-center justify-center rounded-full transition-all duration-100">
+        <div className="w-full h-full p-6 flex flex-col justify-center max-w-5xl mx-auto gap-12 animate-fade-in">
+            <div className="w-full flex flex-col mx-auto gap-8 relative">
+                <div className="w-[120px] h-[120px] md:w-[160px] md:h-[160px] overflow-hidden flex items-center justify-center rounded-full transition-all duration-300 ring-4 ring-primary-500/20 hover:ring-primary-400/40 shadow-glow">
                     <img src="/me.jpg" className="object-cover object-top" />
                 </div>
-                <h1 className="text-slate-300 font-bold text-3xl sm:text-4xl md:text-5xl selection:bg-transparent selection:text-primary-400">
+                <h1 className="text-slate-100 font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl selection:bg-transparent selection:text-primary-400 leading-tight">
                     {"Sifatul Rabbi".split("").map((str, i) => (
                         <AnimatedText
                             key={"first-name-" + str + i}
@@ -51,15 +51,15 @@ const HeroSection: React.FC<Props> = ({ setRevealUnderneath, onEnter }) => {
                         />
                     ))}
                 </h1>
-                <h4 className="text-primary-400 font-mono text-xl md:text-2xl">
+                <h4 className="gradient-text font-mono text-2xl md:text-3xl font-semibold">
                     Full Stack {"&"} AI Developer
                 </h4>
-                <p className="prose prose-invert prose-slate max-w-full relative text-base md:text-lg">
+                <p className="prose prose-invert prose-slate max-w-full relative text-base md:text-xl leading-relaxed text-slate-300">
                     <span className="absolute">
                         <span
                             dangerouslySetInnerHTML={{ __html: aboutme }}
                         ></span>
-                        <span className="inline-block mb-[-5px] h-5 w-2 bg-primary-400 cursor-blink"></span>
+                        <span className="inline-block mb-[-5px] h-6 w-2.5 bg-gradient-to-r from-primary-400 to-accent-violet cursor-blink"></span>
                     </span>
                     <span
                         className="opacity-0 pointer-events-none invisible"
@@ -70,13 +70,12 @@ const HeroSection: React.FC<Props> = ({ setRevealUnderneath, onEnter }) => {
                 </p>
             </div>
 
-            <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-6">
                 <button
                     onClick={handleShowDetails}
-                    className="z-[10] text-slate-300 rounded-full py-4 h-[50px] w-full lg:hover:text-primary-400 lg:hover:border-primary-400 transition-colors duration-300 flex flex-row items-center justify-start overflow-hidden relative"
+                    className="z-[10] text-slate-200 rounded-2xl py-4 h-[60px] w-full lg:hover:text-primary-300 transition-all duration-300 flex flex-row items-center justify-start overflow-hidden relative group"
                 >
-                    {/* <FaChevronRight className="hero-enter-btn delay-[0.5s]" /> */}
-                    <div className="absolute left-0 right-0 h-0 border-t border-dashed border-slate-600"></div>
+                    <div className="absolute left-0 right-0 h-0 border-t border-dashed border-slate-600 group-hover:border-primary-500/50 transition-colors duration-300"></div>
                     <p
                         onMouseEnter={() => {
                             setHoveringEnter(true);
@@ -86,23 +85,23 @@ const HeroSection: React.FC<Props> = ({ setRevealUnderneath, onEnter }) => {
                             setHoveringEnter(false);
                             setRevealUnderneath?.(false);
                         }}
-                        className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-gray-900 flex gap-2 items-center min-w-max px-4 py-2 rounded-lg font-mono"
+                        className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 glass-card flex gap-3 items-center min-w-max px-6 py-3 rounded-xl font-mono font-medium group-hover:shadow-glow transition-all duration-300"
                     >
                         <span
-                            className={`${
+                            className={`text-lg transition-colors duration-300 ${
                                 hoveringEnter
-                                    ? "text-primary-200"
+                                    ? "gradient-text"
                                     : "text-primary-400"
                             }`}
                         >
                             Enter Portfolio
                         </span>
                         <GiClick
-                            className={`text-lg text-slate-300 lg:hidden lg:invisible`}
+                            className={`text-xl text-slate-300 lg:hidden lg:invisible`}
                         />
                         <TbClick
-                            className={`text-xl text-slate-300 hidden invisible lg:visible lg:inline transition-transform ${
-                                hoveringEnter ? "scale-150" : "scale-100"
+                            className={`text-2xl text-primary-400 hidden invisible lg:visible lg:inline transition-transform duration-300 ${
+                                hoveringEnter ? "scale-125 rotate-12" : "scale-100"
                             }`}
                         />
                     </p>
@@ -110,7 +109,7 @@ const HeroSection: React.FC<Props> = ({ setRevealUnderneath, onEnter }) => {
 
                 <Link
                     to="/terminal"
-                    className="mt-4 text-slate-400 rounded-lg p-2 lg:hover:text-primary-400 lg:hover:border-primary-400 transition-transform duration-500 flex flex-row items-center justify-start overflow-hidden relative font-mono text-sm border border-dashed border-slate-400"
+                    className="mt-2 text-slate-400 rounded-xl px-6 py-3 lg:hover:text-primary-400 lg:hover:border-primary-400 lg:hover:shadow-glow transition-all duration-300 flex flex-row items-center justify-center overflow-hidden relative font-mono text-sm border-2 border-dashed border-slate-600 hover:scale-105 active:scale-95 bg-slate-900/50 backdrop-blur-sm"
                 >
                     enter_terminal_mode()
                 </Link>

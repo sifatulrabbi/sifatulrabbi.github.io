@@ -59,8 +59,8 @@ const ContactPage: React.FC = () => {
     // };
 
     return (
-        <section className="w-full gap-12 flex flex-col justify-start items-start 2xl:items-center">
-            <div className="w-full prose max-w-4xl prose-h1:text-slate-300 prose-h1:font-bold prose-a:text-slate-400 prose-a:no-underline lg:hover:prose-a:text-primary-400 prose-h4:text-slate-300 prose-h4:font-medium">
+        <section className="w-full gap-16 flex flex-col justify-start items-start 2xl:items-center animate-fade-in">
+            <div className="w-full prose max-w-5xl prose-h1:text-slate-100 prose-h1:font-bold prose-a:text-slate-400 prose-a:no-underline lg:hover:prose-a:text-primary-400 prose-h4:text-slate-300 prose-h4:font-medium">
                 <h1>
                     {"Let's Connect".split("").map((l, i) => (
                         <AnimatedText
@@ -70,19 +70,24 @@ const ContactPage: React.FC = () => {
                         />
                     ))}
                 </h1>
-                <p className="text-slate-300">You can find me here</p>
+                <p className="text-xl text-slate-400">You can find me here</p>
                 <div className="w-full flex flex-col gap-8 justify-start items-start">
-                    <div className="flex flex-col gap-2 min-w-max lg:min-w-[250px]">
-                        {links.map((l) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                        {links.map((l, index) => (
                             <a
                                 key={l.href}
                                 href={l.href}
-                                className="flex flex-row items-center gap-2"
+                                className="glass-card p-6 flex flex-row items-center gap-4 glass-hover group animate-slide-up"
+                                style={{ animationDelay: `${index * 0.1}s` }}
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                {l.icon}
-                                {l.name}
+                                <div className="text-3xl text-primary-400 group-hover:text-accent-violet transition-colors duration-300">
+                                    {l.icon}
+                                </div>
+                                <span className="text-slate-300 group-hover:text-slate-100 font-medium transition-colors duration-300">
+                                    {l.name}
+                                </span>
                             </a>
                         ))}
                     </div>
