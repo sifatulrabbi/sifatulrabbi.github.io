@@ -22,9 +22,17 @@ html {
     box-sizing: border-box;
 }
 
-/* Custom scrollbar for webkit browsers */
+/* Custom scrollbar - Cross-browser support */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #334155 #0f172a; /* slate-700 slate-900 */
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -32,12 +40,18 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-slate-700 rounded-full;
+    @apply bg-slate-700;
+    border-radius: 10px;
     transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     @apply bg-primary-500;
+}
+
+/* For Firefox - dynamic color change on hover (limited support) */
+*:hover {
+    scrollbar-color: #0ea5e9 #0f172a; /* primary-500 slate-900 */
 }
 
 body {
@@ -177,11 +191,16 @@ h3 {
 
     .glass-hover {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform, box-shadow, border-color;
     }
 
     .glass-hover:hover {
         @apply border-primary-500/50 shadow-glow;
         transform: translateY(-4px) scale(1.02);
+    }
+
+    .glass-hover:not(:hover) {
+        will-change: auto; /* Remove will-change when not needed */
     }
 
     .gradient-text {
@@ -197,6 +216,11 @@ h3 {
         @apply bg-gradient-to-r from-primary-500 to-accent-violet;
         @apply hover:shadow-glow hover:scale-105;
         @apply active:scale-95;
+        will-change: transform, box-shadow;
+    }
+
+    .btn-modern:not(:hover):not(:active) {
+        will-change: auto;
     }
 
     .btn-outline-modern {
@@ -204,6 +228,11 @@ h3 {
         @apply border-2 border-primary-500 text-primary-400;
         @apply hover:bg-primary-500 hover:text-white hover:shadow-primary;
         @apply active:scale-95;
+        will-change: transform, background-color, color, box-shadow;
+    }
+
+    .btn-outline-modern:not(:hover):not(:active) {
+        will-change: auto;
     }
 
     .card-modern {
@@ -217,6 +246,7 @@ h3 {
 
     .floating-element {
         animation: float 6s ease-in-out infinite;
+        will-change: transform;
     }
 }
 
@@ -231,6 +261,47 @@ h3 {
 .tag-modern:hover {
     @apply border-primary-400 bg-gradient-to-r from-primary-500/30 to-accent-violet/30;
     @apply shadow-glow;
+}
+
+/* Performance optimizations for animations */
+.animate-fade-in {
+    will-change: opacity;
+}
+
+.animate-slide-up,
+.animate-slide-down {
+    will-change: transform, opacity;
+}
+
+.animate-scale-in {
+    will-change: transform, opacity;
+}
+
+.animate-float {
+    will-change: transform;
+}
+
+.animate-glow-pulse {
+    will-change: box-shadow;
+}
+
+/* Remove will-change after animation completes */
+.animate-fade-in,
+.animate-slide-up,
+.animate-slide-down,
+.animate-scale-in {
+    animation-fill-mode: forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        will-change: auto !important;
+    }
 }
 
 /* Enhanced Focus Styles */
