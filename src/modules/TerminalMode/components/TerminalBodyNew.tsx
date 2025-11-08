@@ -133,7 +133,7 @@ const TerminalBody: React.FC = () => {
     return (
         <div
             onClick={handleTerminalClick}
-            className="w-full h-full flex flex-col font-mono text-base cursor-text"
+            className="w-full h-full flex flex-col font-mono text-sm md:text-base cursor-text"
         >
             {/* Header - Always visible */}
             <div className="mb-8">
@@ -200,7 +200,7 @@ const TerminalBody: React.FC = () => {
                                             }`}
                                         >
                                             <div
-                                                className="prose prose-invert prose-base max-w-full prose-p:text-terminal-primary prose-strong:text-terminal-accent prose-ul:text-terminal-primary prose-li:text-terminal-primary prose-a:text-terminal-info prose-a:no-underline hover:prose-a:underline"
+                                                className="prose prose-invert prose-sm md:prose-base max-w-full prose-p:text-terminal-primary prose-strong:text-terminal-accent prose-ul:text-terminal-primary prose-li:text-terminal-primary prose-a:text-terminal-info prose-a:no-underline hover:prose-a:underline"
                                                 dangerouslySetInnerHTML={{
                                                     __html: h.output,
                                                 }}

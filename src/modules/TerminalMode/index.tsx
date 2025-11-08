@@ -14,7 +14,7 @@ const TerminalModePage: React.FC<Props> = () => {
             {/* Terminal Window Container */}
             <div className="w-full max-w-6xl md:h-[90vh] bg-terminal-surface border-2 border-terminal-border rounded-lg overflow-hidden shadow-2xl flex flex-col">
                 {/* Terminal Header */}
-                <div className="bg-terminal-border px-4 py-3 flex items-center justify-between border-b border-terminal-border-dim">
+                <div className="bg-terminal-border px-4 py-2 flex items-center justify-between border-b border-terminal-border-dim">
                     {/* Left: Window controls */}
                     <div className="hidden invisible md:visible md:flex gap-2">
                         <div className="w-3 h-3 rounded-full bg-terminal-error" />
@@ -23,7 +23,7 @@ const TerminalModePage: React.FC<Props> = () => {
                     </div>
 
                     {/* Center: Terminal title */}
-                    <div className="flex-1 ml-8">
+                    <div className="flex-1 md:ml-8">
                         <span className="text-terminal-secondary text-xs sm:text-sm font-mono">
                             {currentDir.pwd || "~/portfolio"}
                         </span>

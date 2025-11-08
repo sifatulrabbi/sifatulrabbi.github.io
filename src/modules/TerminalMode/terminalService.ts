@@ -360,11 +360,15 @@ export class PrintExperiences implements TerminalHistory {
                         ${exp.from} - ${exp.till || "Present"} • ${exp.employmentType} • ${exp.jobType}
                     </div>
                     ${exp.companySummary ? `<p class="text-terminal-primary italic mb-3">${exp.companySummary}</p>` : ""}
-                    ${exp.description.length > 0 ? `
+                    ${
+                        exp.description.length > 0
+                            ? `
                         <ul class="list-disc list-inside space-y-1 text-terminal-primary mb-3">
                             ${exp.description.map((desc) => `<li>${desc}</li>`).join("")}
                         </ul>
-                    ` : ""}
+                    `
+                            : ""
+                    }
                     <div class="flex flex-wrap gap-2 mt-3">
                         ${exp.techStack.map((tech) => `<span class="px-2 py-1 bg-terminal-border text-terminal-accent text-xs rounded">${tech}</span>`).join("")}
                     </div>
@@ -575,7 +579,7 @@ const helpText = marked(`Available commands:
 <span class="text-terminal-success">Tip:</span> Using only the first few words of a file/directory name will also work. i.e. <span class="text-terminal-string">'cd ex'</span> will work.`) as string;
 
 export class Help implements TerminalHistory {
-    cmd = "Hi there, welcome to my portfolio.";
+    cmd = "help";
     output = helpText;
     exitCode: TerminalExitCode = 0;
     constructor(public readonly pwd: string) {}

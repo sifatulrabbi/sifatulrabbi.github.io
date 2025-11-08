@@ -32,11 +32,6 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
     const [executing, setExecuting] = useState(false);
     const [currentDir, setCurrentDir] = useState<FileEntry>(rootDirectory);
 
-    useEffect(() => {
-        document.addEventListener("keydown", handleKeydown);
-        return () => document.removeEventListener("keydown", handleKeydown);
-    }, []);
-
     async function runCommand(cmdStr: string) {
         setExecuting(true);
         await new Promise((r) => setTimeout(r, 100));
@@ -89,7 +84,7 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
                 result = new cat(cmdStr, currentDir.pwd, currentDir);
                 break;
             case "clear":
-                setHistory([]);
+                setHistory([introHistory]);
                 result = new IgnoreCommand(currentDir.pwd);
                 break;
             case "help":
@@ -129,8 +124,17 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
     }
 
     function handleKeydown(e: KeyboardEvent) {
-        e.key;
+        switch (e.key.toLowerCase()) {
+            case "tab":
+                e.preventDefault();
+                break;
+        }
     }
+
+    useEffect(() => {
+        document.addEventListener("keydown", handleKeydown);
+        return () => document.removeEventListener("keydown", handleKeydown);
+    }, []);
 
     return (
         <terminalModeContext.Provider
