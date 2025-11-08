@@ -5,14 +5,19 @@ import { CommandButton } from "@/components";
 import { FiFolder, FiFileText, FiMail, FiCode } from "react-icons/fi";
 
 const ASCII_ART = `
- _____ _  __      _         _   ____       _     _     _
-/ ____(_)/ _|    | |       | | |  _ \\     | |   | |   (_)
-| (___  _| |_ __ _| |_ _   _| | | |_) | __ _| |__ | |__  _
- \\___ \\| |  _/ _\` | __| | | | | |  _ < / _\` | '_ \\| '_ \\| |
- ____) | | || (_| | |_| |_| | | | |_) | (_| | |_) | |_) | |
-|_____/|_|_| \\__,_|\\__|\\__,_|_| |____/ \\__,_|_.__/|_.__/|_|
+███████╗ ██╗ ███████╗ █████╗ ████████╗██╗   ██╗ ██╗
+██╔════╝ ██║ ██╔════╝██╔══██╗╚══██╔══╝██║   ██║ ██║
+███████╗ ██║ █████╗  ███████║   ██║   ██║   ██║ ██║
+╚════██║ ██║ ██╔══╝  ██╔══██║   ██║   ██║   ██║ ██║
+███████║ ██║ ██║     ██║  ██║   ██║   ╚██████╔╝ ███████╗
+╚══════╝ ╚═╝ ╚═╝     ╚═╝  ╚═╝   ╚═╝    ╚═════╝  ╚══════╝
 
-Full Stack & AI Developer | Portfolio v2.0
+██████╗   █████╗  ██████╗  ██████╗  ██╗
+██╔══██╗ ██╔══██╗ ██╔══██╗ ██╔══██╗ ██║
+██████╔╝ ███████║ ██████╔╝ ██████╔╝ ██║
+██╔══██╗ ██╔══██║ ██╔══██╗ ██╔══██╗ ██║
+██║  ██║ ██║  ██║ ██████╔╝ ██████╔╝ ██║
+╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝  ╚═╝
 `;
 
 const ABOUT_ME = `I love building software and collaborating with awesome people. I often use Python, TypeScript, or Go to hack out most of my curiosities on Neovim. I enjoy exploring the tech and generative AI world. My intuitions and experience in full-stack development makes me more product oriented and enables me to plan and deploy features from scratch.`;
@@ -28,28 +33,28 @@ interface CommandButtonInfo {
 const AVAILABLE_COMMANDS: CommandButtonInfo[] = [
     {
         id: "experiences",
-        command: "cd experiences",
+        command: "print experiences",
         label: "Experiences",
         icon: <FiFolder />,
         description: "View my work experience",
     },
     {
         id: "projects",
-        command: "cd projects",
+        command: "print projects",
         label: "Projects",
         icon: <FiCode />,
         description: "Browse my projects",
     },
     {
         id: "skills",
-        command: "cat skills.json",
+        command: "print skills",
         label: "Skills",
         icon: <FiFileText />,
         description: "See my technical skills",
     },
     {
         id: "contact",
-        command: "cat contact.txt",
+        command: "print contact",
         label: "Contact",
         icon: <FiMail />,
         description: "Get in touch",
@@ -59,7 +64,7 @@ const AVAILABLE_COMMANDS: CommandButtonInfo[] = [
 const TerminalBody: React.FC = () => {
     const [command, setCommand] = useState("");
     const [executedCommands, setExecutedCommands] = useState<Set<string>>(
-        new Set()
+        new Set(),
     );
     const { runCommand, executing, history, currentDir } = useTerminalMode();
     const inputRef = useRef<HTMLInputElement>(null);
@@ -95,7 +100,11 @@ const TerminalBody: React.FC = () => {
 
     // Focus input on mount
     useEffect(() => {
-        inputRef.current?.focus();
+        if (window.innerWidth > 720) {
+            inputRef.current?.focus();
+        } else {
+            document.getElementById("terminal-container")?.scrollTo({ top: 0 });
+        }
     }, []);
 
     // Re-focus input when history changes
@@ -118,7 +127,7 @@ const TerminalBody: React.FC = () => {
 
     // Filter out already executed commands
     const availableButtons = AVAILABLE_COMMANDS.filter(
-        (btn) => !executedCommands.has(btn.command.toLowerCase())
+        (btn) => !executedCommands.has(btn.command.toLowerCase()),
     );
 
     return (
@@ -128,16 +137,27 @@ const TerminalBody: React.FC = () => {
         >
             {/* Header - Always visible */}
             <div className="mb-8">
-                <pre className="text-terminal-prompt text-xs sm:text-sm leading-tight opacity-90 whitespace-pre overflow-x-auto">
-                    {ASCII_ART}
-                </pre>
+                <div className="text-primary-200 text-xs sm:text-sm leading-tight opacity-90 whitespace-pre overflow-x-auto">
+                    <pre className="mb-8">{ASCII_ART}</pre>
+                    <p className="text-terminal-prompt">
+                        <strong>Full Stack & AI Developer</strong> at{" "}
+                        <a
+                            href="https://sequesto.com"
+                            target="_blank"
+                            className="underline"
+                        >
+                            SEQUESTO BV
+                        </a>
+                    </p>
+                </div>
                 <div className="mt-4 text-terminal-primary text-sm leading-relaxed">
                     {ABOUT_ME}
                 </div>
+                <hr className="mt-4 opacity-20" />
                 <div className="mt-4 text-terminal-secondary text-sm">
                     <p>
-                        Type <span className="text-terminal-accent">help</span> to
-                        see available commands, or use the buttons below to
+                        Type <span className="text-terminal-accent">help</span>{" "}
+                        to see available commands, or use the buttons below to
                         navigate.
                     </p>
                 </div>
@@ -218,14 +238,11 @@ const TerminalBody: React.FC = () => {
             )}
 
             {/* Current command input */}
-            <div className="w-full flex flex-col mt-4">
+            <div className="w-full flex flex-col pb-4">
                 <span className="text-terminal-secondary text-xs sm:text-sm">
                     {currentDir.pwd}
                 </span>
-                <form
-                    onSubmit={run}
-                    className="flex items-center gap-2 w-full"
-                >
+                <form onSubmit={run} className="flex items-center gap-2 w-full">
                     <span className="text-terminal-prompt">$</span>
                     <input
                         ref={inputRef}
@@ -233,9 +250,7 @@ const TerminalBody: React.FC = () => {
                         type="text"
                         value={command}
                         onChange={(e) =>
-                            executing
-                                ? null
-                                : setCommand(e.currentTarget.value)
+                            executing ? null : setCommand(e.currentTarget.value)
                         }
                         disabled={executing}
                         maxLength={200}
