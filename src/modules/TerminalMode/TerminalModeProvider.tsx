@@ -16,6 +16,10 @@ import {
     introHistory,
     Exit,
     Empty,
+    PrintExperiences,
+    PrintProjects,
+    PrintSkills,
+    PrintContact,
 } from "./terminalService";
 
 type Props = {
@@ -48,7 +52,21 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
 
     function identifyCmd(cmdStr: string): TerminalHistory {
         const args = cmdStr.split(" ");
+        const normalizedCmd = cmdStr.trim().toLowerCase();
         let result: TerminalHistory;
+
+        // Handle multi-word commands first
+        if (normalizedCmd === "print experiences") {
+            return new PrintExperiences(currentDir.pwd);
+        } else if (normalizedCmd === "print projects") {
+            return new PrintProjects(currentDir.pwd);
+        } else if (normalizedCmd === "print skills") {
+            return new PrintSkills(currentDir.pwd);
+        } else if (normalizedCmd === "print contact") {
+            return new PrintContact(currentDir.pwd);
+        }
+
+        // Handle single-word commands
         switch (args[0].toLowerCase()) {
             case "ls":
                 result = new ls(cmdStr, currentDir.pwd, currentDir);
