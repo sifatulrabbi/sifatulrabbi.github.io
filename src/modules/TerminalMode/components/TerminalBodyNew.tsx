@@ -167,13 +167,13 @@ const TerminalBody: React.FC = () => {
             {/* Command history */}
             {history.length > 0 && (
                 <div className="w-full flex flex-col gap-4 mb-4">
-                    {history.map((h, idx) => (
+                    {history.map((h) => (
                         <div
                             key={h.cmd + v4()}
                             className="w-full flex flex-col gap-1"
                         >
                             {/* Don't show the intro message in history */}
-                            {idx > 0 && (
+                            {h.cmd !== "Hi there, welcome to my portfolio." && (
                                 <>
                                     {/* Command prompt */}
                                     <div className="flex flex-col">
