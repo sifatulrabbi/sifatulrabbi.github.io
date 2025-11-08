@@ -15,6 +15,8 @@ const ASCII_ART = `
 Full Stack & AI Developer | Portfolio v2.0
 `;
 
+const ABOUT_ME = `I love building software and collaborating with awesome people. I often use Python, TypeScript, or Go to hack out most of my curiosities on Neovim. I enjoy exploring the tech and generative AI world. My intuitions and experience in full-stack development makes me more product oriented and enables me to plan and deploy features from scratch.`;
+
 interface CommandButtonInfo {
     id: string;
     command: string;
@@ -119,28 +121,27 @@ const TerminalBody: React.FC = () => {
         (btn) => !executedCommands.has(btn.command.toLowerCase())
     );
 
-    const showWelcome = history.length === 1; // Only intro message
-
     return (
         <div
             onClick={handleTerminalClick}
             className="w-full h-full flex flex-col font-mono text-sm sm:text-base cursor-text"
         >
-            {/* ASCII Art Welcome - Only show initially */}
-            {showWelcome && (
-                <div className="mb-8">
-                    <pre className="text-terminal-prompt text-xs sm:text-sm leading-tight opacity-90 whitespace-pre overflow-x-auto">
-                        {ASCII_ART}
-                    </pre>
-                    <div className="mt-4 text-terminal-secondary text-sm">
-                        <p>
-                            Type <span className="text-terminal-accent">help</span> to
-                            see available commands, or use the buttons below to
-                            navigate.
-                        </p>
-                    </div>
+            {/* Header - Always visible */}
+            <div className="mb-8">
+                <pre className="text-terminal-prompt text-xs sm:text-sm leading-tight opacity-90 whitespace-pre overflow-x-auto">
+                    {ASCII_ART}
+                </pre>
+                <div className="mt-4 text-terminal-primary text-sm leading-relaxed">
+                    {ABOUT_ME}
                 </div>
-            )}
+                <div className="mt-4 text-terminal-secondary text-sm">
+                    <p>
+                        Type <span className="text-terminal-accent">help</span> to
+                        see available commands, or use the buttons below to
+                        navigate.
+                    </p>
+                </div>
+            </div>
 
             {/* Command history */}
             {history.length > 0 && (

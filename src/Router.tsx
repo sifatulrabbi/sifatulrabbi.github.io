@@ -3,7 +3,6 @@ import App from "./App";
 import BlogsLayout from "@/layouts/BlogsLayout";
 import BorwseBlogsPage from "@/modules/Blogs/BrowseBlogsPage";
 import ReadBlogPage from "./modules/Blogs/ReadBlogsPage";
-import personalFinanceRoutes from "./modules/PersonalFinance/router";
 import liveAppsRoutes from "./modules/LiveApps/router";
 import TerminalRoute from "./modules/TerminalMode/route";
 
@@ -29,10 +28,6 @@ const router = createBrowserRouter([
                         element: <ReadBlogPage />,
                     },
                 ],
-            },
-            {
-                path: "/personal-finance",
-                children: personalFinanceRoutes,
             },
             {
                 path: "/live-apps",
