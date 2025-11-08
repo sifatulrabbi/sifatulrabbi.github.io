@@ -12,7 +12,7 @@ const TerminalModePage: React.FC<Props> = () => {
     return (
         <div className="w-full min-h-screen bg-terminal-background flex items-center justify-center p-4">
             {/* Terminal Window Container */}
-            <div className="w-full max-w-6xl md:h-[85vh] bg-terminal-surface border-2 border-terminal-border rounded-lg overflow-hidden shadow-2xl flex flex-col">
+            <div className="w-full max-w-6xl md:h-[90vh] bg-terminal-surface border-2 border-terminal-border rounded-lg overflow-hidden shadow-2xl flex flex-col">
                 {/* Terminal Header */}
                 <div className="bg-terminal-border px-4 py-3 flex items-center justify-between border-b border-terminal-border-dim">
                     {/* Left: Window controls */}

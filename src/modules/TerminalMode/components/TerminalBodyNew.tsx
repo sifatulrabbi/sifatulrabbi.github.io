@@ -133,14 +133,15 @@ const TerminalBody: React.FC = () => {
     return (
         <div
             onClick={handleTerminalClick}
-            className="w-full h-full flex flex-col font-mono text-sm sm:text-base cursor-text"
+            className="w-full h-full flex flex-col font-mono text-base cursor-text"
         >
             {/* Header - Always visible */}
             <div className="mb-8">
-                <div className="text-primary-200 text-xs sm:text-sm leading-tight opacity-90 whitespace-pre overflow-x-auto">
-                    <pre className="mb-8">{ASCII_ART}</pre>
+                <div className="text-primary-400 leading-tight overflow-y-hidden overflow-x-auto">
+                    <pre className="mb-8 whitespace-pre ">{ASCII_ART}</pre>
                     <p className="text-terminal-prompt">
-                        <strong>Full Stack & AI Developer</strong> at{" "}
+                        <strong>Full Stack & AI Developer</strong>
+                        {" at "}
                         <a
                             href="https://sequesto.com"
                             target="_blank"
@@ -150,11 +151,11 @@ const TerminalBody: React.FC = () => {
                         </a>
                     </p>
                 </div>
-                <div className="mt-4 text-terminal-primary text-sm leading-relaxed">
+                <div className="mt-4 text-terminal-primary leading-relaxed">
                     {ABOUT_ME}
                 </div>
                 <hr className="mt-4 opacity-20" />
-                <div className="mt-4 text-terminal-secondary text-sm">
+                <div className="mt-4 text-terminal-secondary">
                     <p>
                         Type <span className="text-terminal-accent">help</span>{" "}
                         to see available commands, or use the buttons below to
@@ -199,7 +200,7 @@ const TerminalBody: React.FC = () => {
                                             }`}
                                         >
                                             <div
-                                                className="prose prose-invert prose-sm max-w-full prose-p:text-terminal-primary prose-strong:text-terminal-accent prose-ul:text-terminal-primary prose-li:text-terminal-primary prose-a:text-terminal-info prose-a:no-underline hover:prose-a:underline"
+                                                className="prose prose-invert prose-base max-w-full prose-p:text-terminal-primary prose-strong:text-terminal-accent prose-ul:text-terminal-primary prose-li:text-terminal-primary prose-a:text-terminal-info prose-a:no-underline hover:prose-a:underline"
                                                 dangerouslySetInnerHTML={{
                                                     __html: h.output,
                                                 }}
