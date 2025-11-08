@@ -1,7 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import PortfolioLayout from "@/layouts/PortfolioLayout";
-import HomeLayout from "@/layouts/HomeLayout";
 import BlogsLayout from "@/layouts/BlogsLayout";
 import BorwseBlogsPage from "@/modules/Blogs/BrowseBlogsPage";
 import ReadBlogPage from "./modules/Blogs/ReadBlogsPage";
@@ -16,23 +14,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "",
-                element: <HomeLayout />,
-            },
-            {
-                path: "/experiences",
-                element: <PortfolioLayout />,
-            },
-            {
-                path: "/projects",
-                element: <PortfolioLayout />,
-            },
-            {
-                path: "/skills",
-                element: <PortfolioLayout />,
-            },
-            {
-                path: "/contact",
-                element: <PortfolioLayout />,
+                element: <TerminalRoute />,
             },
             {
                 path: "/blogs",
@@ -55,10 +37,6 @@ const router = createBrowserRouter([
             {
                 path: "/live-apps",
                 children: liveAppsRoutes,
-            },
-            {
-                path: "/terminal",
-                element: <TerminalRoute />,
             },
         ],
     },
