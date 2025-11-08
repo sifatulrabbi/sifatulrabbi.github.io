@@ -16,6 +16,10 @@ import {
     introHistory,
     Exit,
     Empty,
+    PrintExperiences,
+    PrintProjects,
+    PrintSkills,
+    PrintContact,
 } from "./terminalService";
 
 type Props = {
@@ -27,11 +31,6 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
     const [history, setHistory] = useState<TerminalHistory[]>([introHistory]);
     const [executing, setExecuting] = useState(false);
     const [currentDir, setCurrentDir] = useState<FileEntry>(rootDirectory);
-
-    useEffect(() => {
-        document.addEventListener("keydown", handleKeydown);
-        return () => document.removeEventListener("keydown", handleKeydown);
-    }, []);
 
     async function runCommand(cmdStr: string) {
         setExecuting(true);
@@ -48,7 +47,21 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
 
     function identifyCmd(cmdStr: string): TerminalHistory {
         const args = cmdStr.split(" ");
+        const normalizedCmd = cmdStr.trim().toLowerCase();
         let result: TerminalHistory;
+
+        // Handle multi-word commands first
+        if (normalizedCmd === "print experiences") {
+            return new PrintExperiences(currentDir.pwd);
+        } else if (normalizedCmd === "print projects") {
+            return new PrintProjects(currentDir.pwd);
+        } else if (normalizedCmd === "print skills") {
+            return new PrintSkills(currentDir.pwd);
+        } else if (normalizedCmd === "print contact") {
+            return new PrintContact(currentDir.pwd);
+        }
+
+        // Handle single-word commands
         switch (args[0].toLowerCase()) {
             case "ls":
                 result = new ls(cmdStr, currentDir.pwd, currentDir);
@@ -71,7 +84,7 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
                 result = new cat(cmdStr, currentDir.pwd, currentDir);
                 break;
             case "clear":
-                setHistory([]);
+                setHistory([introHistory]);
                 result = new IgnoreCommand(currentDir.pwd);
                 break;
             case "help":
@@ -111,8 +124,17 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
     }
 
     function handleKeydown(e: KeyboardEvent) {
-        e.key;
+        switch (e.key.toLowerCase()) {
+            case "tab":
+                e.preventDefault();
+                break;
+        }
     }
+
+    useEffect(() => {
+        document.addEventListener("keydown", handleKeydown);
+        return () => document.removeEventListener("keydown", handleKeydown);
+    }, []);
 
     return (
         <terminalModeContext.Provider

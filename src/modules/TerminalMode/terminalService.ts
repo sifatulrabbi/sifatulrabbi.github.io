@@ -4,6 +4,10 @@ import { marked } from "marked";
 import dayjs from "dayjs";
 import { experiencesData } from "./experienceData";
 import { projectsData } from "./projectsData";
+import {
+    experienceSectionData,
+    projectsData as structuredProjects,
+} from "@/assets/data";
 
 export class ListExp implements TerminalHistory {
     private readonly args: string[] = [];
@@ -329,18 +333,253 @@ export class Empty implements TerminalHistory {
     }
 }
 
-const helpText = marked(`Available commands:
-- <span class="text-primary-200">help, h</span> -> See all the available command list
-- <span class="text-primary-200">list_exp</span> -> All my experiences
-- <span class="text-primary-200">list_proj</span> -> All my Projects
-- <span class="text-primary-200">ls</span> -> List all the directories/files of the current path
-- <span class="text-primary-200">cd [dir name]</span> -> Move between directories
-- <span class="text-primary-200">cat [file name]</span> -> Print the contents of a file. Use this to see my experiences and project descriptions
+export class PrintExperiences implements TerminalHistory {
+    cmd = "print experiences";
+    private _output: string = "";
+    exitCode: TerminalExitCode = 0;
 
-Tip: Using only the first few words of a file/directory name will also work. i.e. 'cd ex' will work.`) as string;
+    constructor(public readonly pwd: string) {}
+
+    exec(): TerminalExitCode {
+        let html = `
+            <div class="terminal-section">
+                <h2 class="text-terminal-accent text-xl font-bold mb-6 border-b border-terminal-border pb-2">
+                    💼 Work Experience
+                </h2>
+        `;
+
+        experienceSectionData.forEach((exp, idx) => {
+            html += `
+                <div class="mb-8 pb-6 ${idx < experienceSectionData.length - 1 ? "border-b border-terminal-border-dim" : ""}">
+                    <div class="mb-3">
+                        <h3 class="text-terminal-prompt text-lg font-bold">${exp.position}</h3>
+                        ${exp.companyUrl ? `<a href="${exp.companyUrl}" target="_blank" rel="noopener noreferrer" class="text-terminal-info hover:text-terminal-accent transition-colors">${exp.companyName}</a>` : `<span class="text-terminal-primary">${exp.companyName}</span>`}
+                        <span class="text-terminal-secondary"> • ${exp.companyLocation}</span>
+                    </div>
+                    <div class="text-terminal-secondary text-sm mb-2">
+                        ${exp.from} - ${exp.till || "Present"} • ${exp.employmentType} • ${exp.jobType}
+                    </div>
+                    ${exp.companySummary ? `<p class="text-terminal-primary italic mb-3">${exp.companySummary}</p>` : ""}
+                    ${
+                        exp.description.length > 0
+                            ? `
+                        <ul class="list-disc list-inside space-y-1 text-terminal-primary mb-3">
+                            ${exp.description.map((desc) => `<li>${desc}</li>`).join("")}
+                        </ul>
+                    `
+                            : ""
+                    }
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        ${exp.techStack.map((tech) => `<span class="px-2 py-1 bg-terminal-border text-terminal-accent text-xs rounded">${tech}</span>`).join("")}
+                    </div>
+                </div>
+            `;
+        });
+
+        html += `</div>`;
+        this._output = html;
+        return 0;
+    }
+
+    get output() {
+        return this._output;
+    }
+}
+
+export class PrintProjects implements TerminalHistory {
+    cmd = "print projects";
+    private _output: string = "";
+    exitCode: TerminalExitCode = 0;
+
+    constructor(public readonly pwd: string) {}
+
+    exec(): TerminalExitCode {
+        let html = `
+            <div class="terminal-section">
+                <h2 class="text-terminal-accent text-xl font-bold mb-6 border-b border-terminal-border pb-2">
+                    🚀 Projects
+                </h2>
+        `;
+
+        structuredProjects.forEach((project, idx) => {
+            html += `
+                <div class="mb-6 pb-6 ${idx < structuredProjects.length - 1 ? "border-b border-terminal-border-dim" : ""}">
+                    <h3 class="text-terminal-prompt text-lg font-bold mb-2">${project.title}</h3>
+                    <p class="text-terminal-primary mb-3">${project.summary}</p>
+                    <div class="flex gap-4 mb-3 text-sm">
+                        ${project.githubLink ? `<a href="${project.githubLink}" target="_blank" rel="noopener noreferrer" class="text-terminal-info hover:text-terminal-accent transition-colors">🔗 GitHub</a>` : ""}
+                        ${project.liveLink ? `<a href="${project.liveLink}" target="_blank" rel="noopener noreferrer" class="text-terminal-info hover:text-terminal-accent transition-colors">🌐 Live Demo</a>` : ""}
+                        <span class="text-terminal-warning">${project.projectType}</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        ${project.techStack.map((tech) => `<span class="px-2 py-1 bg-terminal-border text-terminal-accent text-xs rounded">${tech}</span>`).join("")}
+                    </div>
+                </div>
+            `;
+        });
+
+        html += `</div>`;
+        this._output = html;
+        return 0;
+    }
+
+    get output() {
+        return this._output;
+    }
+}
+
+export class PrintSkills implements TerminalHistory {
+    cmd = "print skills";
+    private _output: string = "";
+    exitCode: TerminalExitCode = 0;
+
+    constructor(public readonly pwd: string) {}
+
+    exec(): TerminalExitCode {
+        const skills = {
+            "Programming Languages": [
+                "TypeScript",
+                "JavaScript",
+                "Python",
+                "Go",
+                "SQL",
+            ],
+            "Frontend": [
+                "React",
+                "Next.js",
+                "Vue.js",
+                "TailwindCSS",
+                "HTML/CSS",
+            ],
+            "Backend": [
+                "Node.js",
+                "FastAPI",
+                "Express.js",
+                "Echo (Go)",
+                "REST APIs",
+                "GraphQL",
+            ],
+            "Databases": [
+                "PostgreSQL",
+                "MongoDB",
+                "Redis",
+                "Cassandra",
+                "Firebase",
+            ],
+            "AI/ML": ["Langchain", "OpenAI", "LLM Integration", "Vector DBs"],
+            "DevOps & Tools": [
+                "Docker",
+                "Kubernetes",
+                "GCP",
+                "AWS",
+                "Nginx",
+                "Git",
+            ],
+            "Concepts": [
+                "Microservices",
+                "System Design",
+                "API Design",
+                "WebSockets",
+                "Pub/Sub",
+                "Background Jobs",
+            ],
+        };
+
+        let html = `
+            <div class="terminal-section">
+                <h2 class="text-terminal-accent text-xl font-bold mb-6 border-b border-terminal-border pb-2">
+                    ⚡ Technical Skills
+                </h2>
+        `;
+
+        Object.entries(skills).forEach(([category, items]) => {
+            html += `
+                <div class="mb-5">
+                    <h3 class="text-terminal-prompt font-bold mb-3">${category}</h3>
+                    <div class="flex flex-wrap gap-2">
+                        ${items.map((skill) => `<span class="px-3 py-1 bg-terminal-surface border border-terminal-border text-terminal-primary text-sm rounded hover:border-terminal-accent transition-colors">${skill}</span>`).join("")}
+                    </div>
+                </div>
+            `;
+        });
+
+        html += `</div>`;
+        this._output = html;
+        return 0;
+    }
+
+    get output() {
+        return this._output;
+    }
+}
+
+export class PrintContact implements TerminalHistory {
+    cmd = "print contact";
+    private _output: string = "";
+    exitCode: TerminalExitCode = 0;
+
+    constructor(public readonly pwd: string) {}
+
+    exec(): TerminalExitCode {
+        const html = `
+            <div class="terminal-section">
+                <h2 class="text-terminal-accent text-xl font-bold mb-6 border-b border-terminal-border pb-2">
+                    📬 Get In Touch
+                </h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-terminal-prompt font-bold mb-2">Email</h3>
+                        <a href="mailto:sifatul.rabbi@outlook.com" class="text-terminal-info hover:text-terminal-accent transition-colors">
+                            sifatul.rabbi@outlook.com
+                        </a>
+                    </div>
+                    <div>
+                        <h3 class="text-terminal-prompt font-bold mb-2">Social Links</h3>
+                        <div class="flex flex-col gap-2">
+                            <a href="https://github.com/sifatulrabbi" target="_blank" rel="noopener noreferrer" class="text-terminal-info hover:text-terminal-accent transition-colors">
+                                🔗 GitHub: github.com/sifatulrabbi
+                            </a>
+                            <a href="https://linkedin.com/in/sifatulrabbi" target="_blank" rel="noopener noreferrer" class="text-terminal-info hover:text-terminal-accent transition-colors">
+                                🔗 LinkedIn: linkedin.com/in/sifatulrabbi
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-terminal-surface border border-terminal-border rounded">
+                        <p class="text-terminal-primary">
+                            💡 Feel free to reach out for collaborations, opportunities, or just to say hi!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
+        this._output = html;
+        return 0;
+    }
+
+    get output() {
+        return this._output;
+    }
+}
+
+const helpText = marked(`Available commands:
+- <span class="text-terminal-accent">help, h</span> -> See all the available command list
+- <span class="text-terminal-accent">print experiences</span> -> View my work experience with details
+- <span class="text-terminal-accent">print projects</span> -> Browse my projects with links
+- <span class="text-terminal-accent">print skills</span> -> See my technical skills
+- <span class="text-terminal-accent">print contact</span> -> Get my contact information
+- <span class="text-terminal-accent">list_exp</span> -> All my experiences (simple list)
+- <span class="text-terminal-accent">list_proj</span> -> All my projects (simple list)
+- <span class="text-terminal-accent">ls</span> -> List all the directories/files of the current path
+- <span class="text-terminal-accent">cd [dir name]</span> -> Move between directories
+- <span class="text-terminal-accent">cat [file name]</span> -> Print the contents of a file
+- <span class="text-terminal-accent">clear</span> -> Clear the terminal screen
+- <span class="text-terminal-accent">time</span> -> Display current time
+- <span class="text-terminal-accent">echo [text]</span> -> Echo text back
+
+<span class="text-terminal-success">Tip:</span> Using only the first few words of a file/directory name will also work. i.e. <span class="text-terminal-string">'cd ex'</span> will work.`) as string;
 
 export class Help implements TerminalHistory {
-    cmd = "Hi there, welcome to my portfolio.";
+    cmd = "help";
     output = helpText;
     exitCode: TerminalExitCode = 0;
     constructor(public readonly pwd: string) {}
