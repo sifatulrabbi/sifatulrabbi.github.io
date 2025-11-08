@@ -62,16 +62,20 @@ const TerminalBody: React.FC = () => {
     const { runCommand, executing, history, currentDir } = useTerminalMode();
     const inputRef = useRef<HTMLInputElement>(null);
     const bottomRef = useRef<HTMLDivElement>(null);
+    const prevHistoryLength = useRef(history.length);
 
     async function run(e: React.SyntheticEvent<HTMLFormElement>) {
         e.preventDefault();
         if (!command.trim()) return;
 
+        const cmdText = command.trim().toLowerCase();
+
         await runCommand(command);
 
-        // Track executed commands for button visibility
-        const baseCmd = command.trim().toLowerCase();
-        setExecutedCommands((prev) => new Set([...prev, baseCmd]));
+        // Don't track "clear" as executed command
+        if (cmdText !== "clear") {
+            setExecutedCommands((prev) => new Set([...prev, cmdText]));
+        }
 
         setCommand("");
         await new Promise((r) => setTimeout(r, 100));
@@ -95,6 +99,15 @@ const TerminalBody: React.FC = () => {
     // Re-focus input when history changes
     useEffect(() => {
         inputRef.current?.focus();
+    }, [history]);
+
+    // Reset executed commands when screen is cleared
+    useEffect(() => {
+        // If history length decreased significantly, screen was cleared
+        if (history.length < prevHistoryLength.current && history.length <= 1) {
+            setExecutedCommands(new Set());
+        }
+        prevHistoryLength.current = history.length;
     }, [history]);
 
     const handleTerminalClick = () => {
