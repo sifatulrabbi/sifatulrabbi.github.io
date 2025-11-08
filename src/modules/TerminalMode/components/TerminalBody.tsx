@@ -14,12 +14,19 @@ const TerminalBody: React.FC = () => {
         setCommand("");
         await new Promise((r) => setTimeout(r, 100));
         bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+        // Re-focus input after command execution
+        inputRef.current?.focus();
     }
 
-    // Focus input on mount and when clicking terminal
+    // Focus input on mount
     useEffect(() => {
         inputRef.current?.focus();
     }, []);
+
+    // Re-focus input when history changes (after command execution)
+    useEffect(() => {
+        inputRef.current?.focus();
+    }, [history]);
 
     const handleTerminalClick = () => {
         inputRef.current?.focus();
