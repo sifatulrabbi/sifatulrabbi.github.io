@@ -2,7 +2,14 @@ import React, { useState, useRef, useEffect } from "react";
 import { useTerminalMode } from "../terminalModeContext";
 import { v4 } from "uuid";
 import { CommandButton } from "@/components";
-import { FiFolder, FiFileText, FiMail, FiCode, FiChevronDown, FiChevronUp } from "react-icons/fi";
+import {
+    FiFolder,
+    FiFileText,
+    FiMail,
+    FiCode,
+    FiChevronDown,
+    FiChevronUp,
+} from "react-icons/fi";
 
 const ASCII_ART = `
 ███████╗ ██╗ ███████╗ █████╗ ████████╗██╗   ██╗ ██╗
@@ -145,7 +152,9 @@ const TerminalBody: React.FC = () => {
             {/* Header - Always visible */}
             <div className="mb-8">
                 <div className="text-primary-400 leading-tight overflow-y-hidden overflow-x-auto">
-                    <pre className="mb-8 whitespace-pre scale-50 md:scale-100 origin-left">{ASCII_ART}</pre>
+                    <pre className="mb-8 whitespace-pre scale-50 md:scale-100 origin-left">
+                        {ASCII_ART}
+                    </pre>
                     <p className="text-terminal-prompt">
                         <strong>Full Stack & AI Developer</strong>
                         {" at "}
@@ -223,9 +232,11 @@ const TerminalBody: React.FC = () => {
 
             {/* Command Buttons - Show available ones */}
             {availableButtons.length > 0 && (
-                <div className="mb-6">
+                <div className={isQuickActionsExpanded ? "mb-6" : ""}>
                     <button
-                        onClick={() => setIsQuickActionsExpanded(!isQuickActionsExpanded)}
+                        onClick={() =>
+                            setIsQuickActionsExpanded(!isQuickActionsExpanded)
+                        }
                         className="w-full text-terminal-secondary text-xs mb-3 flex items-center gap-2 hover:text-terminal-accent transition-colors cursor-pointer"
                     >
                         <span className="text-terminal-comment">
