@@ -152,7 +152,7 @@ const TerminalBody: React.FC = () => {
             {/* Header - Always visible */}
             <div className="mb-8">
                 <div className="text-primary-400 leading-tight overflow-y-hidden overflow-x-auto">
-                    <pre className="mb-8 whitespace-pre origin-left text-[7px]">
+                    <pre className="mb-8 whitespace-pre origin-left text-[7px] md:text-base">
                         {ASCII_ART}
                     </pre>
                     <p className="text-terminal-prompt">
