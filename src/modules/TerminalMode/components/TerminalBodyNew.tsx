@@ -2,7 +2,14 @@ import React, { useState, useRef, useEffect } from "react";
 import { useTerminalMode } from "../terminalModeContext";
 import { v4 } from "uuid";
 import { CommandButton } from "@/components";
-import { FiFolder, FiFileText, FiMail, FiCode } from "react-icons/fi";
+import {
+    FiFolder,
+    FiFileText,
+    FiMail,
+    FiCode,
+    FiChevronDown,
+    FiChevronUp,
+} from "react-icons/fi";
 
 const ASCII_ART = `
 ███████╗ ██╗ ███████╗ █████╗ ████████╗██╗   ██╗ ██╗
@@ -66,6 +73,7 @@ const TerminalBody: React.FC = () => {
     const [executedCommands, setExecutedCommands] = useState<Set<string>>(
         new Set(),
     );
+    const [isQuickActionsExpanded, setIsQuickActionsExpanded] = useState(true);
     const { runCommand, executing, history, currentDir } = useTerminalMode();
     const inputRef = useRef<HTMLInputElement>(null);
     const bottomRef = useRef<HTMLDivElement>(null);
@@ -76,6 +84,9 @@ const TerminalBody: React.FC = () => {
         if (!command.trim()) return;
 
         const cmdText = command.trim().toLowerCase();
+
+        // Auto-collapse quick actions to make room for history
+        setIsQuickActionsExpanded(false);
 
         await runCommand(command);
 
@@ -91,6 +102,9 @@ const TerminalBody: React.FC = () => {
     }
 
     const handleCommandButtonClick = async (cmd: string) => {
+        // Auto-collapse quick actions to make room for history
+        setIsQuickActionsExpanded(false);
+
         await runCommand(cmd);
         setExecutedCommands((prev) => new Set([...prev, cmd.toLowerCase()]));
         await new Promise((r) => setTimeout(r, 100));
@@ -138,7 +152,9 @@ const TerminalBody: React.FC = () => {
             {/* Header - Always visible */}
             <div className="mb-8">
                 <div className="text-primary-400 leading-tight overflow-y-hidden overflow-x-auto">
-                    <pre className="mb-8 whitespace-pre ">{ASCII_ART}</pre>
+                    <pre className="mb-8 whitespace-pre origin-left text-[7px]">
+                        {ASCII_ART}
+                    </pre>
                     <p className="text-terminal-prompt">
                         <strong>Full Stack & AI Developer</strong>
                         {" at "}
@@ -216,25 +232,37 @@ const TerminalBody: React.FC = () => {
 
             {/* Command Buttons - Show available ones */}
             {availableButtons.length > 0 && (
-                <div className="mb-6">
-                    <div className="text-terminal-secondary text-xs mb-3">
+                <div className={isQuickActionsExpanded ? "mb-6" : ""}>
+                    <button
+                        onClick={() =>
+                            setIsQuickActionsExpanded(!isQuickActionsExpanded)
+                        }
+                        className={`text-terminal-secondary text-xs mb-3 flex justify-between items-center gap-2 px-3 py-2 rounded border border-terminal-border/30 hover:border-terminal-accent/50 hover:bg-terminal-surface/50 hover:text-terminal-accent transition-all cursor-pointer ${isQuickActionsExpanded ? "w-full " : "w-auto"}`}
+                    >
                         <span className="text-terminal-comment">
                             # Quick commands:
                         </span>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                        {availableButtons.map((btn) => (
-                            <CommandButton
-                                key={btn.id}
-                                command={btn.command}
-                                onClick={() =>
-                                    handleCommandButtonClick(btn.command)
-                                }
-                                variant="secondary"
-                                icon={btn.icon}
-                            />
-                        ))}
-                    </div>
+                        {isQuickActionsExpanded ? (
+                            <FiChevronUp className="text-terminal-accent" />
+                        ) : (
+                            <FiChevronDown className="text-terminal-accent" />
+                        )}
+                    </button>
+                    {isQuickActionsExpanded && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                            {availableButtons.map((btn) => (
+                                <CommandButton
+                                    key={btn.id}
+                                    command={btn.command}
+                                    onClick={() =>
+                                        handleCommandButtonClick(btn.command)
+                                    }
+                                    variant="secondary"
+                                    icon={btn.icon}
+                                />
+                            ))}
+                        </div>
+                    )}
                 </div>
             )}
 
