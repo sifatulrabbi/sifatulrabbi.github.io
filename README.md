@@ -1,27 +1,24 @@
-# React + TypeScript + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I've built this portfolio by being inspired by the terminal where I spent most of my time as a software developer.
 
-Currently, two official plugins are available:
+## Underlying structure
 
--   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
--   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This terminal is not connected to shell or any VM via any protocol. Its a complete emulation. I like the terminal and was curious how it would be built if I try building it from scratch. At the time I did not have any experience or knowledge of building shell in Linux or MacOS so I thought why not use the web as the canvas to paint my imagination.
 
-## Expanding the ESLint configuration
+### Terminal Emulation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Instead of building the entire shell and file system I just took what is needed for my portfolio. In the `terminalMode.d.ts` file there are:
 
--   Configure the top-level `parserOptions` property like this:
+- `TerminalHistory` contains an input and its output if the input was a valid command.
+- `TerminalModeContext` React context's type used for the terminal components. It contains all the history and the current directory path.
+- `FileEntry` an entry that's either a file or file with children (directory). These are HTML or markdown formatted content that the terminal history component will display with styles.
+- `TerminalExitCode` either 0 or 1 where 0 is success and 1 is error.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### Process of executing a command
 
--   Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
--   Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
--   Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+When a command is entered in the input the current setup follows these steps to finally produce a `TerminalHistory` that gets printed on the terminal's history container.
+
+## AI Coding tools are involved
+
+Parts of the UI is done with [Claude.ai/code](https://claude.ai/code) to speed up the UI refactoring. However, the core logic of the terminal, the history, command execution, the React context, were done by manual coding.
