@@ -237,7 +237,7 @@ const TerminalBody: React.FC = () => {
                         onClick={() =>
                             setIsQuickActionsExpanded(!isQuickActionsExpanded)
                         }
-                        className="w-full text-terminal-secondary text-xs mb-3 flex items-center gap-2 hover:text-terminal-accent transition-colors cursor-pointer"
+                        className="w-full text-terminal-secondary text-xs mb-3 flex items-center gap-2 px-3 py-2 rounded border border-terminal-border/30 hover:border-terminal-accent/50 hover:bg-terminal-surface/50 hover:text-terminal-accent transition-all cursor-pointer"
                     >
                         <span className="text-terminal-comment">
                             # Quick commands:
