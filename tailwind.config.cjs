@@ -39,11 +39,9 @@ module.exports = {
                 },
             },
             fontFamily: {
-                display: ["Montserrat", "sans-serif"],
-                // display: ["Roboto", "sans-serif"],
-                // body: ["Karla", "sans-serif"],
-                body: ["Roboto", "sans-serif"],
-                mono: ["Fira Code", "monospace"],
+                display: ["JetBrains Mono", "monospace"],
+                body: ["JetBrains Mono", "monospace"],
+                mono: ["JetBrains Mono", "monospace"],
             },
             keyframes: {
                 blink: {

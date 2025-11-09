@@ -137,3 +137,30 @@ h6 {
 .animate-fadeIn {
     animation: fadeIn 0.5s ease-out forwards;
 }
+
+/* Custom Terminal Scrollbar */
+.terminal-scrollbar {
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #30363D #161B22;
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+.terminal-scrollbar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-track {
+    background: #161B22; /* terminal-surface */
+    border-radius: 4px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+    background: #30363D; /* terminal-border */
+    border-radius: 4px;
+    border: 2px solid #161B22; /* Creates padding effect */
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #58A6FF; /* terminal-accent */
+}

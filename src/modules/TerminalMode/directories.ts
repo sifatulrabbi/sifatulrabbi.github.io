@@ -1,6 +1,6 @@
 import type { FileEntry } from "@/types";
-import { projectsData } from "./projectsData";
-import { experiencesData } from "./experienceData";
+import { projectsData } from "./data/projectsData";
+import { experiencesData } from "./data/experienceData";
 
 export class Entry implements FileEntry {
     parent: FileEntry | null = null;

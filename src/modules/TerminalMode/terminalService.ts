@@ -2,8 +2,8 @@ import type { TerminalHistory, TerminalExitCode, FileEntry } from "@/types";
 import { rootDirectory } from "./directories";
 import { marked } from "marked";
 import dayjs from "dayjs";
-import { experiencesData } from "./experienceData";
-import { projectsData } from "./projectsData";
+import { experiencesData } from "./data/experienceData";
+import { projectsData } from "./data/projectsData";
 import {
     experienceSectionData,
     projectsData as structuredProjects,

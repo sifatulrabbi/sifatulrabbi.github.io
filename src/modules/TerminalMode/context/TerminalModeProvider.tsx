@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { terminalModeContext } from "./terminalModeContext";
 import { FileEntry, TerminalHistory } from "@/types";
-import { rootDirectory } from "./directories";
+import { rootDirectory } from "../directories";
 import {
     InvalidCommand,
     IgnoreCommand,
@@ -20,7 +20,7 @@ import {
     PrintProjects,
     PrintSkills,
     PrintContact,
-} from "./terminalService";
+} from "../terminalService";
 
 type Props = {
     children?: React.ReactNode;

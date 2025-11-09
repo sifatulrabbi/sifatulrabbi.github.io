@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import type { TerminalModeContext } from "@/types";
-import { rootDirectory } from "./directories";
+import { rootDirectory } from "../directories";
 
 export const terminalModeContext = createContext<TerminalModeContext>({
     history: [],
