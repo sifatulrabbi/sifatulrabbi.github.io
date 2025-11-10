@@ -20,7 +20,12 @@ import {
     PrintProjects,
     PrintSkills,
     PrintContact,
+    ChatCommand,
+    ChatMessage,
 } from "../terminalService";
+import { chatStorage } from "../services/chatStorage";
+import { streamChatResponse } from "../services/aiService";
+import type { ChatMessage as ChatMessageType } from "@/types/chatMode";
 
 type Props = {
     children?: React.ReactNode;
@@ -31,6 +36,8 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
     const [history, setHistory] = useState<TerminalHistory[]>([introHistory]);
     const [executing, setExecuting] = useState(false);
     const [currentDir, setCurrentDir] = useState<FileEntry>(rootDirectory);
+    const [chatMode, setChatMode] = useState(false);
+    const [chatMessages, setChatMessages] = useState<ChatMessageType[]>([]);
 
     async function runCommand(cmdStr: string) {
         setExecuting(true);
@@ -43,6 +50,97 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
             setHistory((p) => [...p, cmd]);
         }
         setExecuting(false);
+    }
+
+    function toggleChatMode() {
+        setChatMode((prev) => {
+            const newMode = !prev;
+            // Add a message to history indicating mode change
+            const message = newMode
+                ? "Chat mode enabled. Ask me anything about Sifatul! Type /chat again to return to terminal mode."
+                : "Chat mode disabled. Back to terminal mode.";
+
+            const toggleMsg: TerminalHistory = {
+                cmd: "/chat",
+                output: `<p class="text-terminal-info">${message}</p>`,
+                exitCode: 0,
+                pwd: currentDir.pwd,
+                exec: () => 0,
+            };
+            setHistory((p) => [...p, toggleMsg]);
+            return newMode;
+        });
+    }
+
+    async function sendChatMessage(message: string): Promise<void> {
+        if (!message.trim()) return;
+
+        setExecuting(true);
+
+        // Create user message
+        const userMsg: ChatMessageType = {
+            role: "user",
+            content: message,
+            timestamp: Date.now(),
+        };
+
+        // Save user message to localStorage
+        chatStorage.saveMessage(userMsg);
+        setChatMessages((prev) => [...prev, userMsg]);
+
+        // Create a placeholder for streaming response
+        let aiResponseText = "";
+
+        const streamingMsg = new ChatMessage(message, "", currentDir.pwd);
+        setHistory((p) => [...p, streamingMsg]);
+
+        try {
+            await streamChatResponse(
+                [...chatMessages, userMsg],
+                (chunk: string) => {
+                    // Update streaming response
+                    aiResponseText += chunk;
+                    setHistory((p) => {
+                        const newHistory = [...p];
+                        const lastMsg = newHistory[newHistory.length - 1];
+                        if (lastMsg.isChatMessage) {
+                            lastMsg.aiResponse = aiResponseText;
+                            lastMsg.output = aiResponseText;
+                        }
+                        return newHistory;
+                    });
+                },
+                () => {
+                    // On complete
+                    const assistantMsg: ChatMessageType = {
+                        role: "assistant",
+                        content: aiResponseText,
+                        timestamp: Date.now(),
+                    };
+                    chatStorage.saveMessage(assistantMsg);
+                    setChatMessages((prev) => [...prev, assistantMsg]);
+                    setExecuting(false);
+                },
+                (error: Error) => {
+                    // On error
+                    console.error("Chat error:", error);
+                    const errorMsg = `<p class="text-terminal-error">Error: ${error.message}</p>`;
+                    setHistory((p) => {
+                        const newHistory = [...p];
+                        const lastMsg = newHistory[newHistory.length - 1];
+                        if (lastMsg.isChatMessage) {
+                            lastMsg.aiResponse = errorMsg;
+                            lastMsg.output = errorMsg;
+                        }
+                        return newHistory;
+                    });
+                    setExecuting(false);
+                }
+            );
+        } catch (error) {
+            console.error("Chat error:", error);
+            setExecuting(false);
+        }
     }
 
     function identifyCmd(cmdStr: string): TerminalHistory {
@@ -63,6 +161,9 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
 
         // Handle single-word commands
         switch (args[0].toLowerCase()) {
+            case "/chat":
+                result = new ChatCommand(currentDir.pwd, toggleChatMode);
+                break;
             case "ls":
                 result = new ls(cmdStr, currentDir.pwd, currentDir);
                 break;
@@ -136,9 +237,42 @@ const TerminalModePage: React.FC<Props> = ({ children, exitTerminalMode }) => {
         return () => document.removeEventListener("keydown", handleKeydown);
     }, []);
 
+    // Load chat history from localStorage on mount
+    useEffect(() => {
+        const savedMessages = chatStorage.getHistory();
+        if (savedMessages.length > 0) {
+            setChatMessages(savedMessages);
+
+            // Add saved chat messages to terminal history
+            const chatHistoryEntries: TerminalHistory[] = [];
+            for (let i = 0; i < savedMessages.length; i += 2) {
+                const userMsg = savedMessages[i];
+                const aiMsg = savedMessages[i + 1];
+                if (userMsg && aiMsg && userMsg.role === "user" && aiMsg.role === "assistant") {
+                    chatHistoryEntries.push(
+                        new ChatMessage(userMsg.content, aiMsg.content, currentDir.pwd)
+                    );
+                }
+            }
+
+            if (chatHistoryEntries.length > 0) {
+                // Don't show chat history on initial load, just keep in memory
+                // User can see it when they enable chat mode
+            }
+        }
+    }, []);
+
     return (
         <terminalModeContext.Provider
-            value={{ history, runCommand, executing, currentDir }}
+            value={{
+                history,
+                runCommand,
+                executing,
+                currentDir,
+                chatMode,
+                toggleChatMode,
+                sendChatMessage,
+            }}
         >
             {children}
         </terminalModeContext.Provider>

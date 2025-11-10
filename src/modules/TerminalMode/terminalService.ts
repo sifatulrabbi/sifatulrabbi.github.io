@@ -575,6 +575,7 @@ const helpText = marked(`Available commands:
 - <span class="text-terminal-accent">clear</span> -> Clear the terminal screen
 - <span class="text-terminal-accent">time</span> -> Display current time
 - <span class="text-terminal-accent">echo [text]</span> -> Echo text back
+- <span class="text-terminal-accent">/chat</span> -> Toggle AI chat mode (ask questions about Sifatul)
 
 <span class="text-terminal-success">Tip:</span> Using only the first few words of a file/directory name will also work. i.e. <span class="text-terminal-string">'cd ex'</span> will work.`) as string;
 
@@ -583,6 +584,46 @@ export class Help implements TerminalHistory {
     output = helpText;
     exitCode: TerminalExitCode = 0;
     constructor(public readonly pwd: string) {}
+
+    exec(): TerminalExitCode {
+        return 0;
+    }
+}
+
+export class ChatCommand implements TerminalHistory {
+    cmd = "/chat";
+    output = "";
+    exitCode: TerminalExitCode = 0;
+
+    constructor(
+        public readonly pwd: string,
+        private toggleCallback: () => void,
+    ) {}
+
+    exec(): TerminalExitCode {
+        this.toggleCallback();
+        return 0;
+    }
+}
+
+export class ChatMessage implements TerminalHistory {
+    cmd: string;
+    output: string = "";
+    exitCode: TerminalExitCode = 0;
+    isChatMessage = true;
+    userMsg: string;
+    aiResponse: string;
+
+    constructor(
+        userMessage: string,
+        aiResponse: string,
+        public readonly pwd: string,
+    ) {
+        this.userMsg = userMessage;
+        this.aiResponse = aiResponse;
+        this.cmd = userMessage; // Store user message as cmd for history
+        this.output = aiResponse; // Store AI response as output for display
+    }
 
     exec(): TerminalExitCode {
         return 0;

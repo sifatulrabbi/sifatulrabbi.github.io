@@ -7,6 +7,9 @@ export const terminalModeContext = createContext<TerminalModeContext>({
     executing: false,
     currentDir: rootDirectory,
     async runCommand() {},
+    chatMode: false,
+    toggleChatMode: () => {},
+    async sendChatMessage() {},
 });
 
 export const useTerminalMode = () => useContext(terminalModeContext);

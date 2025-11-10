@@ -6,6 +6,10 @@ export interface TerminalHistory {
     exitCode: TerminalExitCode;
     pwd: string;
     exec: () => TerminalExitCode;
+    // Chat mode fields
+    isChatMessage?: boolean;
+    userMsg?: string;
+    aiResponse?: string;
 }
 
 export interface StaticTerminalHistory {
@@ -18,6 +22,10 @@ export type TerminalModeContext = {
     executing: boolean;
     currentDir: FileEntry;
     runCommand: (cmd: string) => Promise<void>;
+    // Chat mode
+    chatMode: boolean;
+    toggleChatMode: () => void;
+    sendChatMessage: (message: string) => Promise<void>;
 };
 
 export type FileEntry = {
