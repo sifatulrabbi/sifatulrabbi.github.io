@@ -529,7 +529,7 @@ export class PrintContact implements TerminalHistory {
                 <div class="space-y-4">
                     <div>
                         <h3 class="text-terminal-prompt font-bold mb-2">Email</h3>
-                        <a href="mailto:sifatul.rabbi@outlook.com" class="text-terminal-info hover:text-terminal-accent transition-colors">
+                        <a href="mailto:sifatulrabbii@gmail.com" class="text-terminal-info hover:text-terminal-accent transition-colors">
                             sifatul.rabbi@outlook.com
                         </a>
                     </div>
