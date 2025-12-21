@@ -121,11 +121,11 @@ import { useTerminalMode } from "@/modules/TerminalMode/terminalModeContext";
 
 - TailwindCSS with custom terminal-themed color palette (configured in `tailwind.config.cjs`)
 - Terminal theme colors include:
-    - Backgrounds: `terminal-background`, `terminal-surface`, `terminal-surface-hover`
-    - Borders: `terminal-border`, `terminal-border-dim`
-    - Text: `terminal-primary`, `terminal-secondary`, `terminal-accent`
-    - Syntax: `terminal-keyword`, `terminal-string`, `terminal-function`, etc.
-    - Status: `terminal-success`, `terminal-error`, `terminal-warning`, `terminal-info`
+  - Backgrounds: `terminal-background`, `terminal-surface`, `terminal-surface-hover`
+  - Borders: `terminal-border`, `terminal-border-dim`
+  - Text: `terminal-primary`, `terminal-secondary`, `terminal-accent`
+  - Syntax: `terminal-keyword`, `terminal-string`, `terminal-function`, etc.
+  - Status: `terminal-success`, `terminal-error`, `terminal-warning`, `terminal-info`
 - Typography plugin enabled for markdown content rendering
 - Custom fonts: Montserrat/Roboto for display, Fira Code for monospace
 - Custom blink animation for cursor effect
@@ -144,16 +144,16 @@ import { useTerminalMode } from "@/modules/TerminalMode/terminalModeContext";
 - `src/App.tsx` - Root application component with router outlet
 - `src/main.tsx` - Application entry point
 - `src/modules/TerminalMode/`
-    - `terminalService.ts` - All terminal command class implementations
-    - `directories.ts` - Virtual file system implementation with `Entry` class
-    - `terminalModeContext.tsx` - Context definition for terminal state
-    - `TerminalModeProvider.tsx` - Context provider with command execution logic
-    - `experienceData.ts` - Experience content data
-    - `projectsData.ts` - Project content data
+  - `terminalService.ts` - All terminal command class implementations
+  - `directories.ts` - Virtual file system implementation with `Entry` class
+  - `terminalModeContext.tsx` - Context definition for terminal state
+  - `TerminalModeProvider.tsx` - Context provider with command execution logic
+  - `experienceData.ts` - Experience content data
+  - `projectsData.ts` - Project content data
 - `src/modules/Blogs/`
-    - `blogsContext.tsx` - Context definition for blog state
-    - `BlogsProvider.tsx` - Context provider with API integration
-    - `BrowseBlogsPage.tsx`, `ReadBlogsPage.tsx` - Blog UI pages
+  - `blogsContext.tsx` - Context definition for blog state
+  - `BlogsProvider.tsx` - Context provider with API integration
+  - `BrowseBlogsPage.tsx`, `ReadBlogsPage.tsx` - Blog UI pages
 - `src/modules/LiveApps/` - Standalone utility apps (HTML viewer, markdown converter)
 - `src/types/` - TypeScript type definitions (`terminalMode.d.ts`, `blogs.d.ts`, `index.d.ts`)
 - `src/assets/data/` - Structured data for experiences and projects
@@ -174,11 +174,11 @@ When adding new terminal commands to the TerminalMode module:
 
 1. Create a new class in `terminalService.ts` implementing the `TerminalHistory` interface
 2. The class must have:
-    - `cmd: string` - The command string
-    - `pwd: string` - Current working directory
-    - `output: string` - Command output (can be markdown or HTML)
-    - `exitCode: TerminalExitCode` (0 for success, 1 for error)
-    - `exec(): TerminalExitCode` - Method that executes the command logic
+   - `cmd: string` - The command string
+   - `pwd: string` - Current working directory
+   - `output: string` - Command output (can be markdown or HTML)
+   - `exitCode: TerminalExitCode` (0 for success, 1 for error)
+   - `exec(): TerminalExitCode` - Method that executes the command logic
 3. Parse arguments from `cmd` by splitting on spaces
 4. Return markdown or HTML from the `output` getter (markdown will be converted using `marked`)
 5. Update the command parser in `TerminalModeProvider.tsx` to instantiate your new command class

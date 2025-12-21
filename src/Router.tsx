@@ -7,34 +7,34 @@ import liveAppsRoutes from "./modules/LiveApps/router";
 import TerminalRoute from "./modules/TerminalMode/route";
 
 const router = createBrowserRouter([
-    {
+  {
+    path: "",
+    element: <App />,
+    children: [
+      {
         path: "",
-        element: <App />,
+        element: <TerminalRoute />,
+      },
+      {
+        path: "/blogs",
+        element: <BlogsLayout />,
         children: [
-            {
-                path: "",
-                element: <TerminalRoute />,
-            },
-            {
-                path: "/blogs",
-                element: <BlogsLayout />,
-                children: [
-                    {
-                        path: "",
-                        element: <BorwseBlogsPage />,
-                    },
-                    {
-                        path: "/blogs/read/:articleid",
-                        element: <ReadBlogPage />,
-                    },
-                ],
-            },
-            {
-                path: "/live-apps",
-                children: liveAppsRoutes,
-            },
+          {
+            path: "",
+            element: <BorwseBlogsPage />,
+          },
+          {
+            path: "/blogs/read/:articleid",
+            element: <ReadBlogPage />,
+          },
         ],
-    },
+      },
+      {
+        path: "/live-apps",
+        children: liveAppsRoutes,
+      },
+    ],
+  },
 ]);
 
 export default router;

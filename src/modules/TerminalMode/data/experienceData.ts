@@ -1,19 +1,19 @@
 export const experiencesData = [
-    {
-        id: "1",
-        title: "Full-stack & AI Developer @ SEQUESTO",
-        text: `**Full-stack & AI Developer**  
+  {
+    id: "1",
+    title: "Full-stack & AI Developer @ SEQUESTO",
+    text: `**Full-stack & AI Developer**  
 SEQUESTO, Belgium -- Full-time, Remote -- Oct 2024 - Present
 
 *RFX Response Platform powered by AI*
 - Collaborating with an awesome team to build industry leading AI powered RFX Response solution.
 
 `,
-    },
-    {
-        id: "2",
-        title: "Full-stack Developer @ tambi.ai",
-        text: `**Full-stack Developer**  
+  },
+  {
+    id: "2",
+    title: "Full-stack Developer @ tambi.ai",
+    text: `**Full-stack Developer**  
 tambi.ai, USA -- Contarct, Remote -- Aug 2024 - Sep 2024
 
 *Tambi is a customer support automation company that combines lightweight tools, human service, and AI to provide end-to-end automation, offering simplified support with easy integrations and modern messaging dashboards.*
@@ -26,11 +26,11 @@ tambi.ai, USA -- Contarct, Remote -- Aug 2024 - Sep 2024
 - Partially built Tambi's react-native SDK
 
 `,
-    },
-    {
-        id: "3",
-        title: "Co-Founder & Lead Software Engineer @ HelloScribe AI",
-        text: `**Co-Founder & Lead Software Engineer**  
+  },
+  {
+    id: "3",
+    title: "Co-Founder & Lead Software Engineer @ HelloScribe AI",
+    text: `**Co-Founder & Lead Software Engineer**  
 HelloScribe AI, Florida, USA -- Full time, Remote -- Nov 2022 - Jun 2024
 
 *HelloScribe AI is an AI productivity tool that speeds up various planning and content-writing tasks. It provides an intuitive web app and utilizes LLM engines to aid in plan-making and content writing.*
@@ -44,12 +44,12 @@ HelloScribe AI, Florida, USA -- Full time, Remote -- Nov 2022 - Jun 2024
 - Enforced coding styles and consistencies across team members
 
 `,
-    },
+  },
 
-    {
-        id: "4",
-        title: "Lead Full-stack Engineer @ X-Booker",
-        text: `**Lead Full-stack Engineer**  
+  {
+    id: "4",
+    title: "Lead Full-stack Engineer @ X-Booker",
+    text: `**Lead Full-stack Engineer**  
 X-Booker, Chessington, UK -- Contract, Remote -- Apr 2022 - Feb 2024
 
 *X-Booker aims to streamline project management by combining most of the project management solutions into one single system with intelligent automation as well as providing an intuitive UI for easier navigation and business management.*
@@ -64,13 +64,13 @@ X-Booker, Chessington, UK -- Contract, Remote -- Apr 2022 - Feb 2024
 - Onboarded and mentored junior developers, in understanding the platform, and developing new features
 - Developed an automated deployment pipeline to auto-deploy two different versions of the system on GCP’s Kubernetes cluster
 `,
-    },
+  },
 
-    {
-        id: "5",
-        title: "Freelance Full-stack Developer",
-        text: `**Freelance Full-stack Developer**  
+  {
+    id: "5",
+    title: "Freelance Full-stack Developer",
+    text: `**Freelance Full-stack Developer**  
 Self Employed -- June 2021 - Present
 `,
-    },
+  },
 ];

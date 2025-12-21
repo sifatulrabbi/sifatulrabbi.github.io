@@ -1,12 +1,12 @@
 export const homePageTabs = {
-    experiences: "experiences",
-    projects: "projects",
-    skills: "skills",
-    contact: "contact",
-    // chat: "chat",
+  experiences: "experiences",
+  projects: "projects",
+  skills: "skills",
+  contact: "contact",
+  // chat: "chat",
 };
 
 export const liveAppUrls: Record<string, string> = {
-    "HTML Viewer": "/live-apps/html-viewer",
-    "HTML to Markdown": "/live-apps/html-to-markdown",
+  "HTML Viewer": "/live-apps/html-viewer",
+  "HTML to Markdown": "/live-apps/html-to-markdown",
 };
