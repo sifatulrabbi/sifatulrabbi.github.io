@@ -9,4 +9,6 @@ export const terminalModeContext = createContext<TerminalModeContext>({
   async runCommand() {},
 });
 
-export const useTerminalMode = () => useContext(terminalModeContext);
+export function useTerminalMode() {
+  return useContext(terminalModeContext);
+}

@@ -573,5 +573,7 @@ export const introHistory: TerminalHistory = {
   output: helpText,
   exitCode: 0,
   pwd: "",
-  exec: () => 0,
+  exec() {
+    return 0;
+  },
 };

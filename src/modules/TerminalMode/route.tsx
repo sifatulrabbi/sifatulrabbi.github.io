@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import TerminalModePage from ".";
-import TerminalModeProvider from "./context/TerminalModeProvider";
 import { useNavigate } from "react-router-dom";
+
+import TerminalModePage from "./index";
+import TerminalModeProvider from "./context/TerminalModeProvider";
 
 const TerminalRoute: React.FC = () => {
   const navigate = useNavigate();

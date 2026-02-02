@@ -12,7 +12,7 @@ export function http() {
 }
 
 export function staticImplements<T>() {
-  return <U extends T>(constructor: U) => {
+  return function <U extends T>(constructor: U) {
     constructor;
   };
 }

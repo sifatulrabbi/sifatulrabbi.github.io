@@ -37,14 +37,14 @@ const TerminalContainer: React.FC = () => {
     inputRef.current?.focus();
   }
 
-  const handleCommandButtonClick = async (cmd: string) => {
+  async function handleCommandButtonClick(cmd: string) {
     inputRef.current?.blur();
     setIsQuickActionsExpanded(false);
     await runCommand(cmd);
     setExecutedCommands((prev) => new Set([...prev, cmd.toLowerCase()]));
     await new Promise((r) => setTimeout(r, 100));
     inputRef.current?.blur();
-  };
+  }
 
   // Filter out already executed commands
   const availableButtons = AVAILABLE_COMMANDS.filter(
