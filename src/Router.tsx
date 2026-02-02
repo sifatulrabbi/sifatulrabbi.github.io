@@ -3,8 +3,9 @@ import App from "./App";
 import BlogsLayout from "@/layouts/BlogsLayout";
 import BorwseBlogsPage from "@/modules/Blogs/BrowseBlogsPage";
 import ReadBlogPage from "./modules/Blogs/ReadBlogsPage";
-import liveAppsRoutes from "./modules/LiveApps/router";
 import TerminalRoute from "./modules/TerminalMode/route";
+import AIChatRoute from "./modules/AIChat/route";
+import liveAppsRoutes from "./modules/LiveApps/router";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/live-apps",
         children: liveAppsRoutes,
+      },
+      {
+        path: "/ai-chat",
+        element: <AIChatRoute />,
       },
     ],
   },

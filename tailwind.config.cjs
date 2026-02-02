@@ -39,9 +39,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ["JetBrains Mono", "monospace"],
-        body: ["JetBrains Mono", "monospace"],
-        mono: ["JetBrains Mono", "monospace"],
+        display: ["Fira Code", "JetBrains Mono", "monospace"],
+        body: ["Fira Code", "JetBrains Mono", "monospace"],
+        mono: ["Fira Code", "JetBrains Mono", "monospace"],
       },
       keyframes: {
         blink: {
