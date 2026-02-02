@@ -243,7 +243,7 @@ export class cat implements TerminalHistory {
     }
     const file = this.currentDir.children.get(selectedFilename) as FileEntry;
     if (!file.fileContent) {
-      this._output = `"${file}" is a directory.`;
+      this._output = `"${file.name}" is a directory.`;
       this._exitCode = 1;
       return 1;
     }
