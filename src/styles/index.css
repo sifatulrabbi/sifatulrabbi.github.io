@@ -6,6 +6,26 @@
   --primary-200: #338dff;
   --primary-400: #0070ff;
   --primary-600: #0f00ff;
+
+  --terminal-background: #0d1117;
+  --terminal-surface: #161b22;
+  --terminal-surface-hover: #1c2128;
+  --terminal-border: #30363d;
+  --terminal-border-dim: #21262d;
+  --terminal-primary: #c9d1d9;
+  --terminal-secondary: #8b949e;
+  --terminal-accent: #0077ff;
+  --terminal-keyword: #ff7b72;
+  --terminal-string: #a5d6ff;
+  --terminal-number: #79c0ff;
+  --terminal-comment: #8b949e;
+  --terminal-function: #d2a8ff;
+  --terminal-variable: #ffa657;
+  --terminal-prompt: #7ee787;
+  --terminal-success: #7ee787;
+  --terminal-error: #ff7b72;
+  --terminal-warning: #ffa657;
+  --terminal-info: #79c0ff;
 }
 
 html {
@@ -30,6 +50,28 @@ body {
   &[data-theme="dark"] {
     @apply font-body bg-gray-950 text-slate-400;
   }
+}
+
+body[data-theme="light"] {
+  --terminal-background: #f8fafc;
+  --terminal-surface: #ffffff;
+  --terminal-surface-hover: #f1f5f9;
+  --terminal-border: #e2e8f0;
+  --terminal-border-dim: #cbd5e1;
+  --terminal-primary: #0f172a;
+  --terminal-secondary: #475569;
+  --terminal-accent: #0077ff;
+  --terminal-keyword: #be123c;
+  --terminal-string: #0ea5e9;
+  --terminal-number: #1d4ed8;
+  --terminal-comment: #64748b;
+  --terminal-function: #7c3aed;
+  --terminal-variable: #b45309;
+  --terminal-prompt: #16a34a;
+  --terminal-success: #16a34a;
+  --terminal-error: #dc2626;
+  --terminal-warning: #d97706;
+  --terminal-info: #0284c7;
 }
 
 h1,
@@ -142,7 +184,7 @@ h6 {
 .terminal-scrollbar {
   /* Firefox */
   scrollbar-width: thin;
-  scrollbar-color: #30363d #161b22;
+  scrollbar-color: var(--terminal-border) var(--terminal-surface);
 }
 
 /* Webkit browsers (Chrome, Safari, Edge) */
@@ -151,16 +193,16 @@ h6 {
 }
 
 .terminal-scrollbar::-webkit-scrollbar-track {
-  background: #161b22; /* terminal-surface */
+  background: var(--terminal-surface); /* terminal-surface */
   border-radius: 4px;
 }
 
 .terminal-scrollbar::-webkit-scrollbar-thumb {
-  background: #30363d; /* terminal-border */
+  background: var(--terminal-border); /* terminal-border */
   border-radius: 4px;
-  border: 2px solid #161b22; /* Creates padding effect */
+  border: 2px solid var(--terminal-surface); /* Creates padding effect */
 }
 
 .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #58a6ff; /* terminal-accent */
+  background: var(--terminal-accent); /* terminal-accent */
 }

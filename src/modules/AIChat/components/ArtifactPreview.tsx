@@ -1,6 +1,7 @@
 import React from "react";
 import DOMPurify from "dompurify";
 import { marked } from "marked";
+import { useAIChat } from "../hooks/useAIChat";
 import type { Artifact } from "@/types";
 
 interface ArtifactPreviewProps {
@@ -8,6 +9,7 @@ interface ArtifactPreviewProps {
 }
 
 const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
+  const { activeTheme } = useAIChat();
   const [markdownMode, setMarkdownMode] = React.useState<"rendered" | "raw">(
     "rendered",
   );
@@ -79,7 +81,9 @@ const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
         }
         return (
           <div
-            className="prose prose-sm prose-invert max-w-none"
+            className={`prose prose-sm max-w-none ${
+              activeTheme === "dark" ? "prose-invert" : "prose-slate"
+            }`}
             dangerouslySetInnerHTML={{
               __html: sanitizedMarkdown,
             }}

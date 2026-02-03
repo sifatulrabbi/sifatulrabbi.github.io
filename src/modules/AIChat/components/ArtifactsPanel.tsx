@@ -80,7 +80,7 @@ const ArtifactsPanel: React.FC = () => {
         ) : (
           <div className="p-4 space-y-4">
             {/* Artifact list */}
-            <div className="space-y-2">
+            <div className="flex flex-wrap gap-2">
               {threadArtifacts.map((artifact) => (
                 <button
                   key={artifact.id}
@@ -90,7 +90,7 @@ const ArtifactsPanel: React.FC = () => {
                     )
                   }
                   className={`
-                    w-full text-left p-3 rounded-lg border transition-all
+                    flex-1 min-w-[220px] text-left p-3 rounded-lg border transition-all
                     ${
                       selectedArtifactId === artifact.id
                         ? "bg-terminal-accent/10 border-terminal-accent"

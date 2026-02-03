@@ -2,7 +2,30 @@ import React from "react";
 import { useAIChat } from "../hooks/useAIChat";
 
 const ThreadsSidebar: React.FC = () => {
-  const { threads, activeThreadId, createThread, selectThread } = useAIChat();
+  const {
+    threads,
+    activeThreadId,
+    createThread,
+    selectThread,
+    themeSetting,
+    activeTheme,
+    setThemeSetting,
+  } = useAIChat();
+
+  const handleThemeToggle = () => {
+    const nextTheme =
+      themeSetting === "system"
+        ? "light"
+        : themeSetting === "light"
+          ? "dark"
+          : "system";
+    setThemeSetting(nextTheme);
+  };
+
+  const themeLabel =
+    themeSetting === "system"
+      ? `Auto (${activeTheme})`
+      : themeSetting[0].toUpperCase() + themeSetting.slice(1);
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
@@ -93,8 +116,15 @@ const ThreadsSidebar: React.FC = () => {
       </div>
 
       {/* Footer */}
-      <div className="p-3 border-t border-terminal-border text-xs text-terminal-secondary text-center">
-        AI Chat Interface
+      <div className="p-3 border-t border-terminal-border flex items-center justify-between gap-2">
+        <span className="text-xs text-terminal-secondary">AI Chat</span>
+        <button
+          onClick={handleThemeToggle}
+          className="px-2.5 py-1 rounded border border-terminal-border text-[11px] bg-terminal-surface hover:bg-terminal-surface-hover transition-colors"
+          aria-label="Toggle theme"
+        >
+          {themeLabel}
+        </button>
       </div>
     </div>
   );

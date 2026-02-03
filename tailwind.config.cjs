@@ -11,31 +11,31 @@ module.exports = {
         },
         terminal: {
           // Backgrounds
-          background: "#0D1117",
-          surface: "#161B22",
-          "surface-hover": "#1C2128",
-          border: "#30363D",
-          "border-dim": "#21262D",
+          background: "var(--terminal-background)",
+          surface: "var(--terminal-surface)",
+          "surface-hover": "var(--terminal-surface-hover)",
+          border: "var(--terminal-border)",
+          "border-dim": "var(--terminal-border-dim)",
 
           // Text colors
-          primary: "#C9D1D9",
-          secondary: "#8B949E",
-          accent: "#58A6FF",
+          primary: "var(--terminal-primary)",
+          secondary: "var(--terminal-secondary)",
+          accent: "var(--terminal-accent)",
 
           // Syntax highlighting
-          keyword: "#FF7B72",
-          string: "#A5D6FF",
-          number: "#79C0FF",
-          comment: "#8B949E",
-          function: "#D2A8FF",
-          variable: "#FFA657",
+          keyword: "var(--terminal-keyword)",
+          string: "var(--terminal-string)",
+          number: "var(--terminal-number)",
+          comment: "var(--terminal-comment)",
+          function: "var(--terminal-function)",
+          variable: "var(--terminal-variable)",
 
           // Terminal specific
-          prompt: "#7EE787",
-          success: "#7EE787",
-          error: "#FF7B72",
-          warning: "#FFA657",
-          info: "#79C0FF",
+          prompt: "var(--terminal-prompt)",
+          success: "var(--terminal-success)",
+          error: "var(--terminal-error)",
+          warning: "var(--terminal-warning)",
+          info: "var(--terminal-info)",
         },
       },
       fontFamily: {

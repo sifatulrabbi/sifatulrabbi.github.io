@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { AIChatContext } from "./ai-chat-context";
 import { mockThreads, mockArtifacts } from "../data/mockData";
 import type {
@@ -12,6 +12,7 @@ import type {
 } from "@/types";
 
 const STORAGE_KEY = "aiChat.v1";
+const THEME_STORAGE_KEY = "aiChat.theme";
 
 interface PersistedState {
   threads: Thread[];
@@ -37,6 +38,19 @@ const AIChatProvider: React.FC<{ children: React.ReactNode }> = ({
     null,
   );
   const [composerText, setComposerText] = useState("");
+  const [themeSetting, setThemeSetting] = useState<"system" | "light" | "dark">(
+    () => {
+      if (typeof window === "undefined") return "system";
+      const stored = localStorage.getItem(THEME_STORAGE_KEY);
+      if (stored === "light" || stored === "dark" || stored === "system") {
+        return stored;
+      }
+      return "system";
+    },
+  );
+  const [activeTheme, setActiveTheme] = useState<"light" | "dark">("dark");
+  const previousThemeRef = useRef<string | null>(null);
+  const previousOverflowRef = useRef<string>("");
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -54,6 +68,63 @@ const AIChatProvider: React.FC<{ children: React.ReactNode }> = ({
       // Ignore storage errors, use mock data
     }
   }, []);
+
+  useEffect(() => {
+    previousThemeRef.current = document.body.getAttribute("data-theme");
+    previousOverflowRef.current = document.body.style.overflow;
+    document.body.style.overflow = "auto";
+
+    return () => {
+      const previousTheme = previousThemeRef.current;
+      if (previousTheme) {
+        document.body.setAttribute("data-theme", previousTheme);
+      } else {
+        document.body.removeAttribute("data-theme");
+      }
+      document.body.style.overflow = previousOverflowRef.current;
+    };
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const applyTheme = () => {
+      const systemTheme = mediaQuery.matches ? "dark" : "light";
+      const resolvedTheme = themeSetting === "system" ? systemTheme : themeSetting;
+      document.body.setAttribute("data-theme", resolvedTheme);
+      setActiveTheme(resolvedTheme);
+    };
+
+    applyTheme();
+
+    const handleChange = () => {
+      if (themeSetting === "system") {
+        applyTheme();
+      }
+    };
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", handleChange);
+    } else {
+      mediaQuery.addListener(handleChange);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener("change", handleChange);
+      } else {
+        mediaQuery.removeListener(handleChange);
+      }
+    };
+  }, [themeSetting]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, themeSetting);
+    } catch {
+      // Ignore storage errors
+    }
+  }, [themeSetting]);
 
   // Persist to localStorage when domain state changes
   useEffect(() => {
@@ -174,6 +245,8 @@ const AIChatProvider: React.FC<{ children: React.ReactNode }> = ({
     artifactsOpen,
     selectedArtifactId,
     composerText,
+    themeSetting,
+    activeTheme,
   };
 
   const actions: AIChatActions = {
@@ -184,6 +257,7 @@ const AIChatProvider: React.FC<{ children: React.ReactNode }> = ({
     selectArtifact,
     toggleSidebar,
     toggleArtifacts,
+    setThemeSetting,
   };
 
   const value: AIChatContextValue = { ...state, ...actions };
