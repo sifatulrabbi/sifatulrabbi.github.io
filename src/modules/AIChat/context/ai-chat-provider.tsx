@@ -84,6 +84,7 @@ const AIChatProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const selectThread = useCallback((id: string) => {
     setActiveThreadId(id);
+    setSelectedArtifactId(null);
     setSidebarOpen(false);
   }, []);
 

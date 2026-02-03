@@ -19,7 +19,7 @@ const ToolResultView: React.FC<ToolResultViewProps> = ({ step }) => {
   return (
     <div
       className={`
-        border rounded-lg overflow-hidden max-w-full lg:max-w-[85%]
+        border rounded-lg overflow-hidden w-full
         ${isError ? "border-terminal-error/50 bg-terminal-error/5" : "border-terminal-success/50 bg-terminal-success/5"}
       `}
     >

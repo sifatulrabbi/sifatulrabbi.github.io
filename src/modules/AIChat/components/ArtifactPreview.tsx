@@ -1,4 +1,6 @@
 import React from "react";
+import DOMPurify from "dompurify";
+import { marked } from "marked";
 import type { Artifact } from "@/types";
 
 interface ArtifactPreviewProps {
@@ -6,6 +8,42 @@ interface ArtifactPreviewProps {
 }
 
 const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
+  const [markdownMode, setMarkdownMode] = React.useState<"rendered" | "raw">(
+    "rendered",
+  );
+  const [copyState, setCopyState] = React.useState<"idle" | "copied" | "error">(
+    "idle",
+  );
+  const copyTimeoutRef = React.useRef<number | null>(null);
+
+  const clearCopyTimeout = React.useCallback(() => {
+    if (copyTimeoutRef.current !== null) {
+      window.clearTimeout(copyTimeoutRef.current);
+      copyTimeoutRef.current = null;
+    }
+  }, []);
+
+  React.useEffect(() => {
+    clearCopyTimeout();
+    setCopyState("idle");
+    if (artifact.kind === "markdown") {
+      setMarkdownMode("rendered");
+    }
+  }, [artifact.id, artifact.kind, clearCopyTimeout]);
+
+  React.useEffect(() => {
+    return () => {
+      clearCopyTimeout();
+    };
+  }, [clearCopyTimeout]);
+
+  const sanitizedMarkdown = React.useMemo(() => {
+    if (artifact.kind !== "markdown") return "";
+    const rendered = marked.parse(artifact.content);
+    const html = typeof rendered === "string" ? rendered : "";
+    return DOMPurify.sanitize(html);
+  }, [artifact.kind, artifact.content]);
+
   const renderContent = () => {
     switch (artifact.kind) {
       case "code":
@@ -32,12 +70,20 @@ const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
           </div>
         );
       case "markdown":
-        return (
-          <div className="prose prose-sm prose-invert max-w-none">
+        if (markdownMode === "raw") {
+          return (
             <pre className="text-xs font-mono overflow-x-auto terminal-scrollbar whitespace-pre-wrap">
               {artifact.content}
             </pre>
-          </div>
+          );
+        }
+        return (
+          <div
+            className="prose prose-sm prose-invert max-w-none"
+            dangerouslySetInnerHTML={{
+              __html: sanitizedMarkdown,
+            }}
+          />
         );
       default:
         return (
@@ -62,27 +108,78 @@ const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
             </span>
           )}
         </div>
-        <button
-          onClick={() => {
-            navigator.clipboard.writeText(artifact.content);
-          }}
-          className="p-1.5 hover:bg-terminal-surface-hover rounded transition-colors"
-          title="Copy to clipboard"
-        >
-          <svg
-            className="w-4 h-4 text-terminal-secondary"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        <div className="flex items-center gap-2">
+          {artifact.kind === "markdown" && (
+            <div className="flex items-center border border-terminal-border-dim rounded overflow-hidden">
+              <button
+                onClick={() => setMarkdownMode("rendered")}
+                className={`px-2 py-1 text-xs transition-colors ${
+                  markdownMode === "rendered"
+                    ? "bg-terminal-accent/20 text-terminal-accent"
+                    : "text-terminal-secondary hover:bg-terminal-surface-hover"
+                }`}
+                aria-pressed={markdownMode === "rendered"}
+              >
+                Rendered
+              </button>
+              <button
+                onClick={() => setMarkdownMode("raw")}
+                className={`px-2 py-1 text-xs transition-colors ${
+                  markdownMode === "raw"
+                    ? "bg-terminal-accent/20 text-terminal-accent"
+                    : "text-terminal-secondary hover:bg-terminal-surface-hover"
+                }`}
+                aria-pressed={markdownMode === "raw"}
+              >
+                Raw
+              </button>
+            </div>
+          )}
+          <button
+            onClick={async () => {
+              clearCopyTimeout();
+              try {
+                if (!navigator.clipboard?.writeText) {
+                  throw new Error("Clipboard unavailable");
+                }
+                await navigator.clipboard.writeText(artifact.content);
+                setCopyState("copied");
+                copyTimeoutRef.current = window.setTimeout(
+                  () => setCopyState("idle"),
+                  1500,
+                );
+              } catch {
+                setCopyState("error");
+                copyTimeoutRef.current = window.setTimeout(
+                  () => setCopyState("idle"),
+                  1500,
+                );
+              }
+            }}
+            className="p-1.5 hover:bg-terminal-surface-hover rounded transition-colors"
+            title="Copy to clipboard"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-            />
-          </svg>
-        </button>
+            {copyState === "copied" ? (
+              <span className="text-xs text-terminal-success">Copied</span>
+            ) : copyState === "error" ? (
+              <span className="text-xs text-terminal-error">Copy failed</span>
+            ) : (
+              <svg
+                className="w-4 h-4 text-terminal-secondary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
       <div className="p-3 max-h-[50vh] overflow-y-auto terminal-scrollbar">
         {renderContent()}

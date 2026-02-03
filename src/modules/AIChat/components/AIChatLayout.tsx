@@ -86,10 +86,10 @@ const AIChatLayout: React.FC<AIChatLayoutProps> = ({
         {chat}
       </main>
 
-      {/* Mobile artifacts overlay */}
+      {/* Artifacts overlay */}
       {artifactsOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/50 z-40"
           onClick={toggleArtifacts}
         />
       )}
@@ -97,10 +97,11 @@ const AIChatLayout: React.FC<AIChatLayoutProps> = ({
       {/* Right panel - Artifacts */}
       <aside
         className={`
-          fixed lg:static inset-y-0 right-0 z-50
-          w-[360px] border-l border-terminal-border bg-terminal-surface
+          fixed inset-y-0 right-0 z-50
+          w-full sm:w-[80vw] lg:w-[60vw]
+          border-l border-terminal-border bg-terminal-surface shadow-2xl
           transform transition-transform duration-200 ease-in-out
-          ${artifactsOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0 lg:block hidden"}
+          ${artifactsOpen ? "translate-x-0" : "translate-x-full"}
           flex flex-col
         `}
       >
@@ -110,7 +111,12 @@ const AIChatLayout: React.FC<AIChatLayoutProps> = ({
       {/* Desktop toggle for artifacts */}
       <button
         onClick={toggleArtifacts}
-        className="hidden lg:flex fixed right-4 top-4 z-30 p-2 rounded bg-terminal-surface border border-terminal-border hover:bg-terminal-surface-hover transition-colors"
+        aria-pressed={artifactsOpen}
+        className={`hidden lg:flex fixed right-4 top-4 z-30 p-2 rounded border transition-colors ${
+          artifactsOpen
+            ? "bg-terminal-accent/10 border-terminal-accent text-terminal-accent"
+            : "bg-terminal-surface border-terminal-border hover:bg-terminal-surface-hover"
+        }`}
         aria-label="Toggle artifacts panel"
       >
         <svg

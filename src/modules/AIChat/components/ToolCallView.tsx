@@ -7,6 +7,15 @@ interface ToolCallViewProps {
 
 const ToolCallView: React.FC<ToolCallViewProps> = ({ toolCall }) => {
   const [showArgs, setShowArgs] = React.useState(false);
+  const formattedArgs = React.useMemo(() => {
+    if (!showArgs) return "";
+    try {
+      const parsed = JSON.parse(toolCall.argumentsJson);
+      return JSON.stringify(parsed, null, 2);
+    } catch {
+      return toolCall.argumentsJson;
+    }
+  }, [showArgs, toolCall.argumentsJson]);
 
   return (
     <div className="border border-terminal-border rounded-lg overflow-hidden bg-terminal-surface/50">
@@ -46,7 +55,7 @@ const ToolCallView: React.FC<ToolCallViewProps> = ({ toolCall }) => {
       {showArgs && (
         <div className="px-3 py-2 border-t border-terminal-border-dim">
           <pre className="text-xs text-terminal-secondary font-mono overflow-x-auto">
-            {JSON.stringify(JSON.parse(toolCall.argumentsJson), null, 2)}
+            {formattedArgs}
           </pre>
         </div>
       )}

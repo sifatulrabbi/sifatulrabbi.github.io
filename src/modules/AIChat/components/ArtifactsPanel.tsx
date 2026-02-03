@@ -9,6 +9,7 @@ const ArtifactsPanel: React.FC = () => {
     artifactsById,
     selectedArtifactId,
     selectArtifact,
+    toggleArtifacts,
   } = useAIChat();
 
   const activeThread = threads.find((t) => t.id === activeThreadId);
@@ -38,11 +39,32 @@ const ArtifactsPanel: React.FC = () => {
   return (
     <div className="flex flex-col h-full">
       {/* Header */}
-      <div className="p-4 border-b border-terminal-border">
-        <h2 className="font-medium">Artifacts</h2>
-        <p className="text-xs text-terminal-secondary mt-1">
-          {threadArtifacts.length} in this thread
-        </p>
+      <div className="p-4 border-b border-terminal-border flex items-start justify-between gap-3">
+        <div>
+          <h2 className="font-medium">Artifacts</h2>
+          <p className="text-xs text-terminal-secondary mt-1">
+            {threadArtifacts.length} in this thread
+          </p>
+        </div>
+        <button
+          onClick={toggleArtifacts}
+          className="p-1.5 rounded hover:bg-terminal-surface-hover transition-colors"
+          aria-label="Close artifacts panel"
+        >
+          <svg
+            className="w-4 h-4 text-terminal-secondary"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
       </div>
 
       {/* Content */}

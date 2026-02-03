@@ -9,6 +9,9 @@ const ChatComposer: React.FC = () => {
   const handleSubmit = useCallback(() => {
     if (composerText.trim() && activeThreadId) {
       sendUserMessage(composerText);
+      if (textareaRef.current) {
+        textareaRef.current.style.height = "auto";
+      }
     }
   }, [composerText, activeThreadId, sendUserMessage]);
 

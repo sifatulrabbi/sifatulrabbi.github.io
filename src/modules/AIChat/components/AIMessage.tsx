@@ -68,8 +68,8 @@ const AIMessage: React.FC<AIMessageProps> = ({
   };
 
   return (
-    <div className="flex justify-start">
-      <div className="max-w-full lg:max-w-[85%]">
+    <div className="flex justify-start w-full">
+      <div className="w-full">
         {/* AI Avatar and status */}
         <div className="flex items-center gap-2 mb-2">
           <div className="w-6 h-6 rounded-full bg-terminal-accent/20 flex items-center justify-center">
@@ -101,7 +101,7 @@ const AIMessage: React.FC<AIMessageProps> = ({
                 return (
                   <div
                     key={block.id}
-                    className="bg-terminal-surface px-4 py-3 rounded-2xl rounded-tl-sm border border-terminal-border-dim"
+                    className="px-1 py-1"
                   >
                     <p className="whitespace-pre-wrap">{block.text}</p>
                   </div>
