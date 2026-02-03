@@ -8,12 +8,12 @@ const ReasoningBlockView: React.FC<ReasoningBlockViewProps> = ({ text }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="border border-terminal-border-dim rounded-lg overflow-hidden">
+    <div className="border border-aichat-border-dim rounded-lg overflow-hidden">
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-full flex items-center justify-between px-3 py-2 bg-terminal-surface-hover hover:bg-terminal-surface transition-colors text-left"
+        className="w-full flex items-center justify-between px-3 py-2 bg-aichat-surface-hover hover:bg-aichat-surface transition-colors text-left"
       >
-        <span className="flex items-center gap-2 text-sm text-terminal-secondary">
+        <span className="flex items-center gap-2 text-sm text-aichat-secondary">
           <svg
             className="w-4 h-4"
             fill="none"
@@ -30,7 +30,7 @@ const ReasoningBlockView: React.FC<ReasoningBlockViewProps> = ({ text }) => {
           Reasoning
         </span>
         <svg
-          className={`w-4 h-4 text-terminal-secondary transition-transform ${expanded ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-aichat-secondary transition-transform ${expanded ? "rotate-180" : ""}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -44,8 +44,8 @@ const ReasoningBlockView: React.FC<ReasoningBlockViewProps> = ({ text }) => {
         </svg>
       </button>
       {expanded && (
-        <div className="px-3 py-2 bg-terminal-surface/50">
-          <pre className="text-xs text-terminal-secondary whitespace-pre-wrap font-mono">
+        <div className="px-3 py-2 bg-aichat-surface/50">
+          <pre className="text-xs text-aichat-secondary whitespace-pre-wrap font-mono">
             {text}
           </pre>
         </div>

@@ -19,7 +19,7 @@ const AIMessage: React.FC<AIMessageProps> = ({
     switch (step.status) {
       case "pending":
         return (
-          <span className="inline-flex items-center gap-1 text-terminal-info">
+          <span className="inline-flex items-center gap-1 text-aichat-info">
             <svg
               className="animate-spin h-3 w-3"
               fill="none"
@@ -44,14 +44,14 @@ const AIMessage: React.FC<AIMessageProps> = ({
         );
       case "streaming":
         return (
-          <span className="inline-flex items-center gap-1 text-terminal-info">
-            <span className="w-2 h-2 bg-terminal-info rounded-full animate-pulse" />
+          <span className="inline-flex items-center gap-1 text-aichat-info">
+            <span className="w-2 h-2 bg-aichat-info rounded-full animate-pulse" />
             Streaming...
           </span>
         );
       case "error":
         return (
-          <span className="inline-flex items-center gap-1 text-terminal-error">
+          <span className="inline-flex items-center gap-1 text-aichat-error">
             <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
               <path
                 fillRule="evenodd"
@@ -72,9 +72,9 @@ const AIMessage: React.FC<AIMessageProps> = ({
       <div className="w-full">
         {/* AI Avatar and status */}
         <div className="flex items-center gap-2 mb-2">
-          <div className="w-6 h-6 rounded-full bg-terminal-accent/20 flex items-center justify-center">
+          <div className="w-6 h-6 rounded-full bg-aichat-accent/20 flex items-center justify-center">
             <svg
-              className="w-4 h-4 text-terminal-accent"
+              className="w-4 h-4 text-aichat-accent"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -87,7 +87,7 @@ const AIMessage: React.FC<AIMessageProps> = ({
               />
             </svg>
           </div>
-          <span className="text-sm font-medium text-terminal-secondary">
+          <span className="text-sm font-medium text-aichat-secondary">
             AI
           </span>
           {getStatusIcon()}
@@ -114,11 +114,11 @@ const AIMessage: React.FC<AIMessageProps> = ({
                 return (
                   <div
                     key={block.id}
-                    className="bg-terminal-surface px-4 py-3 rounded-2xl rounded-tl-sm border border-terminal-border-dim"
+                    className="bg-aichat-surface px-4 py-3 rounded-2xl rounded-tl-sm border border-aichat-border-dim"
                   >
                     <button
                       onClick={() => onArtifactClick(block.artifactId)}
-                      className="flex items-center gap-2 text-terminal-accent hover:underline"
+                      className="flex items-center gap-2 text-aichat-accent hover:underline"
                     >
                       <svg
                         className="w-4 h-4"
@@ -134,7 +134,7 @@ const AIMessage: React.FC<AIMessageProps> = ({
                         />
                       </svg>
                       <span className="font-medium">{artifact.title}</span>
-                      <span className="text-xs px-1.5 py-0.5 bg-terminal-border/30 rounded">
+                      <span className="text-xs px-1.5 py-0.5 bg-aichat-border/30 rounded">
                         {artifact.kind}
                       </span>
                     </button>
@@ -152,7 +152,7 @@ const AIMessage: React.FC<AIMessageProps> = ({
         </div>
 
         {/* Timestamp */}
-        <p className="text-xs text-terminal-secondary mt-1">
+        <p className="text-xs text-aichat-secondary mt-1">
           {new Date(step.createdAt).toLocaleTimeString([], {
             hour: "2-digit",
             minute: "2-digit",

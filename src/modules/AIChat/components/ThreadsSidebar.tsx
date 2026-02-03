@@ -1,5 +1,6 @@
 import React from "react";
 import { useAIChat } from "../hooks/useAIChat";
+import { toggleThemeSetting } from "../theme";
 
 const ThreadsSidebar: React.FC = () => {
   const {
@@ -8,24 +9,15 @@ const ThreadsSidebar: React.FC = () => {
     createThread,
     selectThread,
     themeSetting,
-    activeTheme,
     setThemeSetting,
   } = useAIChat();
 
   const handleThemeToggle = () => {
-    const nextTheme =
-      themeSetting === "system"
-        ? "light"
-        : themeSetting === "light"
-          ? "dark"
-          : "system";
-    setThemeSetting(nextTheme);
+    setThemeSetting(toggleThemeSetting(themeSetting));
   };
 
   const themeLabel =
-    themeSetting === "system"
-      ? `Auto (${activeTheme})`
-      : themeSetting[0].toUpperCase() + themeSetting.slice(1);
+    themeSetting[0].toUpperCase() + themeSetting.slice(1);
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
@@ -51,10 +43,10 @@ const ThreadsSidebar: React.FC = () => {
   return (
     <div className="flex flex-col h-full">
       {/* Header */}
-      <div className="p-4 border-b border-terminal-border">
+      <div className="p-4 border-b border-aichat-border">
         <button
           onClick={createThread}
-          className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-terminal-accent text-terminal-background rounded hover:bg-terminal-accent/90 transition-colors font-medium"
+          className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-aichat-accent text-aichat-background rounded hover:bg-aichat-accent/90 transition-colors font-medium"
         >
           <svg
             className="w-5 h-5"
@@ -74,9 +66,9 @@ const ThreadsSidebar: React.FC = () => {
       </div>
 
       {/* Thread list */}
-      <div className="flex-1 overflow-y-auto terminal-scrollbar">
+      <div className="flex-1 overflow-y-auto aichat-scrollbar">
         {threads.length === 0 ? (
-          <div className="p-4 text-terminal-secondary text-sm text-center">
+          <div className="p-4 text-aichat-secondary text-sm text-center">
             No threads yet
           </div>
         ) : (
@@ -87,8 +79,8 @@ const ThreadsSidebar: React.FC = () => {
                 onClick={() => selectThread(thread.id)}
                 className={`
                   w-full px-4 py-3 text-left transition-colors
-                  hover:bg-terminal-surface-hover
-                  ${activeThreadId === thread.id ? "bg-terminal-surface-hover border-l-2 border-terminal-accent" : "border-l-2 border-transparent"}
+                  hover:bg-aichat-surface-hover
+                  ${activeThreadId === thread.id ? "bg-aichat-surface-hover border-l-2 border-aichat-accent" : "border-l-2 border-transparent"}
                 `}
               >
                 <div className="flex items-start justify-between gap-2">
@@ -96,16 +88,16 @@ const ThreadsSidebar: React.FC = () => {
                     <p className="font-medium truncate text-sm">
                       {thread.title}
                     </p>
-                    <p className="text-xs text-terminal-secondary mt-1">
+                    <p className="text-xs text-aichat-secondary mt-1">
                       {thread.model && (
-                        <span className="inline-block px-1.5 py-0.5 bg-terminal-border/30 rounded text-[10px] mr-2">
+                        <span className="inline-block px-1.5 py-0.5 bg-aichat-border/30 rounded text-[10px] mr-2">
                           {thread.model}
                         </span>
                       )}
                       {thread.steps.length} messages
                     </p>
                   </div>
-                  <span className="text-xs text-terminal-secondary whitespace-nowrap">
+                  <span className="text-xs text-aichat-secondary whitespace-nowrap">
                     {formatDate(thread.updatedAt)}
                   </span>
                 </div>
@@ -116,11 +108,11 @@ const ThreadsSidebar: React.FC = () => {
       </div>
 
       {/* Footer */}
-      <div className="p-3 border-t border-terminal-border flex items-center justify-between gap-2">
-        <span className="text-xs text-terminal-secondary">AI Chat</span>
+      <div className="p-3 border-t border-aichat-border flex items-center justify-between gap-2">
+        <span className="text-xs text-aichat-secondary">AI Chat</span>
         <button
           onClick={handleThemeToggle}
-          className="px-2.5 py-1 rounded border border-terminal-border text-[11px] bg-terminal-surface hover:bg-terminal-surface-hover transition-colors"
+          className="px-2.5 py-1 rounded border border-aichat-border text-[11px] bg-aichat-surface hover:bg-aichat-surface-hover transition-colors"
           aria-label="Toggle theme"
         >
           {themeLabel}

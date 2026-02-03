@@ -102,8 +102,7 @@ export interface AIChatState {
   artifactsOpen: boolean;
   selectedArtifactId: string | null;
   composerText: string;
-  themeSetting: "system" | "light" | "dark";
-  activeTheme: "light" | "dark";
+  themeSetting: "light" | "dark";
 }
 
 export interface AIChatActions {
@@ -114,7 +113,7 @@ export interface AIChatActions {
   selectArtifact: (id: string | null) => void;
   toggleSidebar: () => void;
   toggleArtifacts: () => void;
-  setThemeSetting: (theme: "system" | "light" | "dark") => void;
+  setThemeSetting: (theme: "light" | "dark") => void;
 }
 
 export interface AIChatContextValue extends AIChatState, AIChatActions {}

@@ -18,11 +18,11 @@ const ToolCallView: React.FC<ToolCallViewProps> = ({ toolCall }) => {
   }, [showArgs, toolCall.argumentsJson]);
 
   return (
-    <div className="border border-terminal-border rounded-lg overflow-hidden bg-terminal-surface/50">
-      <div className="flex items-center justify-between px-3 py-2 bg-terminal-border/20">
+    <div className="border border-aichat-border rounded-lg overflow-hidden bg-aichat-surface/50">
+      <div className="flex items-center justify-between px-3 py-2 bg-aichat-border/20">
         <div className="flex items-center gap-2">
           <svg
-            className="w-4 h-4 text-terminal-info"
+            className="w-4 h-4 text-aichat-info"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -41,20 +41,20 @@ const ToolCallView: React.FC<ToolCallViewProps> = ({ toolCall }) => {
             />
           </svg>
           <span className="text-sm font-medium">{toolCall.toolName}</span>
-          <span className="text-xs text-terminal-secondary px-1.5 py-0.5 bg-terminal-border/30 rounded">
+          <span className="text-xs text-aichat-secondary px-1.5 py-0.5 bg-aichat-border/30 rounded">
             pending
           </span>
         </div>
         <button
           onClick={() => setShowArgs(!showArgs)}
-          className="text-xs text-terminal-secondary hover:text-terminal-primary transition-colors"
+          className="text-xs text-aichat-secondary hover:text-aichat-primary transition-colors"
         >
           {showArgs ? "Hide args" : "Show args"}
         </button>
       </div>
       {showArgs && (
-        <div className="px-3 py-2 border-t border-terminal-border-dim">
-          <pre className="text-xs text-terminal-secondary font-mono overflow-x-auto">
+        <div className="px-3 py-2 border-t border-aichat-border-dim">
+          <pre className="text-xs text-aichat-secondary font-mono overflow-x-auto">
             {formattedArgs}
           </pre>
         </div>

@@ -9,7 +9,7 @@ interface ArtifactPreviewProps {
 }
 
 const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
-  const { activeTheme } = useAIChat();
+  const { themeSetting } = useAIChat();
   const [markdownMode, setMarkdownMode] = React.useState<"rendered" | "raw">(
     "rendered",
   );
@@ -50,19 +50,19 @@ const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
     switch (artifact.kind) {
       case "code":
         return (
-          <pre className="text-xs font-mono overflow-x-auto terminal-scrollbar">
+          <pre className="text-xs font-mono overflow-x-auto aichat-scrollbar">
             <code>{artifact.content}</code>
           </pre>
         );
       case "json":
         return (
-          <pre className="text-xs font-mono overflow-x-auto terminal-scrollbar">
+          <pre className="text-xs font-mono overflow-x-auto aichat-scrollbar">
             <code>{artifact.content}</code>
           </pre>
         );
       case "html":
         return (
-          <div className="border border-terminal-border-dim rounded p-2 bg-white">
+          <div className="border border-aichat-border-dim rounded p-2 bg-aichat-surface">
             <iframe
               srcDoc={artifact.content}
               className="w-full h-64 border-0"
@@ -74,7 +74,7 @@ const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
       case "markdown":
         if (markdownMode === "raw") {
           return (
-            <pre className="text-xs font-mono overflow-x-auto terminal-scrollbar whitespace-pre-wrap">
+            <pre className="text-xs font-mono overflow-x-auto aichat-scrollbar whitespace-pre-wrap">
               {artifact.content}
             </pre>
           );
@@ -82,7 +82,7 @@ const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
         return (
           <div
             className={`prose prose-sm max-w-none ${
-              activeTheme === "dark" ? "prose-invert" : "prose-slate"
+              themeSetting === "dark" ? "prose-invert" : "prose-slate"
             }`}
             dangerouslySetInnerHTML={{
               __html: sanitizedMarkdown,
@@ -91,7 +91,7 @@ const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
         );
       default:
         return (
-          <pre className="text-xs font-mono overflow-x-auto terminal-scrollbar whitespace-pre-wrap">
+          <pre className="text-xs font-mono overflow-x-auto aichat-scrollbar whitespace-pre-wrap">
             {artifact.content}
           </pre>
         );
@@ -99,28 +99,28 @@ const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
   };
 
   return (
-    <div className="border border-terminal-border rounded-lg overflow-hidden bg-terminal-background">
-      <div className="flex items-center justify-between px-3 py-2 bg-terminal-surface border-b border-terminal-border">
+    <div className="border border-aichat-border rounded-lg overflow-hidden bg-aichat-background">
+      <div className="flex items-center justify-between px-3 py-2 bg-aichat-surface border-b border-aichat-border">
         <div className="flex items-center gap-2">
           <span className="font-medium text-sm">{artifact.title}</span>
-          <span className="text-xs px-1.5 py-0.5 bg-terminal-border/30 rounded">
+          <span className="text-xs px-1.5 py-0.5 bg-aichat-border/30 rounded">
             {artifact.kind}
           </span>
           {artifact.language && (
-            <span className="text-xs text-terminal-secondary">
+            <span className="text-xs text-aichat-secondary">
               {artifact.language}
             </span>
           )}
         </div>
         <div className="flex items-center gap-2">
           {artifact.kind === "markdown" && (
-            <div className="flex items-center border border-terminal-border-dim rounded overflow-hidden">
+            <div className="flex items-center border border-aichat-border-dim rounded overflow-hidden">
               <button
                 onClick={() => setMarkdownMode("rendered")}
                 className={`px-2 py-1 text-xs transition-colors ${
                   markdownMode === "rendered"
-                    ? "bg-terminal-accent/20 text-terminal-accent"
-                    : "text-terminal-secondary hover:bg-terminal-surface-hover"
+                    ? "bg-aichat-accent/20 text-aichat-accent"
+                    : "text-aichat-secondary hover:bg-aichat-surface-hover"
                 }`}
                 aria-pressed={markdownMode === "rendered"}
               >
@@ -130,8 +130,8 @@ const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
                 onClick={() => setMarkdownMode("raw")}
                 className={`px-2 py-1 text-xs transition-colors ${
                   markdownMode === "raw"
-                    ? "bg-terminal-accent/20 text-terminal-accent"
-                    : "text-terminal-secondary hover:bg-terminal-surface-hover"
+                    ? "bg-aichat-accent/20 text-aichat-accent"
+                    : "text-aichat-secondary hover:bg-aichat-surface-hover"
                 }`}
                 aria-pressed={markdownMode === "raw"}
               >
@@ -160,16 +160,16 @@ const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
                 );
               }
             }}
-            className="p-1.5 hover:bg-terminal-surface-hover rounded transition-colors"
+            className="p-1.5 hover:bg-aichat-surface-hover rounded transition-colors"
             title="Copy to clipboard"
           >
             {copyState === "copied" ? (
-              <span className="text-xs text-terminal-success">Copied</span>
+              <span className="text-xs text-aichat-success">Copied</span>
             ) : copyState === "error" ? (
-              <span className="text-xs text-terminal-error">Copy failed</span>
+              <span className="text-xs text-aichat-error">Copy failed</span>
             ) : (
               <svg
-                className="w-4 h-4 text-terminal-secondary"
+                className="w-4 h-4 text-aichat-secondary"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -185,10 +185,10 @@ const ArtifactPreview: React.FC<ArtifactPreviewProps> = ({ artifact }) => {
           </button>
         </div>
       </div>
-      <div className="p-3 max-h-[50vh] overflow-y-auto terminal-scrollbar">
+      <div className="p-3 max-h-[50vh] overflow-y-auto aichat-scrollbar">
         {renderContent()}
       </div>
-      <div className="px-3 py-2 bg-terminal-surface border-t border-terminal-border text-xs text-terminal-secondary">
+      <div className="px-3 py-2 bg-aichat-surface border-t border-aichat-border text-xs text-aichat-secondary">
         Updated {new Date(artifact.updatedAt).toLocaleString()}
       </div>
     </div>

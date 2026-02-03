@@ -50,11 +50,11 @@ const ChatHistory: React.FC = () => {
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex-1 overflow-y-auto terminal-scrollbar p-4 text-[15px]"
+        className="flex-1 overflow-y-auto aichat-scrollbar p-4 text-[15px]"
       >
         <div className="mx-auto w-full max-w-3xl min-h-full flex flex-col space-y-6">
           {!activeThread ? (
-            <div className="flex flex-1 flex-col items-center justify-center text-terminal-secondary text-center">
+            <div className="flex flex-1 flex-col items-center justify-center text-aichat-secondary text-center">
               <svg
                 className="w-16 h-16 mb-4 opacity-50"
                 fill="none"
@@ -74,7 +74,7 @@ const ChatHistory: React.FC = () => {
               </p>
             </div>
           ) : activeThread.steps.length === 0 ? (
-            <div className="flex flex-1 flex-col items-center justify-center text-terminal-secondary text-center">
+            <div className="flex flex-1 flex-col items-center justify-center text-aichat-secondary text-center">
               <p className="text-lg font-medium">
                 Start a new conversation in "{activeThread.title}"
               </p>
@@ -95,7 +95,7 @@ const ChatHistory: React.FC = () => {
       </div>
 
       {/* Composer */}
-      <div className="sticky bottom-0 bg-terminal-background border-t border-terminal-border p-4">
+      <div className="sticky bottom-0 bg-aichat-background border-t border-aichat-border p-4">
         <div className="mx-auto w-full max-w-3xl">
           <ChatComposer />
         </div>
@@ -103,14 +103,14 @@ const ChatHistory: React.FC = () => {
         {/* Quick artifact links */}
         {/* threadArtifacts.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-2">
-            <span className="text-xs text-terminal-secondary">
+            <span className="text-xs text-aichat-secondary">
               Artifacts in this thread:
             </span>
             {threadArtifacts.map((artifact) => (
               <button
                 key={artifact.id}
                 onClick={() => selectArtifact(artifact.id)}
-                className="text-xs px-2 py-1 bg-terminal-surface hover:bg-terminal-surface-hover rounded border border-terminal-border-dim transition-colors"
+                className="text-xs px-2 py-1 bg-aichat-surface hover:bg-aichat-surface-hover rounded border border-aichat-border-dim transition-colors"
               >
                 {artifact.title}
               </button>

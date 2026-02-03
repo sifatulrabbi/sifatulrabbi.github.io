@@ -28,6 +28,54 @@
   --terminal-info: #79c0ff;
 }
 
+[data-section="aichat"] {
+  --aichat-font-body: "Fira Code";
+
+  --aichat-background: #0d1117;
+  --aichat-surface: #161b22;
+  --aichat-surface-hover: #1c2128;
+  --aichat-border: #30363d;
+  --aichat-border-dim: #21262d;
+  --aichat-primary: #c9d1d9;
+  --aichat-secondary: #8b949e;
+  --aichat-accent: #0077ff;
+  --aichat-keyword: #ff7b72;
+  --aichat-string: #a5d6ff;
+  --aichat-number: #79c0ff;
+  --aichat-comment: #8b949e;
+  --aichat-function: #d2a8ff;
+  --aichat-variable: #ffa657;
+  --aichat-prompt: #7ee787;
+  --aichat-success: #7ee787;
+  --aichat-error: #ff7b72;
+  --aichat-warning: #ffa657;
+  --aichat-info: #79c0ff;
+  --aichat-user: #1e293b;
+}
+
+[data-section="aichat"][data-theme="light"] {
+  --aichat-background: #f8fafc;
+  --aichat-surface: #ffffff;
+  --aichat-surface-hover: #f1f5f9;
+  --aichat-border: #e2e8f0;
+  --aichat-border-dim: #cbd5e1;
+  --aichat-primary: #0f172a;
+  --aichat-secondary: #475569;
+  --aichat-accent: #0077ff;
+  --aichat-keyword: #be123c;
+  --aichat-string: #0ea5e9;
+  --aichat-number: #1d4ed8;
+  --aichat-comment: #64748b;
+  --aichat-function: #7c3aed;
+  --aichat-variable: #b45309;
+  --aichat-prompt: #16a34a;
+  --aichat-success: #16a34a;
+  --aichat-error: #dc2626;
+  --aichat-warning: #d97706;
+  --aichat-info: #0284c7;
+  --aichat-user: #e2e8f0;
+}
+
 html {
   height: -webkit-fill-available !important;
 }
@@ -187,6 +235,12 @@ h6 {
   scrollbar-color: var(--terminal-border) var(--terminal-surface);
 }
 
+.aichat-scrollbar {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--aichat-border) var(--aichat-surface);
+}
+
 /* Webkit browsers (Chrome, Safari, Edge) */
 .terminal-scrollbar::-webkit-scrollbar {
   width: 10px;
@@ -205,4 +259,23 @@ h6 {
 
 .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
   background: var(--terminal-accent); /* terminal-accent */
+}
+
+.aichat-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.aichat-scrollbar::-webkit-scrollbar-track {
+  background: var(--aichat-surface);
+  border-radius: 4px;
+}
+
+.aichat-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--aichat-border);
+  border-radius: 4px;
+  border: 2px solid var(--aichat-surface);
+}
+
+.aichat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--aichat-accent);
 }

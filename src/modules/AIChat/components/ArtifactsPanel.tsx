@@ -39,20 +39,20 @@ const ArtifactsPanel: React.FC = () => {
   return (
     <div className="flex flex-col h-full">
       {/* Header */}
-      <div className="p-4 border-b border-terminal-border flex items-start justify-between gap-3">
+      <div className="p-4 border-b border-aichat-border flex items-start justify-between gap-3">
         <div>
           <h2 className="font-medium">Artifacts</h2>
-          <p className="text-xs text-terminal-secondary mt-1">
+          <p className="text-xs text-aichat-secondary mt-1">
             {threadArtifacts.length} in this thread
           </p>
         </div>
         <button
           onClick={toggleArtifacts}
-          className="p-1.5 rounded hover:bg-terminal-surface-hover transition-colors"
+          className="p-1.5 rounded hover:bg-aichat-surface-hover transition-colors"
           aria-label="Close artifacts panel"
         >
           <svg
-            className="w-4 h-4 text-terminal-secondary"
+            className="w-4 h-4 text-aichat-secondary"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -68,13 +68,13 @@ const ArtifactsPanel: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-y-auto terminal-scrollbar">
+      <div className="flex-1 overflow-y-auto aichat-scrollbar">
         {!activeThread ? (
-          <div className="p-4 text-terminal-secondary text-sm text-center">
+          <div className="p-4 text-aichat-secondary text-sm text-center">
             Select a thread to view artifacts
           </div>
         ) : threadArtifacts.length === 0 ? (
-          <div className="p-4 text-terminal-secondary text-sm text-center">
+          <div className="p-4 text-aichat-secondary text-sm text-center">
             No artifacts in this thread yet
           </div>
         ) : (
@@ -93,14 +93,14 @@ const ArtifactsPanel: React.FC = () => {
                     flex-1 min-w-[220px] text-left p-3 rounded-lg border transition-all
                     ${
                       selectedArtifactId === artifact.id
-                        ? "bg-terminal-accent/10 border-terminal-accent"
-                        : "bg-terminal-surface border-terminal-border-dim hover:border-terminal-border"
+                        ? "bg-aichat-accent/10 border-aichat-accent"
+                        : "bg-aichat-surface border-aichat-border-dim hover:border-aichat-border"
                     }
                   `}
                 >
                   <div className="flex items-start gap-2">
                     <svg
-                      className="w-4 h-4 text-terminal-secondary mt-0.5 flex-shrink-0"
+                      className="w-4 h-4 text-aichat-secondary mt-0.5 flex-shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -117,11 +117,11 @@ const ArtifactsPanel: React.FC = () => {
                         {artifact.title}
                       </p>
                       <div className="flex items-center gap-2 mt-1">
-                        <span className="text-xs px-1.5 py-0.5 bg-terminal-border/30 rounded">
+                        <span className="text-xs px-1.5 py-0.5 bg-aichat-border/30 rounded">
                           {artifact.kind}
                         </span>
                         {artifact.language && (
-                          <span className="text-xs text-terminal-secondary">
+                          <span className="text-xs text-aichat-secondary">
                             {artifact.language}
                           </span>
                         )}
@@ -134,7 +134,7 @@ const ArtifactsPanel: React.FC = () => {
 
             {/* Selected artifact preview */}
             {selectedArtifact && (
-              <div className="border-t border-terminal-border pt-4">
+              <div className="border-t border-aichat-border pt-4">
                 <ArtifactPreview artifact={selectedArtifact} />
               </div>
             )}

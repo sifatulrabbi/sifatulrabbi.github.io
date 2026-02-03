@@ -49,12 +49,12 @@ const ChatComposer: React.FC = () => {
           onChange={handleChange}
           onKeyDown={handleKeyDown}
           placeholder="Type your message..."
-          className="w-full px-4 py-3 pr-12 bg-terminal-surface border border-terminal-border rounded-xl resize-none focus:outline-none focus:border-terminal-accent focus:ring-1 focus:ring-terminal-accent min-h-[52px] max-h-[200px] terminal-scrollbar text-[16px]"
+          className="w-full px-4 py-3 pr-12 bg-aichat-surface border border-aichat-border rounded-xl resize-none focus:outline-none focus:border-aichat-accent focus:ring-1 focus:ring-aichat-accent min-h-[52px] max-h-[200px] aichat-scrollbar text-[16px]"
           rows={1}
         />
-        <div className="absolute right-3 bottom-3 text-xs text-terminal-secondary">
+        <div className="absolute right-3 bottom-3 text-xs text-aichat-secondary">
           {composerText.length > 0 && (
-            <span className="bg-terminal-border/30 px-1.5 py-0.5 rounded">
+            <span className="bg-aichat-border/30 px-1.5 py-0.5 rounded">
               {composerText.length}
             </span>
           )}
@@ -68,8 +68,8 @@ const ChatComposer: React.FC = () => {
           px-4 py-3 rounded-xl font-medium transition-all
           ${
             composerText.trim()
-              ? "bg-terminal-accent text-terminal-background hover:bg-terminal-accent/90"
-              : "bg-terminal-border text-terminal-secondary cursor-not-allowed"
+              ? "bg-aichat-accent text-aichat-background hover:bg-aichat-accent/90"
+              : "bg-aichat-border text-aichat-secondary cursor-not-allowed"
           }
         `}
         aria-label="Send message"

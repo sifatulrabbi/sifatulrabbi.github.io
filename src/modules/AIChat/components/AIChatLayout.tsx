@@ -12,11 +12,20 @@ const AIChatLayout: React.FC<AIChatLayoutProps> = ({
   chat,
   artifacts,
 }) => {
-  const { sidebarOpen, artifactsOpen, toggleSidebar, toggleArtifacts } =
-    useAIChat();
+  const {
+    sidebarOpen,
+    artifactsOpen,
+    toggleSidebar,
+    toggleArtifacts,
+    themeSetting,
+  } = useAIChat();
 
   return (
-    <div className="h-[100dvh] w-full flex bg-terminal-background text-terminal-primary overflow-hidden">
+    <div
+      data-section="aichat"
+      data-theme={themeSetting}
+      className="h-[100dvh] w-full flex bg-aichat-background text-aichat-primary overflow-hidden font-aichat"
+    >
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
         <div
@@ -29,7 +38,7 @@ const AIChatLayout: React.FC<AIChatLayoutProps> = ({
       <aside
         className={`
           fixed lg:static inset-y-0 left-0 z-50
-          w-[280px] border-r border-terminal-border bg-terminal-surface
+          w-[280px] border-r border-aichat-border bg-aichat-surface
           transform transition-transform duration-200 ease-in-out
           ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
           flex flex-col
@@ -41,10 +50,10 @@ const AIChatLayout: React.FC<AIChatLayoutProps> = ({
       {/* Middle - Chat area */}
       <main className="flex-1 min-w-0 flex flex-col relative">
         {/* Mobile header with toggles */}
-        <div className="lg:hidden flex items-center justify-between p-3 border-b border-terminal-border bg-terminal-surface">
+        <div className="lg:hidden flex items-center justify-between p-3 border-b border-aichat-border bg-aichat-surface">
           <button
             onClick={toggleSidebar}
-            className="p-2 rounded hover:bg-terminal-surface-hover transition-colors"
+            className="p-2 rounded hover:bg-aichat-surface-hover transition-colors"
             aria-label="Toggle threads"
           >
             <svg
@@ -64,7 +73,7 @@ const AIChatLayout: React.FC<AIChatLayoutProps> = ({
           <span className="font-medium">AI Chat</span>
           <button
             onClick={toggleArtifacts}
-            className="p-2 rounded hover:bg-terminal-surface-hover transition-colors"
+            className="p-2 rounded hover:bg-aichat-surface-hover transition-colors"
             aria-label="Toggle artifacts"
           >
             <svg
@@ -99,7 +108,7 @@ const AIChatLayout: React.FC<AIChatLayoutProps> = ({
         className={`
           fixed inset-y-0 right-0 z-50
           w-full sm:w-[80vw] lg:w-[60vw]
-          border-l border-terminal-border bg-terminal-surface shadow-2xl
+          border-l border-aichat-border bg-aichat-surface shadow-2xl
           transform transition-transform duration-200 ease-in-out
           ${artifactsOpen ? "translate-x-0" : "translate-x-full"}
           flex flex-col
@@ -114,8 +123,8 @@ const AIChatLayout: React.FC<AIChatLayoutProps> = ({
         aria-pressed={artifactsOpen}
         className={`hidden lg:flex fixed right-4 top-4 z-30 p-2 rounded border transition-colors ${
           artifactsOpen
-            ? "bg-terminal-accent/10 border-terminal-accent text-terminal-accent"
-            : "bg-terminal-surface border-terminal-border hover:bg-terminal-surface-hover"
+            ? "bg-aichat-accent/10 border-aichat-accent text-aichat-accent"
+            : "bg-aichat-surface border-aichat-border hover:bg-aichat-surface-hover"
         }`}
         aria-label="Toggle artifacts panel"
       >
