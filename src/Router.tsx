@@ -4,7 +4,7 @@ import BlogsLayout from "@/layouts/BlogsLayout";
 import BorwseBlogsPage from "@/modules/Blogs/BrowseBlogsPage";
 import ReadBlogPage from "./modules/Blogs/ReadBlogsPage";
 import TerminalRoute from "./modules/TerminalMode/route";
-import AIChatRoute from "./modules/AIChat/route";
+import AIChatV5Route from "./modules/AIChatV5/route";
 import liveAppsRoutes from "./modules/LiveApps/router";
 
 const router = createBrowserRouter([
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/ai-chat",
-        element: <AIChatRoute />,
+        element: <AIChatV5Route />,
       },
     ],
   },

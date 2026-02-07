@@ -25,3 +25,4 @@ dist-ssr
 .DS_Store
 *.env
 .claude/settings.local.json
+.claude/settings.local.jsonc
