@@ -3,7 +3,8 @@ import { useTerminalMode } from "../context/terminalModeContext";
 import { v4 } from "uuid";
 import { CommandButton } from "@/components";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import { ASCII_ART, ABOUT_ME, AVAILABLE_COMMANDS } from "../data/aboutMe";
+import { ASCII_ART, AVAILABLE_COMMANDS } from "../data/aboutMe";
+import { aboutMe, profile } from "@/content/profile";
 
 const TerminalContainer: React.FC = () => {
   const { runCommand, executing, history, currentDir } = useTerminalMode();
@@ -69,19 +70,16 @@ const TerminalContainer: React.FC = () => {
             {ASCII_ART}
           </pre>
           <p className="text-terminal-prompt">
-            <strong>Full Stack & AI Developer</strong>
-            {" at "}
-            <a
-              href="https://sequesto.com"
-              target="_blank"
-              className="underline"
-            >
-              SEQUESTO BV
-            </a>
+            <strong>{profile.hero.title}</strong>
+            {" · "}
+            {profile.hero.focus}
           </p>
         </div>
         <div className="mt-4 text-terminal-primary leading-relaxed">
-          {ABOUT_ME}
+          {aboutMe(new Date())}
+        </div>
+        <div className="mt-4 text-terminal-secondary leading-relaxed">
+          {profile.availability}
         </div>
         <hr className="mt-4 opacity-20" />
         <div className="mt-4 text-terminal-secondary">

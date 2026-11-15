@@ -1,6 +1,10 @@
 import type { FileEntry } from "@/types";
 import { projectsData } from "./data/projectsData";
-import { experiencesData } from "./data/experienceData";
+import {
+  experiences,
+  experienceFileName,
+  experienceToMarkdown,
+} from "@/content/experiences";
 
 export class Entry implements FileEntry {
   parent: FileEntry | null = null;
@@ -61,8 +65,10 @@ export class Entry implements FileEntry {
 export const rootDirectory = new Entry("");
 
 const expDir = new Entry("Experiences");
-experiencesData.forEach((expData) => {
-  expDir.insertNewEntry(new Entry(expData.title, expData.text));
+experiences.forEach((exp) => {
+  expDir.insertNewEntry(
+    new Entry(experienceFileName(exp), experienceToMarkdown(exp)),
+  );
 });
 rootDirectory.insertNewEntry(expDir);
 
