@@ -2,12 +2,15 @@ import type { TerminalHistory, TerminalExitCode, FileEntry } from "@/types";
 import { rootDirectory } from "./directories";
 import { marked } from "marked";
 import dayjs from "dayjs";
-import { experiencesData } from "./data/experienceData";
-import { projectsData } from "./data/projectsData";
 import {
-  experienceSectionData,
-  projectsData as structuredProjects,
-} from "@/assets/data";
+  experiences,
+  experienceFileName,
+  experienceToMarkdown,
+} from "@/content/experiences";
+import { profile } from "@/content/profile";
+import { skills } from "@/content/skills";
+import { projectsData } from "./data/projectsData";
+import { projectsData as structuredProjects } from "@/assets/data";
 
 export class ListExp implements TerminalHistory {
   private readonly args: string[] = [];
@@ -24,26 +27,26 @@ export class ListExp implements TerminalHistory {
   exec(): TerminalExitCode {
     if (this.args.length < 2) {
       this._output += "My experiences\n\n";
-      for (const e of experiencesData) {
-        this._output += `- ${e.id}. ${e.title}\n`;
+      for (const e of experiences) {
+        this._output += `- ${e.id}. ${experienceFileName(e)}\n`;
       }
       this._output += `\nUse **list_exp all** to view all the experiences or **list_exp [exp id]** for any specific one.`;
       return 0;
     }
     if (this.args[1] === "all") {
       this._output += "All experiences expanded.\n\n";
-      for (const e of experiencesData) {
-        this._output += e.text;
+      for (const e of experiences) {
+        this._output += experienceToMarkdown(e);
       }
       return 0;
     }
-    const selectedExp = experiencesData.find((p) => p.id === this.args[1]);
+    const selectedExp = experiences.find((p) => p.id === this.args[1]);
     if (!selectedExp) {
       this._exitCode = 1;
       this._output = `No experiences found with id: '${this.args[1]}'`;
       return 1;
     }
-    this._output = selectedExp.text;
+    this._output = experienceToMarkdown(selectedExp);
     return 0;
   }
 
@@ -346,27 +349,26 @@ export class PrintExperiences implements TerminalHistory {
                 </h2>
         `;
 
-    experienceSectionData.forEach((exp, idx) => {
+    experiences.forEach((exp, idx) => {
+      const place = exp.location
+        ? `<span class="text-terminal-secondary"> • ${exp.location}</span>`
+        : "";
+      const company = exp.companyUrl
+        ? `<a href="${exp.companyUrl}" target="_blank" rel="noopener noreferrer" class="text-terminal-info hover:text-terminal-accent transition-colors">${exp.company}</a>`
+        : `<span class="text-terminal-primary">${exp.company}</span>`;
       html += `
-                <div class="mb-8 pb-6 ${idx < experienceSectionData.length - 1 ? "border-b border-terminal-border-dim" : ""}">
+                <div class="mb-8 pb-6 ${idx < experiences.length - 1 ? "border-b border-terminal-border-dim" : ""}">
                     <div class="mb-3">
-                        <h3 class="text-terminal-prompt text-lg font-bold">${exp.position}</h3>
-                        ${exp.companyUrl ? `<a href="${exp.companyUrl}" target="_blank" rel="noopener noreferrer" class="text-terminal-info hover:text-terminal-accent transition-colors">${exp.companyName}</a>` : `<span class="text-terminal-primary">${exp.companyName}</span>`}
-                        <span class="text-terminal-secondary"> • ${exp.companyLocation}</span>
+                        <h3 class="text-terminal-prompt text-lg font-bold">${exp.title}</h3>
+                        ${company}${place}
                     </div>
                     <div class="text-terminal-secondary text-sm mb-2">
-                        ${exp.from} - ${exp.till || "Present"} • ${exp.employmentType} • ${exp.jobType}
+                        ${exp.period} • ${exp.terms}
                     </div>
-                    ${exp.companySummary ? `<p class="text-terminal-primary italic mb-3">${exp.companySummary}</p>` : ""}
-                    ${
-                      exp.description.length > 0
-                        ? `
-                        <ul class="list-disc list-inside space-y-1 text-terminal-primary mb-3">
-                            ${exp.description.map((desc) => `<li>${desc}</li>`).join("")}
-                        </ul>
-                    `
-                        : ""
-                    }
+                    ${exp.summary ? `<p class="text-terminal-primary italic mb-3">${exp.summary}</p>` : ""}
+                    <ul class="list-disc list-inside space-y-1 text-terminal-primary mb-3">
+                        ${exp.highlights.map((h) => `<li>${h}</li>`).join("")}
+                    </ul>
                     <div class="flex flex-wrap gap-2 mt-3">
                         ${exp.techStack.map((tech) => `<span class="px-2 py-1 bg-terminal-border text-terminal-accent text-xs rounded">${tech}</span>`).join("")}
                     </div>
@@ -434,35 +436,6 @@ export class PrintSkills implements TerminalHistory {
   constructor(public readonly pwd: string) {}
 
   exec(): TerminalExitCode {
-    const skills = {
-      "Programming Languages": [
-        "TypeScript",
-        "JavaScript",
-        "Python",
-        "Go",
-        "SQL",
-      ],
-      "Frontend": ["React", "Next.js", "Vue.js", "TailwindCSS", "HTML/CSS"],
-      "Backend": [
-        "Node.js",
-        "FastAPI",
-        "Express.js",
-        "Echo (Go)",
-        "REST APIs",
-        "GraphQL",
-      ],
-      "Databases": ["PostgreSQL", "MongoDB", "Redis", "Cassandra", "Firebase"],
-      "AI/ML": ["Langchain", "OpenAI", "LLM Integration", "Vector DBs"],
-      "DevOps & Tools": ["Docker", "Kubernetes", "GCP", "AWS", "Nginx", "Git"],
-      "Concepts": [
-        "Microservices",
-        "System Design",
-        "API Design",
-        "WebSockets",
-        "Pub/Sub",
-        "Background Jobs",
-      ],
-    };
 
     let html = `
             <div class="terminal-section">
@@ -500,6 +473,7 @@ export class PrintContact implements TerminalHistory {
   constructor(public readonly pwd: string) {}
 
   exec(): TerminalExitCode {
+    const { email, socials, closingLine } = profile.contact;
     const html = `
             <div class="terminal-section">
                 <h2 class="text-terminal-accent text-xl font-bold mb-6 border-b border-terminal-border pb-2">
@@ -508,24 +482,29 @@ export class PrintContact implements TerminalHistory {
                 <div class="space-y-4">
                     <div>
                         <h3 class="text-terminal-prompt font-bold mb-2">Email</h3>
-                        <a href="mailto:sifatulrabbii@gmail.com" class="text-terminal-info hover:text-terminal-accent transition-colors">
-                            sifatul.rabbi@outlook.com
+                        <a href="mailto:${email}" class="text-terminal-info hover:text-terminal-accent transition-colors">
+                            ${email}
                         </a>
                     </div>
                     <div>
                         <h3 class="text-terminal-prompt font-bold mb-2">Social Links</h3>
                         <div class="flex flex-col gap-2">
-                            <a href="https://github.com/sifatulrabbi" target="_blank" rel="noopener noreferrer" class="text-terminal-info hover:text-terminal-accent transition-colors">
-                                🔗 GitHub: github.com/sifatulrabbi
-                            </a>
-                            <a href="https://linkedin.com/in/sifatulrabbi" target="_blank" rel="noopener noreferrer" class="text-terminal-info hover:text-terminal-accent transition-colors">
-                                🔗 LinkedIn: linkedin.com/in/sifatulrabbi
-                            </a>
+                            ${socials
+                              .map(
+                                (s) => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="text-terminal-info hover:text-terminal-accent transition-colors">
+                                🔗 ${s.label}: ${s.handle}
+                            </a>`,
+                              )
+                              .join("")}
                         </div>
+                    </div>
+                    <div>
+                        <h3 class="text-terminal-prompt font-bold mb-2">Availability</h3>
+                        <p class="text-terminal-primary">${profile.availability}</p>
                     </div>
                     <div class="mt-6 p-4 bg-terminal-surface border border-terminal-border rounded">
                         <p class="text-terminal-primary">
-                            💡 Feel free to reach out for collaborations, opportunities, or just to say hi!
+                            💡 ${closingLine}
                         </p>
                     </div>
                 </div>

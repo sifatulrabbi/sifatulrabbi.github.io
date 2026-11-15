@@ -16,7 +16,6 @@ export const ASCII_ART = `
 ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝  ╚═╝
 `.trim();
 
-export const ABOUT_ME = `I love building software and collaborating with awesome people. I often use Python, TypeScript, or Go to hack out most of my curiosities on Neovim. I enjoy exploring the tech and generative AI world. My intuitions and experience in full-stack development makes me more product oriented and enables me to plan and deploy features from scratch.`;
 
 export type CommandButtonInfo = {
   id: string;
