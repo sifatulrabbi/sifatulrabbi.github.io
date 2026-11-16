@@ -17,7 +17,7 @@ export const experiences: Experience[] = [
     title: "Full-Stack AI Developer, then AI Lead",
     company: "SEQUESTO BV",
     companyUrl: "https://sequesto.com",
-    location: "Ghent, Belgium",
+    location: "Melsele, Belgium",
     terms: "Remote, contract",
     period: "Oct 2024 – Nov 2026",
     summary:
