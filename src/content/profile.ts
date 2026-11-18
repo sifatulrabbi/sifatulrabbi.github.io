@@ -30,7 +30,7 @@ export function aboutMe(today: Date): string {
 
 export const profile = {
   hero: {
-    title: "Senior Full-Stack Developer",
+    title: "Software Engineer (Full-stack & AI)",
     focus: "AI Agents and SaaS",
   },
   availability:
